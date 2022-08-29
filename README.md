@@ -63,20 +63,38 @@ de un caso de uso. Cada estado representa el computo de una acción.
 </center>
 
 
+## Patrones de diseño
+---
+
+- **Strategy**: Define una familia de algoritmos, encapsula cada uno
+y los hace intercambiables. Favorece la composición en lugar de la
+herencia, haciendo más flexible la modificación del comportamiento. 
+
+    - **Principio de diseño**: Programar para las interfaces o clases abstractas, en lugar de para implementaciones.
+
+    *Ejemplo*:
+
+<center>
+<br/>
+    <img src="./img/strategy.jpg" width="600"/>
+<br/><br/><br/>
+</center>
+
+
 ## Git cheatsheet
 ---
 
-- `git init`: 
-- `git add -A`: 
-- `git add .`: 
-- `git commit -m "<message>"`: 
-- `git remote add origin <repository_url>`: 
-- `git branch -d <branch_name>`: 
-- `git push`: 
-- `git pull`: 
-- `git checkout <brach_name>`: 
-- `git diff`: 
-- `git diff <source_branch> <target_branch>`: 
+- `git init`: Inicializa un repositorio.
+- `git add -A`: Agrega todos los cambios al staging area (antes de enviarlos a internet)
+- `git add .`: Agrega los cambios de la carpeta actual solamente al staging area.
+- `git commit -m "<message>"`: Haz un commit del staging area como está.
+- `git remote add origin <repository_url>`: Agrega el origen remoto de un repositorio.
+- `git branch -d <branch_name>`: Elimina una rama.
+- `git push`: Enviar los cambios al remoto.
+- `git pull`: Obtener los cambios remotos.
+- `git checkout <brach_name>`: Cambiar de rama.
+- `git diff`: Ver diferencias.
+- `git diff <source_branch> <target_branch>`: Ver diferencias entre dos ramas.
 - `git diff <branch>`: Diferencia entre version actual y el ultimo commit.
 - `git fetch origin`: Eliminar todos los cambios locales
 - `git reset --hard origin/master`: **WARNING** Eliminar todos los cambios locales
