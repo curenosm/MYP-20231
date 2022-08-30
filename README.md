@@ -80,6 +80,14 @@ herencia, haciendo más flexible la modificación del comportamiento.
 <br/><br/><br/>
 </center>
 
+*Ejemplo*:
+
+<center>
+<br/>
+    <img src="./patrones_de_diseno/strategy/ClasesStrategy.jpeg" width="700"/>
+<br/><br/><br/>
+</center>
+
 
 ## Git cheatsheet
 ---
