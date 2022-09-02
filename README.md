@@ -88,6 +88,38 @@ herencia, haciendo más flexible la modificación del comportamiento.
 <br/><br/><br/>
 </center>
 
+- **Observer**: 
+
+    - **Principio de diseño**: 
+
+    *Ejemplo*:
+
+<center>
+<br/>
+    <img src="./patrones_de_diseno/strategy/ClasesStrategy.jpeg" width="700"/>
+<br/><br/><br/>
+</center>
+
+
+- **Template**: Define los pasos de un algoritmo y permite que las subclases proporcionen
+la implementacion de uno o mas pasos.
+
+    - **Principio de diseño**: 
+
+    - **Obs**: El metodo template tiene que ser un método final para que no se sobreescriba.
+
+    *Ejemplo*:
+
+- ** Metodos Hooks ** : cuando un metodo tiene una implementacion general y no se requiere
+que. Por defecto no hace nada, pero cuando se implementa cambian el flujo que sigue el metodo template
+
+<center>
+<br/>
+    <img src="./patrones_de_diseno/strategy/ClasesStrategy.jpeg" width="700"/>
+<br/><br/><br/>
+</center>
+
+
 
 ## Git cheatsheet
 ---
