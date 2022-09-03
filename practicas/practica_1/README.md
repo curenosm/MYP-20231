@@ -7,3 +7,9 @@
 2. Compilar usando `javac -sourcepath . -d ./target/ ./p01/Main.java`
 3. Dirigirse al directorio generado 'target' dentro de 'src'.
 4. Ejecutar usando `java p01.Main`
+
+# Diagramas
+
+<center>
+    <img src="./DiagramaClases.jpeg" width="100%">
+</center>
