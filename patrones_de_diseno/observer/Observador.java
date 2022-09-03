@@ -1,5 +1,4 @@
-package patrones_de_diseno.observer;
 
-public interface Observador {
-    
+public interface Observador{
+	public void actualizar();
 }
