@@ -4,16 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import p01.util.Constantes;
+import static p01.util.Constantes.println;
 
 /**
  * Main
  */
 public class Main {
 
-    public List<Franquicia> franquicias = Constantes.FRANQUICIAS;
-    public List<Personaje> contrincantes = Constantes.PERSONAJES;
     public List<Espectador> espectadores;
-    public Combate combate;
     public Grupo grupo;
 
     public static void main(String[] args) {
@@ -22,25 +20,17 @@ public class Main {
     }
 
     public void start() {
-        println("EMPIEZA LA TRANSMISION");
+        println("EMPIEZA LA TRANSMISION\n");
 
+        println("EMPIEZAN LAS APUESTAS\n");
         inicializarEspectadores();
-        inicializarCombate();
 
-        grupo = new Grupo(espectadores, combate);
+        println("EL COMBATE HA EMPEZADO\n");
+        inicializarCombate();
 
     }
     
     public void inicializarEspectadores() {
-        println("EMPIEZAN LAS APUESTAS");
-
-        for (int i = 0; i < 3; i++) {
-            println("El espectador " 
-                + (i + 1) 
-                + " ha escogido como su favorito a: " 
-                + Constantes.PERSONAJES.get(i) 
-            );
-        }
 
         espectadores = new ArrayList<>();
         espectadores.addAll(
@@ -50,14 +40,29 @@ public class Main {
                 new Espectador(3L, grupo, null, new Bitacora())
             )
         );
+
+        for (int i = 0; i < 3; i++) {
+            println("\n### Quien es tu personaje favorito? ###");
+            println("0. Korby");
+            println("1. MeganMan");
+            println("2. Dittuu");
+            println("#######################################\n");
+
+            espectadores.get(i).personajeFavoritoActual = Constantes.PERSONAJES.get(i);
+
+            println("El espectador " 
+                + espectadores.get(i).toString()
+                + " ha escogido como su favorito a: " 
+                + Constantes.PERSONAJES.get(i) 
+                + "\n"
+            );
+        }
     }
 
     public void inicializarCombate() {
-        println("EL COMBATE HA EMPEZADO");
-        combate = new Combate(contrincantes);
+        Combate combate = new Combate(Constantes.PERSONAJES);
+        grupo = new Grupo(espectadores, combate);
+        grupo.combate.iniciar();
     }
 
-    public static void println(String line) {
-        System.out.println(line);
-    }
 }

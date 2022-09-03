@@ -11,7 +11,7 @@ public class Grupo implements Sujeto {
 
     public Grupo(List<Espectador> espectadores, Combate combate) {
         this.espectadores = new ArrayList<>();
-        this.combate = new Combate();
+        this.combate = combate;
     }
 
     @Override

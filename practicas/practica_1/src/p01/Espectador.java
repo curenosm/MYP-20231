@@ -30,4 +30,9 @@ public class Espectador implements Observador {
         bitacora.escribir(registro);
     }
 
+    @Override
+    public String toString() {
+        return id + "";
+    }
+
 }

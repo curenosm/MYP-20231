@@ -95,10 +95,16 @@ public final class Constantes {
         )
     );
 
+    public static Integer PUNTOS_ATAQUE_BASE = 20;
+    public static Integer PUNTOS_DEFENSA_BASE = 5;
+
     public static List<Personaje> PERSONAJES = List.of(
-        new Personaje(FRANQUICIAS.get(0), "Korby"),
-        new Personaje(FRANQUICIAS.get(0), "MeganMan"),
-        new Personaje(FRANQUICIAS.get(0), "Dittuu")
+        new Personaje(FRANQUICIAS.get(0), "Korby", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE),
+        new Personaje(FRANQUICIAS.get(0), "MeganMan", PUNTOS_ATAQUE_BASE, PUNTOS_ATAQUE_BASE),
+        new Personaje(FRANQUICIAS.get(0), "Dittuu", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE)
     );
 
+    public static void println(String line) {
+        System.out.println(line);
+    }
 }
