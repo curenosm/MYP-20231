@@ -1,5 +1,8 @@
+package p01;
 import java.util.ArrayList;
 import java.util.List;
+
+import p01.interfaces.Sujeto;
 
 public class Grupo implements Sujeto {
 

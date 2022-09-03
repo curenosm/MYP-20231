@@ -1,4 +1,8 @@
+package p01;
+
 import java.time.Instant;
+
+import p01.interfaces.Observador;
 
 public class Espectador implements Observador {
 
