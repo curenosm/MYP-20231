@@ -26,4 +26,9 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
         // TODO Auto-generated method stub
         return null;
     }
+
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
 }
