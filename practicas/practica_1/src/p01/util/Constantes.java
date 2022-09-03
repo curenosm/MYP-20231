@@ -13,22 +13,22 @@ public final class Constantes {
             "Charizardo",
             35, 
             15,
-            "ataco usando bola de fuego",
-            "se defendio usando alas escudo"
+            "bola de fuego",
+            "alas escudo"
         ),
         new Transformacion(
             "Chikorisa",
             40, 
             5,
-            "ataco usando latigo cepa",
-            "se defendio usando hojas inutiles"
+            "latigo cepa",
+            "hojas inutiles"
         ),
         new Transformacion(
             "Spritle",
             20, 
             25,
-            "ataco usando pistola de agua",
-            "se defendio usando caparazon de acero"
+            "pistola de agua",
+            "caparazon de acero"
         )
     );
 
@@ -37,22 +37,22 @@ public final class Constantes {
             "Fire Soul",
             35, 
             7,
-            "ataco usando lanzallamas",
-            "se defendio usando calentar armadura"
+            "lanzallamas",
+            "calentar armadura"
         ),
         new Transformacion(
             "Ice Pegasus",
             35, 
             25,
-            "ataco usando rayo congelador",
-            "se defendio usando barrera de hielo"
+            "rayo congelador",
+            "barrera de hielo"
         ),
         new Transformacion(
             "Wind Soul",
             35, 
             10,
-            "ataco usando torbellino",
-            "se defendio usando barrera de viento"
+            "torbellino",
+            "barrera de viento"
         )
     );
 
@@ -61,22 +61,22 @@ public final class Constantes {
             "Hyperlink",
             33, 
             15,
-            "ataco usando su espada",
-            "se defendio usando giro veloz"
+            "su espada",
+            "giro veloz"
         ),
         new Transformacion(
             "Ladrillo",
             20, 
             45,
-            "ataco cayendole en la cabeza",
-            "se defendio conviertiendose en ladrillo"
+            "caida en la cabeza",
+            "dureza de ladrillo"
         ),
         new Transformacion(
             "Don Kingkon",
             20, 
             10,
-            "ataco usando sus puños",
-            "se defendio cubriendose"
+            "sus puños",
+            "cubriendose"
         )
     );
 
@@ -106,5 +106,9 @@ public final class Constantes {
 
     public static void println(String line) {
         System.out.println(line);
+    }
+
+    public static int obtenerNumeroAleatorioEntre(int inicio, int fin) {
+        return (int) Math.random()*fin + inicio;
     }
 }

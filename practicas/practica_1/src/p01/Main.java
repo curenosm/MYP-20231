@@ -12,7 +12,7 @@ import static p01.util.Constantes.println;
 public class Main {
 
     public List<Espectador> espectadores;
-    public Grupo grupo;
+    public Audiencia audiencia;
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -35,9 +35,9 @@ public class Main {
         espectadores = new ArrayList<>();
         espectadores.addAll(
             List.of(
-                new Espectador(1L, grupo, null, new Bitacora()),
-                new Espectador(2L, grupo, null, new Bitacora()),
-                new Espectador(3L, grupo, null, new Bitacora())
+                new Espectador(1L, audiencia, null, new Bitacora()),
+                new Espectador(2L, audiencia, null, new Bitacora()),
+                new Espectador(3L, audiencia, null, new Bitacora())
             )
         );
 
@@ -61,8 +61,9 @@ public class Main {
 
     public void inicializarCombate() {
         Combate combate = new Combate(Constantes.PERSONAJES);
-        grupo = new Grupo(espectadores, combate);
-        grupo.combate.iniciar();
+        audiencia = new Audiencia(espectadores, combate);
+        combate.audiencia = audiencia;
+        audiencia.combate.iniciar();
     }
 
 }

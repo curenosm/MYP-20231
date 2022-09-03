@@ -7,7 +7,7 @@ import p01.interfaces.Observador;
 public class Espectador implements Observador {
 
     public Long id;
-    public Grupo grupo;
+    public Audiencia audiencia;
     public Personaje personajeFavoritoActual;
     public Bitacora bitacora;
 
@@ -16,17 +16,17 @@ public class Espectador implements Observador {
     }
 
     public Espectador(Long id,
-                        Grupo grupo,
+                        Audiencia audiencia,
                         Personaje personajeFavoritoActual,
                         Bitacora bitacora) {
         this.id = id;
-        this.grupo = grupo;
+        this.audiencia = audiencia;
         this.personajeFavoritoActual = personajeFavoritoActual;
         this.bitacora = bitacora;
     }
 
     @Override
-    public void actualizarBitacora(String registro) {
+    public void actualizar(String registro) {
         bitacora.escribir(registro);
     }
 

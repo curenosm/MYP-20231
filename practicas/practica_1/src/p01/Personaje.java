@@ -20,13 +20,14 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
         this.puntosDeVida = 1000;
         this.powerUpActual = null;
         this.nombre = nombre;
+        this.puntosAtaqueBase = puntosAtaqueBase;
+        this.puntosDefensaBase = puntosDefensaBase;
     }
 
     @Override
     public void atacar(Personaje enemigo) {
-        println(enemigo.toString());
-        enemigo.puntosDeVida -= enemigo.defender(this.obtenerPuntosAtaque());
-        println(enemigo.powerUpActual.toString());
+        int puntosAtaque = this.obtenerPuntosAtaque();
+        enemigo.puntosDeVida -= enemigo.defender(puntosAtaque);
     }
 
     public Integer obtenerPuntosAtaque() {
@@ -57,5 +58,13 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
 
     public boolean estaVivo() {
         return this.puntosDeVida > 0;
+    }
+
+    public String eventoAtaque() {
+        return powerUpActual != null ? "usando " + powerUpActual.eventoAtaque : "";
+    }
+
+    public String eventoDefensa() {
+        return powerUpActual != null ? "usando " + powerUpActual.eventoDefensa : "";
     }
 }

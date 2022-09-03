@@ -19,4 +19,9 @@ public class Transformacion {
         this.eventoAtaque = eventoAtaque;
         this.eventoDefensa = eventoDefensa;
     }
+
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
 }

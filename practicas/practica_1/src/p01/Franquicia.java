@@ -19,4 +19,9 @@ public class Franquicia {
     public Transformacion obtenerTransformacion() {
         return transformaciones.get(0);
     }
+
+    @Override
+    public String toString() {
+        return this.nombre;
+    }
 }
