@@ -2,12 +2,17 @@ package p01;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.IntStream;
 
 import p01.util.Constantes;
-import static p01.util.Constantes.println;
+import static p01.util.Constantes.println;;
 
 /**
- * Main
+ * Clase principal del programa.
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
  */
 public class Main {
 
@@ -19,20 +24,28 @@ public class Main {
         main.start();
     }
 
+    /**
+     * Inicia la ejecución de nuestro programa.
+     */
     public void start() {
         println("EMPIEZA LA TRANSMISION\n");
 
-        println("EMPIEZAN LAS APUESTAS\n");
         inicializarEspectadores();
+        audiencia.notificar("EMPIEZAN LAS APUESTAS\n");
 
-        println("EL COMBATE HA EMPEZADO\n");
+        audiencia.notificar("EL COMBATE HA EMPEZADO\n");
         inicializarCombate();
-
+        
     }
     
+    /**
+     * Metodo que recibe el nomnbre de los espectadores,
+     * asi como su personaje favorito.
+     */
     public void inicializarEspectadores() {
 
         espectadores = new ArrayList<>();
+
         espectadores.addAll(
             List.of(
                 new Espectador(1L, audiencia, null, new Bitacora()),
@@ -42,26 +55,35 @@ public class Main {
         );
 
         for (int i = 0; i < 3; i++) {
-            println("\n### Quien es tu personaje favorito? ###");
-            println("0. Korby");
-            println("1. MeganMan");
-            println("2. Dittuu");
-            println("#######################################\n");
 
-            espectadores.get(i).personajeFavoritoActual = Constantes.PERSONAJES.get(i);
+            Espectador espectadorActual = espectadores.get(i);
+            
+            espectadorActual.actualizar("\n### Quien es tu personaje favorito? ###");
+            espectadorActual.actualizar("0. Korby");
+            espectadorActual.actualizar("1. MeganMan");
+            espectadorActual.actualizar("2. Dittuu");
+            espectadorActual.actualizar("#######################################\n");
 
-            println("El espectador " 
-                + espectadores.get(i).toString()
-                + " ha escogido como su favorito a: " 
-                + Constantes.PERSONAJES.get(i) 
-                + "\n"
-            );
+            espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(i);
         }
+
+        audiencia = new Audiencia(espectadores);
+
+        IntStream.range(0, espectadores.size())
+            .forEach(i -> {
+                Espectador e = espectadores.get(i);
+
+                audiencia.notificar(
+                    "El espectador " + e.toString() + " ha escogido como su favorito a: " 
+                    + Constantes.PERSONAJES.get(i) + "\n"
+                );
+            });
+        
     }
 
     public void inicializarCombate() {
         Combate combate = new Combate(Constantes.PERSONAJES);
-        audiencia = new Audiencia(espectadores, combate);
+        audiencia.combate = combate;
         combate.audiencia = audiencia;
         audiencia.combate.iniciar();
     }

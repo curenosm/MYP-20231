@@ -4,10 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Clase que simula una bitacora en la cual se registran los eventos de un combate
+ * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
- * Clase que simula una bitacora en la cual se registran los eventos de un combate
  */
 public class Bitacora {
 
@@ -25,6 +26,6 @@ public class Bitacora {
      * @param registro String con lo que se va registrar
      */
     public void escribir(String registro) {
-        registros.add(registro);
+        registros.add(registro + "\n");
     }
 }

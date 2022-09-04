@@ -13,7 +13,13 @@ import p01.Transformacion;
  * Clase con las constantes que seran utilizadas para el torneo
  */
 public final class Constantes {
-    
+
+    public static final String DIRECTORIO_BITACORAS = "./bitacoras/";
+
+    public static final Integer PUNTOS_ATAQUE_BASE = 20;
+    public static final Integer PUNTOS_DEFENSA_BASE = 5;
+    public static final Integer PUNTOS_DE_VIDA_INICIALES = 100;
+    public static final Double VELOCIDAD_EJECUCION = 0.1;
     
     public static List<Transformacion> TRANSFORMACIONES_CHINPOKOMON = List.of(
         new Transformacion(
@@ -102,13 +108,10 @@ public final class Constantes {
         )
     );
 
-    public static Integer PUNTOS_ATAQUE_BASE = 20;
-    public static Integer PUNTOS_DEFENSA_BASE = 5;
-
-    public static List<Personaje> PERSONAJES = List.of(
+    public static final List<Personaje> PERSONAJES = List.of(
         new Personaje(FRANQUICIAS.get(0), "Korby", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE),
-        new Personaje(FRANQUICIAS.get(0), "MeganMan", PUNTOS_ATAQUE_BASE, PUNTOS_ATAQUE_BASE),
-        new Personaje(FRANQUICIAS.get(0), "Dittuu", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE)
+        new Personaje(FRANQUICIAS.get(1), "MeganMan", PUNTOS_ATAQUE_BASE, PUNTOS_ATAQUE_BASE),
+        new Personaje(FRANQUICIAS.get(2), "Dittuu", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE)
     );
 
     /**
@@ -120,12 +123,14 @@ public final class Constantes {
     }
 
     /**
-     * Metodo para obtener un numero aleatorio
+     * Metodo para obtener un numero aleatorio.
+     * 
      * @param inicio Inicio del intervalo del cual se desea obtener el numero aleatorio
      * @param fin Fin del intervalo del cual se desea obtener el numero aleatorio
      * @return int 
      */
     public static int obtenerNumeroAleatorioEntre(int inicio, int fin) {
-        return (int) Math.random()*fin + inicio;
+        return (int) ((Math.random()*(fin - inicio)) + inicio);
     }
+
 }

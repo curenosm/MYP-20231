@@ -3,13 +3,17 @@ package p01;
 import java.util.ArrayList;
 import java.util.List;
 
+import static p01.util.Constantes.obtenerNumeroAleatorioEntre;
+
 /**
+ * Clase que simula una frnaquicia de la que vendran nuestros personajes.
+ * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
- * Clase que simula una frnaquicia de la que vendran nuestros personajes
  */
 public class Franquicia {
+
     public String nombre;
     public List<Transformacion> transformaciones; 
 
@@ -35,14 +39,16 @@ public class Franquicia {
      * @return Transformacion
      */
     public Transformacion obtenerTransformacion() {
-        return transformaciones.get(0);
+        return transformaciones.get(
+            obtenerNumeroAleatorioEntre(0, 3)
+        );
     }
 
-    @Override
     /**
      * Representacion en cadena del objeto
      * @return String
      */
+    @Override
     public String toString() {
         return this.nombre;
     }

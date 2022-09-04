@@ -1,5 +1,6 @@
 package p01;
 import p01.interfaces.ComportamientoDefensa;
+import p01.util.Constantes;
 import p01.interfaces.ComportamientoAtaque;
 
 import static p01.util.Constantes.println;
@@ -30,7 +31,7 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
                         Integer puntosAtaqueBase,
                         Integer puntosDefensaBase) {
         this.franquicia = franquicia;
-        this.puntosDeVida = 1000;
+        this.puntosDeVida = Constantes.PUNTOS_DE_VIDA_INICIALES;
         this.powerUpActual = null;
         this.nombre = nombre;
         this.puntosAtaqueBase = puntosAtaqueBase;
@@ -112,5 +113,19 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      */
     public String eventoDefensa() {
         return powerUpActual != null ? "usando " + powerUpActual.eventoDefensa : "";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        
+        if (obj instanceof Personaje ) {
+            if (((Personaje) obj).nombre != null) {
+                return ((Personaje) obj).nombre.equals(this.nombre);
+            }
+            
+            return false;
+        }
+
+        return false;
     }
 }

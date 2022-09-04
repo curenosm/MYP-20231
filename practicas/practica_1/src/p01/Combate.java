@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import p01.interfaces.Sujeto;
+import p01.util.Constantes;
 
 import static p01.util.Constantes.println;
+import static p01.util.Constantes.obtenerNumeroAleatorioEntre;
 
 /**
+ *  * Clase que simula un combate 
+ * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
- * Clase que simula un combate 
- * @implNote Esta clase implementa la interfaz Sujeto para notificar a los espectadores de lo que ocurrre
+ * @note Esta clase implementa la interfaz Sujeto para notificar a los espectadores de lo que ocurrre
  */
 public class Combate implements Sujeto {
 
@@ -23,6 +26,7 @@ public class Combate implements Sujeto {
     public Personaje korby;
     public Personaje meganMan;
     public Personaje dittuu;
+    public boolean termino = true;
 
     /**
      * Metodo constructor de la clase sin parametros
@@ -43,39 +47,71 @@ public class Combate implements Sujeto {
         dittuu = contricantes.get(2);
     }
 
+    public void asignarPowerUpAleatorioAPersonaje() {
+
+        int indicePersonaje = obtenerNumeroAleatorioEntre(
+            0,
+            contricantes.size()
+        );
+
+        Personaje personajeSeleccionado = contricantes.get(indicePersonaje);
+
+        personajeSeleccionado.powerUpActual = personajeSeleccionado.franquicia.obtenerTransformacion();
+
+        notificar(personajeSeleccionado.nombre 
+            + " ha tomado un power up, se ha transformado en " 
+            + personajeSeleccionado.powerUpActual.toString()
+        );
+
+        // A todos los demás quitales el power up
+        this.contricantes.stream()
+            .filter(c -> !personajeSeleccionado.equals(c))
+            .forEach(c -> {
+                c.powerUpActual = null;
+            });
+
+    }
+
     /**
      * Metodo para iniciar el combate
      */
     public void iniciar() {
+
+        termino = false;
+
         try {
-            int i = 0;
+            
+            int turnoActual = 0;
 
             while (!combateTermino()) {
-
-                if (i%4 == 0) {
-                    korby.powerUpActual =  korby.franquicia.obtenerTransformacion();
-                    
-                    println("Korby ha tomado un power up, se ha transformado en " + korby.powerUpActual.toString());
+                
+                if (turnoActual%3 == 0) {
+                    asignarPowerUpAleatorioAPersonaje();
                 }
                 else {
-                    korby.powerUpActual = null;
+                    desasignarPowerUp();
                 }
                 
-                println("Korby ataca a MeganMan " + korby.eventoAtaque());
-                korby.atacar(meganMan);
-                println("MeganMan se defiende " + meganMan.eventoDefensa());
+                if (meganMan.estaVivo()) {
+                    notificar("Korby ataca a MeganMan " + korby.eventoAtaque());
+                    korby.atacar(meganMan);
+                    notificar("MeganMan se defiende " + meganMan.eventoDefensa());
+                }
 
-                println("Korby ataca a Dittuu "  + korby.eventoAtaque());
-                korby.atacar(dittuu);
-                println("Dittuu se defiende " + dittuu.eventoDefensa());
+                if (dittuu.estaVivo()) {
+                    notificar("Korby ataca a Dittuu "  + korby.eventoAtaque());
+                    korby.atacar(dittuu);
+                    notificar("Dittuu se defiende " + dittuu.eventoDefensa());
+                }
 
-                Thread.sleep(300);
+                Thread.sleep((long) (2000*Constantes.VELOCIDAD_EJECUCION));
 
-                i++;
+                turnoActual++;
             }
 
             notificar("EL COMBATE HA TERMINADO");
             notificar("HA GANADO " + ganador.toString());
+            
 
         }
         catch (Exception e) {
@@ -84,37 +120,58 @@ public class Combate implements Sujeto {
     }
 
     /**
-     * Metodo para cuando el combate finaliza
+     * Metodo para cuando el combate finaliza.
+     * 
      * @return boolean
      */
     public boolean combateTermino() {
-        println("\n####################################");
-        println("Vida de Korby " + korby.puntosDeVida);
-        println("Vida de MeganMan " + meganMan.puntosDeVida);
-        println("Vida de Dittuu " + dittuu.puntosDeVida);
-        println("####################################\n");
 
+        if (!termino) {
+            imprimirPuntosDeVida();
+        }
 
         // Checamos que solo quede uno con vida
         if (korby.estaVivo() && !meganMan.estaVivo() && !dittuu.estaVivo()) {
             this.ganador = korby;
-            return true;
+            termino = true;
         } else if (!korby.estaVivo() && meganMan.estaVivo() && !dittuu.estaVivo()) {
             this.ganador = meganMan;
-            return true;
+            termino = true;
         } else if (!korby.estaVivo() && !meganMan.estaVivo() && dittuu.estaVivo()) {
             this.ganador = dittuu;
-            return true;
+            termino = true;
         }
         
-        return false;
+        return termino;
     }
 
-    @Override
+    public void imprimirPuntosDeVida() {
+        
+        notificar("\n####################################");
+
+        this.contricantes
+            .stream()
+            .forEach(c -> {
+                notificar( c.puntosDeVida > 0 ?
+                    "Vida de " + c.nombre + ": " + c.puntosDeVida + "/" + Constantes.PUNTOS_DE_VIDA_INICIALES :
+                    c.nombre + " ha sido derrotado en el combate. "
+                );
+            });
+
+        notificar("####################################\n");
+    }
+
+    public void desasignarPowerUp() {
+        this.contricantes
+            .stream()
+            .forEach(c -> c.powerUpActual = null);
+    }
+
     /**
      * Metodo que notifica a los espectadores los eventos ocurridos durante el combate
      * @param evento Cadena de texto con lo que ocurre durante el combate
      */
+    @Override
     public void notificar(String evento) {
         this.audiencia.notificar(evento);
     }

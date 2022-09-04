@@ -1,26 +1,28 @@
 package p01;
 
 /**
+ * Clase que genera la transformacion de un personaje
  * @author Alcantara Estrada Kevin
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
- * Clase que genera la transformacion de un personaje
  */
 public class Transformacion {
+    
     public String nombre;
     public Integer puntosAtaque;
     public Integer puntosDefensa;
     public String eventoAtaque;
     public String eventoDefensa;
 
-/**
- * Metodo constructor de la clase
- * @param nombre nombre de la transofrmacion del personaje
- * @param puntosAtaque puntos de ataque del personaje
- * @param puntosDefensa puntos de defensa del personaje
- * @param eventoAtaque forma de ataque del personaje
- * @param eventoDefensa forma de ataque del personaje
- */
+    /**
+     * Metodo constructor de la clase.
+     * 
+     * @param nombre nombre de la transofrmacion del personaje
+     * @param puntosAtaque puntos de ataque del personaje
+     * @param puntosDefensa puntos de defensa del personaje
+     * @param eventoAtaque forma de ataque del personaje
+     * @param eventoDefensa forma de ataque del personaje
+    */
     public Transformacion(String nombre,
                             Integer puntosAtaque,
                             Integer puntosDefensa,
@@ -33,11 +35,12 @@ public class Transformacion {
         this.eventoDefensa = eventoDefensa;
     }
 
-    @Override
     /**
-     * Metodo de representacion en cadena del objeto
+     * Metodo de representacion en cadena del objeto.
+     * 
      * @return String
      */
+    @Override
     public String toString() {
         return this.nombre;
     }
