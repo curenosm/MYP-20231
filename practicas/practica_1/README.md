@@ -15,8 +15,8 @@
 # Intrucciones de compilacion
 
 1. Dirigirse al directorio `src` de la práctica.
-2. Compilar usando `javac -sourcepath . -d ./target/ ./p01/Main.java`
-3. Dirigirse al directorio generado `target` dentro de `src`.
+2. Compilar usando `javac -sourcepath . -d ../target/ ./p01/Main.java`
+3. Dirigirse al directorio generado `../target`.
 4. Ejecutar usando `java p01.Main`
 5. Al finalizar la ejecución se habrá creado la carpeta `./target/bitacoras`
 en donde se encuentra cada uno de los ouput de que cada espectador presenció.
