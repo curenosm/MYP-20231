@@ -7,6 +7,13 @@ import p01.interfaces.Sujeto;
 
 import static p01.util.Constantes.println;
 
+/**
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ * Clase que simula un combate 
+ * @implNote Esta clase implementa la interfaz Sujeto para notificar a los espectadores de lo que ocurrre
+ */
 public class Combate implements Sujeto {
 
     public List<Personaje> contricantes;
@@ -17,10 +24,17 @@ public class Combate implements Sujeto {
     public Personaje meganMan;
     public Personaje dittuu;
 
+    /**
+     * Metodo constructor de la clase sin parametros
+     */
     public Combate() {
         this.contricantes = new ArrayList<>();
     }
 
+    /**
+     * Metodo constructor de la clase con parametros
+     * @param contrincantes Lista de personajes que participaran en el combate
+     */
     public Combate(List<Personaje> contrincantes) {
         this.contricantes = contrincantes;
 
@@ -29,6 +43,9 @@ public class Combate implements Sujeto {
         dittuu = contricantes.get(2);
     }
 
+    /**
+     * Metodo para iniciar el combate
+     */
     public void iniciar() {
         try {
             int i = 0;
@@ -66,6 +83,10 @@ public class Combate implements Sujeto {
         }
     }
 
+    /**
+     * Metodo para cuando el combate finaliza
+     * @return boolean
+     */
     public boolean combateTermino() {
         println("\n####################################");
         println("Vida de Korby " + korby.puntosDeVida);
@@ -90,6 +111,10 @@ public class Combate implements Sujeto {
     }
 
     @Override
+    /**
+     * Metodo que notifica a los espectadores los eventos ocurridos durante el combate
+     * @param evento Cadena de texto con lo que ocurre durante el combate
+     */
     public void notificar(String evento) {
         this.audiencia.notificar(evento);
     }
