@@ -6,7 +6,14 @@ import p01.Franquicia;
 import p01.Personaje;
 import p01.Transformacion;
 
+/**
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ * Clase con las constantes que seran utilizadas para el torneo
+ */
 public final class Constantes {
+    
     
     public static List<Transformacion> TRANSFORMACIONES_CHINPOKOMON = List.of(
         new Transformacion(
@@ -104,10 +111,20 @@ public final class Constantes {
         new Personaje(FRANQUICIAS.get(0), "Dittuu", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE)
     );
 
+    /**
+     * Metodo para imprimir en pantalla un texto
+     * @param line Linea de texto que se desea imprimir
+     */
     public static void println(String line) {
         System.out.println(line);
     }
 
+    /**
+     * Metodo para obtener un numero aleatorio
+     * @param inicio Inicio del intervalo del cual se desea obtener el numero aleatorio
+     * @param fin Fin del intervalo del cual se desea obtener el numero aleatorio
+     * @return int 
+     */
     public static int obtenerNumeroAleatorioEntre(int inicio, int fin) {
         return (int) Math.random()*fin + inicio;
     }
