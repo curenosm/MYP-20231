@@ -19,6 +19,7 @@ public class Bitacora {
      */
     public Bitacora() {
         this.registros = new ArrayList<>();
+        this.registros.add("EMPIEZA LA TRANSMISION");
     }
 
     /**

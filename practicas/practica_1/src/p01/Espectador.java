@@ -52,7 +52,7 @@ public class Espectador implements Observador {
      */
     @Override
     public void actualizar(String registro) {
-        println(registro);
+        // println(registro);
         bitacora.escribir(registro);
     }
 
@@ -69,6 +69,7 @@ public class Espectador implements Observador {
      * Metodo que genera la bitacora de eventos presentados a cada espectador.
      */
     public void generarBitacora() {
+        bitacora.escribir("FIN DE LA TRANSMISION");
 
         String res = bitacora
             .registros
@@ -78,7 +79,7 @@ public class Espectador implements Observador {
             });
 
         WriteFile.writeUsingFiles(
-            Constantes.DIRECTORIO_BITACORAS + "BITACORA_ESPECTADOR_" + this.id + ".log",
+            Constantes.DIRECTORIO_BITACORAS + "BITACORA_ESPECTADOR_" + this.id + ".txt",
             res
         );
 

@@ -54,7 +54,8 @@ public class Combate implements Sujeto {
             contricantes.size()
         );
 
-        Personaje personajeSeleccionado = contricantes.get(indicePersonaje);
+        // TODO: Modificar para combates más dinamicos
+        Personaje personajeSeleccionado = contricantes.get(Constantes.GANADOR);
 
         personajeSeleccionado.powerUpActual = personajeSeleccionado.franquicia.obtenerTransformacion();
 
@@ -173,7 +174,7 @@ public class Combate implements Sujeto {
      */
     @Override
     public void notificar(String evento) {
-        this.audiencia.notificar(evento);
+        this.audiencia.actualizar(evento);
     }
     
 }

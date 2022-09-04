@@ -36,6 +36,7 @@ public class Main {
         audiencia.notificar("EL COMBATE HA EMPEZADO\n");
         inicializarCombate();
         
+        println("FIN DE LA TRANSMISION");
     }
     
     /**
@@ -50,11 +51,12 @@ public class Main {
             List.of(
                 new Espectador(1L, audiencia, null, new Bitacora()),
                 new Espectador(2L, audiencia, null, new Bitacora()),
-                new Espectador(3L, audiencia, null, new Bitacora())
+                new Espectador(3L, audiencia, null, new Bitacora()),
+                new Espectador(4L, audiencia, null, new Bitacora())
             )
         );
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < espectadores.size(); i++) {
 
             Espectador espectadorActual = espectadores.get(i);
             
@@ -64,7 +66,7 @@ public class Main {
             espectadorActual.actualizar("2. Dittuu");
             espectadorActual.actualizar("#######################################\n");
 
-            espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(i);
+            espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(i%3);
         }
 
         audiencia = new Audiencia(espectadores);
@@ -74,8 +76,9 @@ public class Main {
                 Espectador e = espectadores.get(i);
 
                 audiencia.notificar(
-                    "El espectador " + e.toString() + " ha escogido como su favorito a: " 
-                    + Constantes.PERSONAJES.get(i) + "\n"
+                    "El espectador " + e.toString() 
+                    + " ha escogido como su favorito a: " 
+                    + e.personajeFavoritoActual.toString() + "\n"
                 );
             });
         

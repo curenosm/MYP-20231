@@ -1,0 +1,110 @@
+EMPIEZA LA TRANSMISION
+### Quien es tu personaje favorito? ###
+0. Korby
+1. MeganMan
+2. Dittuu
+#######################################
+
+El espectador 1 ha escogido como su favorito a: Korby
+
+El espectador 2 ha escogido como su favorito a: MeganMan
+
+El espectador 3 ha escogido como su favorito a: Dittuu
+
+El espectador 4 ha escogido como su favorito a: Korby
+
+EMPIEZAN LAS APUESTAS
+
+EL COMBATE HA EMPEZADO
+
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 100/100
+Vida de Dittuu: 100/100
+####################################
+
+Korby ha tomado un power up, se ha transformado en Don Kingkon
+Korby ataca a MeganMan usando 
+MeganMan se defiende 
+Korby ataca a Dittuu usando 
+Dittuu se defiende 
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 85/100
+Vida de Dittuu: 85/100
+####################################
+
+Korby ataca a MeganMan 
+MeganMan se defiende 
+Korby ataca a Dittuu 
+Dittuu se defiende 
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 70/100
+Vida de Dittuu: 70/100
+####################################
+
+Korby ataca a MeganMan 
+MeganMan se defiende 
+Korby ataca a Dittuu 
+Dittuu se defiende 
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 55/100
+Vida de Dittuu: 55/100
+####################################
+
+Korby ha tomado un power up, se ha transformado en Hyperlink
+Korby ataca a MeganMan usando 
+MeganMan se defiende 
+Korby ataca a Dittuu usando 
+Dittuu se defiende 
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 40/100
+Vida de Dittuu: 40/100
+####################################
+
+Korby ataca a MeganMan 
+MeganMan se defiende 
+Korby ataca a Dittuu 
+Dittuu se defiende 
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 25/100
+Vida de Dittuu: 25/100
+####################################
+
+Korby ataca a MeganMan 
+MeganMan se defiende 
+Korby ataca a Dittuu 
+Dittuu se defiende 
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 10/100
+Vida de Dittuu: 10/100
+####################################
+
+Korby ha tomado un power up, se ha transformado en Ladrillo
+Korby ataca a MeganMan usando 
+MeganMan se defiende 
+Korby ataca a Dittuu usando 
+Dittuu se defiende 
+
+####################################
+Vida de Korby: 100/100
+MeganMan ha sido derrotado en el combate. 
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+EL COMBATE HA TERMINADO
+FIN DE LA TRANSMISION
+HA GANADO Korby
+FIN DE LA TRANSMISION
