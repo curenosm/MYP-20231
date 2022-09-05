@@ -131,9 +131,13 @@ public class Combate implements Sujeto {
                 if (c.estaVivo()) {
                     notificar(
                         atacante.nombre + " ataca a " + c.nombre + " " + atacante.eventoAtaque()
+                        + " (-" + atacante.obtenerPuntosAtaque() + " HP)"
                     );
                     atacante.atacar(c);
-                    notificar(c.nombre + " se defiende " + c.eventoDefensa());
+                    notificar(
+                        c.nombre + " se defiende " + c.eventoDefensa()
+                        + " (+" + c.obtenerPuntosDefensa() + " HP)"
+                    );
                 }
             });
     }
@@ -166,7 +170,7 @@ public class Combate implements Sujeto {
 
     public void imprimirPuntosDeVida() {
         
-        notificar("\n####################################");
+        notificar("\n##############################################################");
 
         this.contricantes
             .stream()
@@ -177,7 +181,7 @@ public class Combate implements Sujeto {
                 );
             });
 
-        notificar("####################################\n");
+        notificar("##############################################################\n");
     }
 
     public void desasignarPowerUp() {

@@ -18,91 +18,91 @@ EMPIEZAN LAS APUESTAS
 EL COMBATE HA EMPEZADO
 
 
-####################################
+###############################################
 Vida de Korby: 100/100
 Vida de MeganMan: 100/100
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
-Dittuu ha tomado un power up, se ha transformado en Charizardo
-Dittuu ataca a Korby usando bola de fuego
-Korby se defiende 
-Dittuu ataca a MeganMan usando bola de fuego
-MeganMan se defiende 
+Dittuu ha tomado un power up, se ha transformado en Spritle
+Dittuu ataca a Korby usando bola de fuego (-20 HP)
+Korby se defiende  (+5 HP)
+Dittuu ataca a MeganMan usando bola de fuego (-20 HP)
+MeganMan se defiende  (+5 HP)
 
-####################################
+###############################################
 Vida de Korby: 85/100
 Vida de MeganMan: 85/100
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
-Dittuu ataca a Korby 
-Korby se defiende 
-Dittuu ataca a MeganMan 
-MeganMan se defiende 
+Dittuu ataca a Korby  (-20 HP)
+Korby se defiende  (+5 HP)
+Dittuu ataca a MeganMan  (-20 HP)
+MeganMan se defiende  (+5 HP)
 
-####################################
+###############################################
 Vida de Korby: 70/100
 Vida de MeganMan: 70/100
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
-Dittuu ataca a Korby 
-Korby se defiende 
-Dittuu ataca a MeganMan 
-MeganMan se defiende 
+Dittuu ataca a Korby  (-20 HP)
+Korby se defiende  (+5 HP)
+Dittuu ataca a MeganMan  (-20 HP)
+MeganMan se defiende  (+5 HP)
 
-####################################
+###############################################
 Vida de Korby: 55/100
 Vida de MeganMan: 55/100
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
 Dittuu ha tomado un power up, se ha transformado en Spritle
-Dittuu ataca a Korby usando bola de fuego
-Korby se defiende 
-Dittuu ataca a MeganMan usando bola de fuego
-MeganMan se defiende 
+Dittuu ataca a Korby usando bola de fuego (-20 HP)
+Korby se defiende  (+5 HP)
+Dittuu ataca a MeganMan usando bola de fuego (-20 HP)
+MeganMan se defiende  (+5 HP)
 
-####################################
+###############################################
 Vida de Korby: 40/100
 Vida de MeganMan: 40/100
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
-Dittuu ataca a Korby 
-Korby se defiende 
-Dittuu ataca a MeganMan 
-MeganMan se defiende 
+Dittuu ataca a Korby  (-20 HP)
+Korby se defiende  (+5 HP)
+Dittuu ataca a MeganMan  (-20 HP)
+MeganMan se defiende  (+5 HP)
 
-####################################
+###############################################
 Vida de Korby: 25/100
 Vida de MeganMan: 25/100
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
-Dittuu ataca a Korby 
-Korby se defiende 
-Dittuu ataca a MeganMan 
-MeganMan se defiende 
+Dittuu ataca a Korby  (-20 HP)
+Korby se defiende  (+5 HP)
+Dittuu ataca a MeganMan  (-20 HP)
+MeganMan se defiende  (+5 HP)
 
-####################################
+###############################################
 Vida de Korby: 10/100
 Vida de MeganMan: 10/100
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
-Dittuu ha tomado un power up, se ha transformado en Chikorisa
-Dittuu ataca a Korby usando latigo cepa
-Korby se defiende 
-Dittuu ataca a MeganMan usando latigo cepa
-MeganMan se defiende 
+Dittuu ha tomado un power up, se ha transformado en Charizardo
+Dittuu ataca a Korby usando bola de fuego (-20 HP)
+Korby se defiende  (+5 HP)
+Dittuu ataca a MeganMan usando bola de fuego (-20 HP)
+MeganMan se defiende  (+5 HP)
 
-####################################
+###############################################
 Korby ha sido derrotado en el combate. 
 MeganMan ha sido derrotado en el combate. 
 Vida de Dittuu: 100/100
-####################################
+###############################################
 
 EL COMBATE HA TERMINADO
 HA GANADO Dittuu

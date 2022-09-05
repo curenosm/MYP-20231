@@ -59,17 +59,19 @@ public class Main {
             if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
                 Constantes.GANADOR = opcionSeleccionada;
             } else {
-                throw new Exception("Por favor, elija una opcion valida");
+                throw new Exception("Por favor, elija una opcion valida\n");
             }
         }
         catch (IOException e) {
-            println("Elija una de las opciones listadas");
+            println("Elija una de las opciones listadas\n");
+            inicializarEspectadores();
         }
         catch (Exception e) {
             println(e.getMessage());
+            inicializarEspectadores();
         }
         finally {
-            scanner.nextLine();
+            scanner = new Scanner(System.in);
         }
 
         espectadores = new ArrayList<>();
