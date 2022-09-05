@@ -22,181 +22,325 @@ Vida de MeganMan: 100/100
 Vida de Dittuu: 100/100
 ####################################
 
-Korby ha tomado un power up, se ha transformado en Hyperlink
-Korby ataca a MeganMan usando su espada
-MeganMan se defiende 
-Korby ataca a Dittuu usando su espada
-Dittuu se defiende 
+Korby ha tomado un power up, se ha transformado en Ladrillo
+Korby ataca a MeganMan usando caida en la cabeza[31m (40)[37m
+MeganMan se defiende [34m(20)[37m
+Korby ataca a Dittuu usando caida en la cabeza[31m (40)[37m
+Dittuu se defiende [34m(5)[37m
 
 ####################################
 Vida de Korby: 100/100
-Vida de MeganMan: 33/100
-Vida de Dittuu: 48/100
+Vida de MeganMan: 80/100
+Vida de Dittuu: 65/100
 ####################################
 
-Korby ataca a MeganMan 
-MeganMan se defiende 
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 15/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+Korby ataca a Dittuu [31m(20)[37m
+Dittuu se defiende [34m(5)[37m
 
 ####################################
 Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 15/100
+Vida de MeganMan: 80/100
+Vida de Dittuu: 50/100
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+Korby ataca a Dittuu [31m(20)[37m
+Dittuu se defiende [34m(5)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 80/100
+Vida de Dittuu: 35/100
 ####################################
 
 Korby ha tomado un power up, se ha transformado en Ladrillo
-Korby ataca a Dittuu usando caida en la cabeza
-Dittuu se defiende 
+Korby ataca a MeganMan usando caida en la cabeza[31m (40)[37m
+MeganMan se defiende [34m(20)[37m
+Korby ataca a Dittuu usando caida en la cabeza[31m (40)[37m
+Dittuu se defiende [34m(5)[37m
 
 ####################################
 Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 15/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
 ####################################
 
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 15/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
 
 ####################################
 Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 15/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
 ####################################
 
-Dittuu ha tomado un power up, se ha transformado en Chikorisa
-Korby ataca a Dittuu 
-Dittuu se defiende usando hojas inutiles
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
 
 ####################################
 Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ha tomado un power up, se ha transformado en Don Kingkon
-Korby ataca a Dittuu usando sus puños
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ha tomado un power up, se ha transformado en Hyperlink
-Korby ataca a Dittuu usando su espada
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
 ####################################
 
 MeganMan ha tomado un power up, se ha transformado en Fire Soul
-Korby ataca a Dittuu 
-Dittuu se defiende 
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende usando calentar armadura[34m (27)[37m
 
 ####################################
 Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
 ####################################
 
-Korby ataca a Dittuu 
-Dittuu se defiende 
-
-####################################
-Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
-####################################
-
-Korby ataca a Dittuu 
-Dittuu se defiende 
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
 
 ####################################
 Vida de Korby: 100/100
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 10/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+MeganMan ha tomado un power up, se ha transformado en Wind Soul
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende usando barrera de viento[34m (30)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 60/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ha tomado un power up, se ha transformado en Hyperlink
+Korby ataca a MeganMan usando su espada[31m (53)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 27/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 27/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 27/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Dittuu ha tomado un power up, se ha transformado en Chikorisa
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 27/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 27/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 27/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ha tomado un power up, se ha transformado en Don Kingkon
+Korby ataca a MeganMan usando sus puños[31m (40)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+MeganMan ha tomado un power up, se ha transformado en Wind Soul
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende usando barrera de viento[34m (30)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
 ####################################
 
 Dittuu ha tomado un power up, se ha transformado en Spritle
-Korby ataca a Dittuu 
-Dittuu se defiende usando caparazon de acero
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+MeganMan ha tomado un power up, se ha transformado en Ice Pegasus
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende usando barrera de hielo[34m (45)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Dittuu ha tomado un power up, se ha transformado en Spritle
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ataca a MeganMan [31m(20)[37m
+MeganMan se defiende [34m(20)[37m
+
+####################################
+Vida de Korby: 100/100
+Vida de MeganMan: 7/100
+Dittuu ha sido derrotado en el combate. 
+####################################
+
+Korby ha tomado un power up, se ha transformado en Ladrillo
+Korby ataca a MeganMan usando caida en la cabeza[31m (40)[37m
+MeganMan se defiende [34m(20)[37m
 
 ####################################
 Vida de Korby: 100/100
