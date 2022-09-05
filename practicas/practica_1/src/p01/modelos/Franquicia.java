@@ -1,4 +1,4 @@
-package p01;
+package p01.modelos;
 
 import java.util.ArrayList;
 import java.util.List;

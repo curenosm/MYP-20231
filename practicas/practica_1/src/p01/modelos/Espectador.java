@@ -1,12 +1,10 @@
-package p01;
+package p01.modelos;
 
-import java.io.File;
 import java.time.Instant;
 
 import p01.interfaces.Observador;
 import p01.util.Constantes;
 import p01.util.WriteFile;
-import static p01.util.Constantes.println;
 
 /**
  * Clase que simula un espectador que observa el combate.

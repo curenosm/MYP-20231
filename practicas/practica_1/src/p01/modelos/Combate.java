@@ -1,4 +1,4 @@
-package p01;
+package p01.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,6 @@ import java.util.List;
 import p01.interfaces.Sujeto;
 import p01.util.Constantes;
 
-import static p01.util.Constantes.println;
 import static p01.util.Constantes.obtenerNumeroAleatorioEntre;
 
 /**
@@ -49,11 +48,6 @@ public class Combate implements Sujeto {
 
     public void asignarPowerUpAleatorioAPersonaje() {
 
-        int indicePersonaje = obtenerNumeroAleatorioEntre(
-            0,
-            contricantes.size()
-        );
-
         // TODO: Modificar para combates más dinamicos
         Personaje personajeSeleccionado = contricantes.get(Constantes.GANADOR);
 
@@ -67,9 +61,7 @@ public class Combate implements Sujeto {
         // A todos los demás quitales el power up
         this.contricantes.stream()
             .filter(c -> !personajeSeleccionado.equals(c))
-            .forEach(c -> {
-                c.powerUpActual = null;
-            });
+            .forEach(c -> c.powerUpActual = null);
 
     }
 
@@ -93,18 +85,10 @@ public class Combate implements Sujeto {
                 }
                 
                 switch (Constantes.GANADOR.intValue()) {
-                    case 0: // Gana Korby
-                        secuenciaPelea(korby);
-                    break;
-                    case 1: // Gana MeganMan
-                        secuenciaPelea(meganMan);
-                    break;
-                    case 2: // Gana Dittuu
-                        secuenciaPelea(dittuu);
-                    break;
-                    default: // Gana Korby
-                        secuenciaPelea(korby);
-                    break;
+                    case 0: secuenciaPelea(korby);    break; // Gana Korby
+                    case 1: secuenciaPelea(meganMan); break; // Gana MeganMan
+                    case 2: secuenciaPelea(dittuu);   break; // Gana Dittuu
+                    default: secuenciaPelea(korby);   break; // Gana Korby
                 }
                 
                 Thread.sleep((long) (2000*Constantes.VELOCIDAD_EJECUCION));
@@ -122,6 +106,11 @@ public class Combate implements Sujeto {
         }
     }
 
+    /**
+     * Metodo que se encarga de ejecutar las acciones de los personajes en el combate.
+     * 
+     * @param atacante
+     */
     public void secuenciaPelea(Personaje atacante) {
 
         this.contricantes
@@ -129,14 +118,22 @@ public class Combate implements Sujeto {
             .filter(c -> !c.equals(atacante))
             .forEach(c -> {
                 if (c.estaVivo()) {
+
                     notificar(
-                        atacante.nombre + " ataca a " + c.nombre + " " + atacante.eventoAtaque()
-                        + " (-" + atacante.obtenerPuntosAtaque() + " HP)"
+                        String.format("%s ataca a %s %s (- %s HP)",
+                            atacante.nombre,
+                            c.nombre,
+                            atacante.eventoAtaque(),
+                            atacante.obtenerPuntosAtaque()
+                        )
                     );
                     atacante.atacar(c);
                     notificar(
-                        c.nombre + " se defiende " + c.eventoDefensa()
-                        + " (+" + c.obtenerPuntosDefensa() + " HP)"
+                        String.format("%s se defiende %s (+ %s HP)", 
+                            c.nombre,
+                            c.eventoDefensa(),
+                            c.obtenerPuntosDefensa()
+                        )
                     );
                 }
             });
@@ -184,6 +181,9 @@ public class Combate implements Sujeto {
         notificar("##############################################################\n");
     }
 
+    /**
+     * Metodo que les quita a todos los contrincantes su powerup actual.
+     */
     public void desasignarPowerUp() {
         this.contricantes
             .stream()

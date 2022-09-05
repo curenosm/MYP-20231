@@ -2,9 +2,9 @@ package p01.util;
 
 import java.util.List;
 
-import p01.Franquicia;
-import p01.Personaje;
-import p01.Transformacion;
+import p01.modelos.Franquicia;
+import p01.modelos.Personaje;
+import p01.modelos.Transformacion;
 
 import static p01.util.Ataques.*;
 import static p01.util.Defensas.*;

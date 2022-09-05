@@ -1,7 +1,5 @@
 package p01.defensas;
 
-import p01.Personaje;
-
 public class Defensa {
 
     public String eventoDefensa;

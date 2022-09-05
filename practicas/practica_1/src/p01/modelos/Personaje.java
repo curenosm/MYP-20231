@@ -1,4 +1,4 @@
-package p01;
+package p01.modelos;
 import p01.interfaces.ComportamientoDefensa;
 import p01.util.Constantes;
 import p01.interfaces.ComportamientoAtaque;

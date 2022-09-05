@@ -6,6 +6,10 @@ import java.util.List;
 import java.util.stream.IntStream;
 import java.util.Scanner;
 
+import p01.modelos.Audiencia;
+import p01.modelos.Bitacora;
+import p01.modelos.Combate;
+import p01.modelos.Espectador;
 import p01.util.Constantes;
 import static p01.util.Constantes.println;
 
@@ -89,11 +93,11 @@ public class Main {
 
             Espectador espectadorActual = espectadores.get(i);
             
-            espectadorActual.actualizar("\n### Quien es tu personaje favorito? ###");
+            espectadorActual.actualizar("\n############# Quien es tu personaje favorito? ################");
             espectadorActual.actualizar("0. Korby");
             espectadorActual.actualizar("1. MeganMan");
             espectadorActual.actualizar("2. Dittuu");
-            espectadorActual.actualizar("#######################################\n");
+            espectadorActual.actualizar("##############################################################\n");
 
             espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(i%3);
         }
@@ -107,7 +111,7 @@ public class Main {
                 audiencia.notificar(
                     "El espectador " + e.toString() 
                     + " ha escogido como su favorito a: " 
-                    + e.personajeFavoritoActual.toString() + "\n"
+                    + e.personajeFavoritoActual.toString()
                 );
             });
         

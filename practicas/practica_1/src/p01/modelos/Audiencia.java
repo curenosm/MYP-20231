@@ -1,5 +1,4 @@
-package p01;
-import java.util.ArrayList;
+package p01.modelos;
 import java.util.List;
 
 import p01.interfaces.Observador;
@@ -51,10 +50,12 @@ public class Audiencia implements Sujeto, Observador {
     @Override
     public void notificar(String evento) {
 
+        // Simplemente imprime el evento si aun no hay espectadores
         if (espectadores.isEmpty()) {
             println(evento);
         }
 
+        // Informales a todos de los acontecimientos
         espectadores.forEach(
             espectador -> {
                 espectador.actualizar(evento);

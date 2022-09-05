@@ -1,7 +1,8 @@
 package p01.interfaces;
 
 /**
- * Interfaz que representa a un Sujeto que notificara a observadores
+ * Interfaz que representa a un Sujeto que notificara a observadores.
+ * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
