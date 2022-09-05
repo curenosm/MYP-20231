@@ -1,9 +1,10 @@
 package p01.interfaces;
 
-import p01.Personaje;
+import p01.modelos.Personaje;
 
 /**
- *  Interfaz que representa un comportamiento para atacar a una instancia de la clase Personaje
+ *  Interfaz que representa un comportamiento para atacar a una instancia 
+ *  de la clase Personaje
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -11,4 +12,5 @@ import p01.Personaje;
  */
 public interface ComportamientoAtaque {
     void atacar(Personaje enemigo);
+    String evento();
 }

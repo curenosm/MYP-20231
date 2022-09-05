@@ -1,4 +1,4 @@
-package p01;
+package p01.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +19,7 @@ public class Bitacora {
      */
     public Bitacora() {
         this.registros = new ArrayList<>();
+        this.registros.add("EMPIEZA LA TRANSMISION");
     }
 
     /**

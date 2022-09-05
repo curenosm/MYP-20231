@@ -1,4 +1,7 @@
-package p01;
+package p01.modelos;
+
+import p01.interfaces.ComportamientoAtaque;
+import p01.interfaces.ComportamientoDefensa;
 
 /**
  * Clase que genera la transformacion de un personaje
@@ -11,8 +14,8 @@ public class Transformacion {
     public String nombre;
     public Integer puntosAtaque;
     public Integer puntosDefensa;
-    public String eventoAtaque;
-    public String eventoDefensa;
+    public ComportamientoAtaque comportamientoAtaque;
+    public ComportamientoDefensa comportamientoDefensa;
 
     /**
      * Metodo constructor de la clase.
@@ -20,19 +23,19 @@ public class Transformacion {
      * @param nombre nombre de la transofrmacion del personaje
      * @param puntosAtaque puntos de ataque del personaje
      * @param puntosDefensa puntos de defensa del personaje
-     * @param eventoAtaque forma de ataque del personaje
-     * @param eventoDefensa forma de ataque del personaje
+     * @param comportamientoAtaque forma de ataque del personaje
+     * @param comportamientoDefensa forma de ataque del personaje
     */
     public Transformacion(String nombre,
                             Integer puntosAtaque,
                             Integer puntosDefensa,
-                            String eventoAtaque,
-                            String eventoDefensa) {
+                            ComportamientoAtaque comportamientoAtaque,
+                            ComportamientoDefensa comportamientoDefensa) {
         this.nombre = nombre;
         this.puntosAtaque = puntosAtaque;
         this.puntosDefensa = puntosDefensa;
-        this.eventoAtaque = eventoAtaque;
-        this.eventoDefensa = eventoDefensa;
+        this.comportamientoAtaque = comportamientoAtaque;
+        this.comportamientoDefensa = comportamientoDefensa;
     }
 
     /**

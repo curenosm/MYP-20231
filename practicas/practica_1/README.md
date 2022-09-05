@@ -34,7 +34,7 @@ en donde se encuentra cada uno de los ouput de que cada espectador presenció.
 <br/>
 
     
-Como sabemos es un patrón de diseño para el desarrollo del software. Como se nos mencionó en ayudantías, el comportamiento de una clase cambia en tiempo de ejecución, se crean un conjunto de algoritmos representando estartegias para resolver un problema.
+Como sabemos es un patrón de diseño para el desarrollo del software. Como se nos mencionó en ayudantías, el comportamiento de una clase cambia en tiempo de ejecución, se crean un conjunto de algoritmos representando estrategias para resolver un problema.
     
 **Los principios de diseño esenciales de este patrón son:**
     

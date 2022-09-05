@@ -2,9 +2,12 @@ package p01.util;
 
 import java.util.List;
 
-import p01.Franquicia;
-import p01.Personaje;
-import p01.Transformacion;
+import p01.modelos.Franquicia;
+import p01.modelos.Personaje;
+import p01.modelos.Transformacion;
+
+import static p01.util.Ataques.*;
+import static p01.util.Defensas.*;
 
 /**
  * @author Alcantara Estrada Kevin Isaac
@@ -20,28 +23,29 @@ public final class Constantes {
     public static final Integer PUNTOS_DEFENSA_BASE = 5;
     public static final Integer PUNTOS_DE_VIDA_INICIALES = 100;
     public static final Double VELOCIDAD_EJECUCION = 0.1;
+    public static Integer GANADOR = 0;
     
     public static List<Transformacion> TRANSFORMACIONES_CHINPOKOMON = List.of(
         new Transformacion(
             "Charizardo",
             35, 
             15,
-            "bola de fuego",
-            "alas escudo"
+            ataqueBolaDeFuego,
+            defensaAlasEscudo
         ),
         new Transformacion(
             "Chikorisa",
             40, 
             5,
-            "latigo cepa",
-            "hojas inutiles"
+            ataqueLatigoCepa,
+            defensaHojasInutiles
         ),
         new Transformacion(
             "Spritle",
             20, 
             25,
-            "pistola de agua",
-            "caparazon de acero"
+            ataquePistolaDeAgua,
+            defensaCaparazonDeAcero
         )
     );
 
@@ -50,22 +54,22 @@ public final class Constantes {
             "Fire Soul",
             35, 
             7,
-            "lanzallamas",
-            "calentar armadura"
+            ataqueLanzallamas,
+            defensaCalentarArmadura
         ),
         new Transformacion(
             "Ice Pegasus",
             35, 
-            25,
-            "rayo congelador",
-            "barrera de hielo"
+            10,
+            ataqueRayoCongelador,
+            defensaBarreraDeHielo
         ),
         new Transformacion(
             "Wind Soul",
             35, 
-            10,
-            "torbellino",
-            "barrera de viento"
+            5,
+            ataqueTorbellino,
+            defensaBarreraDeViento
         )
     );
 
@@ -74,22 +78,22 @@ public final class Constantes {
             "Hyperlink",
             33, 
             15,
-            "su espada",
-            "giro veloz"
+            ataqueEspada,
+            defensaGiroVeloz
         ),
         new Transformacion(
             "Ladrillo",
             20, 
             45,
-            "caida en la cabeza",
-            "dureza de ladrillo"
+            ataqueCaidaEnCabeza,
+            defensaDurezaDeLadrillo
         ),
         new Transformacion(
             "Don Kingkon",
             20, 
             10,
-            "sus puños",
-            "cubriendose"
+            ataquePuños,
+            defensaCubrirse
         )
     );
 
@@ -110,7 +114,7 @@ public final class Constantes {
 
     public static final List<Personaje> PERSONAJES = List.of(
         new Personaje(FRANQUICIAS.get(0), "Korby", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE),
-        new Personaje(FRANQUICIAS.get(1), "MeganMan", PUNTOS_ATAQUE_BASE, PUNTOS_ATAQUE_BASE),
+        new Personaje(FRANQUICIAS.get(1), "MeganMan", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE),
         new Personaje(FRANQUICIAS.get(2), "Dittuu", PUNTOS_ATAQUE_BASE, PUNTOS_DEFENSA_BASE)
     );
 

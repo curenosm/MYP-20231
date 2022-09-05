@@ -1,11 +1,17 @@
 package p01;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
+import java.util.Scanner;
 
+import p01.modelos.Audiencia;
+import p01.modelos.Bitacora;
+import p01.modelos.Combate;
+import p01.modelos.Espectador;
 import p01.util.Constantes;
-import static p01.util.Constantes.println;;
+import static p01.util.Constantes.println;
 
 /**
  * Clase principal del programa.
@@ -18,6 +24,7 @@ public class Main {
 
     public List<Espectador> espectadores;
     public Audiencia audiencia;
+    public Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -36,6 +43,7 @@ public class Main {
         audiencia.notificar("EL COMBATE HA EMPEZADO\n");
         inicializarCombate();
         
+        println("FIN DE LA TRANSMISION");
     }
     
     /**
@@ -44,27 +52,54 @@ public class Main {
      */
     public void inicializarEspectadores() {
 
+        // Aquí se elige el caso de prueba (Que personaje ganara)
+        println("Que caso de prueba desea ejecutar? ");
+        println("0. Gana Korby");
+        println("1. Gana MeganMan");
+        println("2. Gana Dittuu\n");
+        
+        try {
+            int opcionSeleccionada = scanner.nextInt();
+            if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
+                Constantes.GANADOR = opcionSeleccionada;
+            } else {
+                throw new Exception("Por favor, elija una opcion valida\n");
+            }
+        }
+        catch (IOException e) {
+            println("Elija una de las opciones listadas\n");
+            inicializarEspectadores();
+        }
+        catch (Exception e) {
+            println(e.getMessage());
+            inicializarEspectadores();
+        }
+        finally {
+            scanner = new Scanner(System.in);
+        }
+
         espectadores = new ArrayList<>();
 
         espectadores.addAll(
             List.of(
                 new Espectador(1L, audiencia, null, new Bitacora()),
                 new Espectador(2L, audiencia, null, new Bitacora()),
-                new Espectador(3L, audiencia, null, new Bitacora())
+                new Espectador(3L, audiencia, null, new Bitacora()),
+                new Espectador(4L, audiencia, null, new Bitacora())
             )
         );
 
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < espectadores.size(); i++) {
 
             Espectador espectadorActual = espectadores.get(i);
             
-            espectadorActual.actualizar("\n### Quien es tu personaje favorito? ###");
+            espectadorActual.actualizar("\n############# Quien es tu personaje favorito? ################");
             espectadorActual.actualizar("0. Korby");
             espectadorActual.actualizar("1. MeganMan");
             espectadorActual.actualizar("2. Dittuu");
-            espectadorActual.actualizar("#######################################\n");
+            espectadorActual.actualizar("##############################################################\n");
 
-            espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(i);
+            espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(i%3);
         }
 
         audiencia = new Audiencia(espectadores);
@@ -74,8 +109,9 @@ public class Main {
                 Espectador e = espectadores.get(i);
 
                 audiencia.notificar(
-                    "El espectador " + e.toString() + " ha escogido como su favorito a: " 
-                    + Constantes.PERSONAJES.get(i) + "\n"
+                    "El espectador " + e.toString() 
+                    + " ha escogido como su favorito a: " 
+                    + e.personajeFavoritoActual.toString()
                 );
             });
         

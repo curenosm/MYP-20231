@@ -1,7 +1,9 @@
-package p01;
+package p01.modelos;
 import p01.interfaces.ComportamientoDefensa;
 import p01.util.Constantes;
 import p01.interfaces.ComportamientoAtaque;
+import p01.ataques.Ataque;
+import p01.defensas.Defensa;
 
 import static p01.util.Constantes.println;
 
@@ -11,7 +13,8 @@ import static p01.util.Constantes.println;
  * @author Hernandez Paramo Elizabeth
  * Clase que simula un personaje del torneo de pelea
  */
-public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
+public class Personaje {
+
     public Franquicia franquicia;
     public Integer puntosDeVida;
     public Transformacion powerUpActual;
@@ -38,13 +41,19 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
         this.puntosDefensaBase = puntosDefensaBase;
     }
 
-    @Override
     /**
      * Metodo para atacar a un enemigo y afectar sus puntos de vida
      * @param enemigo Instancia de la clase Personaje a la cual se esta atacando
      */
     public void atacar(Personaje enemigo) {
+
+        // Agrega un comportamiento extra dependiendo de cada comportamiento
+        if (this.powerUpActual != null) {
+            this.powerUpActual.comportamientoAtaque.atacar(enemigo);
+        }
+
         int puntosAtaque = this.obtenerPuntosAtaque();
+
         enemigo.puntosDeVida -= enemigo.defender(puntosAtaque);
     }
 
@@ -54,7 +63,7 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      */
     public Integer obtenerPuntosAtaque() {
         if (this.powerUpActual != null) {
-            return this.puntosAtaqueBase + this.powerUpActual.puntosAtaque;
+            return this.puntosAtaqueBase + ((Ataque) this.powerUpActual.comportamientoAtaque).puntosAtaque;
         }
         
         return this.puntosAtaqueBase;
@@ -66,19 +75,24 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      */
     public Integer obtenerPuntosDefensa() {
         if (this.powerUpActual != null) {
-            return this.puntosAtaqueBase + this.powerUpActual.puntosDefensa;
+            return this.puntosAtaqueBase + ((Defensa) this.powerUpActual.comportamientoDefensa).puntosDefensa;
         }
-
+        
         return this.puntosDefensaBase;
     }
 
-    @Override
     /**
      * Metodo para defenderse del atatque de otro personaje y reducir el danio 
      * @param puntosDelAtaque Valor del ataque que se esta recibiendo
      * @return Integer
      */
     public Integer defender(Integer puntosDelAtaque) {
+
+        // Agrega un comportamiento extra dependiendo de cada comportamiento
+        if (this.powerUpActual != null) {
+            this.powerUpActual.comportamientoDefensa.defender(puntosDelAtaque);
+        }
+
         return puntosDelAtaque -= this.obtenerPuntosDefensa();
     }
 
@@ -104,7 +118,9 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      * @return String
      */
     public String eventoAtaque() {
-        return powerUpActual != null ? "usando " + powerUpActual.eventoAtaque : "";
+        return powerUpActual != null 
+            ? "usando " + powerUpActual.comportamientoAtaque.evento() 
+            : "";
     }
 
     /**
@@ -112,7 +128,9 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      * @return String
      */
     public String eventoDefensa() {
-        return powerUpActual != null ? "usando " + powerUpActual.eventoDefensa : "";
+        return powerUpActual != null 
+            ? "usando " + powerUpActual.comportamientoDefensa.evento() 
+            : "";
     }
 
     @Override

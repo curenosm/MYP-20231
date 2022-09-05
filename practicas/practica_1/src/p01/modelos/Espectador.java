@@ -1,12 +1,10 @@
-package p01;
+package p01.modelos;
 
-import java.io.File;
 import java.time.Instant;
 
 import p01.interfaces.Observador;
 import p01.util.Constantes;
 import p01.util.WriteFile;
-import static p01.util.Constantes.println;
 
 /**
  * Clase que simula un espectador que observa el combate.
@@ -52,7 +50,7 @@ public class Espectador implements Observador {
      */
     @Override
     public void actualizar(String registro) {
-        println(registro);
+        // println(registro);
         bitacora.escribir(registro);
     }
 
@@ -69,7 +67,6 @@ public class Espectador implements Observador {
      * Metodo que genera la bitacora de eventos presentados a cada espectador.
      */
     public void generarBitacora() {
-
         String res = bitacora
             .registros
             .stream()
@@ -78,7 +75,7 @@ public class Espectador implements Observador {
             });
 
         WriteFile.writeUsingFiles(
-            Constantes.DIRECTORIO_BITACORAS + "BITACORA_ESPECTADOR_" + this.id + ".log",
+            Constantes.DIRECTORIO_BITACORAS + "BITACORA_ESPECTADOR_" + this.id + ".txt",
             res
         );
 
