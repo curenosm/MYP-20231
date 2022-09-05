@@ -50,7 +50,7 @@ public class Combate implements Sujeto {
 
         // TODO: Modificar para combates más dinamicos
         Personaje personajeSeleccionado = contricantes.get(Constantes.GANADOR);
-
+        
         personajeSeleccionado.powerUpActual = personajeSeleccionado.franquicia.obtenerTransformacion();
 
         notificar(personajeSeleccionado.nombre 

@@ -2,6 +2,7 @@ package p01;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.stream.IntStream;
 import java.util.Scanner;
@@ -66,6 +67,11 @@ public class Main {
                 throw new Exception("Por favor, elija una opcion valida\n");
             }
         }
+        catch (InputMismatchException e){
+            println("Elija una de las opciones listadas\n");
+            scanner.next();
+            inicializarEspectadores();
+        }
         catch (IOException e) {
             println("Elija una de las opciones listadas\n");
             inicializarEspectadores();
@@ -98,9 +104,37 @@ public class Main {
             espectadorActual.actualizar("1. MeganMan");
             espectadorActual.actualizar("2. Dittuu");
             espectadorActual.actualizar("##############################################################\n");
-
-            espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(i%3);
+    
+            
+            try {
+                
+        println("\n############# Quien es tu personaje favorito? ################");
+        println("0. Korby");
+        println("1. MeganMan");
+        println("2. Dittuu\n");
+        
+       
+            int opcionSeleccionada = scanner.nextInt();
+            if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
+                espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(opcionSeleccionada);
+            } else {
+                throw new Exception("Por favor, elija una opcion valida\n");
+            }
         }
+        catch (IOException e) {
+            println("Elija una de las opciones listadas\n");
+            inicializarEspectadores();
+        }
+        catch (Exception e) {
+            println(e.getMessage());
+            inicializarEspectadores();
+        }
+        finally {
+            scanner = new Scanner(System.in);
+        }
+    
+        }
+    
 
         audiencia = new Audiencia(espectadores);
 
