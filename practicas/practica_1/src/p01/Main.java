@@ -99,42 +99,39 @@ public class Main {
 
             Espectador espectadorActual = espectadores.get(i);
             
+            espectadorActual.actualizar("\n############# " + espectadorActual.toString() + " ################");
             espectadorActual.actualizar("\n############# Quien es tu personaje favorito? ################");
             espectadorActual.actualizar("0. Korby");
             espectadorActual.actualizar("1. MeganMan");
             espectadorActual.actualizar("2. Dittuu");
             espectadorActual.actualizar("##############################################################\n");
-    
             
             try {
                 
-        println("\n############# Quien es tu personaje favorito? ################");
-        println("0. Korby");
-        println("1. MeganMan");
-        println("2. Dittuu\n");
-        
-       
-            int opcionSeleccionada = scanner.nextInt();
-            if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
-                espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(opcionSeleccionada);
-            } else {
-                throw new Exception("Por favor, elija una opcion valida\n");
+                println("\n############# Quien es tu personaje favorito? ################");
+                println("0. Korby");
+                println("1. MeganMan");
+                println("2. Dittuu\n");
+                
+                int opcionSeleccionada = scanner.nextInt();
+                if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
+                    espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(opcionSeleccionada);
+                } else {
+                    throw new Exception("Por favor, elija una opcion valida\n");
+                }
+            }
+            catch (IOException e) {
+                println("Elija una de las opciones listadas\n");
+                inicializarEspectadores();
+            }
+            catch (Exception e) {
+                println(e.getMessage());
+                inicializarEspectadores();
+            }
+            finally {
+                scanner = new Scanner(System.in);
             }
         }
-        catch (IOException e) {
-            println("Elija una de las opciones listadas\n");
-            inicializarEspectadores();
-        }
-        catch (Exception e) {
-            println(e.getMessage());
-            inicializarEspectadores();
-        }
-        finally {
-            scanner = new Scanner(System.in);
-        }
-    
-        }
-    
 
         audiencia = new Audiencia(espectadores);
 
