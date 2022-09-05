@@ -55,7 +55,7 @@ public class Combate implements Sujeto {
         );
 
         Personaje personajeSeleccionado = contricantes.get(indicePersonaje);
-
+        if(personajeSeleccionado.estaVivo()){
         personajeSeleccionado.powerUpActual = personajeSeleccionado.franquicia.obtenerTransformacion();
 
         notificar(personajeSeleccionado.nombre 
@@ -69,6 +69,7 @@ public class Combate implements Sujeto {
             .forEach(c -> {
                 c.powerUpActual = null;
             });
+        }
 
     }
 
@@ -145,6 +146,9 @@ public class Combate implements Sujeto {
         return termino;
     }
 
+    /**
+     * Metodo para imprimir en la pantalla, a traves de un string, los puntos de vida de los combatientes
+     */
     public void imprimirPuntosDeVida() {
         
         notificar("\n####################################");
@@ -161,6 +165,9 @@ public class Combate implements Sujeto {
         notificar("####################################\n");
     }
 
+    /**
+     * Metodo para eliminar el powerup de los personajes
+     */
     public void desasignarPowerUp() {
         this.contricantes
             .stream()

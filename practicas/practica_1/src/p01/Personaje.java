@@ -45,7 +45,11 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      */
     public void atacar(Personaje enemigo) {
         int puntosAtaque = this.obtenerPuntosAtaque();
-        enemigo.puntosDeVida -= enemigo.defender(puntosAtaque);
+        int vida = enemigo.puntosDeVida;
+        int danio = enemigo.defender(puntosAtaque);
+        if(danio>=0){
+        enemigo.puntosDeVida -= danio;
+        }
     }
 
     /**
@@ -66,7 +70,7 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      */
     public Integer obtenerPuntosDefensa() {
         if (this.powerUpActual != null) {
-            return this.puntosAtaqueBase + this.powerUpActual.puntosDefensa;
+            return this.puntosDefensaBase + this.powerUpActual.puntosDefensa;
         }
 
         return this.puntosDefensaBase;
@@ -104,7 +108,7 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      * @return String
      */
     public String eventoAtaque() {
-        return powerUpActual != null ? "usando " + powerUpActual.eventoAtaque : "";
+        return powerUpActual != null ? "usando " + powerUpActual.eventoAtaque + "\u001B[31m"+" ("+obtenerPuntosAtaque()+")"+"\u001B[37m":"\u001B[31m"+ "("+obtenerPuntosAtaque()+")"+"\u001B[37m";
     }
 
     /**
@@ -112,10 +116,14 @@ public class Personaje implements ComportamientoAtaque, ComportamientoDefensa {
      * @return String
      */
     public String eventoDefensa() {
-        return powerUpActual != null ? "usando " + powerUpActual.eventoDefensa : "";
+        return powerUpActual != null ? "usando " + powerUpActual.eventoDefensa + "\u001B[34m"+" ("+obtenerPuntosDefensa()+")" +"\u001B[37m": "\u001B[34m"+"("+obtenerPuntosDefensa()+")"+"\u001B[37m";
     }
 
     @Override
+    /**
+     * Metodo para saber si un objeto es igual a esta instancia de la clase Personaje
+     * @return boolean
+     */
     public boolean equals(Object obj) {
         
         if (obj instanceof Personaje ) {

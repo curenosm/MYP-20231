@@ -78,7 +78,7 @@ public class Espectador implements Observador {
             });
 
         WriteFile.writeUsingFiles(
-            Constantes.DIRECTORIO_BITACORAS + "BITACORA_ESPECTADOR_" + this.id + ".log",
+            Constantes.DIRECTORIO_BITACORAS + "BITACORA_ESPECTADOR_" + this.id + ".txt",
             res
         );
 
