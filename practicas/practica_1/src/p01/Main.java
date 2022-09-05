@@ -1,11 +1,13 @@
 package p01;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
+import java.util.Scanner;
 
 import p01.util.Constantes;
-import static p01.util.Constantes.println;;
+import static p01.util.Constantes.println;
 
 /**
  * Clase principal del programa.
@@ -18,6 +20,7 @@ public class Main {
 
     public List<Espectador> espectadores;
     public Audiencia audiencia;
+    public Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         Main main = new Main();
@@ -44,6 +47,30 @@ public class Main {
      * asi como su personaje favorito.
      */
     public void inicializarEspectadores() {
+
+        // Aquí se elige el caso de prueba (Que personaje ganara)
+        println("Que caso de prueba desea ejecutar? ");
+        println("0. Gana Korby");
+        println("1. Gana MeganMan");
+        println("2. Gana Dittuu\n");
+        
+        try {
+            int opcionSeleccionada = scanner.nextInt();
+            if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
+                Constantes.GANADOR = opcionSeleccionada;
+            } else {
+                throw new Exception("Por favor, elija una opcion valida");
+            }
+        }
+        catch (IOException e) {
+            println("Elija una de las opciones listadas");
+        }
+        catch (Exception e) {
+            println(e.getMessage());
+        }
+        finally {
+            scanner.nextLine();
+        }
 
         espectadores = new ArrayList<>();
 

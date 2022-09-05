@@ -24,4 +24,9 @@ public class Ataque {
         return this.eventoAtaque;
     }
 
+    @Override
+    public String toString() {
+        return evento();
+    }
+
 }

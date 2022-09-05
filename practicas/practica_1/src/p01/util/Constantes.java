@@ -23,7 +23,7 @@ public final class Constantes {
     public static final Integer PUNTOS_DEFENSA_BASE = 5;
     public static final Integer PUNTOS_DE_VIDA_INICIALES = 100;
     public static final Double VELOCIDAD_EJECUCION = 0.1;
-    public static final Integer GANADOR = 0;
+    public static Integer GANADOR = 0;
     
     public static List<Transformacion> TRANSFORMACIONES_CHINPOKOMON = List.of(
         new Transformacion(

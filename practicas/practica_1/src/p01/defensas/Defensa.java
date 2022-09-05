@@ -24,4 +24,9 @@ public class Defensa {
     public String evento() {
         return this.eventoDefensa;
     }
+
+    @Override
+    public String toString() {
+        return evento();
+    }
 }

@@ -69,8 +69,6 @@ public class Espectador implements Observador {
      * Metodo que genera la bitacora de eventos presentados a cada espectador.
      */
     public void generarBitacora() {
-        bitacora.escribir("FIN DE LA TRANSMISION");
-
         String res = bitacora
             .registros
             .stream()

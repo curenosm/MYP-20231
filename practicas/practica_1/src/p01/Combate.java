@@ -88,23 +88,25 @@ public class Combate implements Sujeto {
                 
                 if (turnoActual%3 == 0) {
                     asignarPowerUpAleatorioAPersonaje();
-                }
-                else {
+                } else {
                     desasignarPowerUp();
                 }
                 
-                if (meganMan.estaVivo()) {
-                    notificar("Korby ataca a MeganMan " + korby.eventoAtaque());
-                    korby.atacar(meganMan);
-                    notificar("MeganMan se defiende " + meganMan.eventoDefensa());
+                switch (Constantes.GANADOR.intValue()) {
+                    case 0: // Gana Korby
+                        secuenciaPelea(korby);
+                    break;
+                    case 1: // Gana MeganMan
+                        secuenciaPelea(meganMan);
+                    break;
+                    case 2: // Gana Dittuu
+                        secuenciaPelea(dittuu);
+                    break;
+                    default: // Gana Korby
+                        secuenciaPelea(korby);
+                    break;
                 }
-
-                if (dittuu.estaVivo()) {
-                    notificar("Korby ataca a Dittuu "  + korby.eventoAtaque());
-                    korby.atacar(dittuu);
-                    notificar("Dittuu se defiende " + dittuu.eventoDefensa());
-                }
-
+                
                 Thread.sleep((long) (2000*Constantes.VELOCIDAD_EJECUCION));
 
                 turnoActual++;
@@ -118,6 +120,22 @@ public class Combate implements Sujeto {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void secuenciaPelea(Personaje atacante) {
+
+        this.contricantes
+            .stream()
+            .filter(c -> !c.equals(atacante))
+            .forEach(c -> {
+                if (c.estaVivo()) {
+                    notificar(
+                        atacante.nombre + " ataca a " + c.nombre + " " + atacante.eventoAtaque()
+                    );
+                    atacante.atacar(c);
+                    notificar(c.nombre + " se defiende " + c.eventoDefensa());
+                }
+            });
     }
 
     /**
