@@ -120,6 +120,22 @@ que. Por defecto no hace nada, pero cuando se implementa cambian el flujo que si
 </center>
 
 
+- **State**: 
+
+    - **Principio de diseño**: 
+
+    - **Obs**: El metodo template tiene que ser un método final para que no se sobreescriba.
+
+    *Ejemplo*:
+
+
+<center>
+<br/>
+    <img src="./patrones_de_diseno/strategy/ClasesStrategy.jpeg" width="700"/>
+<br/><br/><br/>
+</center>
+
+
 
 ## Git cheatsheet
 ---
