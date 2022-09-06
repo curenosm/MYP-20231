@@ -12,13 +12,52 @@ import p01.ataques.AtaqueTorbellino;
 import p01.interfaces.ComportamientoAtaque;
 
 public class Ataques {
-    public static ComportamientoAtaque ataqueBolaDeFuego = new AtaqueBolaDeFuego();
-    public static ComportamientoAtaque ataqueLatigoCepa = new AtaqueLatigoCepa();
-    public static ComportamientoAtaque ataquePistolaDeAgua = new AtaquePistolaDeAgua();
-    public static ComportamientoAtaque ataqueLanzallamas = new AtaqueLanzallamas();
-    public static ComportamientoAtaque ataqueRayoCongelador = new AtaqueRayoCongelador();
-    public static ComportamientoAtaque ataqueTorbellino = new AtaqueTorbellino();
-    public static ComportamientoAtaque ataqueEspada = new AtaqueEspada();
-    public static ComportamientoAtaque ataqueCaidaEnCabeza = new AtaqueCaidaEnCabeza();
-    public static ComportamientoAtaque ataquePuños = new AtaquePuños();
+
+    // Chinpokomon
+    public static ComportamientoAtaque ataqueBolaDeFuego = new AtaqueBolaDeFuego(
+        "bola de fuego", 
+        35
+    );
+
+    public static ComportamientoAtaque ataqueLatigoCepa = new AtaqueLatigoCepa(
+        "latigo cepa",
+        40
+    );
+
+    public static ComportamientoAtaque ataquePistolaDeAgua = new AtaquePistolaDeAgua(
+        "pistola de agua",
+        20
+    );
+
+    // Copcam
+    public static ComportamientoAtaque ataqueLanzallamas = new AtaqueLanzallamas(
+        "lanzallamas",
+        35
+    );
+
+    public static ComportamientoAtaque ataqueRayoCongelador = new AtaqueRayoCongelador(
+        "rayo congelador",
+        35
+    );
+
+    public static ComportamientoAtaque ataqueTorbellino = new AtaqueTorbellino(
+        "torbellino",
+        35
+    );
+
+    // Nientiendo
+    public static ComportamientoAtaque ataqueEspada = new AtaqueEspada(
+        "su espada",
+        33
+    );
+
+    public static ComportamientoAtaque ataqueCaidaEnCabeza = new AtaqueCaidaEnCabeza(
+        "caida en la cabeza",
+        20
+    );
+
+    public static ComportamientoAtaque ataquePuños = new AtaquePuños(
+        "sus puños",
+        20
+    );
 }

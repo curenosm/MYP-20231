@@ -10,7 +10,8 @@ import p01.interfaces.ComportamientoAtaque;
  */
 public class AtaqueLatigoCepa extends Ataque implements ComportamientoAtaque {
     
-    public AtaqueLatigoCepa() {
-        this.eventoAtaque = "latigo cepa";
+    public AtaqueLatigoCepa(String eventoAtaque, Integer puntosAtaque) {
+        super(eventoAtaque, puntosAtaque);
     }
+
 }

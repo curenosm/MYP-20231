@@ -10,8 +10,9 @@ import p01.interfaces.ComportamientoDefensa;
  * @author Hernandez Paramo Elizabeth
  */
 public class DefensaBarreraDeHielo extends Defensa implements ComportamientoDefensa {
-    
-    public DefensaBarreraDeHielo() {
-        this.eventoDefensa = "barrera de hielo";
+        
+    public DefensaBarreraDeHielo(String eventoDefensa, Integer puntosDefensa) {
+        super(eventoDefensa, puntosDefensa);
     }
+
 }

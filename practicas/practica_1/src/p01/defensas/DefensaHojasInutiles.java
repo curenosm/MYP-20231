@@ -11,7 +11,7 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaHojasInutiles extends Defensa implements ComportamientoDefensa {
     
-    public DefensaHojasInutiles() {
-        this.eventoDefensa = "hojas inutiles";
+    public DefensaHojasInutiles(String eventoDefensa, Integer puntosDefensa) {
+        super(eventoDefensa, puntosDefensa);
     }
 }

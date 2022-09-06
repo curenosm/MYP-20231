@@ -1,5 +1,12 @@
 package p01.defensas;
 
+/**
+ * Clase que representa una defensa asociada a una transformación
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class Defensa {
 
     public String eventoDefensa;
@@ -16,6 +23,7 @@ public class Defensa {
     }
 
     public Integer defender(Integer puntosDelAtaque) {
+        // Acción extra para personaliza mas el evento efectuado
         return puntosDelAtaque;
     }
 

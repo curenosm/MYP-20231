@@ -12,13 +12,50 @@ import p01.defensas.DefensaHojasInutiles;
 import p01.interfaces.ComportamientoDefensa;
 
 public class Defensas {
-    public static ComportamientoDefensa defensaAlasEscudo = new DefensaAlasEscudo();
-    public static ComportamientoDefensa defensaHojasInutiles = new DefensaHojasInutiles();
-    public static ComportamientoDefensa defensaCaparazonDeAcero = new DefensaCaparazonDeAcero();
-    public static ComportamientoDefensa defensaCalentarArmadura = new DefensaCalentarArmadura();
-    public static ComportamientoDefensa defensaBarreraDeHielo = new DefensaBarreraDeHielo();
-    public static ComportamientoDefensa defensaBarreraDeViento = new DefensaBarreraDeViento();
-    public static ComportamientoDefensa defensaDurezaDeLadrillo = new DefensaDurezaDeLadrillo();
-    public static ComportamientoDefensa defensaGiroVeloz = new DefensaGiroVeloz();
-    public static ComportamientoDefensa defensaCubrirse = new DefensaCubrirse();
+
+    public static ComportamientoDefensa defensaAlasEscudo = new DefensaAlasEscudo(
+        "alas escudo",
+        3
+    );
+
+    public static ComportamientoDefensa defensaHojasInutiles = new DefensaHojasInutiles(
+        "hojas inutiles",
+        1
+    );
+
+    public static ComportamientoDefensa defensaCaparazonDeAcero = new DefensaCaparazonDeAcero(
+        "caparazon de acero",
+        15
+    );
+
+    public static ComportamientoDefensa defensaCalentarArmadura = new DefensaCalentarArmadura(
+        "calentar armadura",
+        7
+    );
+
+    public static ComportamientoDefensa defensaBarreraDeHielo = new DefensaBarreraDeHielo(
+        "barrera de hielo",
+        10
+    );
+
+    public static ComportamientoDefensa defensaBarreraDeViento = new DefensaBarreraDeViento(
+        "barrera de viento",
+        5
+    );
+
+    public static ComportamientoDefensa defensaDurezaDeLadrillo = new DefensaDurezaDeLadrillo(
+        "dureza de ladrillo",
+        10
+    );
+
+    public static ComportamientoDefensa defensaGiroVeloz = new DefensaGiroVeloz(
+        "giro veloz",
+        7
+    );
+
+    public static ComportamientoDefensa defensaCubrirse = new DefensaCubrirse(
+        "cubrirse",
+        5
+    );
+    
 }

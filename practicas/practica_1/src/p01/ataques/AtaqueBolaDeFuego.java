@@ -11,8 +11,8 @@ import p01.interfaces.ComportamientoAtaque;
  */
 public class AtaqueBolaDeFuego extends Ataque implements ComportamientoAtaque {
     
-    public AtaqueBolaDeFuego() {
-        this.eventoAtaque = "bola de fuego";
+    public AtaqueBolaDeFuego(String eventoAtaque, Integer puntosAtaque) {
+        super(eventoAtaque, puntosAtaque);
     }
-
+    
 }

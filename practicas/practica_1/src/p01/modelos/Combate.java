@@ -2,6 +2,7 @@ package p01.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import p01.interfaces.Sujeto;
 import p01.util.Constantes;
@@ -48,7 +49,6 @@ public class Combate implements Sujeto {
 
     public void asignarPowerUpAleatorioAPersonaje() {
 
-        // TODO: Modificar para combates más dinamicos
         Personaje personajeSeleccionado = contricantes.get(Constantes.GANADOR);
         
         personajeSeleccionado.powerUpActual = personajeSeleccionado.franquicia.obtenerTransformacion();
@@ -59,9 +59,37 @@ public class Combate implements Sujeto {
         );
 
         // A todos los demás quitales el power up
-        this.contricantes.stream()
-            .filter(c -> !personajeSeleccionado.equals(c))
-            .forEach(c -> c.powerUpActual = null);
+        List<Personaje> contrincantes = this.contricantes
+            .stream()
+            .filter(c -> !personajeSeleccionado.equals(c)).toList();
+        
+        // y haz que uno ataque
+        Personaje contraAtacante = contrincantes.get(
+            obtenerNumeroAleatorioEntre(0, contrincantes.size())
+        );
+
+        contraAtacante.atacar(personajeSeleccionado);
+
+        notificar(
+            String.format("%s ataca a %s %s (- %s HP)",
+                contraAtacante.nombre,
+                personajeSeleccionado.nombre,
+                contraAtacante.eventoAtaque(),
+                contraAtacante.obtenerPuntosAtaque()
+            )
+        );
+        contraAtacante.atacar(personajeSeleccionado);
+        notificar(
+            String.format("%s se defiende %s (+ %s HP)", 
+                personajeSeleccionado.nombre,
+                personajeSeleccionado.eventoDefensa(),
+                personajeSeleccionado.obtenerPuntosDefensa()
+            )
+        );
+
+        contrincantes.forEach(c -> {
+            c.powerUpActual = null;
+        });
 
     }
 

@@ -11,7 +11,9 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaCaparazonDeAcero extends Defensa implements ComportamientoDefensa {
     
-    public DefensaCaparazonDeAcero() {
-        this.eventoDefensa = "caparazon de acero";
+
+    public DefensaCaparazonDeAcero(String eventoDefensa, Integer puntosDefensa) {
+        super(eventoDefensa, puntosDefensa);
     }
+
 }

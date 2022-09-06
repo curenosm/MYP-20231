@@ -12,7 +12,8 @@ import p01.interfaces.ComportamientoAtaque;
  */
 public class AtaqueLanzallamas extends Ataque implements ComportamientoAtaque  {
     
-    public AtaqueLanzallamas() {
-        this.eventoAtaque = "lanzallamas";
+    public AtaqueLanzallamas(String eventoAtaque, Integer puntosAtaque) {
+        super(eventoAtaque, puntosAtaque);
     }
+
 }

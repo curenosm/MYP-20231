@@ -12,7 +12,8 @@ import p01.interfaces.ComportamientoAtaque;
  */
 public class AtaqueTorbellino extends Ataque implements ComportamientoAtaque {
     
-    public AtaqueTorbellino() {
-        this.eventoAtaque = "torbellino";
+    public AtaqueTorbellino(String eventoAtaque, Integer puntosAtaque) {
+        super(eventoAtaque, puntosAtaque);
     }
+
 }

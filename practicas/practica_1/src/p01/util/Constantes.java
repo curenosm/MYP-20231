@@ -28,22 +28,16 @@ public final class Constantes {
     public static List<Transformacion> TRANSFORMACIONES_CHINPOKOMON = List.of(
         new Transformacion(
             "Charizardo",
-            35, 
-            15,
             ataqueBolaDeFuego,
             defensaAlasEscudo
         ),
         new Transformacion(
             "Chikorisa",
-            40, 
-            5,
             ataqueLatigoCepa,
             defensaHojasInutiles
         ),
         new Transformacion(
             "Spritle",
-            20, 
-            25,
             ataquePistolaDeAgua,
             defensaCaparazonDeAcero
         )
@@ -52,22 +46,16 @@ public final class Constantes {
     public static List<Transformacion> TRANSFORMACIONES_COPCAM = List.of(
         new Transformacion(
             "Fire Soul",
-            35, 
-            7,
             ataqueLanzallamas,
             defensaCalentarArmadura
         ),
         new Transformacion(
             "Ice Pegasus",
-            35, 
-            10,
             ataqueRayoCongelador,
             defensaBarreraDeHielo
         ),
         new Transformacion(
             "Wind Soul",
-            35, 
-            5,
             ataqueTorbellino,
             defensaBarreraDeViento
         )
@@ -76,22 +64,16 @@ public final class Constantes {
     public static List<Transformacion> TRANSFORMACIONES_NIENTIENDO = List.of(
         new Transformacion(
             "Hyperlink",
-            33, 
-            15,
             ataqueEspada,
             defensaGiroVeloz
         ),
         new Transformacion(
             "Ladrillo",
-            20, 
-            45,
             ataqueCaidaEnCabeza,
             defensaDurezaDeLadrillo
         ),
         new Transformacion(
             "Don Kingkon",
-            20, 
-            10,
             ataquePuños,
             defensaCubrirse
         )

@@ -11,7 +11,7 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaCubrirse extends Defensa implements ComportamientoDefensa{
     
-    public DefensaCubrirse() {
-        this.eventoDefensa = "cubrise";
+    public DefensaCubrirse(String eventoDefensa, Integer puntosDefensa) {
+        super(eventoDefensa, puntosDefensa);
     }
 }

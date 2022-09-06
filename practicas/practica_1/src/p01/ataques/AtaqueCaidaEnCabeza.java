@@ -12,7 +12,8 @@ import p01.interfaces.ComportamientoAtaque;
  */
 public class AtaqueCaidaEnCabeza extends Ataque implements ComportamientoAtaque {
 
-    public AtaqueCaidaEnCabeza() {
-        this.eventoAtaque = "caida en la cabeza";
+    public AtaqueCaidaEnCabeza(String eventoAtaque, Integer puntosAtaque) {
+        super(eventoAtaque, puntosAtaque);
     }
+
 }

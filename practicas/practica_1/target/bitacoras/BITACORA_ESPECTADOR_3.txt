@@ -7,8 +7,8 @@ EMPIEZA LA TRANSMISION
 ##############################################################
 
 El espectador 1 ha escogido como su favorito a: Korby
-El espectador 2 ha escogido como su favorito a: MeganMan
-El espectador 3 ha escogido como su favorito a: Dittuu
+El espectador 2 ha escogido como su favorito a: Korby
+El espectador 3 ha escogido como su favorito a: Korby
 El espectador 4 ha escogido como su favorito a: Dittuu
 EMPIEZAN LAS APUESTAS
 
@@ -21,86 +21,55 @@ Vida de MeganMan: 100/100
 Vida de Dittuu: 100/100
 ##############################################################
 
-Dittuu ha tomado un power up, se ha transformado en Chikorisa
-Dittuu ataca a Korby usando latigo cepa (- 20 HP)
-Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan usando latigo cepa (- 20 HP)
-MeganMan se defiende  (+ 5 HP)
-
-##############################################################
-Vida de Korby: 85/100
-Vida de MeganMan: 85/100
-Vida de Dittuu: 100/100
-##############################################################
-
-Dittuu ataca a Korby  (- 20 HP)
-Korby se defiende  (+ 5 HP)
+MeganMan ha tomado un power up, se ha transformado en Ice Pegasus
 Dittuu ataca a MeganMan  (- 20 HP)
-MeganMan se defiende  (+ 5 HP)
-
-##############################################################
-Vida de Korby: 70/100
-Vida de MeganMan: 70/100
-Vida de Dittuu: 100/100
-##############################################################
-
-Dittuu ataca a Korby  (- 20 HP)
+MeganMan se defiende usando barrera de hielo (+ 30 HP)
+MeganMan ataca a Korby usando rayo congelador (- 55 HP)
 Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan  (- 20 HP)
-MeganMan se defiende  (+ 5 HP)
+MeganMan ataca a Dittuu usando rayo congelador (- 55 HP)
+Dittuu se defiende  (+ 5 HP)
 
 ##############################################################
-Vida de Korby: 55/100
-Vida de MeganMan: 55/100
-Vida de Dittuu: 100/100
+Vida de Korby: 50/100
+Vida de MeganMan: 120/100
+Vida de Dittuu: 50/100
 ##############################################################
 
-Dittuu ha tomado un power up, se ha transformado en Chikorisa
-Dittuu ataca a Korby usando latigo cepa (- 20 HP)
+MeganMan ataca a Korby  (- 20 HP)
 Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan usando latigo cepa (- 20 HP)
-MeganMan se defiende  (+ 5 HP)
+MeganMan ataca a Dittuu  (- 20 HP)
+Dittuu se defiende  (+ 5 HP)
 
 ##############################################################
-Vida de Korby: 40/100
-Vida de MeganMan: 40/100
-Vida de Dittuu: 100/100
+Vida de Korby: 35/100
+Vida de MeganMan: 120/100
+Vida de Dittuu: 35/100
 ##############################################################
 
-Dittuu ataca a Korby  (- 20 HP)
+MeganMan ataca a Korby  (- 20 HP)
 Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan  (- 20 HP)
-MeganMan se defiende  (+ 5 HP)
+MeganMan ataca a Dittuu  (- 20 HP)
+Dittuu se defiende  (+ 5 HP)
 
 ##############################################################
-Vida de Korby: 25/100
-Vida de MeganMan: 25/100
-Vida de Dittuu: 100/100
+Vida de Korby: 20/100
+Vida de MeganMan: 120/100
+Vida de Dittuu: 20/100
 ##############################################################
 
-Dittuu ataca a Korby  (- 20 HP)
+MeganMan ha tomado un power up, se ha transformado en Fire Soul
+Korby ataca a MeganMan  (- 20 HP)
+MeganMan se defiende usando calentar armadura (+ 27 HP)
+MeganMan ataca a Korby usando lanzallamas (- 55 HP)
 Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan  (- 20 HP)
-MeganMan se defiende  (+ 5 HP)
-
-##############################################################
-Vida de Korby: 10/100
-Vida de MeganMan: 10/100
-Vida de Dittuu: 100/100
-##############################################################
-
-Dittuu ha tomado un power up, se ha transformado en Chikorisa
-Dittuu ataca a Korby usando latigo cepa (- 20 HP)
-Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan usando latigo cepa (- 20 HP)
-MeganMan se defiende  (+ 5 HP)
+MeganMan ataca a Dittuu usando lanzallamas (- 55 HP)
+Dittuu se defiende  (+ 5 HP)
 
 ##############################################################
 Korby ha sido derrotado en el combate. 
-MeganMan ha sido derrotado en el combate. 
-Vida de Dittuu: 100/100
+Vida de MeganMan: 134/100
+Dittuu ha sido derrotado en el combate. 
 ##############################################################
 
 EL COMBATE HA TERMINADO
-HA GANADO Dittuu
-Tu personaje favorito gano, pasa a cobrar tu premio
+HA GANADO MeganMan

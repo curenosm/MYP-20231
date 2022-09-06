@@ -11,7 +11,7 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaDurezaDeLadrillo extends Defensa implements ComportamientoDefensa {
     
-    public DefensaDurezaDeLadrillo() {
-        this.eventoDefensa = "dureza de ladrillo";
+    public DefensaDurezaDeLadrillo(String eventoDefensa, Integer puntosDefensa) {
+        super(eventoDefensa, puntosDefensa);
     }
 }

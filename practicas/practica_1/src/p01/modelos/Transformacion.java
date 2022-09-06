@@ -12,8 +12,6 @@ import p01.interfaces.ComportamientoDefensa;
 public class Transformacion {
     
     public String nombre;
-    public Integer puntosAtaque;
-    public Integer puntosDefensa;
     public ComportamientoAtaque comportamientoAtaque;
     public ComportamientoDefensa comportamientoDefensa;
 
@@ -21,19 +19,13 @@ public class Transformacion {
      * Metodo constructor de la clase.
      * 
      * @param nombre nombre de la transofrmacion del personaje
-     * @param puntosAtaque puntos de ataque del personaje
-     * @param puntosDefensa puntos de defensa del personaje
      * @param comportamientoAtaque forma de ataque del personaje
      * @param comportamientoDefensa forma de ataque del personaje
     */
     public Transformacion(String nombre,
-                            Integer puntosAtaque,
-                            Integer puntosDefensa,
                             ComportamientoAtaque comportamientoAtaque,
                             ComportamientoDefensa comportamientoDefensa) {
         this.nombre = nombre;
-        this.puntosAtaque = puntosAtaque;
-        this.puntosDefensa = puntosDefensa;
         this.comportamientoAtaque = comportamientoAtaque;
         this.comportamientoDefensa = comportamientoDefensa;
     }
