@@ -104,8 +104,9 @@ public class Main {
             espectadorActual.actualizar("1. MeganMan");
             espectadorActual.actualizar("2. Dittuu");
             espectadorActual.actualizar("##############################################################\n");
-    
-            
+    boolean bobo =true;
+            do{
+
             try {
                 
         println("\n############# Quien es tu personaje favorito? ################");
@@ -117,22 +118,25 @@ public class Main {
             int opcionSeleccionada = scanner.nextInt();
             if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
                 espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(opcionSeleccionada);
+                bobo=false;
             } else {
                 throw new Exception("Por favor, elija una opcion valida\n");
             }
         }
         catch (IOException e) {
             println("Elija una de las opciones listadas\n");
-            inicializarEspectadores();
+            scanner.next();
+            
         }
         catch (Exception e) {
             println(e.getMessage());
-            inicializarEspectadores();
+            scanner.next();
+           
         }
         finally {
             scanner = new Scanner(System.in);
         }
-    
+    }while(bobo);
         }
     
 
