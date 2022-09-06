@@ -2,7 +2,6 @@ package p01.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 import p01.interfaces.Sujeto;
 import p01.util.Constantes;

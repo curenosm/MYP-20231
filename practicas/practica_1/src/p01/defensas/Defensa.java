@@ -23,7 +23,7 @@ public class Defensa {
     }
 
     public Integer defender(Integer puntosDelAtaque) {
-        // Acción extra para personaliza mas el evento efectuado
+        // Acción extra para personalizar mas el evento efectuado
         return puntosDelAtaque;
     }
 

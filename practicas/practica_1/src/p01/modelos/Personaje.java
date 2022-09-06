@@ -1,11 +1,8 @@
 package p01.modelos;
-import p01.interfaces.ComportamientoDefensa;
+
 import p01.util.Constantes;
-import p01.interfaces.ComportamientoAtaque;
 import p01.ataques.Ataque;
 import p01.defensas.Defensa;
-
-import static p01.util.Constantes.println;
 
 /**
  * @author Alcantara Estrada Kevin
@@ -93,7 +90,10 @@ public class Personaje {
             this.powerUpActual.comportamientoDefensa.defender(puntosDelAtaque);
         }
 
-        return puntosDelAtaque -= this.obtenerPuntosDefensa();
+        int res = puntosDelAtaque - this.obtenerPuntosDefensa();
+
+
+        return res < 0 ? 0 : res;
     }
 
     @Override
