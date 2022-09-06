@@ -85,5 +85,5 @@ Con el uso de este patrón puede ocurrir que se desconozcan las consecuencias de
 <br/>
 
 <center>
-    <img src="./DiagramaClases.jpeg" width="100%">
+    <img src="./DiagramaClases.png" width="100%">
 </center>
