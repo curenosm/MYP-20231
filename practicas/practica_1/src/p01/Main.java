@@ -99,39 +99,41 @@ public class Main {
 
             Espectador espectadorActual = espectadores.get(i);
             
-            espectadorActual.actualizar("\n############# " + espectadorActual.toString() + " ################");
-            espectadorActual.actualizar("\n############# Quien es tu personaje favorito? ################");
-            espectadorActual.actualizar("0. Korby");
-            espectadorActual.actualizar("1. MeganMan");
-            espectadorActual.actualizar("2. Dittuu");
-            espectadorActual.actualizar("##############################################################\n");
+            boolean faltanEspectadoresPorApostar = true;
             
-            try {
+            do { 
+                try {
                 
-                println("\n############# Quien es tu personaje favorito? ################");
-                println("0. Korby");
-                println("1. MeganMan");
-                println("2. Dittuu\n");
-                
-                int opcionSeleccionada = scanner.nextInt();
-                if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
-                    espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(opcionSeleccionada);
-                } else {
-                    throw new Exception("Por favor, elija una opcion valida\n");
+                    espectadorActual.actualizar("\n############# " + espectadorActual.toString() + " ################");
+                    espectadorActual.actualizar("\n############# Quien es tu personaje favorito? ################");
+                    espectadorActual.actualizar("0. Korby");
+                    espectadorActual.actualizar("1. MeganMan");
+                    espectadorActual.actualizar("2. Dittuu");
+                    espectadorActual.actualizar("##############################################################\n");
+
+                    int opcionSeleccionada = scanner.nextInt();
+                    if (0 <= opcionSeleccionada && opcionSeleccionada <= 2) {
+                        espectadorActual.personajeFavoritoActual = Constantes.PERSONAJES.get(opcionSeleccionada);
+                        faltanEspectadoresPorApostar = false;
+                    } else {
+                        throw new Exception("Por favor, elija una opcion valida\n");
+                    }
                 }
-            }
-            catch (IOException e) {
-                println("Elija una de las opciones listadas\n");
-                inicializarEspectadores();
-            }
-            catch (Exception e) {
-                println(e.getMessage());
-                inicializarEspectadores();
-            }
-            finally {
-                scanner = new Scanner(System.in);
-            }
+                catch (IOException e) {
+                    println("Elija una de las opciones listadas\n");
+                    scanner.next();
+                    
+                }
+                catch (Exception e) {
+                    println(e.getMessage());
+                    scanner.next();
+                }
+                finally {
+                    scanner = new Scanner(System.in);
+                }
+            } while (faltanEspectadoresPorApostar);
         }
+    
 
         audiencia = new Audiencia(espectadores);
 
