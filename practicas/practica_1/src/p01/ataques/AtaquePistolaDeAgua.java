@@ -12,4 +12,7 @@ import p01.interfaces.ComportamientoAtaque;
  */
 public class AtaquePistolaDeAgua extends Ataque implements ComportamientoAtaque {
 
+    public AtaquePistolaDeAgua() {
+        this.eventoAtaque = "pistola de agua";
+    }
 }

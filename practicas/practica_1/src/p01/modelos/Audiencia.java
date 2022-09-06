@@ -63,6 +63,11 @@ public class Audiencia implements Sujeto, Observador {
                 // Cuando el combate termine genera las bitacoras de lo que vio cada espectador
                 if (combate != null) {
                     if (combate.termino) {
+
+                        if (combate.ganador.equals(espectador.personajeFavoritoActual)) {
+                            espectador.actualizar("Tu personaje favorito gano, pasa a cobrar tu premio");
+                        }
+
                         espectador.generarBitacora();
                     }
                 }

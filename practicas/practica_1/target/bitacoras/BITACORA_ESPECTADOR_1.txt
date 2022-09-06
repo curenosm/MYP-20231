@@ -1,4 +1,5 @@
 EMPIEZA LA TRANSMISION
+######################## Espectador 1 ########################
 ############# Quien es tu personaje favorito? ################
 0. Korby
 1. MeganMan
@@ -6,9 +7,9 @@ EMPIEZA LA TRANSMISION
 ##############################################################
 
 El espectador 1 ha escogido como su favorito a: Korby
-El espectador 2 ha escogido como su favorito a: Korby
-El espectador 3 ha escogido como su favorito a: Korby
-El espectador 4 ha escogido como su favorito a: Korby
+El espectador 2 ha escogido como su favorito a: MeganMan
+El espectador 3 ha escogido como su favorito a: Dittuu
+El espectador 4 ha escogido como su favorito a: Dittuu
 EMPIEZAN LAS APUESTAS
 
 EL COMBATE HA EMPEZADO
@@ -20,85 +21,85 @@ Vida de MeganMan: 100/100
 Vida de Dittuu: 100/100
 ##############################################################
 
-MeganMan ha tomado un power up, se ha transformado en Wind Soul
-MeganMan ataca a Korby usando  (- 20 HP)
+Dittuu ha tomado un power up, se ha transformado en Chikorisa
+Dittuu ataca a Korby usando latigo cepa (- 20 HP)
 Korby se defiende  (+ 5 HP)
-MeganMan ataca a Dittuu usando  (- 20 HP)
-Dittuu se defiende  (+ 5 HP)
+Dittuu ataca a MeganMan usando latigo cepa (- 20 HP)
+MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
 Vida de Korby: 85/100
-Vida de MeganMan: 100/100
-Vida de Dittuu: 85/100
+Vida de MeganMan: 85/100
+Vida de Dittuu: 100/100
 ##############################################################
 
-MeganMan ataca a Korby  (- 20 HP)
+Dittuu ataca a Korby  (- 20 HP)
 Korby se defiende  (+ 5 HP)
-MeganMan ataca a Dittuu  (- 20 HP)
-Dittuu se defiende  (+ 5 HP)
+Dittuu ataca a MeganMan  (- 20 HP)
+MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
 Vida de Korby: 70/100
-Vida de MeganMan: 100/100
-Vida de Dittuu: 70/100
+Vida de MeganMan: 70/100
+Vida de Dittuu: 100/100
 ##############################################################
 
-MeganMan ataca a Korby  (- 20 HP)
+Dittuu ataca a Korby  (- 20 HP)
 Korby se defiende  (+ 5 HP)
-MeganMan ataca a Dittuu  (- 20 HP)
-Dittuu se defiende  (+ 5 HP)
+Dittuu ataca a MeganMan  (- 20 HP)
+MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
 Vida de Korby: 55/100
-Vida de MeganMan: 100/100
-Vida de Dittuu: 55/100
+Vida de MeganMan: 55/100
+Vida de Dittuu: 100/100
 ##############################################################
 
-MeganMan ha tomado un power up, se ha transformado en Fire Soul
-MeganMan ataca a Korby usando  (- 20 HP)
+Dittuu ha tomado un power up, se ha transformado en Chikorisa
+Dittuu ataca a Korby usando latigo cepa (- 20 HP)
 Korby se defiende  (+ 5 HP)
-MeganMan ataca a Dittuu usando  (- 20 HP)
-Dittuu se defiende  (+ 5 HP)
+Dittuu ataca a MeganMan usando latigo cepa (- 20 HP)
+MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
 Vida de Korby: 40/100
-Vida de MeganMan: 100/100
-Vida de Dittuu: 40/100
+Vida de MeganMan: 40/100
+Vida de Dittuu: 100/100
 ##############################################################
 
-MeganMan ataca a Korby  (- 20 HP)
+Dittuu ataca a Korby  (- 20 HP)
 Korby se defiende  (+ 5 HP)
-MeganMan ataca a Dittuu  (- 20 HP)
-Dittuu se defiende  (+ 5 HP)
+Dittuu ataca a MeganMan  (- 20 HP)
+MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
 Vida de Korby: 25/100
-Vida de MeganMan: 100/100
-Vida de Dittuu: 25/100
+Vida de MeganMan: 25/100
+Vida de Dittuu: 100/100
 ##############################################################
 
-MeganMan ataca a Korby  (- 20 HP)
+Dittuu ataca a Korby  (- 20 HP)
 Korby se defiende  (+ 5 HP)
-MeganMan ataca a Dittuu  (- 20 HP)
-Dittuu se defiende  (+ 5 HP)
+Dittuu ataca a MeganMan  (- 20 HP)
+MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
 Vida de Korby: 10/100
-Vida de MeganMan: 100/100
-Vida de Dittuu: 10/100
+Vida de MeganMan: 10/100
+Vida de Dittuu: 100/100
 ##############################################################
 
-MeganMan ha tomado un power up, se ha transformado en Fire Soul
-MeganMan ataca a Korby usando  (- 20 HP)
+Dittuu ha tomado un power up, se ha transformado en Chikorisa
+Dittuu ataca a Korby usando latigo cepa (- 20 HP)
 Korby se defiende  (+ 5 HP)
-MeganMan ataca a Dittuu usando  (- 20 HP)
-Dittuu se defiende  (+ 5 HP)
+Dittuu ataca a MeganMan usando latigo cepa (- 20 HP)
+MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
 Korby ha sido derrotado en el combate. 
-Vida de MeganMan: 100/100
-Dittuu ha sido derrotado en el combate. 
+MeganMan ha sido derrotado en el combate. 
+Vida de Dittuu: 100/100
 ##############################################################
 
 EL COMBATE HA TERMINADO
-HA GANADO MeganMan
+HA GANADO Dittuu

@@ -12,4 +12,7 @@ import p01.interfaces.ComportamientoDefensa;
 
 public class DefensaCalentarArmadura extends Defensa implements ComportamientoDefensa {
     
+    public DefensaCalentarArmadura() {
+        this.eventoDefensa = "calentar armadura";
+    }
 }

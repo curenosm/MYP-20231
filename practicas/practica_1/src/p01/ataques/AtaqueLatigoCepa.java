@@ -9,5 +9,8 @@ import p01.interfaces.ComportamientoAtaque;
  * @author Hernandez Paramo Elizabeth
  */
 public class AtaqueLatigoCepa extends Ataque implements ComportamientoAtaque {
-
+    
+    public AtaqueLatigoCepa() {
+        this.eventoAtaque = "latigo cepa";
+    }
 }

@@ -12,4 +12,7 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaAlasEscudo extends Defensa implements ComportamientoDefensa {
     
+    public DefensaAlasEscudo() {
+        this.eventoDefensa = "alas escudo";
+    }
 }

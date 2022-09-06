@@ -11,4 +11,7 @@ import p01.interfaces.ComportamientoAtaque;
  */
 public class AtaquePuños extends Ataque implements ComportamientoAtaque {
     
+    public AtaquePuños() {
+        this.eventoAtaque = "sus puños";
+    }
 }

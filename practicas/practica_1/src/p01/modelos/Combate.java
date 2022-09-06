@@ -96,10 +96,8 @@ public class Combate implements Sujeto {
                 turnoActual++;
             }
 
-            notificar("EL COMBATE HA TERMINADO");
-            notificar("HA GANADO " + ganador.toString());
+            notificar("EL COMBATE HA TERMINADO\nHA GANADO " + ganador.toString());
             
-
         }
         catch (Exception e) {
             e.printStackTrace();

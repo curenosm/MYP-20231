@@ -11,4 +11,7 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaGiroVeloz extends Defensa implements ComportamientoDefensa {
     
+    public DefensaGiroVeloz() {
+        this.eventoDefensa = "giro veloz";
+    }
 }

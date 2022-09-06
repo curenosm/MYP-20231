@@ -11,4 +11,7 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaBarreraDeViento extends Defensa implements ComportamientoDefensa {
     
+    public DefensaBarreraDeViento() {
+        this.eventoDefensa = "barrera de viento";
+    }
 }

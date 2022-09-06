@@ -11,4 +11,7 @@ import p01.interfaces.ComportamientoDefensa;
  */
 public class DefensaCubrirse extends Defensa implements ComportamientoDefensa{
     
+    public DefensaCubrirse() {
+        this.eventoDefensa = "cubrise";
+    }
 }
