@@ -148,6 +148,9 @@ public class Main {
         
     }
 
+    /**
+     * Metodo para inicializar el combate
+     */
     public void inicializarCombate() {
         Combate combate = new Combate(Constantes.PERSONAJES);
         audiencia.combate = combate;

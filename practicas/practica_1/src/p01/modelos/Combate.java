@@ -192,7 +192,10 @@ public class Combate implements Sujeto {
         
         return termino;
     }
-
+    
+    /**
+     * Metodo para escribir en las bitacoras los puntos de vida de un personaje o si ha sido derrotado en combate.
+     */
     public void imprimirPuntosDeVida() {
         
         notificar("\n##############################################################");

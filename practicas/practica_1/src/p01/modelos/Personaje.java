@@ -133,6 +133,10 @@ public class Personaje {
             : "";
     }
 
+    /**
+     * Metodo para saber si un objeto es igual al personaje actual
+     * @param obj Instancia de la clase Object con la cual se desea hacer la comparacion
+     */
     @Override
     public boolean equals(Object obj) {
         
