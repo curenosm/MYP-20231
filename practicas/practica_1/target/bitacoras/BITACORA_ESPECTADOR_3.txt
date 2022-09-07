@@ -6,8 +6,8 @@ EMPIEZA LA TRANSMISION
 2. Dittuu
 ##############################################################
 
-El espectador 1 ha escogido como su favorito a: MeganMan
-El espectador 2 ha escogido como su favorito a: MeganMan
+El espectador 1 ha escogido como su favorito a: Korby
+El espectador 2 ha escogido como su favorito a: Korby
 El espectador 3 ha escogido como su favorito a: Korby
 El espectador 4 ha escogido como su favorito a: Dittuu
 EMPIEZAN LAS APUESTAS
@@ -21,17 +21,17 @@ Vida de MeganMan: 100/100
 Vida de Dittuu: 100/100
 ##############################################################
 
-Dittuu ha tomado un power up, se ha transformado en Charizardo
+Dittuu ha tomado un power up, se ha transformado en Chikorisa
 MeganMan ataca a Dittuu  (- 20 HP)
-Dittuu se defiende usando alas escudo (+ 23 HP)
-Dittuu ataca a Korby usando bola de fuego (- 55 HP)
+Dittuu se defiende usando hojas inutiles (+ 21 HP)
+Dittuu ataca a Korby usando latigo cepa (- 60 HP)
 Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan usando bola de fuego (- 55 HP)
+Dittuu ataca a MeganMan usando latigo cepa (- 60 HP)
 MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
-Vida de Korby: 50/100
-Vida de MeganMan: 50/100
+Vida de Korby: 45/100
+Vida de MeganMan: 45/100
 Vida de Dittuu: 100/100
 ##############################################################
 
@@ -41,8 +41,8 @@ Dittuu ataca a MeganMan  (- 20 HP)
 MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
-Vida de Korby: 35/100
-Vida de MeganMan: 35/100
+Vida de Korby: 30/100
+Vida de MeganMan: 30/100
 Vida de Dittuu: 100/100
 ##############################################################
 
@@ -52,17 +52,17 @@ Dittuu ataca a MeganMan  (- 20 HP)
 MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
-Vida de Korby: 20/100
-Vida de MeganMan: 20/100
+Vida de Korby: 15/100
+Vida de MeganMan: 15/100
 Vida de Dittuu: 100/100
 ##############################################################
 
-Dittuu ha tomado un power up, se ha transformado en Charizardo
-MeganMan ataca a Dittuu  (- 20 HP)
-Dittuu se defiende usando alas escudo (+ 23 HP)
-Dittuu ataca a Korby usando bola de fuego (- 55 HP)
+Dittuu ha tomado un power up, se ha transformado en Chikorisa
+Korby ataca a Dittuu  (- 20 HP)
+Dittuu se defiende usando hojas inutiles (+ 21 HP)
+Dittuu ataca a Korby usando latigo cepa (- 60 HP)
 Korby se defiende  (+ 5 HP)
-Dittuu ataca a MeganMan usando bola de fuego (- 55 HP)
+Dittuu ataca a MeganMan usando latigo cepa (- 60 HP)
 MeganMan se defiende  (+ 5 HP)
 
 ##############################################################
