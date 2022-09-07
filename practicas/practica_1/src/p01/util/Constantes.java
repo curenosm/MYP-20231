@@ -74,7 +74,7 @@ public final class Constantes {
         ),
         new Transformacion(
             "Don Kingkon",
-            ataquePuños,
+            ataquePunos,
             defensaCubrirse
         )
     );

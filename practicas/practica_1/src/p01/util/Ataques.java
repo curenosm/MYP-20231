@@ -6,7 +6,7 @@ import p01.ataques.AtaqueEspada;
 import p01.ataques.AtaqueLanzallamas;
 import p01.ataques.AtaqueLatigoCepa;
 import p01.ataques.AtaquePistolaDeAgua;
-import p01.ataques.AtaquePuños;
+import p01.ataques.AtaquePunos;
 import p01.ataques.AtaqueRayoCongelador;
 import p01.ataques.AtaqueTorbellino;
 import p01.interfaces.ComportamientoAtaque;
@@ -56,7 +56,7 @@ public class Ataques {
         20
     );
 
-    public static ComportamientoAtaque ataquePuños = new AtaquePuños(
+    public static ComportamientoAtaque ataquePunos = new AtaquePunos(
         "sus puños",
         20
     );

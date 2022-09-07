@@ -9,9 +9,9 @@ import p01.interfaces.ComportamientoAtaque;
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
-public class AtaquePuños extends Ataque implements ComportamientoAtaque {
+public class AtaquePunos extends Ataque implements ComportamientoAtaque {
     
-    public AtaquePuños(String eventoAtaque, Integer puntosAtaque) {
+    public AtaquePunos(String eventoAtaque, Integer puntosAtaque) {
         super(eventoAtaque, puntosAtaque);
     }
 
