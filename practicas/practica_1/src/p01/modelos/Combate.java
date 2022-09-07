@@ -2,6 +2,8 @@ package p01.modelos;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import p01.interfaces.Sujeto;
 import p01.util.Constantes;
@@ -60,7 +62,8 @@ public class Combate implements Sujeto {
         // A todos los demás quitales el power up
         List<Personaje> contrincantes = this.contricantes
             .stream()
-            .filter(c -> !personajeSeleccionado.equals(c)).toList();
+            .filter(c -> !personajeSeleccionado.equals(c))
+            .collect(Collectors.toList());
         
         // y haz que uno ataque
         Personaje contraAtacante = contrincantes.get(
@@ -189,7 +192,10 @@ public class Combate implements Sujeto {
         
         return termino;
     }
-
+    
+    /**
+     * Metodo para escribir en las bitacoras los puntos de vida de un personaje o si ha sido derrotado en combate.
+     */
     public void imprimirPuntosDeVida() {
         
         notificar("\n##############################################################");
