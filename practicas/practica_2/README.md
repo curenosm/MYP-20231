@@ -15,9 +15,9 @@
 # Intrucciones de compilacion
 
 1. Dirigirse al directorio `src` de la práctica.
-2. Compilar usando `javac -sourcepath . -d ../target/ ./p02/Main.java`
+2. Compilar usando `javac -sourcepath . -d ../target/ -cp .:../lib/* ./p02/Main.java`
 3. Dirigirse al directorio generado `cd ../target`.
-4. Ejecutar usando `java p02.Main`.
+4. Ejecutar usando `java -cp .:../lib/* p02.Main`.
 
 <br/>
 
