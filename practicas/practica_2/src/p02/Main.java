@@ -9,6 +9,8 @@ public class Main {
     public static void main(String[] args) {
         Robot robot = new Robot();
 
+        println("\n\n\n");
+        
         printProjectInformation();
         
         println("\n\n\n");
