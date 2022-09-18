@@ -15,36 +15,37 @@ public class ModoApagado implements EstadoRobot {
 
     @Override
     public void suspender() {
-        error(Constantes.properties.getProperty("modo.apagado.label.suspender"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void atender() {
-        error(Constantes.properties.getProperty("modo.apagado.label.atender"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void cocinar() {
-        error(Constantes.properties.getProperty("modo.apagado.label.cocinar"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void apagar() {
-        error(Constantes.properties.getProperty("modo.apagado.label.apagar"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void caminar() {
-        error(Constantes.properties.getProperty("modo.apagado.label.caminar"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void entregarComida() {
-        error(Constantes.properties.getProperty("modo.apagado.label.entregarComida"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void encender() {
+        success("PASANDO A " + robot.getModoSuspendido());
         success(Constantes.properties.getProperty("modo.apagado.label.encender"));
         robot.setEstadoActual(robot.getModoSuspendido());
     }

@@ -16,56 +16,39 @@ public class ModoCocinando implements EstadoRobot {
 
     @Override
     public void suspender() {
-        error(Constantes.properties.getProperty("modo.cocinando.label.suspender"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void atender() {
-        error(Constantes.properties.getProperty("modo.cocinando.label.suspender"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void cocinar() {
-        if (contador++ <= 3) {
-            success(Constantes.properties.getProperty("modo.cocinando.label.cocinar.error"));
-        }
-        else {
-            error(Constantes.properties.getProperty("modo.cocinando.label.cocinar.success"));
-            robot.getPlatillo().preparar();
-            robot.setEstadoActual(robot.getModoEntregarComida());
-            contador = 0;
-            return;
-        }
-
-        contador++;
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void apagar() {
-        error(Constantes.properties.getProperty("modo.cocinando.label.apagar"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void caminar() {
-        error(Constantes.properties.getProperty("modo.cocinando.label.caminar"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void entregarComida() {
-
-        error(Constantes.properties.getProperty("modo.cocinando.label.cocinando"));
-
-        if (contador == 0) {
-            success(this.robot.getCarta().toString());
-            
-        } else if (contador == 3) {
-            entregarComida();
-        }
+        success("PASANDO A " + robot.getModoEntregarComida());
+        success(Constantes.properties.getProperty("modo.cocinando.label.entregarComida"));
+        robot.setEstadoActual(robot.getModoEntregarComida());
     }
 
     @Override
     public void encender() {
-        warning(Constantes.properties.getProperty("modo.cocinando.label.encender"));
+        warning(Constantes.properties.getProperty("mensajes.accion.encendido"));
     }
 
     @Override

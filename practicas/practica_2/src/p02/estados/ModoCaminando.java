@@ -16,19 +16,17 @@ public class ModoCaminando implements EstadoRobot {
 
     @Override
     public void suspender() {
+        success("PASANDO A " + robot.getModoSuspendido());
         success(Constantes.properties.getProperty("modo.caminando.label.suspender"));
         robot.setEstadoActual(robot.getModoSuspendido());
     }
 
     @Override
     public void atender() {
-        if (contador++ <= 3){
-            error(Constantes.properties.getProperty("modo.caminando.label.atender.error"));
-        } else {
-            success(Constantes.properties.getProperty("modo.caminando.label.atender.success"));
-            robot.setEstadoActual(robot.getModoAtendiendo());
-            contador = 0;
-        }
+        success("PASANDO A " + robot.getModoAtendiendo());
+        success(Constantes.properties.getProperty("modo.caminando.label.atender"));
+        success(this.robot.getCarta().toString());
+        robot.setEstadoActual(robot.getModoAtendiendo());
     }
 
     @Override
@@ -43,17 +41,17 @@ public class ModoCaminando implements EstadoRobot {
 
     @Override
     public void caminar() {
-        success(Constantes.properties.getProperty("modo.caminando.label.caminar"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void entregarComida() {
-        error(Constantes.properties.getProperty("modo.caminando.label.entregarComida"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void encender() {
-        warning(Constantes.properties.getProperty("modo.caminando.label.enceder"));
+        warning(Constantes.properties.getProperty("mensajes.accion.encendido"));
     }
     
     @Override

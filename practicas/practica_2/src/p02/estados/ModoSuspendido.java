@@ -13,39 +13,41 @@ public class ModoSuspendido implements EstadoRobot {
     
     @Override
     public void suspender() {
-        error(Constantes.properties.getProperty("modo.suspendido.label.suspender"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void atender() {
-        error(Constantes.properties.getProperty("modo.suspendido.label.atender"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void cocinar() {
-        error(Constantes.properties.getProperty("modo.suspendido.label.cocinar"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void apagar() {
-        version(Constantes.properties.getProperty("mensaje.despedida"));
+        success("PASANDO A " + robot.getModoApagado());
+        version(Constantes.properties.getProperty("modo.suspendido.label.apagar"));
         System.exit(0);
     }
 
     @Override
     public void caminar() {
+        success("PASANDO A " + robot.getModoCaminando());
         success(Constantes.properties.getProperty("modo.suspendido.label.caminar"));
         robot.setEstadoActual(robot.getModoCaminando());
     }
 
     @Override
     public void entregarComida() {
-        error(Constantes.properties.getProperty("modo.suspendido.label.entregarComida"));
+        error(Constantes.properties.getProperty("mensajes.accion.prohibida"));
     }
 
     @Override
     public void encender() {
-        success(Constantes.properties.getProperty("modo.suspendido.label.encender"));
+        error(Constantes.properties.getProperty("mensajes.accion.encendido"));
     }
 
     @Override

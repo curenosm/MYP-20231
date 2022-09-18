@@ -13,10 +13,6 @@ public class IteradorMenuEspecial implements Iterator<Platillo> {
     public IteradorMenuEspecial(Hashtable<Long, Platillo> platillos) {
         this.platillos = platillos;
         it = platillos.elements().asIterator();
-
-        for (Long id : platillos.keySet()) {
-            System.out.println(platillos.get(id));
-        }
     }
     
     @Override

@@ -36,6 +36,7 @@ public class Robot {
         this.modoCocinando = new ModoCocinando(this);
         this.modoEntregarComida = new ModoEntregarComida(this);
         this.carta = new Carta();
+        success("EMPEZANDO EN " + getModoApagado());
         setEstadoActual(modoApagado);
     }
     
@@ -81,7 +82,6 @@ public class Robot {
     }
 
     public void setEstadoActual(EstadoRobot estadoActual) {
-        success("PASANDO A " + estadoActual);
         this.estadoActual = estadoActual;
     }
 
