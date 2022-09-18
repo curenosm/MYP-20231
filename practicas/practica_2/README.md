@@ -14,10 +14,15 @@
 
 # Intrucciones de compilacion
 
+## Forma 1
+
 1. Dirigirse al directorio `src` de la práctica.
 2. Compilar usando `javac -sourcepath . -d ../target/ -cp .:../lib/* ./p02/Main.java`
 3. Dirigirse al directorio generado `cd ../target`.
 4. Ejecutar usando `java -cp .:../lib/* p02.Main`.
+
+## Forma 2 (Linux)
+1. Ejecuta el script haciendo `./run.sh` o bien `bash run.sh` desde la terminal, dentro de la carpeta raiz de la práctica.
 
 <br/>
 

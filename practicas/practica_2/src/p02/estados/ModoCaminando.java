@@ -22,14 +22,13 @@ public class ModoCaminando implements EstadoRobot {
 
     @Override
     public void atender() {
-        if (contador < 3){
-            error(Constantes.properties.getProperty("modo.caminando.label.atender"));
+        if (contador++ <= 3){
+            error(Constantes.properties.getProperty("modo.caminando.label.atender.error"));
         } else {
-            success(Constantes.properties.getProperty("modo.caminando.label.atender"));
+            success(Constantes.properties.getProperty("modo.caminando.label.atender.success"));
             robot.setEstadoActual(robot.getModoAtendiendo());
             contador = 0;
         }
-        
     }
 
     @Override

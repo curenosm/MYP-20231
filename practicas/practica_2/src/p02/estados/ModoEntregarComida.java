@@ -40,7 +40,8 @@ public class ModoEntregarComida implements EstadoRobot {
     @Override
     public void entregarComida() {
         success(Constantes.properties.getProperty("modo.entregarComida.label.entregarComida"));
-        robot.setEstadoActual(robot.getModoSuspendido()); 
+        robot.setEstadoActual(robot.getModoSuspendido());
+        robot.setEstadoActual(robot.getModoApagado()); 
     }
 
     @Override

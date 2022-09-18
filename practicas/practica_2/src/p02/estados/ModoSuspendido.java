@@ -34,7 +34,8 @@ public class ModoSuspendido implements EstadoRobot {
 
     @Override
     public void caminar() {
-        error(Constantes.properties.getProperty("modo.suspendido.label.caminar"));
+        success(Constantes.properties.getProperty("modo.suspendido.label.caminar"));
+        robot.setEstadoActual(robot.getModoCaminando());
     }
 
     @Override
@@ -45,7 +46,6 @@ public class ModoSuspendido implements EstadoRobot {
     @Override
     public void encender() {
         success(Constantes.properties.getProperty("modo.suspendido.label.encender"));
-        robot.setEstadoActual(robot.getModoCaminando());
     }
 
     @Override

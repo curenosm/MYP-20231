@@ -26,15 +26,18 @@ public class ModoCocinando implements EstadoRobot {
 
     @Override
     public void cocinar() {
-        if (contador++ < 3) {
-            success(Constantes.properties.getProperty("modo.cocinando.label.cocinar"));
+        if (contador++ <= 3) {
+            success(Constantes.properties.getProperty("modo.cocinando.label.cocinar.error"));
         }
         else {
-            error(Constantes.properties.getProperty("modo.cocinando.label.cocinar.completo"));
+            error(Constantes.properties.getProperty("modo.cocinando.label.cocinar.success"));
             robot.getPlatillo().preparar();
             robot.setEstadoActual(robot.getModoEntregarComida());
             contador = 0;
+            return;
         }
+
+        contador++;
     }
 
     @Override
@@ -49,7 +52,15 @@ public class ModoCocinando implements EstadoRobot {
 
     @Override
     public void entregarComida() {
-        error(Constantes.properties.getProperty("modo.cocinando.label.entregarComida"));
+
+        error(Constantes.properties.getProperty("modo.cocinando.label.cocinando"));
+
+        if (contador == 0) {
+            success(this.robot.getCarta().toString());
+            
+        } else if (contador == 3) {
+            entregarComida();
+        }
     }
 
     @Override

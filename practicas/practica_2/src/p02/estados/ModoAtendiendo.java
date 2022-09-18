@@ -21,19 +21,36 @@ public class ModoAtendiendo implements EstadoRobot {
 
     @Override
     public void atender() {
-        success(this.robot.getCarta().toString() + "aaaaaaaaaaaaaaaaaa");
 
-        if (contador++ < 3) {
-            error(Constantes.properties.getProperty("modo.atendiendo.label.atender.error"));
-        } else {
-            success(Constantes.properties.getProperty("modo.atendiendo.label.atender.success"));
-            robot.setEstadoActual(robot.getModoCocinando());
-            contador = 0;
+        error(Constantes.properties.getProperty("modo.atendiendo.label.atender.error"));
+
+        if (contador == 0) {
+            success(this.robot.getCarta().toString());
+            
+        } else if (contador == 3) {
+            cocinar();
         }
     }
 
     @Override
     public void cocinar() {
+
+        if (contador == 0) {
+            success(Constantes.properties.getProperty("mensaje.mostrarCarta"));
+            success(this.robot.getCarta().toString());
+            
+        } else if (contador < 3) {
+            error(Constantes.properties.getProperty("modo.atendiendo.label.atender.error"));
+
+        } else {
+
+            success(Constantes.properties.getProperty("modo.atendiendo.label.atender.success"));
+            robot.setEstadoActual(robot.getModoCocinando());
+            contador = 0;
+            return;
+        }
+
+        contador++;
         error(Constantes.properties.getProperty("modo.atendiendo.label.cocinar"));
     }
 
