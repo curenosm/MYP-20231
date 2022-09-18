@@ -8,6 +8,8 @@ import static p02.util.Printer.*;
 public class ModoCocinando implements EstadoRobot {
 
     Robot robot;
+    private int contador = 0;
+
     public ModoCocinando(Robot robot){
         this.robot=robot;
     }
@@ -24,9 +26,14 @@ public class ModoCocinando implements EstadoRobot {
 
     @Override
     public void cocinar() {
-        success(Constantes.properties.getProperty("modo.cocinando.label.cocinar"));
-        robot.getPlatillo().preparar();
-        robot.asignarEstado(robot.getModoEntregarComida());
+        if (contador++ < 3) {
+            success(Constantes.properties.getProperty("modo.cocinando.label.cocinar"));
+        }
+        else {
+            error(Constantes.properties.getProperty("modo.cocinando.label.cocinar.completo"));
+            robot.getPlatillo().preparar();
+            robot.setEstadoActual(robot.getModoEntregarComida());
+        }
     }
 
     @Override

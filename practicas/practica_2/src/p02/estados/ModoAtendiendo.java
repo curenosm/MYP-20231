@@ -8,6 +8,7 @@ import static p02.util.Printer.*;
 public class ModoAtendiendo implements EstadoRobot {
 
     Robot robot;
+    private int contador = 0;
 
     public ModoAtendiendo(Robot robot){
         this.robot=robot;
@@ -20,9 +21,14 @@ public class ModoAtendiendo implements EstadoRobot {
 
     @Override
     public void atender() {
-        //METODO PARA ATENDER, DEBERIA MOSTRAR LA CARTA Y RECIBIR UNA ORDEN
-        error(Constantes.properties.getProperty("modo.atendiendo.label.atender.error"));
-        success(Constantes.properties.getProperty("modo.atendiendo.label.atender.success"));
+
+        if (contador++ < 3) {
+            error(Constantes.properties.getProperty("modo.atendiendo.label.atender.error"));
+        } else {
+            success(Constantes.properties.getProperty("modo.atendiendo.label.atender.success"));
+            robot.setEstadoActual(robot.getModoCocinando());
+            contador = 0;
+        }
     }
 
     @Override

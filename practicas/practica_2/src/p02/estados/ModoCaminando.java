@@ -6,9 +6,10 @@ import p02.util.Constantes;
 import static p02.util.Printer.*;
 
 public class ModoCaminando implements EstadoRobot {
-    private int contador=0;
-
+    
     Robot robot;
+    private int contador = 0;
+
     public ModoCaminando(Robot robot){
         this.robot=robot;
     }
@@ -16,17 +17,17 @@ public class ModoCaminando implements EstadoRobot {
     @Override
     public void suspender() {
         success(Constantes.properties.getProperty("modo.caminando.label.suspender"));
-        robot.asignarEstado(robot.getModoSuspendido());
+        robot.setEstadoActual(robot.getModoSuspendido());
     }
 
     @Override
     public void atender() {
-        
         if (contador < 3){
             error(Constantes.properties.getProperty("modo.caminando.label.atender"));
         } else {
             success(Constantes.properties.getProperty("modo.caminando.label.atender"));
-            robot.asignarEstado(robot.getModoAtendiendo());
+            robot.setEstadoActual(robot.getModoAtendiendo());
+            contador = 0;
         }
         
     }

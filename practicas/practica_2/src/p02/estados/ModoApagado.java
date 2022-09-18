@@ -46,7 +46,7 @@ public class ModoApagado implements EstadoRobot {
     @Override
     public void encender() {
         success(Constantes.properties.getProperty("modo.apagado.label.encender"));
-        robot.asignarEstado(robot.getModoSuspendido());
+        robot.setEstadoActual(robot.getModoSuspendido());
     }
 
     @Override

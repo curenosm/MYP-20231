@@ -13,7 +13,7 @@ public class Main {
 
         println("");
         printProjectInformation();
-        println("\n\n\n");
+        println("");
 
 
         Robot robot = new Robot();
@@ -33,25 +33,25 @@ public class Main {
                         System.exit(0);
                     break;
                     case 1: 
-                        robot.getEstadoActual().apagar();
+                    robot.getEstadoActual().encender();
                     break;
                     case 2: 
-                        robot.getEstadoActual().atender();
+                    robot.getEstadoActual().caminar();
                     break;
                     case 3: 
-                        robot.getEstadoActual().caminar();
+                    robot.getEstadoActual().atender();
                     break;
                     case 4: 
-                        robot.getEstadoActual().cocinar();
+                    robot.getEstadoActual().cocinar();
                     break;
                     case 5: 
-                        robot.getEstadoActual().encender();
+                    robot.getEstadoActual().entregarComida();
                     break;
                     case 6: 
-                        robot.getEstadoActual().entregarComida();
+                    robot.getEstadoActual().suspender();
                     break;
                     case 7: 
-                        robot.getEstadoActual().suspender();
+                        robot.getEstadoActual().apagar();
                     break;
                     default:
                         error(properties.getProperty("error.opcion.incorrecta"));
