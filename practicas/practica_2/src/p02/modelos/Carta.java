@@ -12,10 +12,19 @@ import static p02.util.Constantes.platillosMenuDelDia;
 import static p02.util.Constantes.platillosMenuEspecial;
 import static p02.util.Constantes.platillosMenuGeneral;
 
+/**
+ * Clase que simula una carta con los distintos menus
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class Carta {
     
     public LinkedList<Menu> menus;
 
+    /**
+     * Constructor sin parametros de la clase
+     */
     public Carta() {
         menus = new LinkedList<Menu>();
 
@@ -29,6 +38,10 @@ public class Carta {
 
     }
 
+    /**
+     * Representacion en cadena de la clase
+     * @return String
+     */
     @Override
     public String toString() {
         String res = "";

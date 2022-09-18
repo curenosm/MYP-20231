@@ -10,6 +10,12 @@ import java.util.Properties;
 import p02.modelos.Platillo;
 import static p02.util.Printer.*;
 
+/**
+ *Clase que almacena las constantes utilizadas para la practica
+ *@author Alcantara Estrada Kevin Isaac
+ *@author Curenio Sanchez Misael
+ *@author Hernandez Paramo Elizabeth
+ */
 public class Constantes {
 
     public static Properties properties;
@@ -18,7 +24,7 @@ public class Constantes {
         properties = loadProperties();
     }
 
-    
+    //Lista de platillos que constituyen al menu general
     public static List<Platillo> platillosMenuGeneral = List.of(
         new Platillo(
             1L,
@@ -46,6 +52,7 @@ public class Constantes {
         )
     );
 
+    //Lista de platillos que constituyen al menu especial
     public static List<Platillo> platillosMenuEspecial = List.of(
         new Platillo(
             4L,
@@ -73,7 +80,7 @@ public class Constantes {
         )
     );
 
-
+    //Lista de platillos que constituyen al menu del dia
     public static List<Platillo> platillosMenuDelDia = List.of(
         new Platillo(
             7L,
@@ -101,7 +108,7 @@ public class Constantes {
         )
     );
 
-
+    
     public static Properties loadProperties() {
 
         try (InputStream input = new FileInputStream("../application.properties")) {
