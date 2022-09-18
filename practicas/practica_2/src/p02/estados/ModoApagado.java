@@ -1,46 +1,55 @@
 package p02.estados;
 
+import p02.modelos.Robot;
+
 public class ModoApagado implements EstadoRobot {
+
+    Robot robot;
+    public ModoApagado(Robot robot){
+        this.robot=robot;
+    }
 
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
+        System.out.println("Estoy apagado");
         
     }
 
     @Override
     public void atender() {
-        // TODO Auto-generated method stub
+        System.out.println("Estoy apagado");
         
     }
 
     @Override
     public void cocinar() {
-        // TODO Auto-generated method stub
+        System.out.println("Estoy apagado");
         
     }
 
     @Override
     public void apagar() {
-        // TODO Auto-generated method stub
+        System.out.println("Estoy apagado");
         
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
+        System.out.println("Estoy apagado");
         
     }
 
     @Override
     public void entregarComida() {
-        // TODO Auto-generated method stub
+        System.out.println("Estoy apagado");
         
     }
 
     @Override
     public void encender() {
-        // TODO Auto-generated method stub
+        System.out.println("Encendiendo...");
+        System.out.println("Pasando a estado de suspencion");
+        robot.asignarEstado(robot.getModoSuspendido());
         
     }
     

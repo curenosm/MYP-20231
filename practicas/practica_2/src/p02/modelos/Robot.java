@@ -3,19 +3,80 @@ package p02.modelos;
 import java.util.Collection;
 
 import p02.estados.EstadoRobot;
+import p02.estados.ModoApagado;
+import p02.estados.ModoAtendiendo;
+import p02.estados.ModoCaminando;
+import p02.estados.ModoCocinando;
+import p02.estados.ModoEntregarComida;
+import p02.estados.ModoSuspendido;
 
 public class Robot {
 
     private EstadoRobot estadoActual;
     private Collection<Platillo> ordenActual;
+    private Platillo platillo;
     private Boolean ordenCompleta;
+    private ModoApagado modoApagado;
+    private ModoSuspendido modoSuspendido;
+    private ModoAtendiendo modoAtendiendo;
+    private ModoCaminando modoCaminando;
+    private ModoCocinando modoCocinando;
+    private ModoEntregarComida modoEntregarComida;
 
-    void asignarEstado(EstadoRobot estado) {
+    public Robot(){
+        this.estadoActual= new ModoApagado(this);
+        this.modoApagado = new ModoApagado(this);
+        this.modoSuspendido = new ModoSuspendido(this);
+        this.modoAtendiendo = new ModoAtendiendo(this);
+        this.modoCaminando = new ModoCaminando(this);
+        this.modoCocinando = new ModoCocinando(this);
+        this.modoEntregarComida = new ModoEntregarComida(this);
+    }
+    
+    public void setPlatillo(Platillo platillo){
+        this.platillo=platillo;
+    }
+
+   public Platillo getPlatillo(){
+       return this.platillo;
+   }
+
+   public void asignarEstado(EstadoRobot estado) {
         this.estadoActual = estado;
+      
     }
 
     public EstadoRobot getEstadoActual() {
         return estadoActual;
+    }
+
+    public EstadoRobot getModoApagado(){
+        return this.modoApagado;
+    }
+
+
+    public EstadoRobot getModoSuspendido(){
+        return this.modoSuspendido;
+    }
+
+
+    public EstadoRobot getModoCocinando(){
+        return this.modoCocinando;
+    }
+
+
+    public EstadoRobot getModoCaminando(){
+        return this.modoCaminando;
+    }
+
+    
+    public EstadoRobot getModoAtendiendo(){
+        return this.modoAtendiendo;
+    }
+
+
+    public EstadoRobot getModoEntregarComida(){
+        return this.modoEntregarComida;
     }
 
     public void setEstadoActual(EstadoRobot estadoActual) {

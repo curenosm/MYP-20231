@@ -1,46 +1,55 @@
 package p02.estados;
 
+import p02.modelos.Platillo;
+import p02.modelos.Robot;
+
 public class ModoCocinando implements EstadoRobot {
+
+    Robot robot;
+    public ModoCocinando(Robot robot){
+        this.robot=robot;
+    }
 
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
+        System.out.println("No me puedo suspender en este momento");
         
     }
 
     @Override
     public void atender() {
-        // TODO Auto-generated method stub
+        System.out.println("No puedo atenderte en este momento");
         
     }
 
     @Override
     public void cocinar() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("Es hora de preparar tu platillo");
+        robot.getPlatillo().preparar();
+       robot.asignarEstado(robot.getModoEntregarComida());
     }
 
     @Override
     public void apagar() {
-        // TODO Auto-generated method stub
+        System.out.println("Accion no disponible");
         
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
+        System.out.println("No puedo caminar mientras cocino, es peligroso");
         
     }
 
     @Override
     public void entregarComida() {
-        // TODO Auto-generated method stub
+        System.out.println("Podre entregarte tu comida al terminar de prepararla");
         
     }
 
     @Override
     public void encender() {
-        // TODO Auto-generated method stub
+        System.out.println("Actualmente ya estoy encendido");
         
     }
     

@@ -1,46 +1,57 @@
 package p02.estados;
 
+import p02.modelos.Robot;
+
 public class ModoSuspendido implements EstadoRobot {
 
+    Robot robot;
+    public ModoSuspendido(Robot robot){
+        this.robot=robot;
+    }
+    
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
+        System.out.println("Ya estoy suspendido.");
         
     }
 
     @Override
     public void atender() {
-        // TODO Auto-generated method stub
+        System.out.println("Me es imposible atender estando suspendido");
         
     }
 
     @Override
     public void cocinar() {
-        // TODO Auto-generated method stub
+        System.out.println("No puedo cocinar estando suspendido");
         
     }
 
     @Override
     public void apagar() {
-        // TODO Auto-generated method stub
+        System.out.println("Apagando sistema...");
+        System.out.println("Apagado, hasta luego");
+        System.exit(0);
         
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
+        System.out.println("Inadmisible tal accion");
         
     }
 
     @Override
     public void entregarComida() {
-        // TODO Auto-generated method stub
+        System.out.println("No me es posible tal accion");
         
     }
 
     @Override
     public void encender() {
-        // TODO Auto-generated method stub
+        System.out.println("Encendiendo...");
+        System.out.println("Me dirijo hacia su mesa");
+        this.robot.asignarEstado(robot.getModoCaminando());
         
     }
     
