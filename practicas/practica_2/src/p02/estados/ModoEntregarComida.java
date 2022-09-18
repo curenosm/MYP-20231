@@ -1,58 +1,55 @@
 package p02.estados;
 
 import p02.modelos.Robot;
+import p02.util.Constantes;
+import static p02.util.Printer.*;
 
 public class ModoEntregarComida implements EstadoRobot {
+    
     Robot robot;
 
-   
     public ModoEntregarComida(Robot robot){
         this.robot=robot;
     }
 
     @Override
     public void suspender() {
-        System.out.println("No me puedo suspender");
-        
+        error(Constantes.properties.getProperty("modo.entregarComida.label.suspender"));
     }
 
     @Override
     public void atender() {
-        System.out.println("Ya te estoy atendiendo");
-        
+        error(Constantes.properties.getProperty("modo.entregarComida.label.atender"));
     }
 
     @Override
     public void cocinar() {
-        System.out.println("Actualmente ya he cocicnado todo");
-        
+        error(Constantes.properties.getProperty("modo.entregarComida.label.cocinar"));
     }
 
     @Override
     public void apagar() {
-        System.out.println("Para apagarme debo estar suspendido");
-        
+        error(Constantes.properties.getProperty("modo.entregarComida.label.apagar"));
     }
 
     @Override
     public void caminar() {
-        System.out.println("No se me permite caminar en estos momentos");
-        
+        error(Constantes.properties.getProperty("modo.entregarComida.label.caminar"));
     }
 
     @Override
     public void entregarComida() {
-        System.out.println("Espero disfrute su comida");
-        System.out.println("Entrando en modo suspendido");
-         robot.asignarEstado(robot.getModoSuspendido()); 
-
-        
+        success(Constantes.properties.getProperty("modo.entregarComida.label.entregarComida"));
+        robot.asignarEstado(robot.getModoSuspendido()); 
     }
 
     @Override
     public void encender() {
-        System.out.println("Ya estoy encendido");
-        
+        warning(Constantes.properties.getProperty("modo.entregarComida.label.suspender"));
     }
     
+    @Override
+    public String toString() {
+        return Constantes.properties.getProperty("modo.entregarComida");
+    }
 }

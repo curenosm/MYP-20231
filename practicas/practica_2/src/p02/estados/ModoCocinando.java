@@ -2,6 +2,8 @@ package p02.estados;
 
 import p02.modelos.Platillo;
 import p02.modelos.Robot;
+import p02.util.Constantes;
+import static p02.util.Printer.*;
 
 public class ModoCocinando implements EstadoRobot {
 
@@ -12,45 +14,44 @@ public class ModoCocinando implements EstadoRobot {
 
     @Override
     public void suspender() {
-        System.out.println("No me puedo suspender en este momento");
-        
+        error(Constantes.properties.getProperty("modo.cocinando.label.suspender"));
     }
 
     @Override
     public void atender() {
-        System.out.println("No puedo atenderte en este momento");
-        
+        error(Constantes.properties.getProperty("modo.cocinando.label.suspender"));
     }
 
     @Override
     public void cocinar() {
-        System.out.println("Es hora de preparar tu platillo");
+        success(Constantes.properties.getProperty("modo.cocinando.label.cocinar"));
         robot.getPlatillo().preparar();
-       robot.asignarEstado(robot.getModoEntregarComida());
+        robot.asignarEstado(robot.getModoEntregarComida());
     }
 
     @Override
     public void apagar() {
-        System.out.println("Accion no disponible");
-        
+        error(Constantes.properties.getProperty("modo.cocinando.label.apagar"));
     }
 
     @Override
     public void caminar() {
-        System.out.println("No puedo caminar mientras cocino, es peligroso");
-        
+        error(Constantes.properties.getProperty("modo.cocinando.label.caminar"));
     }
 
     @Override
     public void entregarComida() {
-        System.out.println("Podre entregarte tu comida al terminar de prepararla");
-        
+        error(Constantes.properties.getProperty("modo.cocinando.label.entregarComida"));
     }
 
     @Override
     public void encender() {
-        System.out.println("Actualmente ya estoy encendido");
-        
+        warning(Constantes.properties.getProperty("modo.cocinando.label.encender"));
+    }
+
+    @Override
+    public String toString() {
+        return Constantes.properties.getProperty("modo.cocinando");
     }
     
 }

@@ -1,9 +1,12 @@
 package p02.estados;
 
 import p02.modelos.Robot;
+import p02.util.Constantes;
+
+import static p02.util.Printer.*;
 
 public class ModoCaminando implements EstadoRobot {
-   private int contador=0;
+    private int contador=0;
 
     Robot robot;
     public ModoCaminando(Robot robot){
@@ -12,19 +15,17 @@ public class ModoCaminando implements EstadoRobot {
 
     @Override
     public void suspender() {
-        System.out.println("Suspendiendo...");
-        System.out.println("Suspendido");
+        success(Constantes.properties.getProperty("modo.caminando.label.suspender"));
         robot.asignarEstado(robot.getModoSuspendido());
-        
     }
 
     @Override
     public void atender() {
-        if(contador<3){
-            System.out.println("Aun no llego a tu mesa");
-            
-        }else{
-            System.out.println("Listo para atenderte");
+        
+        if (contador < 3){
+            error(Constantes.properties.getProperty("modo.caminando.label.atender"));
+        } else {
+            success(Constantes.properties.getProperty("modo.caminando.label.atender"));
             robot.asignarEstado(robot.getModoAtendiendo());
         }
         
@@ -32,37 +33,31 @@ public class ModoCaminando implements EstadoRobot {
 
     @Override
     public void cocinar() {
-        System.out.println("No es posible cocinar actualmente");
-        
+        error(Constantes.properties.getProperty("modo.caminando.label.cocinar"));
     }
 
     @Override
     public void apagar() {
-        System.out.println("Para apagarme debo estar suspendido");
-        
+        error(Constantes.properties.getProperty("modo.caminando.label.apagar"));
     }
 
     @Override
     public void caminar() {
-        if(contador <3){
-            System.out.println("Yendo a tu mesa");
-            contador++;
-        }else{
-            System.out.println("No puedo caminar mas, ya he llegado a tu mesa, pero podria atenderte");
-        }
-        
+        success(Constantes.properties.getProperty("modo.caminando.label.caminar"));
     }
 
     @Override
     public void entregarComida() {
-        System.out.println("Pero si aun no solicitas tu comida...");
-        
+        error(Constantes.properties.getProperty("modo.caminando.label.entregarComida"));
     }
 
     @Override
     public void encender() {
-        System.out.println("Actualmente ya estoy encendido");
-        
+        warning(Constantes.properties.getProperty("modo.caminando.label.enceder"));
     }
     
+    @Override
+    public String toString() {
+        return Constantes.properties.getProperty("modo.caminando");
+    }
 }

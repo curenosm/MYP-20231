@@ -1,79 +1,70 @@
 package p02;
 
 import p02.modelos.*;
+import p02.util.Constantes;
+
 import java.util.Scanner;
 import static p02.util.Printer.*;
+import static p02.util.Constantes.*;
 
 public class Main {
 
-    
     public static void main(String[] args) {
+
+        println("");
+        printProjectInformation();
+        println("\n\n\n");
+
+
         Robot robot = new Robot();
-        Scanner esc = new Scanner(System.in);
-        int elec=0;
-        while(true){
+        Scanner scanner = new Scanner(System.in);
+
+        int opcionElegida = -1;
+
+        while(opcionElegida != 0){
+
             try {
-                System.out.println("Que desea hacer?");
-                System.out.println("1.Encender");
-                System.out.println("2.Suspender");
-                System.out.println("3.Caminar");
-                System.out.println("4.Atender");
-                System.out.println("5.Cocinar");
-                System.out.println("6.Entregar comida");
-                System.out.println("7.Apagar");
-                elec= esc.nextInt();
-               
-               
-                switch(elec){
+                bold(properties.getProperty("menu.acciones"));
+
+                opcionElegida = scanner.nextInt();
+                
+                switch(opcionElegida){
+                    case 0:
+                        System.exit(0);
+                    break;
                     case 1: 
-                    robot.getEstadoActual().encender();
+                        robot.getEstadoActual().apagar();
                     break;
-
                     case 2: 
-                    robot.getEstadoActual().suspender();
+                        robot.getEstadoActual().atender();
                     break;
-
                     case 3: 
-                    robot.getEstadoActual().caminar();
+                        robot.getEstadoActual().caminar();
                     break;
-
                     case 4: 
-                    robot.getEstadoActual().atender();
+                        robot.getEstadoActual().cocinar();
                     break;
-
                     case 5: 
-                    robot.getEstadoActual().cocinar();
+                        robot.getEstadoActual().encender();
                     break;
-
                     case 6: 
-                    robot.getEstadoActual().entregarComida();
+                        robot.getEstadoActual().entregarComida();
                     break;
-
                     case 7: 
-                    robot.getEstadoActual().apagar();
+                        robot.getEstadoActual().suspender();
                     break;
-
                     default:
-                    System.out.println("Elige una opcion correcta");
+                        error(properties.getProperty("error.opcion.incorrecta"));
                     break;
                 }
-           
-               
 
-                
+            } catch (NumberFormatException e) {
+                scanner.next();
             } catch (Exception e) {
-                esc.next();
+                scanner = new Scanner(System.in);
             }
+        }
 
-        
-    }
-    
-        
-       /*  println("\n\n\n");
-        
-        printProjectInformation();
-        
-        println("\n\n\n");*/
     }
 
 }

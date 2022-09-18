@@ -1,6 +1,8 @@
 package p02.estados;
 
 import p02.modelos.Robot;
+import p02.util.Constantes;
+import static p02.util.Printer.*;
 
 public class ModoSuspendido implements EstadoRobot {
 
@@ -11,48 +13,44 @@ public class ModoSuspendido implements EstadoRobot {
     
     @Override
     public void suspender() {
-        System.out.println("Ya estoy suspendido.");
-        
+        error(Constantes.properties.getProperty("modo.suspendido.label.suspender"));
     }
 
     @Override
     public void atender() {
-        System.out.println("Me es imposible atender estando suspendido");
-        
+        error(Constantes.properties.getProperty("modo.suspendido.label.atender"));
     }
 
     @Override
     public void cocinar() {
-        System.out.println("No puedo cocinar estando suspendido");
-        
+        error(Constantes.properties.getProperty("modo.suspendido.label.cocinar"));
     }
 
     @Override
     public void apagar() {
-        System.out.println("Apagando sistema...");
-        System.out.println("Apagado, hasta luego");
+        version(Constantes.properties.getProperty("mensaje.despedida"));
         System.exit(0);
-        
     }
 
     @Override
     public void caminar() {
-        System.out.println("Inadmisible tal accion");
-        
+        error(Constantes.properties.getProperty("modo.suspendido.label.caminar"));
     }
 
     @Override
     public void entregarComida() {
-        System.out.println("No me es posible tal accion");
-        
+        error(Constantes.properties.getProperty("modo.suspendido.label.entregarComida"));
     }
 
     @Override
     public void encender() {
-        System.out.println("Encendiendo...");
-        System.out.println("Me dirijo hacia su mesa");
+        success(Constantes.properties.getProperty("modo.suspendido.label.encender"));
         this.robot.asignarEstado(robot.getModoCaminando());
-        
+    }
+
+    @Override
+    public String toString() {
+        return Constantes.properties.getProperty("modo.suspendido");
     }
     
 }

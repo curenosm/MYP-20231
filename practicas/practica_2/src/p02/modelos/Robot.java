@@ -10,6 +10,8 @@ import p02.estados.ModoCocinando;
 import p02.estados.ModoEntregarComida;
 import p02.estados.ModoSuspendido;
 
+import static p02.util.Printer.*;
+
 public class Robot {
 
     private EstadoRobot estadoActual;
@@ -37,13 +39,12 @@ public class Robot {
         this.platillo=platillo;
     }
 
-   public Platillo getPlatillo(){
-       return this.platillo;
-   }
+    public Platillo getPlatillo(){
+        return this.platillo;
+    }
 
-   public void asignarEstado(EstadoRobot estado) {
+    public void asignarEstado(EstadoRobot estado) {
         this.estadoActual = estado;
-      
     }
 
     public EstadoRobot getEstadoActual() {
@@ -80,6 +81,7 @@ public class Robot {
     }
 
     public void setEstadoActual(EstadoRobot estadoActual) {
+        success("PASANDO A ESTADO: " + estadoActual);
         this.estadoActual = estadoActual;
     }
 
@@ -99,5 +101,4 @@ public class Robot {
         this.ordenCompleta = ordenCompleta;
     }
 
-    
 }
