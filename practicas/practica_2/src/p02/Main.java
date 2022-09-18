@@ -33,22 +33,22 @@ public class Main {
                         System.exit(0);
                     break;
                     case 1: 
-                    robot.getEstadoActual().encender();
+                        robot.getEstadoActual().encender();
                     break;
                     case 2: 
-                    robot.getEstadoActual().caminar();
+                        robot.getEstadoActual().caminar();
                     break;
                     case 3: 
-                    robot.getEstadoActual().atender();
+                        robot.getEstadoActual().atender();
                     break;
                     case 4: 
-                    robot.getEstadoActual().cocinar();
+                        robot.getEstadoActual().cocinar();
                     break;
                     case 5: 
-                    robot.getEstadoActual().entregarComida();
+                        robot.getEstadoActual().entregarComida();
                     break;
                     case 6: 
-                    robot.getEstadoActual().suspender();
+                        robot.getEstadoActual().suspender();
                     break;
                     case 7: 
                         robot.getEstadoActual().apagar();
