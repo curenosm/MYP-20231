@@ -25,6 +25,8 @@ public class Robot {
     private ModoCocinando modoCocinando;
     private ModoEntregarComida modoEntregarComida;
 
+    private Carta carta;
+
     public Robot(){
         this.estadoActual= new ModoApagado(this);
         this.modoApagado = new ModoApagado(this);
@@ -33,6 +35,7 @@ public class Robot {
         this.modoCaminando = new ModoCaminando(this);
         this.modoCocinando = new ModoCocinando(this);
         this.modoEntregarComida = new ModoEntregarComida(this);
+        this.carta = new Carta();
         setEstadoActual(modoApagado);
     }
     
@@ -96,6 +99,10 @@ public class Robot {
 
     public void setOrdenCompleta(Boolean ordenCompleta) {
         this.ordenCompleta = ordenCompleta;
+    }
+
+    public Carta getCarta() {
+        return carta;
     }
 
 }

@@ -21,6 +21,7 @@ public class ModoAtendiendo implements EstadoRobot {
 
     @Override
     public void atender() {
+        success(this.robot.getCarta().toString() + "aaaaaaaaaaaaaaaaaa");
 
         if (contador++ < 3) {
             error(Constantes.properties.getProperty("modo.atendiendo.label.atender.error"));

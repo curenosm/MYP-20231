@@ -14,18 +14,29 @@ import static p02.util.Constantes.platillosMenuGeneral;
 
 public class Carta {
     
-    public Collection<Menu> menus;
+    public LinkedList<Menu> menus;
 
     public Carta() {
         menus = new LinkedList<Menu>();
 
-        Menu menuEspecial = new MenuEspecial(platillosMenuEspecial);
-        Menu menuDelDia = new MenuDelDia(platillosMenuDelDia);
-        Menu menuGeneral = new MenuGeneral(platillosMenuGeneral);
+        MenuEspecial menuEspecial = new MenuEspecial(platillosMenuEspecial);
+        MenuDelDia menuDelDia = new MenuDelDia(platillosMenuDelDia);
+        MenuGeneral menuGeneral = new MenuGeneral(platillosMenuGeneral);
 
         menus.add(menuEspecial);
         menus.add(menuDelDia);
         menus.add(menuGeneral);
 
+    }
+
+    @Override
+    public String toString() {
+        String res = "";
+
+        for (Menu menu: menus) {
+            res += menu.toString();
+        }
+
+        return res;
     }
 }

@@ -7,6 +7,7 @@ import p02.modelos.Platillo;
 public class MenuGeneral implements Menu {
     
     private Platillo[] platillos;
+    private int curIndex = 0;
 
     public MenuGeneral(Collection<Platillo> platillosDelMenu) {
         this.platillos = new Platillo[platillosDelMenu.size()];
@@ -23,13 +24,32 @@ public class MenuGeneral implements Menu {
 
     @Override
     public boolean hasNext() {
-        // TODO Auto-generated method stub
-        return false;
+        return curIndex != platillos.length - 1;
     }
 
     @Override
     public Platillo next() {
-        // TODO Auto-generated method stub
-        return null;
+        Platillo siguiente = null;
+
+        if (hasNext()) {
+            siguiente = platillos[curIndex++];
+        } else {
+            curIndex = 0;
+        }
+
+        return siguiente;
+    }
+
+
+    @Override
+    public String toString() {
+        String res = "MENU GENERAL\n\n";
+        
+        for (Platillo p: platillos) {
+            res += p.toString();
+        }
+
+        return res;
+
     }
 }

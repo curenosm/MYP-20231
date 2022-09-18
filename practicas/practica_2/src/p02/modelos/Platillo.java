@@ -83,4 +83,13 @@ public class Platillo extends Preparacion {
         super.preparar(this);
     }
 
+    @Override
+    public String toString() {
+        return "Id: " + this.id + "\n"
+            + "Nombre: " + this.nombre + "\n"
+            + "Descripcion: " + this.descripcion + "\n"
+            + "Precio: $" + this.precio.toString() + "\n"
+            + (tieneQueso ? "CON QUESO" + "\n" : "")
+            + (esVegetariano ? "PLATILLO VEGETARIANO" + "\n" : "") + "\n";
+    }
 }

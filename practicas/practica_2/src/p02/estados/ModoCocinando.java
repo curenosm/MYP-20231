@@ -33,6 +33,7 @@ public class ModoCocinando implements EstadoRobot {
             error(Constantes.properties.getProperty("modo.cocinando.label.cocinar.completo"));
             robot.getPlatillo().preparar();
             robot.setEstadoActual(robot.getModoEntregarComida());
+            contador = 0;
         }
     }
 
