@@ -19,8 +19,6 @@ public class Main {
         Robot robot = new Robot();
         Scanner scanner = new Scanner(System.in);
 
-        println(robot.getCarta().toString());
-
         int opcionElegida = -1;
 
         while(opcionElegida != 0){

@@ -1,14 +1,14 @@
 package p02.menus;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 import p02.modelos.Platillo;
 
-public class MenuGeneral implements Menu {
+public class MenuGeneral extends Menu {
     
     private Platillo[] platillos;
-    private int curIndex = 0;
-
+    
     public MenuGeneral(Collection<Platillo> platillosDelMenu) {
         this.platillos = new Platillo[platillosDelMenu.size()];
 
@@ -23,33 +23,19 @@ public class MenuGeneral implements Menu {
     }
 
     @Override
-    public boolean hasNext() {
-        return curIndex != platillos.length - 1;
-    }
-
-    @Override
-    public Platillo next() {
-        Platillo siguiente = null;
-
-        if (hasNext()) {
-            siguiente = platillos[curIndex++];
-        } else {
-            curIndex = 0;
-        }
-
-        return siguiente;
-    }
-
-
-    @Override
     public String toString() {
         String res = "MENU GENERAL\n\n";
+        Iterator<Platillo> it = createIterator();
         
-        for (Platillo p: platillos) {
-            res += p.toString();
+        while (it.hasNext()) {
+            res += it.next().toString();
         }
 
         return res;
+    }
 
+    @Override
+    public Iterator<Platillo> createIterator() {
+        return new IteradorMenuGeneral(platillos);
     }
 }
