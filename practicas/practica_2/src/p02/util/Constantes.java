@@ -10,7 +10,6 @@ import java.util.Properties;
 import p02.modelos.Platillo;
 import p02.modelos.PlatilloNoVegetariano;
 import p02.modelos.PlatilloVegetariano;
-import static p02.util.Printer.*;
 
 /**
  *Clase que almacena las constantes utilizadas para la practica

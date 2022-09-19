@@ -1,15 +1,11 @@
 package p02.estados;
 
-import p02.modelos.Platillo;
+import java.util.Scanner;
+
 import p02.modelos.Robot;
 import p02.util.Constantes;
 
 import static p02.util.Printer.*;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
 
 /**
  * Clase que simula el comportamiento del robot estando en modo atendiendo

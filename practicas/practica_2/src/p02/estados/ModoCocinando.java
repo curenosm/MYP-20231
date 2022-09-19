@@ -1,6 +1,5 @@
 package p02.estados;
 
-import p02.modelos.Platillo;
 import p02.modelos.Robot;
 import p02.util.Constantes;
 import static p02.util.Printer.*;

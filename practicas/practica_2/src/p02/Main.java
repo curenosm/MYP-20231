@@ -1,9 +1,9 @@
 package p02;
 
-import p02.modelos.*;
-import p02.util.Constantes;
-
 import java.util.Scanner;
+
+import p02.modelos.*;
+
 import static p02.util.Printer.*;
 import static p02.util.Constantes.*;
 
