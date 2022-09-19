@@ -6,10 +6,14 @@ import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Properties;
+import java.util.Scanner;
 
 import p02.modelos.Platillo;
 import p02.modelos.PlatilloNoVegetariano;
 import p02.modelos.PlatilloVegetariano;
+import p02.modelos.Robot;
+
+import static p02.util.Printer.*;
 
 /**
  *Clase que almacena las constantes utilizadas para la practica
@@ -20,6 +24,7 @@ import p02.modelos.PlatilloVegetariano;
 public class Constantes {
 
     public static Properties properties;
+    public static Scanner scanner = new Scanner(System.in);
 
     static {
         properties = loadProperties();
@@ -116,6 +121,36 @@ public class Constantes {
         }
 
         return null;
+    }
+
+    /**
+     * Metodo que solicita al usuario un long por medio de stdout
+     * 
+     * @param robot Robot con la carta de platillos posibles
+     * @return
+     */
+    public static Platillo solicitarPedido(Robot robot) {
+
+        Long id = 0L;
+        Platillo platillo = null;
+
+        try {
+            id = Long.parseLong(scanner.nextLine());
+
+            platillo = robot.getCarta().buscarPlatillo(id);
+
+            if (platillo == null) {
+                throw new Exception();
+            }
+
+        } catch (Exception e) {
+            error("ELIJA SOLO UNA OPCION VALIDA, POR FAVOR");
+            scanner = new Scanner(System.in);
+            return solicitarPedido(robot);
+        }
+
+        return platillo;
+
     }
 
 }

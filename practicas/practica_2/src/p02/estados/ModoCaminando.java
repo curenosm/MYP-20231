@@ -1,14 +1,11 @@
 package p02.estados;
 
+import p02.modelos.Platillo;
 import p02.modelos.Robot;
 import p02.util.Constantes;
 
 import static p02.util.Printer.*;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
+import static p02.util.Constantes.solicitarPedido;
 
 /**
  * Clase que simula el comportamiento del robot estando en modo caminando
@@ -19,8 +16,6 @@ import java.util.stream.Collectors;
 public class ModoCaminando implements EstadoRobot {
     
     Robot robot;
-    private int contador = 0;
-    private Scanner scanner = new Scanner(System.in);
 
     /**
      * Constructor con parametros de la clase
@@ -53,19 +48,11 @@ public class ModoCaminando implements EstadoRobot {
         robot.setEstadoActual(robot.getModoAtendiendo());
         success(this.robot.getCarta().toString());
         warning("ESCRIBA EL ID DE LO QUE VA A ORDENAR");
-        warning("PARA ORDENAR MAS DE UN PRODUCTO, ESCRIBA LOS IDs SEPARADOS POR COMAS");
 
-        List<Long> res = Arrays
-            .stream(scanner.nextLine().split(","))
-            .map(s -> Long.parseLong(s))
-            .collect(Collectors.toList());
+        Platillo pedido = solicitarPedido(this.robot);
 
-        res.forEach(id -> {
-            robot.getOrdenActual().add(
-                robot.getCarta().buscarPlatillo(id)
-            );
-        });
-
+        println(pedido.toString());
+        this.robot.getOrdenActual().add(pedido);
     }
 
     /**

@@ -71,6 +71,7 @@ public class ModoCocinando implements EstadoRobot {
         success("PASANDO A " + robot.getModoEntregarComida());
         success(Constantes.properties.getProperty("modo.cocinando.label.entregarComida"));
         robot.setEstadoActual(robot.getModoEntregarComida());
+        robot.getOrdenActual().clear();
     }
 
     /**
