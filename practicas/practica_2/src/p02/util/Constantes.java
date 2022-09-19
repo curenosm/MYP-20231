@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Properties;
 
 import p02.modelos.Platillo;
-import static p02.util.Printer.*;
+import p02.modelos.PlatilloNoVegetariano;
+import p02.modelos.PlatilloVegetariano;
 
 public class Constantes {
 
@@ -17,87 +18,68 @@ public class Constantes {
     static {
         properties = loadProperties();
     }
-
     
     public static List<Platillo> platillosMenuGeneral = List.of(
-        new Platillo(
+        new PlatilloNoVegetariano(
             1L,
             "Hamburguesa sencilla",
             "Una clasica",
-            BigDecimal.valueOf(9.99),
-            false, 
-            false
+            BigDecimal.valueOf(9.99)
         ),
-        new Platillo(
+        new PlatilloNoVegetariano(
             2L,
             "Hamburguesa hawaiana",
             "Con jamon y piña",
-            BigDecimal.valueOf(13.99),
-            true,
-            false
+            BigDecimal.valueOf(13.99)
         ),
-        new Platillo(
+        new PlatilloNoVegetariano(
             3L,
             "Hamburguesa BBQ",
             "Con tocino y salsa bbq",
-            BigDecimal.valueOf(13.99),
-            true,
-            false
+            BigDecimal.valueOf(13.99)
         )
     );
 
     public static List<Platillo> platillosMenuEspecial = List.of(
-        new Platillo(
+        new PlatilloVegetariano(
             4L,
             "Hamburguesa de chilaquiles",
             "Una clasica",
-            BigDecimal.valueOf(12.99),
-            true, 
-            true
+            BigDecimal.valueOf(12.99)
         ),
-        new Platillo(
+        new PlatilloVegetariano(
             5L,
-            "Hamburguesa sin pan",
-            "Con jamon y piña",
-            BigDecimal.valueOf(19.99),
-            false,
-            false
+            "Hamburguesa de soya",
+            "Con el doble de verduras",
+            BigDecimal.valueOf(19.99)
         ),
-        new Platillo(
+        new PlatilloNoVegetariano(
             6L,
             "Hamburguesa con toño",
             "Incluye de todo, se puede desbordar",
-            BigDecimal.valueOf(30.00),
-            true,
-            false
+            BigDecimal.valueOf(30.00)
         )
     );
 
 
     public static List<Platillo> platillosMenuDelDia = List.of(
-        new Platillo(
+        new PlatilloNoVegetariano(
             7L,
-            "Desayuno mexicano",
+            "Mexicana",
             "Una clasica",
-            BigDecimal.valueOf(8.99),
-            false, 
-            false
+            BigDecimal.valueOf(8.99)
         ),
-        new Platillo(
+        new PlatilloVegetariano(
             8L,
-            "Papas",
-            "A la francesa",
-            BigDecimal.valueOf(5.99),
-            false,
-            true
+            "Hamburguesa de papas",
+            "A la francesa con pan vegano",
+            BigDecimal.valueOf(5.99)
         ),
-        new Platillo(
+        new PlatilloNoVegetariano(
             9L,
-            "Vaso de agua",
-            "Incluye de todo, se puede desbordar",
-            BigDecimal.valueOf(2.99),
-            false,
-            true
+            "Mounstruo",
+            "Si te la acabas, no pagas, como la con toño pero más grande.",
+            BigDecimal.valueOf(2.99)
         )
     );
 
