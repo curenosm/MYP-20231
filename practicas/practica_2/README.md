@@ -22,7 +22,7 @@
 4. Ejecutar usando `java -cp .:../lib/* p02.Main`.
 
 ## Forma 2 (Linux)
-1. Ejecuta el script haciendo `./run.sh` o bien `bash run.sh` desde la terminal, dentro de la carpeta raiz de la práctica.
+1. Ejecuta el script haciendo `./run.sh` o bien `bash run.sh` desde la terminal, dentro de la carpeta raiz de la práctica (en caso de no tener permiso de ejecución ejecutar `chmod +x run.sh`).
 
 <br/>
 

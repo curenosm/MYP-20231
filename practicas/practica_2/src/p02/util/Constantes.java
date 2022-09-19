@@ -32,19 +32,22 @@ public class Constantes {
             1L,
             "Hamburguesa sencilla",
             "Una clasica",
-            BigDecimal.valueOf(9.99)
+            BigDecimal.valueOf(9.99),
+            true
         ),
         new PlatilloNoVegetariano(
             2L,
             "Hamburguesa hawaiana",
             "Con jamon y piña",
-            BigDecimal.valueOf(13.99)
+            BigDecimal.valueOf(13.99),
+            false
         ),
         new PlatilloNoVegetariano(
             3L,
             "Hamburguesa BBQ",
             "Con tocino y salsa bbq",
-            BigDecimal.valueOf(13.99)
+            BigDecimal.valueOf(13.99),
+            true
         )
     );
 
@@ -54,19 +57,22 @@ public class Constantes {
             4L,
             "Hamburguesa de chilaquiles",
             "Una clasica",
-            BigDecimal.valueOf(12.99)
+            BigDecimal.valueOf(12.99),
+            true
         ),
         new PlatilloVegetariano(
             5L,
             "Hamburguesa de soya",
             "Con el doble de verduras",
-            BigDecimal.valueOf(19.99)
+            BigDecimal.valueOf(19.99),
+            false
         ),
         new PlatilloNoVegetariano(
             6L,
             "Hamburguesa con toño",
             "Incluye de todo, se puede desbordar",
-            BigDecimal.valueOf(30.00)
+            BigDecimal.valueOf(30.00),
+            true
         )
     );
 
@@ -76,19 +82,22 @@ public class Constantes {
             7L,
             "Mexicana",
             "Una clasica",
-            BigDecimal.valueOf(8.99)
+            BigDecimal.valueOf(8.99),
+            false
         ),
         new PlatilloVegetariano(
             8L,
-            "Hamburguesa de papas",
-            "A la francesa con pan vegano",
-            BigDecimal.valueOf(5.99)
+            "Hamburguesa senci-vegi",
+            "Con papas, caarne de soya y pan vegano",
+            BigDecimal.valueOf(5.99),
+            false
         ),
         new PlatilloNoVegetariano(
             9L,
             "Monstruo",
             "Si te la acabas, no pagas, como la con toño pero más grande.",
-            BigDecimal.valueOf(29.99)
+            BigDecimal.valueOf(29.99),
+            false
         )
     );
 

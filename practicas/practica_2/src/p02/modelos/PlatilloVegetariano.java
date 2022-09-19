@@ -16,7 +16,7 @@ public class PlatilloVegetariano extends Platillo {
     private String nombre;
     private String descripcion;
     private BigDecimal precio;
-    private final Boolean tieneQueso = false;
+    private Boolean tieneQueso = false;
     private final Boolean esVegetariano = true;
     
     public PlatilloVegetariano() {
@@ -27,12 +27,14 @@ public class PlatilloVegetariano extends Platillo {
             Long id,
             String nombre,
             String descripcion, 
-            BigDecimal precio) {
+            BigDecimal precio,
+            Boolean tieneQueso){
         super(id);
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.tieneQueso = tieneQueso;
     }
 
     public String getNombre() {
