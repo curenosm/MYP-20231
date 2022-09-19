@@ -5,6 +5,11 @@ import p02.util.Constantes;
 
 import static p02.util.Printer.*;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
 /**
  * Clase que simula el comportamiento del robot estando en modo caminando
  * @author Alcantara Estrada Kevin Isaac
@@ -15,6 +20,7 @@ public class ModoCaminando implements EstadoRobot {
     
     Robot robot;
     private int contador = 0;
+    private Scanner scanner = new Scanner(System.in);
 
     /**
      * Constructor con parametros de la clase
@@ -43,8 +49,23 @@ public class ModoCaminando implements EstadoRobot {
     public void atender() {
         success("PASANDO A " + robot.getModoAtendiendo());
         success(Constantes.properties.getProperty("modo.caminando.label.atender"));
-        success(this.robot.getCarta().toString());
+
         robot.setEstadoActual(robot.getModoAtendiendo());
+        success(this.robot.getCarta().toString());
+        warning("ESCRIBA EL ID DE LO QUE VA A ORDENAR");
+        warning("PARA ORDENAR MAS DE UN PRODUCTO, ESCRIBA LOS IDs SEPARADOS POR COMAS");
+
+        List<Long> res = Arrays
+            .stream(scanner.nextLine().split(","))
+            .map(s -> Long.parseLong(s))
+            .collect(Collectors.toList());
+
+        res.forEach(id -> {
+            robot.getOrdenActual().add(
+                robot.getCarta().buscarPlatillo(id)
+            );
+        });
+
     }
 
     /**

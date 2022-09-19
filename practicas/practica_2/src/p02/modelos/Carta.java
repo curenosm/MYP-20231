@@ -39,6 +39,22 @@ public class Carta {
     }
 
     /**
+     * Metodo que busca un platillo entre todos los menus del restaurante
+     * @param id
+     * @return
+     */
+    public Platillo buscarPlatillo(Long id) {
+        for (Menu menu: menus) {
+            Platillo busqueda = menu.buscarPlatillo(id); 
+            if (busqueda != null) {
+                return busqueda;
+            }
+        }
+
+        return null;
+    }
+
+    /**
      * Representacion en cadena de la clase
      * @return String
      */

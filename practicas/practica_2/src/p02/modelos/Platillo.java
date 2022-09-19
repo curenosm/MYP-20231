@@ -1,6 +1,14 @@
 package p02.modelos;
 
 import static p02.util.Printer.*;
+
+/**
+ * Clase que representa un producto a ser preparado.
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public abstract class Platillo {
 
     protected Long id;
@@ -9,8 +17,11 @@ public abstract class Platillo {
         this.id = id;
     }
 
+    /**
+     * Metodo template que ejecuta  de preparacion
+     */
     public void preparar() {
-        println("SE ESTÁ PREPARANDO EL PEDIDO:");
+        success("SE ESTA PREPARANDO EL PEDIDO:");
         
         ponerPan();
 
@@ -34,13 +45,13 @@ public abstract class Platillo {
     }
 
     public void ponerPan() {
-        success("COLOCANDO EL PAN");
+        warning("COLOCANDO EL PAN");
     }
 
     public abstract void ponerMayonesa();
     
     public void ponerMostaza() {
-        success("UNTANDO LA MOSTAZA");
+        warning("UNTANDO LA MOSTAZA");
     }
 
     public abstract void ponerCarne();
@@ -48,7 +59,7 @@ public abstract class Platillo {
     public abstract void ponerQueso();
 
     public void ponerVegetales() {
-        println("PONIENDOLE LOS VEGETALES");
+        warning("PONIENDOLE LOS VEGETALES");
     }
 
     public boolean esVegetariano() {
@@ -60,7 +71,7 @@ public abstract class Platillo {
     }
 
     public void ponerCatsup() {
-        println("PONIENDOLE CATSUP");
+        warning("PONIENDOLE CATSUP");
     }
 
     public Long getId() {

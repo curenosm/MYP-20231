@@ -1,5 +1,6 @@
 package p02.modelos;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 import p02.estados.EstadoRobot;
@@ -44,6 +45,7 @@ public class Robot {
         this.modoCocinando = new ModoCocinando(this);
         this.modoEntregarComida = new ModoEntregarComida(this);
         this.carta = new Carta();
+        this.ordenActual = new ArrayList<Platillo>();
         success("EMPEZANDO EN " + getModoApagado());
         setEstadoActual(modoApagado);
     }

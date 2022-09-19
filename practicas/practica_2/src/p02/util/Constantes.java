@@ -86,13 +86,16 @@ public class Constantes {
         ),
         new PlatilloNoVegetariano(
             9L,
-            "Mounstruo",
+            "Monstruo",
             "Si te la acabas, no pagas, como la con toño pero más grande.",
-            BigDecimal.valueOf(2.99)
+            BigDecimal.valueOf(29.99)
         )
     );
 
-    
+    /**
+     * Metodo que carga el archivo application.properties que esta en la raiz de la practica.
+     * @return objeto de propiedades
+     */
     public static Properties loadProperties() {
 
         try (InputStream input = new FileInputStream("../application.properties")) {

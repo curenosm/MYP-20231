@@ -31,4 +31,18 @@ public abstract class Menu {
 
         return res + "\n";
     }
+
+    public Platillo buscarPlatillo(Long id) {
+        Iterator<Platillo> it = createIterator();
+
+        while(it.hasNext()) {
+            Platillo cur = it.next();
+
+            if (cur.getId().equals(id)) {
+                return cur;
+            }
+        }
+
+        return null;
+    }
 }

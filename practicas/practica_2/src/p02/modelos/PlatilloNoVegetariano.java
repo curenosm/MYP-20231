@@ -3,6 +3,13 @@ package p02.modelos;
 import java.math.BigDecimal;
 import static p02.util.Printer.*;
 
+/**
+ * Clase que representa un platillo que lleva carne y puede o no llevar queso.
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class PlatilloNoVegetariano extends Platillo {
     
     protected Long id;
@@ -64,17 +71,17 @@ public class PlatilloNoVegetariano extends Platillo {
 
     @Override
     public void ponerMayonesa() {
-        success("UNTANDO LA MAYONESA");
+        warning("UNTANDO LA MAYONESA");
     }
 
     @Override
     public void ponerCarne() {
-        success("PONIENDOLE LA CARNE");
+        warning("PONIENDOLE LA CARNE");
     }
 
     @Override
     public void ponerQueso() {
-        success("PONIENDOLE EL QUESO");
+        warning("PONIENDOLE EL QUESO");
     }
 
     @Override

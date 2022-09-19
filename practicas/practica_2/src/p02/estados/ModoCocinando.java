@@ -14,7 +14,6 @@ import static p02.util.Printer.*;
 public class ModoCocinando implements EstadoRobot {
 
     Robot robot;
-    private int contador = 0;
 
     /**
      * Metodo consructor con parametros de la clase

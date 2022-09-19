@@ -1,9 +1,15 @@
 package p02.estados;
 
+import p02.modelos.Platillo;
 import p02.modelos.Robot;
 import p02.util.Constantes;
 
 import static p02.util.Printer.*;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  * Clase que simula el comportamiento del robot estando en modo atendiendo
@@ -15,6 +21,7 @@ public class ModoAtendiendo implements EstadoRobot {
 
     Robot robot;
     private int contador = 0;
+    private Scanner scanner = new Scanner(System.in);
 
     /**
      * Metodo constructor con parametros de la clase
@@ -49,6 +56,9 @@ public class ModoAtendiendo implements EstadoRobot {
         success("PASANDO A " + robot.getModoCocinando());
         success(Constantes.properties.getProperty("modo.atendiendo.label.cocinar"));
         robot.setEstadoActual(robot.getModoCocinando());
+
+        robot.getOrdenActual().stream()
+            .forEach(p -> p.preparar());
     }
 
     /**

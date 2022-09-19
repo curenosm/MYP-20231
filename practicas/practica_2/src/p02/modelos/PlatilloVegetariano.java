@@ -2,6 +2,14 @@ package p02.modelos;
 
 import java.math.BigDecimal;
 
+
+/**
+ * Clase que representa un platillo que NO lleva carne, mayonesa y tampoco queso.
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class PlatilloVegetariano extends Platillo {
 
     private Long id;
