@@ -1,4 +1,6 @@
-public abstract class BaguetteDecorador extends Baguette{
+package main.java.p03.modelos;
+
+public abstract class BaguetteDecorador extends Baguette {
 
     protected Baguette pan;
 
@@ -7,12 +9,12 @@ public abstract class BaguetteDecorador extends Baguette{
     }
 
     @Override
-    public String getDescripcion(){
+    public String getDescripcion() {
         return pan.getDescripcion();
     }
 
     @Override
-    public double getPrecio(){
+    public double getPrecio() {
         return pan.getPrecio();
     }
 }

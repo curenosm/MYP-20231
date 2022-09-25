@@ -1,5 +1,6 @@
+package main.java.p03.modelos;
 
-public abstract class Baguette{
+public abstract class Baguette {
 
     protected String descripcion="";
     protected double precio=0;

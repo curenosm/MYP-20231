@@ -1,5 +1,7 @@
-public class PizzaSalchicha extends Pizza{
-    public PizzaSalchicha(){
+package main.java.p03.modelos;
+
+public class PizzaSalchicha extends Pizza {
+    public PizzaSalchicha() {
         this.carne= "salchicha";
         this.queso="manchego";
         this.masa="delgada";

@@ -1,8 +1,10 @@
-public class BaguetteTostado extends Baguette{
+package main.java.p03.modelos;
 
-    public BaguetteTostado(){
-        this.descripcion="Baguette con pan tostado";
-        this.precio= 40;
+public class BaguetteAvena extends Baguette {
+
+    public BaguetteAvena(){
+        this.descripcion="Baguette con pan de avena";
+        this.precio= 50;
     }
 
     @Override
