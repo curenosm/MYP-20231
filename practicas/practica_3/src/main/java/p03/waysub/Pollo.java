@@ -24,7 +24,7 @@ public class Pollo extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + ",pollo";
+    return pan.getDescripcion() + "\nPollo";
   }
 
   /**
