@@ -14,20 +14,23 @@
 
 # Instrucciones de compilacion
 
-## Instrucciones para dar formato estandarizado
-
-1. Dirigirse al directorio `src` de la práctica.
-2. Ejecutar `java -jar ../lib/google-java-format-1.15.0-all-deps.jar ./main/java/p03/Main.java`
 
 ## Forma 1
 
 1. Dirigirse al directorio `src` de la práctica.
-2. Compilar usando `javac -sourcepath . -d ../target/ -cp .:../lib/* ./p02/Main.java`
-3. Dirigirse al directorio generado `cd ../target`.
-4. Ejecutar usando `java -cp .:../lib/* p02.Main`.
+2. Compilar usando `javac -sourcepath . -d ../target/ -cp .:../lib/* ./main/java/p03/Main.java`
+3. Copiar los recursos usando `cp -r ./main/resources ../target/main/`
+4. Dirigirse al directorio generado `cd ../target`.
+5. Ejecutar usando `java -cp .:../lib/* main.java.p03.Main`.
 
 ## Forma 2 (Linux)
 1. Ejecuta el script haciendo `./run.sh` o bien `bash run.sh` desde la terminal, dentro de la carpeta raiz de la práctica (en caso de no tener permiso de ejecución ejecutar `chmod +x run.sh`).
+
+
+# Instrucciones para dar formato estandarizado
+
+1. Dirigirse al directorio `src` de la práctica.
+2. Ejecutar `java -jar ../lib/google-java-format-1.15.0-all-deps.jar ./main/java/p03/Main.java`
 
 <br/>
 
