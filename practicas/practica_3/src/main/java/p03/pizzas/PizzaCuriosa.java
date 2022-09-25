@@ -11,6 +11,7 @@ public class PizzaCuriosa extends Pizza {
 
   /** Metodo constructor sin parametros de la clase */
   public PizzaCuriosa() {
+    this.nombre = "Curiosa";
     this.carne = "pollo";
     this.queso = "cheddar";
     this.masa = "gruesa";

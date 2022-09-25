@@ -11,6 +11,7 @@ public class PizzaRelax extends Pizza {
 
   /** Metodo constructor sin parametros de la clase */
   public PizzaRelax() {
+    this.nombre = "Relax";
     this.carne = "jamon";
     this.queso = "manchego";
     this.masa = "delgada";

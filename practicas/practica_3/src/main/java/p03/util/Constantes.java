@@ -3,6 +3,7 @@ package main.java.p03.util;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -17,6 +18,17 @@ public class Constantes {
 
   private static Properties properties;
   public static Scanner scanner = new Scanner(System.in);
+  public static final List<String> INGREDIENTES_BAGUETTE =
+      List.of(
+          "Cebolla",
+          "Catsup",
+          "Jamon",
+          "Jitomate",
+          "Lechuga",
+          "Mayonesa",
+          "Mostaza",
+          "Pepperoni",
+          "Pollo");
 
   static {
     properties = loadProperties();

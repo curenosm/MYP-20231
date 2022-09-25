@@ -4,6 +4,9 @@ import static main.java.p03.util.Constantes.*;
 import static main.java.p03.util.Printer.*;
 
 import java.util.Scanner;
+import main.java.p03.pizzas.Pizza;
+import main.java.p03.pizzas.PizzaAdapter;
+import main.java.p03.pizzas.PizzaAmericana;
 import main.java.p03.waysub.*;
 
 public class Main {
@@ -22,47 +25,59 @@ public class Main {
 
         opcionElegida = scanner.nextInt();
 
+        Baguette pedido = null;
+
         switch (opcionElegida) {
           case 0:
             System.exit(0);
             break;
           case 1:
-            success("Eligio " + opcionElegida);
+            warning("Eligio la preparación de un baguette ");
 
             // TODO: Mostrar menu para eligir el pan
 
             int tipoPan = 1;
-            Baguette baguette = new BaguetteBlanco();
+            pedido = new BaguetteBlanco();
 
             bold(property("menu.baguette.pan"));
 
             if (tipoPan == 1) {
-              baguette = new BaguetteAvena();
+              pedido = new BaguetteAvena();
             } else if (tipoPan == 2) {
-              baguette = new BaguetteTostado();
+              pedido = new BaguetteTostado();
             } else if (tipoPan == 3) {
-              baguette = new BaguetteBlanco();
+              pedido = new BaguetteBlanco();
             }
 
             // TODO: Mientras el pedido no esté listo, sigue agregandole ingredientes
-            bold(property("menu.baguette.pan"));
+            // para verificar si puedes seguir poniendo de un ingrediente manda a llamar
+            // pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(i))
+            bold(property("menu.baguette.ingredientes"));
 
-            baguette = new Cebolla(baguette);
-            baguette = new Lechuga(baguette);
-            baguette = new Jitomate(baguette);
-            baguette = new Jamon(baguette);
-
-            warning(baguette.getDescripcion());
-            success("Precio: $" + baguette.getPrecio());
+            pedido = new Cebolla(pedido);
+            pedido = new Cebolla(pedido);
+            pedido = new Cebolla(pedido);
+            pedido = new Lechuga(pedido);
+            pedido = new Jitomate(pedido);
+            pedido = new Jamon(pedido);
 
             break;
           case 2:
-            warning("Eligio " + opcionElegida);
+            warning("Eligio la preparación de una pizza");
+
+            Pizza pizza = new PizzaAmericana();
+            pedido = new PizzaAdapter(pizza);
+
             break;
           default:
             error(property("error.opcion.incorrecta"));
             break;
         }
+
+        warning("Su pedido está listo:");
+        success(pedido.getDescripcion());
+        success("-----------------------");
+        success(pedido.getPrecio() + "");
 
       } catch (NumberFormatException e) {
         scanner.next();

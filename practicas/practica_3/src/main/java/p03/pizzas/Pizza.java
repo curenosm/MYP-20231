@@ -52,10 +52,10 @@ public class Pizza {
 
   @Override
   public String toString() {
-    String res = this.nombre;
-    res += "\nMasa " + getMasa();
-    res += "\nQueso " + getQueso();
-    res += "\nCarne " + getCarne();
+    String res = "Pizza " + this.nombre + "\n";
+    res += "\n - Masa " + getMasa();
+    res += "\n - Queso " + getQueso();
+    res += "\n - Carne " + getCarne();
     return res;
   }
 }

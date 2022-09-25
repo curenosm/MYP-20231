@@ -31,12 +31,7 @@ public class PizzaAdapter extends Baguette {
    */
   @Override
   public String getDescripcion() {
-    return "Pizza con masa"
-        + pizza.getMasa()
-        + ", queso "
-        + pizza.getQueso()
-        + " y "
-        + pizza.getCarne();
+    return pizza.toString();
   }
 
   /**
