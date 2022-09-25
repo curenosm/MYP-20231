@@ -18,7 +18,7 @@ public abstract class Baguette {
    * @return String
    */
   public String getDescripcion() {
-    return this.descripcion;
+    return this.descripcion + "\n";
   }
 
   /**

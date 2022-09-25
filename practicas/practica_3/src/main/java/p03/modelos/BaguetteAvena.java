@@ -16,16 +16,6 @@ public class BaguetteAvena extends Baguette {
   }
 
   /**
-   * Metodo para obtener la descripcion del baguette de pan de avena
-   *
-   * @return String
-   */
-  @Override
-  public String getDescripcion() {
-    return super.getDescripcion() + this.descripcion;
-  }
-
-  /**
    * Metodo para obtener el precio del baguette de pan de avena
    *
    * @return double

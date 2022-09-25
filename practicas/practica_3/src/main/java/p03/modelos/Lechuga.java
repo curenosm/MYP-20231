@@ -16,6 +16,7 @@ public class Lechuga extends BaguetteDecorador {
    */
   public Lechuga(Baguette pan) {
     super(pan);
+    this.ingrediente = "Lechuga";
   }
 
   /**
@@ -24,7 +25,7 @@ public class Lechuga extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + ",lechuga";
+    return pan.getDescripcion() + "\n - " + this.ingrediente;
   }
 
   /**

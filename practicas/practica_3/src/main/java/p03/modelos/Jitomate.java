@@ -16,6 +16,7 @@ public class Jitomate extends BaguetteDecorador {
    */
   public Jitomate(Baguette pan) {
     super(pan);
+    this.ingrediente = "Jitomate";
   }
 
   /**
@@ -24,7 +25,7 @@ public class Jitomate extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + ",jitomate";
+    return pan.getDescripcion() + "\n - " + this.ingrediente;
   }
 
   /**

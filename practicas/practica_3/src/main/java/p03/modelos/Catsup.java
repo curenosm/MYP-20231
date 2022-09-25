@@ -16,6 +16,7 @@ public class Catsup extends BaguetteDecorador {
    */
   public Catsup(Baguette pan) {
     super(pan);
+    this.ingrediente = "Catsup";
   }
 
   /**
@@ -24,7 +25,7 @@ public class Catsup extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + ",catsup";
+    return pan.getDescripcion() + "\n - " + this.ingrediente;
   }
 
   /**

@@ -16,16 +16,6 @@ public class BaguetteTostado extends Baguette {
   }
 
   /**
-   * Metodo para obtener la descripcion del baguette de pan tostado
-   *
-   * @return String
-   */
-  @Override
-  public String getDescripcion() {
-    return super.getDescripcion() + this.descripcion;
-  }
-
-  /**
    * Metodo para obtener el precio del baguette de pan tostado
    *
    * @return double

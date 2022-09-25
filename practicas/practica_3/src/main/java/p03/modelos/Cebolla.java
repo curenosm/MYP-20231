@@ -16,6 +16,7 @@ public class Cebolla extends BaguetteDecorador {
    */
   public Cebolla(Baguette pan) {
     super(pan);
+    this.ingrediente = "Cebolla";
   }
 
   /**
@@ -24,7 +25,7 @@ public class Cebolla extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + ",cebolla";
+    return pan.getDescripcion() + "\n - " + this.ingrediente;
   }
 
   /**

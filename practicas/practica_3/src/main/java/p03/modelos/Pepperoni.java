@@ -16,6 +16,7 @@ public class Pepperoni extends BaguetteDecorador {
    */
   public Pepperoni(Baguette pan) {
     super(pan);
+    this.ingrediente = "Pepperoni";
   }
 
   /**
@@ -24,7 +25,7 @@ public class Pepperoni extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + ",pepperoni";
+    return pan.getDescripcion() + "\n - " + this.ingrediente;
   }
 
   /**
