@@ -1,26 +1,26 @@
-package main.java.p03.modelos;
+package main.java.p03.waysub;
 
 /**
- * Clase que simula el ingrediente cebolla. Extiende de BaguetteDecorador
+ * Clase que simula el ingrediente jitomate. Extiende de BaguetteDecorador
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo ELizabeth
  */
-public class Cebolla extends BaguetteDecorador {
+public class Jitomate extends BaguetteDecorador {
 
   /**
    * Constructor con parametros de la clase
    *
    * @param pan Instancia de la clase Baguette
    */
-  public Cebolla(Baguette pan) {
+  public Jitomate(Baguette pan) {
     super(pan);
-    this.ingrediente = "Cebolla";
+    this.ingrediente = "Jitomate";
   }
 
   /**
-   * Metodo que devuelve la descripcion del atributo pan de la clase y el ingrediente cebolla
+   * Metodo que devuelve la descripcion del atributo pan de la clase y el ingrediente jitomate
    *
    * @return String
    */
@@ -29,11 +29,11 @@ public class Cebolla extends BaguetteDecorador {
   }
 
   /**
-   * Metodo para obtener el precio base del objeto pan y sumarle el precio del ingrediente cebolla
+   * Metodo para obtener el precio base del objeto pan y sumarle el precio del ingrediente jitomate
    *
    * @return double
    */
   public double getPrecio() {
-    return pan.getPrecio() + 1.2;
+    return pan.getPrecio() + 2.5;
   }
 }

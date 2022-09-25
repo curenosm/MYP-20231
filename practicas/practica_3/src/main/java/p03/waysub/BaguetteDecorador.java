@@ -1,4 +1,4 @@
-package main.java.p03.modelos;
+package main.java.p03.waysub;
 
 /**
  * Clase que sirve para agregar ingredientes a una instancia de la clase Baguette. Extiende de

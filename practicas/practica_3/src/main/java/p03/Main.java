@@ -4,7 +4,7 @@ import static main.java.p03.util.Constantes.*;
 import static main.java.p03.util.Printer.*;
 
 import java.util.Scanner;
-import main.java.p03.modelos.*;
+import main.java.p03.waysub.*;
 
 public class Main {
 
@@ -53,7 +53,7 @@ public class Main {
             baguette = new Jamon(baguette);
 
             warning(baguette.getDescripcion());
-            success(baguette.getPrecio() + "");
+            success("Precio: $" + baguette.getPrecio());
 
             break;
           case 2:

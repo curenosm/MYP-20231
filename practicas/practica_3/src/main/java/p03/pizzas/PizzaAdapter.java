@@ -1,4 +1,6 @@
-package main.java.p03.modelos;
+package main.java.p03.pizzas;
+
+import main.java.p03.waysub.Baguette;
 
 /**
  * Clase que adapta una instancia de la clase Pizza para comportarse como un baguette. Extiende de

@@ -1,4 +1,4 @@
-package main.java.p03.modelos;
+package main.java.p03.waysub;
 
 /**
  * Clase que simula el ingrediente pollo. Extiende de BaguetteDecorador

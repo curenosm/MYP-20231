@@ -1,4 +1,4 @@
-package main.java.p03.modelos;
+package main.java.p03.waysub;
 
 /**
  * Metodo que simula a un baguette de plan blanco. Extiende de Baguette

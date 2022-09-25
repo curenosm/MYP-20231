@@ -1,26 +1,26 @@
-package main.java.p03.modelos;
+package main.java.p03.waysub;
 
 /**
- * Clase que simula el ingrediente catsup Extiende de BaguetteDecorador
+ * Clase que simula el ingrediente mayonesa. Extiende de BaguetteDecorador
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo ELizabeth
  */
-public class Catsup extends BaguetteDecorador {
+public class Mayonesa extends BaguetteDecorador {
 
   /**
    * Constructor con parametros de la clase
    *
    * @param pan Instancia de la clase Baguette
    */
-  public Catsup(Baguette pan) {
+  public Mayonesa(Baguette pan) {
     super(pan);
-    this.ingrediente = "Catsup";
+    this.ingrediente = "Mayonesa";
   }
 
   /**
-   * Metodo que devuelve la descripcion del atributo pan de la clase y el ingrediente catsup
+   * Metodo que devuelve la descripcion del atributo pan de la clase y el ingrediente mayonesa
    *
    * @return String
    */
@@ -29,11 +29,11 @@ public class Catsup extends BaguetteDecorador {
   }
 
   /**
-   * Metodo para obtener el precio base del objeto pan y sumarle el precio del ingrediente catsup
+   * Metodo para obtener el precio base del objeto pan y sumarle el precio del ingrediente mayonesa
    *
    * @return double
    */
   public double getPrecio() {
-    return pan.getPrecio() + 3;
+    return pan.getPrecio() + 2;
   }
 }

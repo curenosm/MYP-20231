@@ -1,26 +1,26 @@
-package main.java.p03.modelos;
+package main.java.p03.waysub;
 
 /**
- * Clase que simula el ingrediente lechuga. Extiende de BaguetteDecorador
+ * Clase que simula el ingrediente mostaza. Extiende de BaguetteDecorador
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo ELizabeth
  */
-public class Lechuga extends BaguetteDecorador {
+public class Mostaza extends BaguetteDecorador {
 
   /**
    * Constructor con parametros de la clase
    *
    * @param pan Instancia de la clase Baguette
    */
-  public Lechuga(Baguette pan) {
+  public Mostaza(Baguette pan) {
     super(pan);
-    this.ingrediente = "Lechuga";
+    this.ingrediente = "Mostaza";
   }
 
   /**
-   * Metodo que devuelve la descripcion del atributo pan de la clase y el ingrediente lechuga
+   * Metodo que devuelve la descripcion del atributo pan de la clase y el ingrediente mostaza
    *
    * @return String
    */
@@ -29,11 +29,11 @@ public class Lechuga extends BaguetteDecorador {
   }
 
   /**
-   * Metodo para obtener el precio base del objeto pan y sumarle el precio del ingrediente lechuga
+   * Metodo para obtener el precio base del objeto pan y sumarle el precio del ingrediente mostaza
    *
    * @return double
    */
   public double getPrecio() {
-    return pan.getPrecio() + 3;
+    return pan.getPrecio() + 2;
   }
 }

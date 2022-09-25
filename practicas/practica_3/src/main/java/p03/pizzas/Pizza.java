@@ -1,4 +1,4 @@
-package main.java.p03.modelos;
+package main.java.p03.pizzas;
 
 /**
  * Clase que simula a una pizza
@@ -12,6 +12,7 @@ public class Pizza {
   protected String carne;
   protected String masa;
   protected double precio;
+  protected String nombre;
 
   /**
    * Metodo para obtener el tipo de queso de la pizza
@@ -47,5 +48,14 @@ public class Pizza {
    */
   public double getPrecio() {
     return this.precio;
+  }
+
+  @Override
+  public String toString() {
+    String res = this.nombre;
+    res += "\nMasa " + getMasa();
+    res += "\nQueso " + getQueso();
+    res += "\nCarne " + getCarne();
+    return res;
   }
 }

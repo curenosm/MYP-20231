@@ -1,19 +1,19 @@
-package main.java.p03.modelos;
+package main.java.p03.pizzas;
 
 /**
- * Clase que simula a una pizza de salchicha. Extiende de pizza.
+ * Clase que simula a una pizza de jamon. Extiende de Pizza.
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
-public class PizzaSalchicha extends Pizza {
+public class PizzaRelax extends Pizza {
 
   /** Metodo constructor sin parametros de la clase */
-  public PizzaSalchicha() {
-    this.carne = "salchicha";
+  public PizzaRelax() {
+    this.carne = "jamon";
     this.queso = "manchego";
     this.masa = "delgada";
-    this.precio = 169.69;
+    this.precio = 123.54;
   }
 }
