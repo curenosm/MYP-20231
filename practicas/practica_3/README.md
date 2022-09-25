@@ -82,18 +82,33 @@ Las envolturas proveen de funcionalidad adicional manteniendo su funcionalidad o
 
 ## ADAPTER
 <br/>
-
+Como se nos explicó en clase, este patrón convierte la interfaz de una clase en otra interfaz que se adapte a la que el cliente espera. Permite a las clases trabajar juntas, a pesar de que sus interfaces sean incompatibles.
 
 ### ESTRUCTURA
 <br/>
 
+- **Clase cliente:** Contiene la lógica de negocio existente del programa.
+- **Interfaz con el cliente:** Describe un protocolo que otras clases deben seguir para poder colaborar con el código cliente.
+- **Servicio:** Es alguna clase útil (normalmente de una tercera parte o heredada). El cliente no puede utilizar directamente esta clase porque tiene una interfaz incompatible.
+- **La clase Adaptadora:** Es capaz de trabajar tanto con la clase cliente como con la clase de servicio: implementa la interfaz con el cliente, mientras envuelve el objeto de la clase de servicio.
+<br/><br/>
 
 ### IMPLEMENTACIÓN
 <br/>
 
+1. Nos aseguramos de que tienes al menos dos clases con interfaces incompatibles.
+2. Declaramos la interfaz con el cliente y describimos el modo en que las clases cliente se comunican con la clase de servicio.
+3. Creamos la clase adaptadora y haz que siga la interfaz con el cliente. Deja todos los métodos vacíos por ahora.
+4. Añadimos un campo a la clase adaptadora para almacenar una referencia al objeto de servicio. 
+5. Implementamos todos los métodos de la interfaz con el cliente en la clase adaptadora.
+6. Las clases cliente deberán utilizar la clase adaptadora a través de la interfaz con el cliente.
+
+<br/>
 
 ### DESVENTAJA
 <br/>
+
+- La complejidad general del código aumenta, ya que debemos introducir un grupo de nuevas interfaces y clases. En ocasiones resulta más sencillo cambiar la clase de servicio de modo que coincida con el resto del código.
 
 <br/>
 
