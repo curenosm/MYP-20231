@@ -1,13 +1,11 @@
 package main.java.p03.util;
 
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
-
 import main.java.p03.pizzas.*;
 import main.java.p03.waysub.*;
 
@@ -38,15 +36,14 @@ public class Constantes {
     properties = loadProperties();
   }
 
-  
-//Pizzas del menu que se pueden pedir
-  public static List<Pizza> menuPizzas= List.of( 
-    new PizzaAmericana(), 
-    new PizzaRelax(), 
-    new PizzaSalchicha(),
-    new PizzaChicken(), 
-    new PizzaCuriosa()
-  );
+  // Pizzas del menu que se pueden pedir
+  public static List<Pizza> menuPizzas =
+      List.of(
+          new PizzaAmericana(),
+          new PizzaRelax(),
+          new PizzaSalchicha(),
+          new PizzaChicken(),
+          new PizzaCuriosa());
 
   /**
    * Metodo que carga el archivo application.properties que esta en la raiz de la practica.
@@ -73,167 +70,168 @@ public class Constantes {
   public static double redondear(double cantidad) {
     return Math.floor(cantidad * 100) / 100;
   }
-  
-/**
- * Metodo para pedir una pizza de las opciones del menu. Se usa un PizzaAdapter para que la pizza se comporte como Baguette.
- * @return Baguette
- */
-  public static Baguette pedirPizza(){
-    int resp =0;
-    boolean bobo=false;
+
+  /**
+   * Metodo para pedir una pizza de las opciones del menu. Se usa un PizzaAdapter para que la pizza
+   * se comporte como Baguette.
+   *
+   * @return Baguette
+   */
+  public static Baguette pedirPizza() {
+    int resp = 0;
+    boolean bobo = false;
     Pizza pizza = new PizzaAmericana();
-    do{
-    try {
-      Printer.bold(property("menu.pizza.opciones"));
-      resp= scanner.nextInt();
+    do {
+      try {
+        Printer.bold(property("menu.pizza.opciones"));
+        resp = scanner.nextInt();
 
-      switch(resp){
-        case 1:
-           pizza = menuPizzas.get(0);
-           bobo=false;
-        break;
+        switch (resp) {
+          case 1:
+            pizza = menuPizzas.get(0);
+            bobo = false;
+            break;
 
-        case 2:
-           pizza = menuPizzas.get(1);
-           bobo=false;
-        break;
+          case 2:
+            pizza = menuPizzas.get(1);
+            bobo = false;
+            break;
 
-        case 3:
-           pizza = menuPizzas.get(2);
-           bobo=false;
-        break;
+          case 3:
+            pizza = menuPizzas.get(2);
+            bobo = false;
+            break;
 
-        case 4:
-           pizza = menuPizzas.get(3);
-           bobo=false;
-        break;
+          case 4:
+            pizza = menuPizzas.get(3);
+            bobo = false;
+            break;
 
-        case 5:
-           pizza = menuPizzas.get(4);
-           bobo=false;
-        break;
+          case 5:
+            pizza = menuPizzas.get(4);
+            bobo = false;
+            break;
 
-        default:
-        Printer.error(property("error.opcion.incorrecta"));
-        break;
+          default:
+            Printer.error(property("error.opcion.incorrecta"));
+            break;
+        }
+      } catch (Exception e) {
+        scanner.nextLine();
       }
-    } catch (Exception e) {
-      scanner.nextLine();
-    }
-  }while(bobo==true);
+    } while (bobo == true);
 
-  PizzaAdapter baguettePizza = new PizzaAdapter(pizza);
-  return baguettePizza;
-
+    PizzaAdapter baguettePizza = new PizzaAdapter(pizza);
+    return baguettePizza;
   }
-
 
   /**
    * Metodo para agregar ingredientes a los panes
+   *
    * @param pedido instancia de la clase Baguette a la que se le aniadieran cosas
    * @return Baguette
    */
-  public static Baguette agregarIngredientes(Baguette pedido){
+  public static Baguette agregarIngredientes(Baguette pedido) {
     boolean bobo = true;
-    int resp=0, ingrediente=0;
+    int resp = 0, ingrediente = 0;
 
-    do{
+    do {
       Printer.bold("Elija el ingrediente que desea agregar");
       Printer.bold(property("menu.baguette.ingredientes"));
       try {
-       resp= scanner.nextInt();
+        resp = scanner.nextInt();
 
-       switch(resp){
-         case 1:
-            if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(0))){
-            pedido = new Catsup(pedido);
-            }else{
+        switch (resp) {
+          case 1:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(0))) {
+              pedido = new Catsup(pedido);
+            } else {
               Printer.error(property("menu.baguette.error"));
             }
-            bobo=false;
-        break;
+            bobo = false;
+            break;
 
-        case 2:
-            if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(1))){
-            pedido = new Cebolla(pedido);
-            }else{
+          case 2:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(1))) {
+              pedido = new Cebolla(pedido);
+            } else {
               Printer.error(property("menu.baguette.error"));
             }
-            bobo=false;
-        break;
+            bobo = false;
+            break;
 
-       case 3:
-          if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(2))){
-          pedido = new Jamon(pedido);
-          }else{
-            Printer.error(property("menu.baguette.error"));
-          }
-          bobo=false;
-       break;
+          case 3:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(2))) {
+              pedido = new Jamon(pedido);
+            } else {
+              Printer.error(property("menu.baguette.error"));
+            }
+            bobo = false;
+            break;
 
-       case 4:
-          if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(3))){
-          pedido = new Jitomate(pedido);
-          }else{
-            Printer.error(property("menu.baguette.error"));
-          }
-          bobo=false;
-       break;
+          case 4:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(3))) {
+              pedido = new Jitomate(pedido);
+            } else {
+              Printer.error(property("menu.baguette.error"));
+            }
+            bobo = false;
+            break;
 
-       case 5:
-          if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(4))){
-          pedido = new Lechuga(pedido);
-          }else{
-            Printer.error(property("menu.baguette.error"));
-          }
-          bobo=false;
-       break;
+          case 5:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(4))) {
+              pedido = new Lechuga(pedido);
+            } else {
+              Printer.error(property("menu.baguette.error"));
+            }
+            bobo = false;
+            break;
 
-       case 6:
-          if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(5))){
-          pedido = new Mayonesa(pedido);
-          }else{
-            Printer.error(property("menu.baguette.error"));
-          }
-          bobo=false;
-       break;
+          case 6:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(5))) {
+              pedido = new Mayonesa(pedido);
+            } else {
+              Printer.error(property("menu.baguette.error"));
+            }
+            bobo = false;
+            break;
 
-       case 7:
-          if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(6))){
-          pedido = new Mostaza(pedido);
-          }else{
-            Printer.error(property("menu.baguette.error"));
-          }
-          bobo=false;
-       break;
+          case 7:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(6))) {
+              pedido = new Mostaza(pedido);
+            } else {
+              Printer.error(property("menu.baguette.error"));
+            }
+            bobo = false;
+            break;
 
-       case 8:
-          if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(7))){
-          pedido = new Pepperoni(pedido);
-          }else{
-            Printer.error(property("menu.baguette.error"));
-          }
-          bobo=false;
-       break;
+          case 8:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(7))) {
+              pedido = new Pepperoni(pedido);
+            } else {
+              Printer.error(property("menu.baguette.error"));
+            }
+            bobo = false;
+            break;
 
-       case 9:
-          if(pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(8))){
-          pedido = new Pollo(pedido);
-          }else{
-            Printer.error(property("menu.baguette.error"));
-          }
-          bobo=false;
-       break;
+          case 9:
+            if (pedido.puedoAgregarIngrediente(INGREDIENTES_BAGUETTE.get(8))) {
+              pedido = new Pollo(pedido);
+            } else {
+              Printer.error(property("menu.baguette.error"));
+            }
+            bobo = false;
+            break;
 
-       default:
-       Printer.error(property("error.opcion.incorrecta"));
-        break;
-       }
+          default:
+            Printer.error(property("error.opcion.incorrecta"));
+            break;
+        }
       } catch (Exception e) {
         scanner.nextLine();
         Printer.error(property("error.opcion.incorrecta"));
       }
-    }while(bobo==true);
+    } while (bobo == true);
     return pedido;
   }
 }

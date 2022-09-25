@@ -4,11 +4,7 @@ import static main.java.p03.util.Constantes.*;
 import static main.java.p03.util.Printer.*;
 
 import java.util.Scanner;
-import main.java.p03.pizzas.Pizza;
-import main.java.p03.pizzas.PizzaAdapter;
-import main.java.p03.pizzas.PizzaAmericana;
 import main.java.p03.util.Constantes;
-import main.java.p03.util.Printer;
 import main.java.p03.waysub.*;
 
 public class Main {
@@ -36,63 +32,60 @@ public class Main {
           case 1:
             warning("Eligio la preparación de un baguette ");
 
-            
-            boolean bobo=true;
-            
+            boolean bobo = true;
+
             int tipoPan = 0;
             pedido = new BaguetteBlanco();
-            do{
+            do {
               try {
                 bold(property("menu.baguette.pan"));
                 tipoPan = scanner.nextInt();
                 if (tipoPan == 1) {
                   pedido = new BaguetteAvena();
-                  bobo=false;
+                  bobo = false;
                 } else if (tipoPan == 2) {
                   pedido = new BaguetteTostado();
-                  bobo=false;
+                  bobo = false;
                 } else if (tipoPan == 3) {
                   pedido = new BaguetteBlanco();
-                  bobo=false;
-                }else{
+                  bobo = false;
+                } else {
                   error(property("error.opcion.incorrecta"));
                 }
-                
+
               } catch (Exception e) {
                 error(property("error.opcion.incorrecta"));
                 scanner.nextLine();
               }
-            }while(bobo==true);
+            } while (bobo == true);
 
-           bobo=true;
-           int resp=0;
-           scanner.nextLine();
+            bobo = true;
+            int resp = 0;
+            scanner.nextLine();
 
-            do{
-              
+            do {
+
               bold(property("menu.agregar.ingrediente"));
               try {
-                resp= scanner.nextInt();
-                if(resp==1){
+                resp = scanner.nextInt();
+                if (resp == 1) {
                   pedido = Constantes.agregarIngredientes(pedido);
-                }else if(resp==2){
+                } else if (resp == 2) {
                   bold("Terminando pedido");
-                  bobo=false;
-                }else{
+                  bobo = false;
+                } else {
                   error(property("error.opcion.incorrecta"));
                 }
               } catch (Exception e) {
                 scanner.nextLine();
                 error(property("error.opcion.incorrecta"));
               }
-            }while(bobo==true);
-           
+            } while (bobo == true);
 
             break;
           case 2:
             warning("Eligio la preparación de una pizza");
 
-            
             pedido = Constantes.pedirPizza();
 
             break;
