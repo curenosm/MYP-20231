@@ -2,19 +2,19 @@ package main.java.p03.modelos;
 
 public abstract class BaguetteDecorador extends Baguette {
 
-    protected Baguette pan;
+  protected Baguette pan;
 
-    public BaguetteDecorador(Baguette pan){
-        this.pan = pan;
-    }
+  public BaguetteDecorador(Baguette pan) {
+    this.pan = pan;
+  }
 
-    @Override
-    public String getDescripcion() {
-        return pan.getDescripcion();
-    }
+  @Override
+  public String getDescripcion() {
+    return pan.getDescripcion();
+  }
 
-    @Override
-    public double getPrecio() {
-        return pan.getPrecio();
-    }
+  @Override
+  public double getPrecio() {
+    return pan.getPrecio();
+  }
 }

@@ -2,15 +2,15 @@ package main.java.p03.modelos;
 
 public class Mayonesa extends BaguetteDecorador {
 
-    public Mayonesa(Baguette pan) {
-        super(pan);
-    }
+  public Mayonesa(Baguette pan) {
+    super(pan);
+  }
 
-    public String getDescripcion() {
-        return pan.getDescripcion() + ",mayonesa";
-    }
+  public String getDescripcion() {
+    return pan.getDescripcion() + ",mayonesa";
+  }
 
-    public double getPrecio() {
-        return pan.getPrecio()+2;
-    }
+  public double getPrecio() {
+    return pan.getPrecio() + 2;
+  }
 }
