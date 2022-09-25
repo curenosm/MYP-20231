@@ -14,29 +14,27 @@
 
 # Instrucciones de compilacion
 
-
 ## Forma 1
 
-1. Dirigirse al directorio `src` de la práctica.
+1. Dirigirse al directorio `src` de la práctica
 2. Compilar usando `javac -sourcepath . -d ../target/ -cp .:../lib/* ./main/java/p03/Main.java`
 3. Copiar los recursos usando `cp -r ./main/resources ../target/main/`
-4. Dirigirse al directorio generado `cd ../target`.
-5. Ejecutar usando `java -cp .:../lib/* main.java.p03.Main`.
+4. Dirigirse al directorio generado `cd ../target`
+5. Ejecutar usando `java -cp .:../lib/* main.java.p03.Main`
 
 ## Forma 2 (Linux)
 1. Ejecuta el script haciendo `./run.sh` o bien `bash run.sh` desde la terminal, dentro de la carpeta raiz de la práctica (en caso de no tener permiso de ejecución ejecutar `chmod +x run.sh`).
 
-
-# Instrucciones para dar formato estandarizado
-
-1. Dirigirse al directorio `src` de la práctica.
-2. Ejecutar `java -jar ../lib/google-java-format-1.15.0-all-deps.jar ./main/java/p03/Main.java`
-
 <br/>
 
-
+# Instrucciones de formato estandarizado
+1. En la raíz de la práctica ejecutar `make`.
+2. En caso de que solo se quiera saber los errores de formato ejecutar `make check-format`.
+3. En caso de que se quieran corregir los errores de formato ejecutar `make reformat`.
 
 <br/>
+<br/>
+<br/><br/><br/>
 
 # SECCIÓN TEÓRICA
 
@@ -118,3 +116,7 @@ Como se nos explicó en clase, este patrón convierte la interfaz de una clase e
 # Diagramas
 
 <br/>
+
+<center>
+    <img src="./DiagramaClases.png" width="100%">
+</center>
