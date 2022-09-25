@@ -1,0 +1,8 @@
+public class PizzaSalchicha extends Pizza{
+    public PizzaSalchicha(){
+        this.carne= "salchicha";
+        this.queso="manchego";
+        this.masa="delgada";
+        this.precio=169.69;
+    }
+}
