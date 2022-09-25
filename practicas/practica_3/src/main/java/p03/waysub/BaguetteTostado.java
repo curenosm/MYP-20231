@@ -22,6 +22,6 @@ public class BaguetteTostado extends Baguette {
    */
   @Override
   public double getPrecio() {
-    return super.precio + this.precio;
+    return this.precio;
   }
 }

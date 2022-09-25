@@ -1,5 +1,7 @@
 package main.java.p03.waysub;
 
+import static main.java.p03.util.Constantes.redondear;
+
 /**
  * Clase que simula el ingrediente pepperoni. Extiende de BaguetteDecorador
  *
@@ -17,6 +19,7 @@ public class Pepperoni extends BaguetteDecorador {
   public Pepperoni(Baguette pan) {
     super(pan);
     this.ingrediente = "Pepperoni";
+    this.precioIndividual = 10.8;
   }
 
   /**
@@ -25,7 +28,11 @@ public class Pepperoni extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + "\n - " + this.ingrediente;
+    return pan.getDescripcion()
+        + "\n - "
+        + this.ingrediente
+        + "\t$"
+        + redondear(this.precioIndividual);
   }
 
   /**
@@ -34,6 +41,6 @@ public class Pepperoni extends BaguetteDecorador {
    * @return double
    */
   public double getPrecio() {
-    return pan.getPrecio() + 10.8;
+    return pan.getPrecio() + this.precioIndividual;
   }
 }

@@ -12,6 +12,7 @@ public abstract class BaguetteDecorador extends Baguette {
 
   protected Baguette pan;
   protected String ingrediente;
+  protected double precioIndividual;
 
   /**
    * Constructor con parametros de la clase

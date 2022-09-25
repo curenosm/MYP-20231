@@ -55,4 +55,8 @@ public class Constantes {
   public static String property(String propertyName) {
     return properties.getProperty(propertyName);
   }
+
+  public static double redondear(double cantidad) {
+    return Math.floor(cantidad * 100) / 100;
+  }
 }

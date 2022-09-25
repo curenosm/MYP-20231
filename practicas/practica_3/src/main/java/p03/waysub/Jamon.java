@@ -1,5 +1,7 @@
 package main.java.p03.waysub;
 
+import static main.java.p03.util.Constantes.redondear;
+
 /**
  * Clase que simula el ingrediente jamon. Extiende de BaguetteDecorador
  *
@@ -17,6 +19,7 @@ public class Jamon extends BaguetteDecorador {
   public Jamon(Baguette pan) {
     super(pan);
     this.ingrediente = "Jamon";
+    this.precioIndividual = 8.5;
   }
 
   /**
@@ -25,7 +28,11 @@ public class Jamon extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + "\n - " + this.ingrediente;
+    return pan.getDescripcion()
+        + "\n - "
+        + this.ingrediente
+        + "\t$"
+        + redondear(this.precioIndividual);
   }
 
   /**
@@ -34,6 +41,6 @@ public class Jamon extends BaguetteDecorador {
    * @return double
    */
   public double getPrecio() {
-    return pan.getPrecio() + 8.5;
+    return pan.getPrecio() + this.precioIndividual;
   }
 }

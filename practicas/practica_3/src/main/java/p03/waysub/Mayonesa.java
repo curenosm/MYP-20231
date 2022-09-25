@@ -17,6 +17,7 @@ public class Mayonesa extends BaguetteDecorador {
   public Mayonesa(Baguette pan) {
     super(pan);
     this.ingrediente = "Mayonesa";
+    this.precioIndividual = 2;
   }
 
   /**
@@ -25,7 +26,7 @@ public class Mayonesa extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + "\n - " + this.ingrediente;
+    return pan.getDescripcion() + "\n - " + this.ingrediente + "\t$" + this.precioIndividual;
   }
 
   /**
@@ -34,6 +35,6 @@ public class Mayonesa extends BaguetteDecorador {
    * @return double
    */
   public double getPrecio() {
-    return pan.getPrecio() + 2;
+    return pan.getPrecio() + this.precioIndividual;
   }
 }

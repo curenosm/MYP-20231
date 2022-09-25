@@ -77,7 +77,7 @@ public class Main {
         warning("Su pedido está listo:");
         success(pedido.getDescripcion());
         success("-----------------------");
-        success(pedido.getPrecio() + "");
+        success("Total: \t\t$" + redondear(pedido.getPrecio()) + "");
 
       } catch (NumberFormatException e) {
         scanner.next();

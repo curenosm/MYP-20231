@@ -17,6 +17,7 @@ public class Mostaza extends BaguetteDecorador {
   public Mostaza(Baguette pan) {
     super(pan);
     this.ingrediente = "Mostaza";
+    this.precioIndividual = 2;
   }
 
   /**
@@ -25,7 +26,7 @@ public class Mostaza extends BaguetteDecorador {
    * @return String
    */
   public String getDescripcion() {
-    return pan.getDescripcion() + "\n - " + this.ingrediente;
+    return pan.getDescripcion() + "\n - " + this.ingrediente + "\t$" + this.precioIndividual;
   }
 
   /**
@@ -34,6 +35,6 @@ public class Mostaza extends BaguetteDecorador {
    * @return double
    */
   public double getPrecio() {
-    return pan.getPrecio() + 2;
+    return pan.getPrecio() + this.precioIndividual;
   }
 }

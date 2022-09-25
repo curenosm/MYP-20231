@@ -1,5 +1,7 @@
 package main.java.p03.pizzas;
 
+import static main.java.p03.util.Constantes.redondear;
+
 import main.java.p03.waysub.Baguette;
 
 /**
@@ -41,6 +43,6 @@ public class PizzaAdapter extends Baguette {
    */
   @Override
   public double getPrecio() {
-    return pizza.getPrecio();
+    return redondear(pizza.getPrecio());
   }
 }

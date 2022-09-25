@@ -1,5 +1,7 @@
 package main.java.p03.waysub;
 
+import static main.java.p03.util.Constantes.redondear;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -21,7 +23,7 @@ public abstract class Baguette {
    * @return String
    */
   public String getDescripcion() {
-    return this.descripcion + "\n";
+    return this.descripcion + "\n\n - Pan: \t$" + redondear(this.precio);
   }
 
   /**
