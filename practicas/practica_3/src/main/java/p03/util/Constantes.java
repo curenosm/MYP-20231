@@ -63,10 +63,20 @@ public class Constantes {
     return null;
   }
 
+  /**
+   * Metodo para obtener un mensaje especifico del archivo application.properties de acuerdo a su nombre
+   * @param propertyName NOmbre del mensaje que se desea obtener
+   * @return String
+   */
   public static String property(String propertyName) {
     return properties.getProperty(propertyName);
   }
 
+  /***
+   * Metodo para redondear decimales
+   * @param cantidad Cantidad a redondear
+   * @return double
+   */
   public static double redondear(double cantidad) {
     return Math.floor(cantidad * 100) / 100;
   }

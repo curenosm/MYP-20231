@@ -50,6 +50,10 @@ public class Pizza {
     return this.precio;
   }
 
+  /**
+   * Representancion en cadena de la clase 
+   * @return String
+   */
   @Override
   public String toString() {
     String res = "Pizza " + this.nombre + "\n";
