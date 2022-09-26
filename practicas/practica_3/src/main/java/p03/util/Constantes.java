@@ -64,7 +64,9 @@ public class Constantes {
   }
 
   /**
-   * Metodo para obtener un mensaje especifico del archivo application.properties de acuerdo a su nombre
+   * Metodo para obtener un mensaje especifico del archivo application.properties de acuerdo a su
+   * nombre
+   *
    * @param propertyName NOmbre del mensaje que se desea obtener
    * @return String
    */

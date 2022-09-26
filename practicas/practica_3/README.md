@@ -17,7 +17,10 @@
 ## Forma 1
 
 1. Dirigirse al directorio `src` de la práctica
-2. Compilar usando `javac -sourcepath . -d ../target/ -cp .:../lib/* ./main/java/p03/Main.java`
+2. Compilar usando <br/>
+
+`javac -sourcepath . -d ../target/ -cp .:../lib/* ./main/java/p03/Main.java`
+
 3. Copiar los recursos usando `cp -r ./main/resources ../target/main/`
 4. Dirigirse al directorio generado `cd ../target`
 5. Ejecutar usando `java -cp .:../lib/* main.java.p03.Main`

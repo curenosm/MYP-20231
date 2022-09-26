@@ -10,7 +10,7 @@ import main.java.p03.waysub.*;
 public class Main {
 
   public static void main(String[] args) {
-    version(property("version"));
+    version(property("project.info"));
 
     Scanner scanner = new Scanner(System.in);
 

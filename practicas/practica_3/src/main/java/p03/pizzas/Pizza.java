@@ -51,7 +51,8 @@ public class Pizza {
   }
 
   /**
-   * Representancion en cadena de la clase 
+   * Representancion en cadena de la clase
+   *
    * @return String
    */
   @Override
