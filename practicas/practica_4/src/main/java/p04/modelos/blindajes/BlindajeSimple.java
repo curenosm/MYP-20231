@@ -2,21 +2,47 @@ package main.java.p04.modelos.blindajes;
 
 import java.math.BigDecimal;
 
+/**
+ *Clase que representa un blindaje simple. Extiende de la clase Blindaje.
+ *@author Alcantara Estrada Kevin Isaac
+ *@author Curenio Sanchez Misael
+ *@author Hernandez Paramo ELizabeth
+ */
 public class BlindajeSimple extends Blindaje{
 
+    /**
+     * Metodo constructor sin parametros de la clase
+     */
+    public BlindajeSimple(){
+        this.nombre= "Blindaje Simple.";
+        this.descripcion= "Blindaje ligero hecho con acero. Resulta ligero y sutil.";
+        this.precio= new BigDecimal(1111.11);
+    }
+
+     /**
+     * Metodo para obtener el nombre de la clase
+     * @return String
+     */
     @Override 
     public String nombre(){
-        return "Blindaje Simple.";
+        return this.nombre;
     }
 
+    /**
+     * Metodo para obtener la descripcion de esta pieza
+     * @return String
+     */
     @Override
     public String descripcion(){
-        return "Blindaje ligero hecho con acero. Resulta ligero y sutil.";
+        return this.descripcion;
     }
 
+     /**
+     * Metodo que devuelve el precio del componente
+     * @return BigDecimal
+     */
     @Override 
     public BigDecimal precio(){
-        BigDecimal bd = new BigDecimal(1111.11);
-        return bd;
+        return this.precio;
     }
 }
