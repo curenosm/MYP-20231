@@ -119,20 +119,34 @@ El método Abstract factory proporciona una interfaz para crear familias de obje
 
 ## BUILDER
 <br/>
+Como vimos en clase, el patrón builder se utiliza para encapsular la construcción de un producto y permitir que se construya en pasos.
 
 ### ESTRUCTURA
 <br/>
 
+- **Interfaz constructora:** Declara pasos de construcción de producto que todos los tipos de objetos constructores tienen en común.
+- **Constructores concretos:** Ofrecen distintas implementaciones de los pasos de construcción.
+- **Productos:** Son los objetos resultantes. Los productos construidos por distintos objetos constructores no tienen que pertencer a la misma jerarquía de clases o interfaz.
+- **Clase Directora:** Define el orden en el que se invocarán los pasos de construcción, por lo que puedes crear y reutilizar configuraciones específicas de los productos.
+- **Cliente:** Debe asociar uno de los objetos constructores con la clase directora. 
+<br/><br/>
 
 ### IMPLEMENTACIÓN
+<br/>
 
-br/>
+1. Nos aseguramos de poder definir claramente los pasos comunes de construcción para todas las representaciones disponibles del producto.
+2. Declaramos estos pasos en la interfaz constructora base.
+3. Creamos una clase constructora concreta para cada una de las representaciones de producto e implementa sus pasos de construcción.
+4. Pensamos en crear una clase directora. Podemos encapsular varias formas de construir un producto utilizando el mismo objeto constructor.
+5. El código cliente crea tanto el objeto constructor como el director. Antes de que empiece la construcción, el cliente debe pasar un objeto constructor al director. Normalmente, el cliente hace esto sólo una vez, mediante los parámetros del constructor del director. El director utiliza el objeto constructor para el resto de la construcción. Existe una manera alternativa, en la que el objeto constructor se pasa directamente al método de construcción del director.
+6. El resultado de la construcción tan solo se puede obtener directamente del director si todos los productos siguen la misma interfaz. De lo contrario, el cliente deberá extraer el resultado del constructor.
+
+<br/>
 
 ### DESVENTAJA
 <br/>
 
--
--
+- La complejidad general del código aumenta, ya que el patrón exige la creación de varias clases nuevas.
 
 <br/>
 
