@@ -16,7 +16,7 @@ public class Printer {
   private static AnsiFormat error = new AnsiFormat(BOLD(), RED_TEXT());
   private static AnsiFormat warning = new AnsiFormat(BOLD(), YELLOW_TEXT());
   private static AnsiFormat success = new AnsiFormat(BOLD(), GREEN_TEXT());
-  private static AnsiFormat version = new AnsiFormat(BRIGHT_BLUE_TEXT());
+  private static AnsiFormat info = new AnsiFormat(BRIGHT_BLUE_TEXT());
   private static AnsiFormat bold = new AnsiFormat(BOLD(), BLUE_TEXT());
 
   /**
@@ -39,7 +39,7 @@ public class Printer {
 
   /** Metodo para imprimir la informacion de la practica */
   public static void printProjectInformation() {
-    version(
+    info(
         "Project: Practica 2 (Template, State, Iterator)\n"
             + "Version: 1.0.0\n"
             + "Authors: BETTER CODE SAUL");
@@ -97,7 +97,7 @@ public class Printer {
    *
    * @param s String con el mensaje deseado
    */
-  public static void version(String s) {
-    println(s, version);
+  public static void info(String s) {
+    println(s, info);
   }
 }
