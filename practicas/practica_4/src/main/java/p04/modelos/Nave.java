@@ -3,19 +3,29 @@ package main.java.p04.modelos;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import main.java.p04.modelos.blindajes.BlindajeFortaleza;
-import main.java.p04.modelos.cabinas.Cabina1Piloto;
-import main.java.p04.modelos.sistemas.ViajeIntercontinental;
+import main.java.p04.modelos.blindajes.*;
+import main.java.p04.modelos.cabinas.*;
+import main.java.p04.modelos.sistemas.*;
+import main.java.p04.modelos.armas.*;
 
 public class Nave {
 
-  private List<Componente> armas;
+  
+  private Componente arma;
   private Componente blindaje;
   private Componente cabina;
   private Componente sistemaDePropulsion;
 
+
+  public Nave(Arma arma, Blindaje blindaje, Cabina cabina, SistemaDePropulsion sistema){
+    this.arma = arma;
+    this.blindaje = blindaje;
+    this.cabina=cabina;
+    this.sistemaDePropulsion = sistema;
+  }
+
   public Nave() {
-    this.armas = new ArrayList<>();
+    arma = new ArmaLaserSimple();
     blindaje = new BlindajeFortaleza();
     cabina = new Cabina1Piloto();
     sistemaDePropulsion = new ViajeIntercontinental();
@@ -24,10 +34,8 @@ public class Nave {
   public BigDecimal obtenerCosto() {
 
     BigDecimal total = BigDecimal.ZERO;
-    for (Componente arma : armas) {
-      total = total.add(arma.precio());
-    }
-
+    
+    total = total.add(arma.precio());
     total = total.add(blindaje.precio());
     total = total.add(cabina.precio());
     total = total.add(sistemaDePropulsion.precio());
@@ -35,12 +43,12 @@ public class Nave {
     return total;
   }
 
-  public List<Componente> getArmas() {
-    return armas;
+  public Componente getArma() {
+    return arma;
   }
 
-  public void setArmas(List<Componente> armas) {
-    this.armas = armas;
+  public void setArma(Componente arma) {
+    this.arma = arma;
   }
 
   public Componente getBlindaje() {
@@ -69,12 +77,14 @@ public class Nave {
 
   @Override
   public String toString() {
+
+    BigDecimal costo = obtenerCosto();
     return ""
         + "Sistema de propulsion: "
         + this.sistemaDePropulsion
         + "\n"
         + "Armas: "
-        + this.armas
+        + this.arma
         + "\n"
         + "Cabina: "
         + this.cabina

@@ -14,4 +14,9 @@ public abstract class Blindaje implements Componente {
   protected BigDecimal precio;
   protected String descripcion;
   protected String nombre;
+
+  public String toString(){
+    String s = nombre + "\n" + descripcion;
+    return s;
+  }
 }
