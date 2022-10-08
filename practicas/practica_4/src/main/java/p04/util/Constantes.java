@@ -59,4 +59,6 @@ public class Constantes {
   public static double redondear(double cantidad) {
     return Math.floor(cantidad * 100) / 100;
   }
+
+  
 }

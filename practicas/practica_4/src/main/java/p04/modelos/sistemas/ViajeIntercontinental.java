@@ -49,4 +49,14 @@ public class ViajeIntercontinental extends SistemaDePropulsion {
   public BigDecimal precio() {
     return this.precio;
   }
+
+  @Override
+  public int velocidad(){
+    return 150;
+  }
+
+  @Override
+  public int peso(){
+    return 80;
+  }
 }

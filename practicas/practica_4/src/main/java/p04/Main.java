@@ -65,6 +65,11 @@ public class Main {
     } while (true);
   }
 
+  /**
+   * Metodo para leer el presupuesto del usuario
+   * @param scanner Instancia de la clase Scanner
+   * @return BigDecimal
+   */
   public static BigDecimal leerPresupuesto(Scanner scanner) {
 
     info(property("mensajes.presupuesto"));
@@ -82,6 +87,10 @@ public class Main {
     return res;
   }
 
+  /**
+   * Metodo para que el usuario arme su nave
+   * @return Nave
+   */
   public static Nave elegirNave(){
 
     Nave nave = new Nave();
@@ -98,6 +107,10 @@ public class Main {
     return nave;
   }
 
+  /**
+   * Metodo para que el usuario elija el Arma que desea para su nave
+   * @return Arma
+   */
   public static Arma elegirArma(){
     int resp=0;
     Scanner scanner = new Scanner(System.in);
@@ -133,6 +146,10 @@ public class Main {
     }while(true);
   }
 
+  /**
+   * Metodo para que el usuario elija el blindaje que desea para su nave
+   * @return Blindaje
+   */
   public static Blindaje elegirBlindaje(){
     int resp=0;
     Scanner scanner = new Scanner(System.in);
@@ -168,6 +185,10 @@ public class Main {
     }while(true);
   }
   
+  /**
+   * Metodo para que el usuario elija la cabina que desea para su nave
+   * @return Cabina
+   */
   public static Cabina elegirCabina(){
     int resp=0;
     Scanner scanner = new Scanner(System.in);
@@ -203,6 +224,10 @@ public class Main {
     }while(true);
   }
 
+  /**
+   * Metodo para elegir el Sistema de Propulsion que el usuario quiere para su nave
+   * @return SistemaDePropulsion
+   */
   public static SistemaDePropulsion elegirSistema(){
     int resp=0;
     Scanner scanner = new Scanner(System.in);
@@ -238,6 +263,7 @@ public class Main {
     }while(true);
   }
 
+  //Lista con las naves del catalogo que estan hechas por default
   public static List<Nave> catalogoNaves = 
   List.of(
     new Nave(new ArmaLaserSimple(), new BlindajeReforzado(), new Cabina1Piloto(), new ViajeInterplanetario()),
@@ -245,9 +271,13 @@ public class Main {
     new Nave(new ArmaLaserDestructorDePlanetas(), new BlindajeFortaleza(), new CabinaEjercito(), new ViajeIntergalactico())
   );
 
+  /**
+   * Metodo para mostrar en pantalla el catalogo de naves hechas por default y permitir al usuario comprar una
+   */
   public static void mostrarCatalogo(BigDecimal presupuesto){
     Scanner scanner = new Scanner(System.in);    
     int i=1, contador=0,resp=0;
+    //Este codigo es para conocer cuantas naves resultan impagables para el usuario
       for (Nave nave : catalogoNaves) {
         if(nave.obtenerCosto().compareTo(presupuesto)>0){
           contador++;

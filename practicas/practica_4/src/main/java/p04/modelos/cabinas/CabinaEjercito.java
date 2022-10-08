@@ -47,4 +47,14 @@ public class CabinaEjercito extends Cabina {
   public BigDecimal precio() {
     return this.precio;
   }
+
+  @Override
+  public int defensa(){
+    return 600;
+  }
+
+  @Override
+  public int peso(){
+    return 500;
+  }
 }

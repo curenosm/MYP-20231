@@ -15,4 +15,9 @@ public interface Componente {
   public String descripcion();
 
   public BigDecimal precio();
+
+  public int peso();
+  public int velocidad();
+  public int ataque();
+  public int defensa();
 }

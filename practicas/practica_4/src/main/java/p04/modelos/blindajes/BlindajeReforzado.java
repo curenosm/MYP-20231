@@ -48,4 +48,14 @@ public class BlindajeReforzado extends Blindaje {
   public BigDecimal precio() {
     return this.precio;
   }
+
+  @Override
+  public int defensa(){
+    return 1500;
+  }
+
+  @Override
+  public int peso(){
+    return 700;
+  }
 }
