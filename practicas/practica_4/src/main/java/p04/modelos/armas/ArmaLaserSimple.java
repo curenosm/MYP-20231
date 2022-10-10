@@ -49,12 +49,12 @@ public class ArmaLaserSimple extends Arma {
   }
 
   @Override
-  public int ataque(){
+  public int ataque() {
     return 200;
   }
 
   @Override
-  public int peso(){
+  public int peso() {
     return 70;
   }
 }

@@ -2,9 +2,6 @@ package main.java.p04.modelos;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.ArrayList;
-import java.util.List;
-
 import main.java.p04.modelos.armas.*;
 import main.java.p04.modelos.blindajes.*;
 import main.java.p04.modelos.cabinas.*;
@@ -12,6 +9,7 @@ import main.java.p04.modelos.sistemas.*;
 
 /**
  * Clase que simula una Nave que se conforma de varias y distintas instancias de la clase componente
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
@@ -27,14 +25,15 @@ public class Nave {
   private Componente cabina;
   private Componente sistemaDePropulsion;
 
-/**
- * Constructor con parametros de la clase
- * @param arma Instancia de la clase Arma
- * @param blindaje Instancia de la clase Blindaje
- * @param cabina Instancia de la clase Cabina
- * @param sistema Instancia de la clase SistemaDePropulsion
- */
-  public Nave(Arma arma, Blindaje blindaje, Cabina cabina, SistemaDePropulsion sistema){
+  /**
+   * Constructor con parametros de la clase
+   *
+   * @param arma Instancia de la clase Arma
+   * @param blindaje Instancia de la clase Blindaje
+   * @param cabina Instancia de la clase Cabina
+   * @param sistema Instancia de la clase SistemaDePropulsion
+   */
+  public Nave(Arma arma, Blindaje blindaje, Cabina cabina, SistemaDePropulsion sistema) {
     this.arma = arma;
     this.blindaje = blindaje;
     this.cabina = cabina;
@@ -45,9 +44,7 @@ public class Nave {
     this.velocidad = 100 + sistema.velocidad();
   }
 
-  /**
-   * Metodo constructor sin parametros de la clase
-   */
+  /** Metodo constructor sin parametros de la clase */
   public Nave() {
     arma = new ArmaLaserSimple();
     blindaje = new BlindajeFortaleza();
@@ -57,6 +54,7 @@ public class Nave {
 
   /**
    * Metodo para obtener el costo total de la nave
+   *
    * @return BigDecimal
    */
   public BigDecimal obtenerCosto() {
@@ -71,9 +69,9 @@ public class Nave {
     return totalRedondeado;
   }
 
-
   /**
    * Metodo para obtener el valor del atributo arma
+   *
    * @return Componente
    */
   public Componente getArma() {
@@ -82,6 +80,7 @@ public class Nave {
 
   /**
    * Metodo para modificar el valor del atributo arma
+   *
    * @param sistemaDePropulsion Instancia de la clase Componente
    */
   public void setArma(Componente arma) {
@@ -90,6 +89,7 @@ public class Nave {
 
   /**
    * Metodo para obtener el valor del atributo blindaje
+   *
    * @return Componente
    */
   public Componente getBlindaje() {
@@ -98,14 +98,16 @@ public class Nave {
 
   /**
    * Metodo para modificar el valor del atributo blindaje
+   *
    * @param sistemaDePropulsion Instancia de la clase Componente
    */
   public void setBlindaje(Componente blindaje) {
     this.blindaje = blindaje;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo cabina
+   *
    * @return Componente
    */
   public Componente getCabina() {
@@ -114,14 +116,16 @@ public class Nave {
 
   /**
    * Metodo para modificar el valor del atributo cabina
+   *
    * @param sistemaDePropulsion Instancia de la clase Componente
    */
   public void setCabina(Componente cabina) {
     this.cabina = cabina;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo sistemaDePropulsion
+   *
    * @return Componente
    */
   public Componente getSistemaDePropulsion() {
@@ -130,6 +134,7 @@ public class Nave {
 
   /**
    * Metodo para modificar el valor del atributo sistemaDePropulsion
+   *
    * @param sistemaDePropulsion Instancia de la clase Componente
    */
   public void setSistemaDePropulsion(Componente sistemaDePropulsion) {
@@ -138,12 +143,13 @@ public class Nave {
 
   /**
    * Representacion en cadena de la clase
+   *
    * @return String
    */
   @Override
   public String toString() {
 
-  calcularEstadisticas();
+    calcularEstadisticas();
     return ""
         + "Sistema de propulsion: "
         + this.sistemaDePropulsion
@@ -168,12 +174,16 @@ public class Nave {
         + " defendits \n"
         + "Velocidad: "
         + this.velocidad
-        + " parsecs\n"
-        ;
+        + " parsecs\n";
   }
 
-  private void calcularEstadisticas(){
-    this.peso = 600 + this.arma.peso() + this.blindaje.peso() + this.cabina.peso() + this.sistemaDePropulsion.peso();
+  private void calcularEstadisticas() {
+    this.peso =
+        600
+            + this.arma.peso()
+            + this.blindaje.peso()
+            + this.cabina.peso()
+            + this.sistemaDePropulsion.peso();
     this.ataque = 50 + this.arma.ataque();
     this.defensa = 200 + this.cabina.defensa() + this.blindaje.defensa();
     this.velocidad = 100 + this.sistemaDePropulsion.velocidad();

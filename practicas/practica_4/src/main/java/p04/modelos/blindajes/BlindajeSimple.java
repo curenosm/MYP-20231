@@ -49,12 +49,12 @@ public class BlindajeSimple extends Blindaje {
   }
 
   @Override
-  public int defensa(){
+  public int defensa() {
     return 700;
   }
 
   @Override
-  public int peso(){
+  public int peso() {
     return 320;
   }
 }

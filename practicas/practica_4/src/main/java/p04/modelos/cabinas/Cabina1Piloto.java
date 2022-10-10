@@ -49,12 +49,12 @@ public class Cabina1Piloto extends Cabina {
   }
 
   @Override
-  public int defensa(){
+  public int defensa() {
     return 250;
   }
 
   @Override
-  public int peso(){
+  public int peso() {
     return 55;
   }
 }

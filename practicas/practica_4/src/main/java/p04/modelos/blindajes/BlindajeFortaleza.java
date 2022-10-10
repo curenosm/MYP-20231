@@ -51,12 +51,12 @@ public class BlindajeFortaleza extends Blindaje {
   }
 
   @Override
-  public int defensa(){
+  public int defensa() {
     return 4000;
   }
 
   @Override
-  public int peso(){
+  public int peso() {
     return 1200;
   }
 }

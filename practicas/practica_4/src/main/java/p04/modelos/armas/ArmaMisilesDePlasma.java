@@ -51,12 +51,12 @@ public class ArmaMisilesDePlasma extends Arma {
   }
 
   @Override
-  public int ataque(){
+  public int ataque() {
     return 1000;
   }
 
   @Override
-  public int peso(){
+  public int peso() {
     return 160;
   }
 }

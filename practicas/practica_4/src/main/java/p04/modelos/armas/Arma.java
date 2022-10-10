@@ -16,24 +16,23 @@ public abstract class Arma implements Componente {
   protected String nombre;
 
   /**
-   *Representacion en cadena de la clase
-   *@return String
+   * Representacion en cadena de la clase
+   *
+   * @return String
    */
   @Override
-  public String toString(){
+  public String toString() {
     String s = nombre + "\n" + descripcion;
     return s;
   }
 
   public abstract int ataque();
 
-  
-  public int defensa(){
+  public int defensa() {
     return 0;
   }
 
-  
-  public int velocidad(){
+  public int velocidad() {
     return 0;
   }
 }

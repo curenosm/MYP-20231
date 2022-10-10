@@ -49,12 +49,12 @@ public class CabinaEjercito extends Cabina {
   }
 
   @Override
-  public int defensa(){
+  public int defensa() {
     return 600;
   }
 
   @Override
-  public int peso(){
+  public int peso() {
     return 500;
   }
 }

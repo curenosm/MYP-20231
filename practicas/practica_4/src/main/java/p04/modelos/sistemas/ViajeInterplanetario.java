@@ -51,12 +51,12 @@ public class ViajeInterplanetario extends SistemaDePropulsion {
   }
 
   @Override
-  public int velocidad(){
+  public int velocidad() {
     return 480;
   }
 
   @Override
-  public int peso(){
+  public int peso() {
     return 220;
   }
 }
