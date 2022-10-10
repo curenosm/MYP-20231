@@ -15,7 +15,7 @@ public abstract class Cabina implements Componente {
   protected String descripcion;
   protected String nombre;
 
-  public String toString(){
+  public String toString() {
     String s = nombre + "\n" + descripcion;
     return s;
   }

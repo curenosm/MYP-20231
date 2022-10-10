@@ -1,26 +1,22 @@
 package main.java.p04.modelos;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import main.java.p04.modelos.armas.*;
 import main.java.p04.modelos.blindajes.*;
 import main.java.p04.modelos.cabinas.*;
 import main.java.p04.modelos.sistemas.*;
-import main.java.p04.modelos.armas.*;
 
 public class Nave {
 
-  
   private Componente arma;
   private Componente blindaje;
   private Componente cabina;
   private Componente sistemaDePropulsion;
 
-
-  public Nave(Arma arma, Blindaje blindaje, Cabina cabina, SistemaDePropulsion sistema){
+  public Nave(Arma arma, Blindaje blindaje, Cabina cabina, SistemaDePropulsion sistema) {
     this.arma = arma;
     this.blindaje = blindaje;
-    this.cabina=cabina;
+    this.cabina = cabina;
     this.sistemaDePropulsion = sistema;
   }
 
@@ -34,7 +30,7 @@ public class Nave {
   public BigDecimal obtenerCosto() {
 
     BigDecimal total = BigDecimal.ZERO;
-    
+
     total = total.add(arma.precio());
     total = total.add(blindaje.precio());
     total = total.add(cabina.precio());
