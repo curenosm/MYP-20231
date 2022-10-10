@@ -49,4 +49,14 @@ public class ArmaLaserDestructorDePlanetas extends Arma {
   public BigDecimal precio() {
     return this.precio;
   }
+
+  @Override
+  public int ataque(){
+    return 3000;
+  }
+
+  @Override
+  public int peso(){
+    return 340;
+  }
 }

@@ -48,4 +48,14 @@ public class ViajeIntergalactico extends SistemaDePropulsion {
   public BigDecimal precio() {
     return this.precio;
   }
+
+  @Override
+  public int velocidad(){
+    return 1000;
+  }
+
+  @Override
+  public int peso(){
+    return 420;
+  }
 }

@@ -62,6 +62,11 @@ public class Main {
     } while (true);
   }
 
+  /**
+   * Metodo para leer el presupuesto del usuario
+   * @param scanner Instancia de la clase Scanner
+   * @return BigDecimal
+   */
   public static BigDecimal leerPresupuesto(Scanner scanner) {
 
     info(property("mensajes.presupuesto"));
@@ -79,7 +84,15 @@ public class Main {
     return res;
   }
 
+<<<<<<< HEAD
   public static Nave elegirNave() {
+=======
+  /**
+   * Metodo para que el usuario arme su nave
+   * @return Nave
+   */
+  public static Nave elegirNave(){
+>>>>>>> origin/Kevin
 
     Nave nave = new Nave();
 
@@ -95,8 +108,17 @@ public class Main {
     return nave;
   }
 
+<<<<<<< HEAD
   public static Arma elegirArma() {
     int resp = 0;
+=======
+  /**
+   * Metodo para que el usuario elija el Arma que desea para su nave
+   * @return Arma
+   */
+  public static Arma elegirArma(){
+    int resp=0;
+>>>>>>> origin/Kevin
     Scanner scanner = new Scanner(System.in);
 
     do {
@@ -130,8 +152,17 @@ public class Main {
     } while (true);
   }
 
+<<<<<<< HEAD
   public static Blindaje elegirBlindaje() {
     int resp = 0;
+=======
+  /**
+   * Metodo para que el usuario elija el blindaje que desea para su nave
+   * @return Blindaje
+   */
+  public static Blindaje elegirBlindaje(){
+    int resp=0;
+>>>>>>> origin/Kevin
     Scanner scanner = new Scanner(System.in);
 
     do {
@@ -164,9 +195,19 @@ public class Main {
       }
     } while (true);
   }
+<<<<<<< HEAD
 
   public static Cabina elegirCabina() {
     int resp = 0;
+=======
+  
+  /**
+   * Metodo para que el usuario elija la cabina que desea para su nave
+   * @return Cabina
+   */
+  public static Cabina elegirCabina(){
+    int resp=0;
+>>>>>>> origin/Kevin
     Scanner scanner = new Scanner(System.in);
 
     do {
@@ -200,8 +241,17 @@ public class Main {
     } while (true);
   }
 
+<<<<<<< HEAD
   public static SistemaDePropulsion elegirSistema() {
     int resp = 0;
+=======
+  /**
+   * Metodo para elegir el Sistema de Propulsion que el usuario quiere para su nave
+   * @return SistemaDePropulsion
+   */
+  public static SistemaDePropulsion elegirSistema(){
+    int resp=0;
+>>>>>>> origin/Kevin
     Scanner scanner = new Scanner(System.in);
 
     do {
@@ -235,6 +285,7 @@ public class Main {
     } while (true);
   }
 
+<<<<<<< HEAD
   public static List<Nave> catalogoNaves =
       List.of(
           new Nave(
@@ -259,6 +310,27 @@ public class Main {
     for (Nave nave : catalogoNaves) {
       if (nave.obtenerCosto().compareTo(presupuesto) > 0) {
         contador++;
+=======
+  //Lista con las naves del catalogo que estan hechas por default
+  public static List<Nave> catalogoNaves = 
+  List.of(
+    new Nave(new ArmaLaserSimple(), new BlindajeReforzado(), new Cabina1Piloto(), new ViajeInterplanetario()),
+    new Nave(new ArmaMisilesDePlasma(), new BlindajeReforzado(), new CabinaTripulacionPequena(), new ViajeIntercontinental()),
+    new Nave(new ArmaLaserDestructorDePlanetas(), new BlindajeFortaleza(), new CabinaEjercito(), new ViajeIntergalactico())
+  );
+
+  /**
+   * Metodo para mostrar en pantalla el catalogo de naves hechas por default y permitir al usuario comprar una
+   */
+  public static void mostrarCatalogo(BigDecimal presupuesto){
+    Scanner scanner = new Scanner(System.in);    
+    int i=1, contador=0,resp=0;
+    //Este codigo es para conocer cuantas naves resultan impagables para el usuario
+      for (Nave nave : catalogoNaves) {
+        if(nave.obtenerCosto().compareTo(presupuesto)>0){
+          contador++;
+        }
+>>>>>>> origin/Kevin
       }
     }
 

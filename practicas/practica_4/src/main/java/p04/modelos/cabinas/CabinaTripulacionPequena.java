@@ -47,4 +47,14 @@ public class CabinaTripulacionPequena extends Cabina {
   public BigDecimal precio() {
     return this.precio;
   }
+
+  @Override
+  public int defensa(){
+    return 400;
+  }
+
+  @Override
+  public int peso(){
+    return 200;
+  }
 }

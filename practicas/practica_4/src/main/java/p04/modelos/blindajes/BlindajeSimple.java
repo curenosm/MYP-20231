@@ -47,4 +47,14 @@ public class BlindajeSimple extends Blindaje {
   public BigDecimal precio() {
     return this.precio;
   }
+
+  @Override
+  public int defensa(){
+    return 700;
+  }
+
+  @Override
+  public int peso(){
+    return 320;
+  }
 }
