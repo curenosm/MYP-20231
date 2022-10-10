@@ -37,14 +37,6 @@ public class Printer {
     System.out.print(s);
   }
 
-  /** Metodo para imprimir la informacion de la practica */
-  public static void printProjectInformation() {
-    info(
-        "Project: Practica 2 (Template, State, Iterator)\n"
-            + "Version: 1.0.0\n"
-            + "Authors: BETTER CODE SAUL");
-  }
-
   /**
    * Metodo para imprimir en pantalla una nueva linea el mensaje deseado con un cierto color
    *
