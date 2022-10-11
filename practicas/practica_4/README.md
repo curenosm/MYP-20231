@@ -49,7 +49,10 @@
 <br/>
 Como se nos explicó en clase, el método Factory define una interfaz para crear un objeto permitiendo que las subclases decidan qué clase instanciar. El método factory permite que una clase difiera a la instalación a subclases.
 
+<br/>
+
 ### ESTRUCTURA
+
 <br/>
 
 - **Producto:** Declara la interfaz, que es común a todos los objetos que puede producir la clase creadora y sus subclases.
@@ -84,6 +87,9 @@ Como se nos explicó en clase, el método Factory define una interfaz para crear
 ## ABSTRACT FACTORY
 <br/>
 El método Abstract factory proporciona una interfaz para crear familias de objetos relacionados o dependientes sin especificar sus clases concretas.
+
+
+<br/>
 
 ### ESTRUCTURA
 <br/>
@@ -120,6 +126,8 @@ El método Abstract factory proporciona una interfaz para crear familias de obje
 ## BUILDER
 <br/>
 Como vimos en clase, el patrón builder se utiliza para encapsular la construcción de un producto y permitir que se construya en pasos.
+
+<br/>
 
 ### ESTRUCTURA
 <br/>

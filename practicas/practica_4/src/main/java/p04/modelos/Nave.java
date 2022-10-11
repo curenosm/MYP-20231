@@ -1,5 +1,7 @@
 package main.java.p04.modelos;
 
+import static main.java.p04.util.Constantes.*;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import main.java.p04.modelos.armas.*;
@@ -149,30 +151,40 @@ public class Nave {
   @Override
   public String toString() {
 
+    String space = repeat('-', 30);
+
     calcularEstadisticas();
     return ""
         + "Sistema de propulsion: "
+        + space
         + this.sistemaDePropulsion
         + "\n"
         + "Armas: "
+        + space
         + this.arma
         + "\n"
         + "Cabina: "
+        + space
         + this.cabina
         + "\n"
         + "Blindaje: "
+        + space
         + this.blindaje
         + "\n"
         + "Peso: "
+        + space
         + this.peso
         + " kilogramos\n"
         + "Ataque: "
+        + space
         + this.ataque
         + " ataquits\n"
         + "Defensa: "
+        + space
         + this.defensa
         + " defendits \n"
         + "Velocidad: "
+        + space
         + this.velocidad
         + " parsecs\n";
   }
