@@ -33,7 +33,7 @@ public class Nave {
    * @param cabina Instancia de la clase Cabina
    * @param sistema Instancia de la clase SistemaDePropulsion
    */
-  public Nave(Arma arma, Blindaje blindaje, Cabina cabina, SistemaDePropulsion sistema) {
+  public Nave(Componente arma, Componente blindaje, Componente cabina, Componente sistema) {
     this.arma = arma;
     this.blindaje = blindaje;
     this.cabina = cabina;

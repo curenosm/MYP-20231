@@ -6,7 +6,10 @@ import static main.java.p04.util.Printer.*;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Scanner;
+import main.java.p04.modelos.Componente;
 import main.java.p04.modelos.Nave;
+import main.java.p04.modelos.Builder;
+import main.java.p04.modelos.NaveBuilder;
 import main.java.p04.modelos.armas.*;
 import main.java.p04.modelos.blindajes.*;
 import main.java.p04.modelos.cabinas.*;
@@ -92,18 +95,15 @@ public class Main {
    */
   public static Nave elegirNave() {
 
-    Nave nave = new Nave();
+    Builder builder = new Builder();
 
-    Arma arma = elegirArma();
-    Blindaje blindaje = elegirBlindaje();
-    Cabina cabina = elegirCabina();
-    SistemaDePropulsion sistema = elegirSistema();
+    builder=builder.arma(elegirArma());
+    builder= builder.blindaje(elegirBlindaje());
+    builder=builder.cabina(elegirCabina());
+    builder = builder.sistemaDePropulsion(elegirSistema());
 
-    nave.setArma(arma);
-    nave.setBlindaje(blindaje);
-    nave.setCabina(cabina);
-    nave.setSistemaDePropulsion(sistema);
-    return nave;
+    NaveBuilder nave = new NaveBuilder(builder.build());
+    return nave.getNave();
   }
 
   /**
@@ -111,7 +111,7 @@ public class Main {
    *
    * @return Arma
    */
-  public static Arma elegirArma() {
+  public static Componente elegirArma() {
     int resp = 0;
     Scanner scanner = new Scanner(System.in);
 
@@ -151,7 +151,7 @@ public class Main {
    *
    * @return Blindaje
    */
-  public static Blindaje elegirBlindaje() {
+  public static Componente elegirBlindaje() {
     int resp = 0;
     Scanner scanner = new Scanner(System.in);
 
@@ -191,7 +191,7 @@ public class Main {
    *
    * @return Cabina
    */
-  public static Cabina elegirCabina() {
+  public static Componente elegirCabina() {
     int resp = 0;
     Scanner scanner = new Scanner(System.in);
 
@@ -231,7 +231,7 @@ public class Main {
    *
    * @return SistemaDePropulsion
    */
-  public static SistemaDePropulsion elegirSistema() {
+  public static Componente elegirSistema() {
     int resp = 0;
     Scanner scanner = new Scanner(System.in);
 
