@@ -25,13 +25,23 @@ public abstract class Arma implements Componente {
     String s = nombre + "\n" + descripcion;
     return s;
   }
-
+/**
+ * Metodo abstracto para modificar el ataque de la nave
+ */
   public abstract int ataque();
 
+  /**
+   * Metodo para modificar la defensa de la nave
+   * @return int
+   */
   public int defensa() {
     return 0;
   }
 
+   /**
+   * Metodo para modificar la velocidad de la nave
+   * @return int
+   */
   public int velocidad() {
     return 0;
   }

@@ -49,11 +49,19 @@ public class BlindajeReforzado extends Blindaje {
     return this.precio;
   }
 
+   /**
+   * Metodo para modificar la defensa de la nave
+   * @return int
+   */
   @Override
   public int defensa() {
     return 1500;
   }
 
+   /**
+   * Metodo para modificar el peso de la nave
+   * @return int
+   */
   @Override
   public int peso() {
     return 700;

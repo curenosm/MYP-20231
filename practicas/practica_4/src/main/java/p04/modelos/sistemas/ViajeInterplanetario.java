@@ -50,11 +50,19 @@ public class ViajeInterplanetario extends SistemaDePropulsion {
     return this.precio;
   }
 
+  /**
+   * Metodo para modificar la velocidad de la nave
+   * @return int
+   */
   @Override
   public int velocidad() {
     return 480;
   }
 
+   /**
+   * Metodo para modificar el peso de la nave
+   * @return int
+   */
   @Override
   public int peso() {
     return 220;
