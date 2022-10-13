@@ -50,11 +50,19 @@ public class ArmaMisilesDePlasma extends Arma {
     return this.precio;
   }
 
+   /**
+   * Metodo para modificar el ataque de la nave
+   * @return int
+   */
   @Override
   public int ataque() {
     return 1000;
   }
 
+   /**
+   * Metodo para modificar el peso de la nave
+   * @return int
+   */
   @Override
   public int peso() {
     return 160;

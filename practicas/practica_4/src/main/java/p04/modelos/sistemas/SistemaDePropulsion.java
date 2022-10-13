@@ -26,13 +26,24 @@ public abstract class SistemaDePropulsion implements Componente {
     String s = nombre + "\n" + descripcion;
     return s;
   }
-
+/**
+ * Metodo abstracto para modificar la velocidad de la nave
+ * @return int
+ */
   public abstract int velocidad();
 
+   /**
+   * Metodo para modificar el ataque de la nave
+   * @return int
+   */
   public int ataque() {
     return 0;
   }
 
+   /**
+   * Metodo para modificar la defensa de la nave
+   * @return int
+   */
   public int defensa() {
     return 0;
   }

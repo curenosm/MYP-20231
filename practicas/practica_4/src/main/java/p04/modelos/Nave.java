@@ -189,6 +189,9 @@ public class Nave {
         + " parsecs\n";
   }
 
+  /**
+   * Metodo para actualizar atributos de la nave respecto a las piezas que la componen
+   */
   private void calcularEstadisticas() {
     this.peso =
         600

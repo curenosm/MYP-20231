@@ -26,12 +26,24 @@ public abstract class Blindaje implements Componente {
     return s;
   }
 
+   /**
+   * Metodo abstracto para modificar la defensa de la nave
+   * @return int
+   */
   public abstract int defensa();
 
+   /**
+   * Metodo para modificar el ataque de la nave
+   * @return int
+   */
   public int ataque() {
     return 0;
   }
 
+   /**
+   * Metodo para modificar la velocidad de la nave
+   * @return int
+   */
   public int velocidad() {
     return 0;
   }

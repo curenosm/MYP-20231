@@ -48,11 +48,19 @@ public class CabinaEjercito extends Cabina {
     return this.precio;
   }
 
+   /**
+   * Metodo para modificar la defensa de la nave
+   * @return int
+   */
   @Override
   public int defensa() {
     return 600;
   }
 
+   /**
+   * Metodo para modificar el peso de la nave
+   * @return int
+   */
   @Override
   public int peso() {
     return 500;
