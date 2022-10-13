@@ -158,6 +158,15 @@ Como vimos en clase, el patrón builder se utiliza para encapsular la construcci
 
 <br/>
 
+## ¿Por qué escogimos builder?
+
+<br/>
+
+Como el usuario iba a tener la libertad de "armar" la nave a su propio gusto mediante ciertos pasos o etapas, consideramos que habia una cierta similitud con el patrón builder; además vimos en él una forma
+de ahorrarnos la especificacion concreta de diferentes tipos de naves dependiendo de los componentes.
+
+<br/>
+
 # Diagramas
 
 <br/>
