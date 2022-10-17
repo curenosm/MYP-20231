@@ -14,24 +14,34 @@
 
 # Instrucciones de compilacion
 
-## Forma 1 (Linux)
+
+## **Linux**
+
+### Forma 1
 
 1. Dirigirse al directorio raiz del proyecto
 2. Compilar usando `./mvnw package`
 3. Ejecutar usando `java -jar ./target/proyecto_1-0.0.1-executable.jar`
 
-## Forma 2 (Windows)
+### Forma 2
+1. Dirigirse al directorio raiz del proyecto
+2. Ejecuta el script haciendo `./run.sh` o bien `bash run.sh` desde la terminal, dentro de la carpeta raiz de la práctica (en caso de no tener permiso de ejecución ejecutar `chmod +x run.sh`).
+
+
+<br/>
+
+## **Windows**
+
+### Forma 1
 
 1. Dirigirse al directorio raiz del proyecto
 2. Compilar usando `.\mvnw.cmd package`
 3. Ejecutar usando `java -jar .\target\proyecto_1-0.0.1-executable.jar`
 
-
-<br/>
-<br/><br/><br/>
+<br/><br/>
 
 # Notas 
-- Los diagramas se encuentran ubicados en la carpeta `docs` en la raiz del proyecto.
+- Los diagramas se encuentran ubicados en la carpeta `docs`
 
 <br/>
 <br/>
