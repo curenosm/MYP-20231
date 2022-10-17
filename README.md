@@ -10,8 +10,8 @@
 - **Diagrama de clases**: Perspectiva estructural.
 <center>
 <br/>
-<img src="./UML/DiagramaClases.jpg" alt="drawing" width="600"/>
-<img src="./UML/DiagramaClases2.jpeg" alt="drawing" width="600"/>
+<img src="./img/UML/DiagramaClases.jpg" alt="drawing" width="600"/>
+<img src="./img/UML/DiagramaClases2.jpeg" alt="drawing" width="600"/>
 <br/><br/><br/>
 </center>
 
@@ -22,8 +22,8 @@ requerimientos que un sistema debe cumplir.
 
 <center>
 <br/>
-<img src="./UML/DiagramaCasosDeUso.jpg" alt="drawing" width="700"/>
-<img src="./UML/DiagramaCasosDeUso2.jpeg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaCasosDeUso.jpg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaCasosDeUso2.jpeg" alt="drawing" width="700"/>
 <br/><br/><br/>
 </center>
 
@@ -36,8 +36,8 @@ objetos de una clase) Solo se enfoca en un objeto a la vez cada diagrama. Como s
 
 <center>
 <br/>
-<img src="./UML/DiagramaDeEstados.jpeg" alt="drawing" width="700"/>
-<img src="./UML/DiagramaDeEstados2.jpeg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaDeEstados.jpeg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaDeEstados2.jpeg" alt="drawing" width="700"/>
 <br/><br/><br/>
 </center>
 
@@ -47,8 +47,8 @@ de un caso de uso. Cada estado representa el computo de una acción.
 
 <center>
 <br/>
-<img src="./UML/DiagramaDeActividades.jpeg" alt="drawing" width="700"/>
-<img src="./UML/DiagramaDeActividades.jpeg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaDeActividades.jpeg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaDeActividades.jpeg" alt="drawing" width="700"/>
 <br/><br/><br/>
 </center>
 
@@ -57,8 +57,8 @@ de un caso de uso. Cada estado representa el computo de una acción.
 
 <center>
 <br/>
-<img src="./UML/DiagramaDeSecuencia.jpeg" alt="drawing" width="700"/>
-<img src="./UML/DiagramaDeSecuencia2.jpeg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaDeSecuencia.jpeg" alt="drawing" width="700"/>
+<img src="./img/UML/DiagramaDeSecuencia2.jpeg" alt="drawing" width="700"/>
 <br/><br/><br/>
 </center>
 
