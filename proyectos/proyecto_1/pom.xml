@@ -14,7 +14,6 @@
     <spring-boot-maven-plugin-version>2.7.2</spring-boot-maven-plugin-version>
 
     <!-- Dependencies -->
-
     <google-java-format-version>1.15.0</google-java-format-version>
     <junit-version>5.8.2</junit-version>
     <jcolor-version>5.5.1</jcolor-version>
