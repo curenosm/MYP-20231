@@ -1,11 +1,5 @@
 package com.bettercodesaul.util;
 
-import com.bettercodesaul.Main;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
-import java.util.Scanner;
-
 /**
  * Clase que almacena las constantes utilizadas para la practica
  *
@@ -14,44 +8,6 @@ import java.util.Scanner;
  * @author Hernandez Paramo Elizabeth
  */
 public class Constantes {
-
-  private static Properties properties;
-  public static Scanner scanner = new Scanner(System.in);
-
-  static {
-    properties = loadProperties();
-  }
-
-  /**
-   * Metodo que carga el archivo application.properties que esta en la raiz de la practica.
-   *
-   * @return objeto de propiedades
-   */
-  public static Properties loadProperties() {
-
-    InputStream input = Main.class.getResourceAsStream("/application.properties");
-
-    try {
-      Properties prop = new Properties();
-      prop.load(input);
-      return prop;
-    } catch (IOException ex) {
-      ex.printStackTrace();
-    }
-
-    return null;
-  }
-
-  /**
-   * Metodo para obtener un mensaje especifico del archivo application.properties de acuerdo a su
-   * nombre
-   *
-   * @param propertyName NOmbre del mensaje que se desea obtener
-   * @return String
-   */
-  public static String property(String propertyName) {
-    return properties.getProperty(propertyName);
-  }
 
   /**
    * * Metodo para redondear decimales
@@ -83,5 +39,16 @@ public class Constantes {
    */
   public static String repeat(String s, int n) {
     return (n > 0) ? s + repeat(s, n - 1) : "";
+  }
+
+  /**
+   * Metodo para repetir una cadena un cierto numero de veces
+   *
+   * @param c Cadena a repetir
+   * @param n Numero de veces
+   * @return
+   */
+  public static int random(int startInclusive, int endExclusive) {
+    return (int) (Math.random() * endExclusive + startInclusive);
   }
 }

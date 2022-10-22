@@ -11,6 +11,13 @@ import java.util.List;
 
 public class ReadFile {
 
+  /**
+   * Metodo que lee un archivo desde los recursos y devuelve una lista de sus lineas como texto.
+   *
+   * @param pathname
+   * @return
+   * @throws IOException
+   */
   public static List<String> readUsingBufferedReader(String pathname) throws IOException {
 
     List<String> res = new ArrayList<>();

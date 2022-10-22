@@ -42,6 +42,26 @@
 
 # Notas 
 - Los diagramas se encuentran ubicados en la carpeta `docs`
+- Existen 3 usuarios predeterminados en el sistema, cuyos datos de inicio de sesion son:
+
+    ### Mexico
+
+    **username:** admin <br/>
+    **password:** admin
+
+    <br/>
+
+    ### USA
+
+    **username:** john <br/>
+    **password:** john
+
+    <br/>
+
+    ### España
+
+    **username:** manolo <br/>
+    **password:** manolo
 
 <br/>
 <br/>

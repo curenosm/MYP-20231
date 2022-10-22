@@ -1,5 +1,6 @@
 package com.bettercodesaul;
 
+import com.bettercodesaul.servicio.ServicioRemoto;
 import java.rmi.Naming;
 
 public class ClienteRemoto {

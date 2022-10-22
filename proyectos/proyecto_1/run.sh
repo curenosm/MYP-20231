@@ -10,7 +10,7 @@ else
     if [ "$MODE" = "client" ]; then
         true
     else
-        echo "Introduzca un modo de ejecucion (client/server)."
+        echo "Introduzca un modo de ejecucion (client/server)"
         exit 1
     fi
     
