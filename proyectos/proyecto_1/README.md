@@ -21,11 +21,11 @@
 
 1. Dirigirse al directorio raiz del proyecto
 2. Compilar usando `./mvnw package`
-3. Ejecutar usando `java -jar ./target/proyecto_1-0.0.1-executable.jar`
+3. Ejecutar usando `java -jar ./target/proyecto_1-0.0.1-executable.jar <param>` donde param puede ser o bien server o bien client.
 
 ### Forma 2
 1. Dirigirse al directorio raiz del proyecto
-2. Ejecuta el script haciendo `./run.sh` o bien `bash run.sh` desde la terminal, dentro de la carpeta raiz de la práctica (en caso de no tener permiso de ejecución ejecutar `chmod +x run.sh`).
+2. Ejecuta el script haciendo `./run.sh <param>` desde la terminal donde *param* puede ser o bien server o bien client (en caso de no tener permiso de ejecución ejecutar `chmod +x run.sh`).
 
 
 <br/>
