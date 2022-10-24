@@ -91,5 +91,6 @@ public class Catalogo {
     s += mostrarDepartamento(this.electrodomesticos);
     s += "-----------------------------------\n";
     s += mostrarDepartamento(this.electronica);
+    return s;
   }
 }

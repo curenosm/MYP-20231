@@ -2709,3 +2709,350 @@ com.google.googlejavaformat.java.FormatterException: 57:3: error: reached end of
 [ERROR] 
 [ERROR] For more information about the errors and possible solutions, please read the following articles:
 [ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (1 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[121,13] cannot find symbol
+  symbol:   variable cliente
+  location: class com.bettercodesaul.Main
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.780 s
+[INFO] Finished at: 2022-10-23T21:50:53-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[121,13] cannot find symbol
+[ERROR]   symbol:   variable cliente
+[ERROR]   location: class com.bettercodesaul.Main
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[warn] Failed to format file '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java'.
+
+com.google.googlejavaformat.java.FormatterException: 126:12: error: ';' expected
+	at com.google.googlejavaformat.java.FormatterException.fromJavacDiagnostics(FormatterException.java:50)
+	at com.google.googlejavaformat.java.Formatter.format(Formatter.java:151)
+	at com.google.googlejavaformat.java.Formatter.getFormatReplacements(Formatter.java:258)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:234)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:202)
+	at com.coveo.AbstractFMT.formatSourceFile(AbstractFMT.java:186)
+	at com.coveo.AbstractFMT.lambda$formatSourceFilesInDirectory$2(AbstractFMT.java:137)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:290)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:746)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+[INFO] Processed 12 files (1 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[126,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[135,50] ';' expected
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.493 s
+[INFO] Finished at: 2022-10-23T22:39:26-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[126,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[135,50] ';' expected
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[warn] Failed to format file '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java'.
+
+com.google.googlejavaformat.java.FormatterException: 126:12: error: ';' expected
+	at com.google.googlejavaformat.java.FormatterException.fromJavacDiagnostics(FormatterException.java:50)
+	at com.google.googlejavaformat.java.Formatter.format(Formatter.java:151)
+	at com.google.googlejavaformat.java.Formatter.getFormatReplacements(Formatter.java:258)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:234)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:202)
+	at com.coveo.AbstractFMT.formatSourceFile(AbstractFMT.java:186)
+	at com.coveo.AbstractFMT.lambda$formatSourceFilesInDirectory$2(AbstractFMT.java:137)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:290)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:746)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+[INFO] Processed 12 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[126,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[135,50] ';' expected
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.663 s
+[INFO] Finished at: 2022-10-23T22:39:46-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[126,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[135,50] ';' expected
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[warn] Failed to format file '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java'.
+
+com.google.googlejavaformat.java.FormatterException: 127:12: error: ';' expected
+	at com.google.googlejavaformat.java.FormatterException.fromJavacDiagnostics(FormatterException.java:50)
+	at com.google.googlejavaformat.java.Formatter.format(Formatter.java:151)
+	at com.google.googlejavaformat.java.Formatter.getFormatReplacements(Formatter.java:258)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:234)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:202)
+	at com.coveo.AbstractFMT.formatSourceFile(AbstractFMT.java:186)
+	at com.coveo.AbstractFMT.lambda$formatSourceFilesInDirectory$2(AbstractFMT.java:137)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:290)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:746)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+[INFO] Processed 12 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[128,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[136,50] ';' expected
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.543 s
+[INFO] Finished at: 2022-10-23T22:42:41-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[128,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[136,50] ';' expected
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[warn] Failed to format file '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java'.
+
+com.google.googlejavaformat.java.FormatterException: 127:12: error: ';' expected
+	at com.google.googlejavaformat.java.FormatterException.fromJavacDiagnostics(FormatterException.java:50)
+	at com.google.googlejavaformat.java.Formatter.format(Formatter.java:151)
+	at com.google.googlejavaformat.java.Formatter.getFormatReplacements(Formatter.java:258)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:234)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:202)
+	at com.coveo.AbstractFMT.formatSourceFile(AbstractFMT.java:186)
+	at com.coveo.AbstractFMT.lambda$formatSourceFilesInDirectory$2(AbstractFMT.java:137)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:290)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:746)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+[INFO] Processed 12 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[128,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[136,50] ';' expected
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.387 s
+[INFO] Finished at: 2022-10-23T22:43:14-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[127,11] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[128,46] ';' expected
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[136,50] ';' expected
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

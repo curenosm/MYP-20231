@@ -3,6 +3,7 @@ package com.bettercodesaul;
 import static com.bettercodesaul.util.Printer.*;
 import static com.bettercodesaul.util.PropertiesFactory.*;
 
+import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioRemoto;
 import com.bettercodesaul.servicio.ServicioRemotoImpl;
@@ -10,6 +11,7 @@ import com.bettercodesaul.util.*;
 import java.net.MalformedURLException;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
@@ -20,6 +22,7 @@ public class Main {
 
   public static void main(String[] args) throws RemoteException {
     success(property("version"));
+    System.out.println("Prueba");
 
     if (args.length != 0) {
       if (args[0].equals("server")) {
@@ -68,6 +71,7 @@ public class Main {
     success(messages.getProperty("messages.welcome.menu"));
 
     int opcionMenuWelcome = -1;
+    ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
       try {
         opcionMenuWelcome = Integer.parseInt(scanner.nextLine());
@@ -78,14 +82,16 @@ public class Main {
             System.exit(0);
             break;
           case 1:
-            System.out.println("Pruweba");
             success(messages.getProperty("messages.shop.menu"));
             warning(cliente.obtenerCatalogo2());
-            System.out.println("Pruweba");
-            // System.exit(0);
+
+            Producto compra = comprarProducto(cliente, messages);
+            carrito.add(compra);
+
             break;
+
           default:
-            error(property("messages.error.invalid.option"));
+            error(messages.getProperty("messages.error.invalid.option"));
             throw new Exception();
         }
 
@@ -118,6 +124,25 @@ public class Main {
     } catch (Exception e) {
 
     }
-    warning(cliente.obtenerCatalogo2());
+  }
+
+  public static Producto comprarProducto(ClienteRemoto cliente, Properties messages) {
+    Scanner scanner = new Scanner(System.in);
+    String resp = "";
+    warning(messages.getProperty("messages.buy.product"));
+    resp = scanner.nextLine();
+
+    // MOSTRAR CATALOGO
+    do {
+      resp = scanner.nextLine();
+      Producto productoElegido = cliente.comprarProducto(resp);
+      if (productoElegido == null) {
+        error(messages.getProperty("messages.buy.product"));
+        scanner = new Scanner(System.in);
+      } else {
+        return productoElegido;
+      }
+
+    } while (true);
   }
 }

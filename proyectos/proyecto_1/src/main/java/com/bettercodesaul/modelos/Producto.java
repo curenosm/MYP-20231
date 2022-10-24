@@ -39,7 +39,7 @@ public class Producto implements Cloneable {
 
   @Override
   public String toString() {
-    return "Codigo de barras: "
+    return "\nCodigo de barras: "
         + this.codigoBarras
         + "\n"
         + "Nombre producto: "
@@ -49,6 +49,6 @@ public class Producto implements Cloneable {
         + this.departamento
         + "\n"
         + this.precio
-        + "\n";
+        + "\n\n";
   }
 }

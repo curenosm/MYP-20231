@@ -32,4 +32,9 @@ public class ClienteRemoto {
 
     return menuCatalogo;
   }
+
+  public Producto comprarProducto(String codigo) {
+    Producto producto = this.catalogo.obtenerProducto(codigo);
+    return producto;
+  }
 }
