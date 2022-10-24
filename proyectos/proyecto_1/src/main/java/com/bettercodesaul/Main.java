@@ -87,6 +87,7 @@ public class Main {
 
             Producto compra = comprarProducto(cliente, messages);
             carrito.add(compra);
+            success(messages.getProperty("messages.success.buy" + compra.getNombre()));
 
             break;
 
@@ -137,7 +138,7 @@ public class Main {
       resp = scanner.nextLine();
       Producto productoElegido = cliente.comprarProducto(resp);
       if (productoElegido == null) {
-        error(messages.getProperty("messages.buy.product"));
+        error(messages.getProperty("messages.error.product"));
         scanner = new Scanner(System.in);
       } else {
         return productoElegido;
