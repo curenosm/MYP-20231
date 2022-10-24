@@ -4,19 +4,19 @@ import java.math.BigDecimal;
 
 public class Producto implements Cloneable {
 
-  private String codigoBarras;
+  private int codigoBarras;
   private String nombre;
   private String departamento;
   private BigDecimal precio;
 
-  public Producto(String codigoBarras, String nombre, String departamento, BigDecimal precio) {
+  public Producto(int codigoBarras, String nombre, String departamento, BigDecimal precio) {
     this.codigoBarras = codigoBarras;
     this.nombre = nombre;
     this.departamento = departamento;
     this.precio = precio;
   }
 
-  public String getCodigoBarras() {
+  public int getCodigoBarras() {
     return this.codigoBarras;
   }
 

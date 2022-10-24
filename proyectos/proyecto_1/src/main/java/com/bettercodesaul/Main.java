@@ -129,13 +129,22 @@ public class Main {
 
   public static Producto comprarProducto(ClienteRemoto cliente, Properties messages) {
     Scanner scanner = new Scanner(System.in);
-    String resp = "";
+    int resp = 0;
     warning(messages.getProperty("messages.buy.product"));
-    resp = scanner.nextLine();
+    // resp = scanner.nextInt();
 
     // MOSTRAR CATALOGO
     do {
-      resp = scanner.nextLine();
+
+      try {
+
+        // TODO: handle exception
+
+        resp = scanner.nextInt();
+      } catch (Exception e) {
+        error(messages.getProperty("messages.error.invalid.option"));
+        scanner = new Scanner(System.in);
+      }
       Producto productoElegido = cliente.comprarProducto(resp);
       if (productoElegido == null) {
         error(messages.getProperty("messages.error.product"));
