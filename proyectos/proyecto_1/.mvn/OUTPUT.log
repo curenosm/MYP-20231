@@ -2100,3 +2100,612 @@
 [INFO] Total time:  5.262 s
 [INFO] Finished at: 2022-10-23T02:31:33-05:00
 [INFO] ------------------------------------------------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (3 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[52,15] cannot find symbol
+  symbol: variable producto
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,24] clone() has protected access in java.lang.Object
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,30] incompatible types: java.lang.Object cannot be converted to com.bettercodesaul.modelos.Producto
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  8.289 s
+[INFO] Finished at: 2022-10-23T19:32:29-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[52,15] cannot find symbol
+[ERROR]   symbol: variable producto
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,24] clone() has protected access in java.lang.Object
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,30] incompatible types: java.lang.Object cannot be converted to com.bettercodesaul.modelos.Producto
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[52,15] cannot find symbol
+  symbol: variable producto
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,24] clone() has protected access in java.lang.Object
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,30] incompatible types: java.lang.Object cannot be converted to com.bettercodesaul.modelos.Producto
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.737 s
+[INFO] Finished at: 2022-10-23T19:32:44-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[52,15] cannot find symbol
+[ERROR]   symbol: variable producto
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,24] clone() has protected access in java.lang.Object
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[53,30] incompatible types: java.lang.Object cannot be converted to com.bettercodesaul.modelos.Producto
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[warn] Failed to format file '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java'.
+
+com.google.googlejavaformat.java.FormatterException: 57:3: error: reached end of file while parsing
+	at com.google.googlejavaformat.java.FormatterException.fromJavacDiagnostics(FormatterException.java:50)
+	at com.google.googlejavaformat.java.Formatter.format(Formatter.java:151)
+	at com.google.googlejavaformat.java.Formatter.getFormatReplacements(Formatter.java:258)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:234)
+	at com.google.googlejavaformat.java.Formatter.formatSource(Formatter.java:202)
+	at com.coveo.AbstractFMT.formatSourceFile(AbstractFMT.java:186)
+	at com.coveo.AbstractFMT.lambda$formatSourceFilesInDirectory$2(AbstractFMT.java:137)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:195)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:177)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1655)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:484)
+	at java.base/java.util.stream.ForEachOps$ForEachTask.compute(ForEachOps.java:290)
+	at java.base/java.util.concurrent.CountedCompleter.exec(CountedCompleter.java:746)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+
+[INFO] Processed 12 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[57,2] reached end of file while parsing
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.302 s
+[INFO] Finished at: 2022-10-23T19:34:10-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[57,2] reached end of file while parsing
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (4 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[81,35] cannot find symbol
+  symbol:   method obtenerCatalogo2()
+  location: variable servicioRemoto of type com.bettercodesaul.servicio.ServicioRemoto
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.614 s
+[INFO] Finished at: 2022-10-23T21:28:36-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[81,35] cannot find symbol
+[ERROR]   symbol:   method obtenerCatalogo2()
+[ERROR]   location: variable servicioRemoto of type com.bettercodesaul.servicio.ServicioRemoto
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[94,3] missing return statement
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.272 s
+[INFO] Finished at: 2022-10-23T21:31:30-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[94,3] missing return statement
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[94,3] missing return statement
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.941 s
+[INFO] Finished at: 2022-10-23T21:33:24-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/modelos/Catalogo.java:[94,3] missing return statement
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[119,13] cannot find symbol
+  symbol:   variable cliente
+  location: class com.bettercodesaul.Main
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[INFO] 2 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.508 s
+[INFO] Finished at: 2022-10-23T21:34:48-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure: Compilation failure: 
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[119,13] cannot find symbol
+[ERROR]   symbol:   variable cliente
+[ERROR]   location: class com.bettercodesaul.Main
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/ClienteRemoto.java:[33,12] incompatible types: com.bettercodesaul.modelos.Catalogo cannot be converted to java.lang.String
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[119,13] cannot find symbol
+  symbol:   variable cliente
+  location: class com.bettercodesaul.Main
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.589 s
+[INFO] Finished at: 2022-10-23T21:35:29-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[119,13] cannot find symbol
+[ERROR]   symbol:   variable cliente
+[ERROR]   location: class com.bettercodesaul.Main
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[119,13] cannot find symbol
+  symbol:   variable cliente
+  location: class com.bettercodesaul.Main
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  5.691 s
+[INFO] Finished at: 2022-10-23T21:45:40-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[119,13] cannot find symbol
+[ERROR]   symbol:   variable cliente
+[ERROR]   location: class com.bettercodesaul.Main
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (0 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[120,13] cannot find symbol
+  symbol:   variable cliente
+  location: class com.bettercodesaul.Main
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.047 s
+[INFO] Finished at: 2022-10-23T21:46:28-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[120,13] cannot find symbol
+[ERROR]   symbol:   variable cliente
+[ERROR]   location: class com.bettercodesaul.Main
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.bettercodesaul:proyecto_1 >--------------------
+[INFO] Building proyecto_1 0.0.1
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:copy-resources (copy-resource-one) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] skip non existing resourceDirectory /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/source-files
+[INFO] 
+[INFO] --- fmt-maven-plugin:2.5.0:format (default) @ proyecto_1 ---
+[warn] Test source directory '/home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/test/java' does not exist, ignoring.
+[debug] Using Google style
+[INFO] Processed 13 files (1 reformatted).
+[INFO] 
+[INFO] --- maven-resources-plugin:3.2.0:resources (default-resources) @ proyecto_1 ---
+[WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+[INFO] Using 'null' encoding to copy filtered properties files.
+[INFO] Copying 5 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.1:compile (default-compile) @ proyecto_1 ---
+[INFO] Changes detected - recompiling the module!
+[WARNING] File encoding has not been set, using platform encoding UTF-8, i.e. build is platform dependent!
+[INFO] Compiling 13 source files to /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[121,13] cannot find symbol
+  symbol:   variable cliente
+  location: class com.bettercodesaul.Main
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  6.869 s
+[INFO] Finished at: 2022-10-23T21:49:18-05:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project proyecto_1: Compilation failure
+[ERROR] /home/isaac/MyP/MYP-20231/proyectos/proyecto_1/src/main/java/com/bettercodesaul/Main.java:[121,13] cannot find symbol
+[ERROR]   symbol:   variable cliente
+[ERROR]   location: class com.bettercodesaul.Main
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

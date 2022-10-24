@@ -34,6 +34,7 @@ public class Main {
     bold(property("messages.client"));
 
     ServicioRemoto servicioRemoto = new ServicioRemotoImpl();
+    ClienteRemoto cliente = new ClienteRemoto();
 
     Usuario usuario = null;
     do {
@@ -77,8 +78,11 @@ public class Main {
             System.exit(0);
             break;
           case 1:
+            System.out.println("Pruweba");
             success(messages.getProperty("messages.shop.menu"));
-            System.exit(0);
+            warning(cliente.obtenerCatalogo2());
+            System.out.println("Pruweba");
+            // System.exit(0);
             break;
           default:
             error(property("messages.error.invalid.option"));
@@ -114,5 +118,6 @@ public class Main {
     } catch (Exception e) {
 
     }
+    warning(cliente.obtenerCatalogo2());
   }
 }
