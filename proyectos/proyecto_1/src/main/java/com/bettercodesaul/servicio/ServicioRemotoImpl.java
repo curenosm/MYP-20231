@@ -2,20 +2,23 @@ package com.bettercodesaul.servicio;
 
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
+import com.bettercodesaul.repositorio.RepositorioOferta;
 import com.bettercodesaul.repositorio.RepositorioProducto;
 import com.bettercodesaul.repositorio.RepositorioUsuario;
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 import java.util.Collection;
 
-public class ServicioRemotoImpl extends UnicastRemoteObject implements ServicioRemoto {
+public class ServicioRemotoImpl implements ServicioRemoto {
 
   private RepositorioUsuario repositorioUsuarios;
   private RepositorioProducto repositorioProductos;
+  private RepositorioOferta repositorioOfertas;
 
   public ServicioRemotoImpl() throws RemoteException {
     super();
     this.repositorioUsuarios = RepositorioUsuario.getInstance();
+    this.repositorioProductos = RepositorioProducto.getInstance();
+    this.repositorioOfertas = RepositorioOferta.getInstance();
   }
 
   @Override

@@ -1,8 +1,12 @@
 package com.bettercodesaul.modelos;
 
-import java.io.Serializable;
+import static com.bettercodesaul.util.Constantes.generarID;
 
-public class Usuario implements Serializable {
+import com.bettercodesaul.interfaces.Observador;
+import java.io.Serializable;
+import java.util.Collection;
+
+public class Usuario implements Serializable, Observador {
 
   private Long id;
   private String username;
@@ -12,6 +16,7 @@ public class Usuario implements Serializable {
   private String direccion;
   private Long cuentaBancaria;
   private String codigoPais;
+  private Collection<Oferta> ofertasDisponibles;
 
   public Usuario(
       String username,
@@ -23,8 +28,7 @@ public class Usuario implements Serializable {
       String codigoPais)
       throws InterruptedException {
 
-    Thread.sleep(100);
-    this.id = System.currentTimeMillis();
+    this.id = generarID();
     this.username = username;
     this.password = password;
     this.nombre = nombre;
@@ -96,6 +100,21 @@ public class Usuario implements Serializable {
 
   public void setCodigoPais(String codigoPais) {
     this.codigoPais = codigoPais;
+  }
+
+  public Collection<Oferta> getOfertasDisponibles() {
+    return ofertasDisponibles;
+  }
+
+  public void setOfertasDisponibles(Collection<Oferta> ofertasDisponibles) {
+    this.ofertasDisponibles = ofertasDisponibles;
+  }
+
+  @Override
+  public void actualizar(Object oferta) {
+    if (oferta instanceof Oferta) {
+      this.ofertasDisponibles.add((Oferta) oferta);
+    }
   }
 
   @Override

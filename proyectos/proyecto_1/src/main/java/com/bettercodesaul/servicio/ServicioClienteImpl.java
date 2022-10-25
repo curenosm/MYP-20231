@@ -1,8 +1,6 @@
 package com.bettercodesaul.servicio;
 
 import com.bettercodesaul.modelos.*;
-
-import java.rmi.Naming;
 import java.util.Collection;
 
 public class ServicioClienteImpl implements ServicioCliente {
@@ -16,7 +14,8 @@ public class ServicioClienteImpl implements ServicioCliente {
     String menuCatalogo = "";
 
     try {
-      ServicioRemoto servicio = (ServicioRemoto) Naming.lookup(URL_GET_CATALOGO);
+      // ServicioRemoto servicio = (ServicioRemoto) Naming.lookup(URL_GET_CATALOGO);
+      ServicioRemoto servicio = new ServicioRemotoImpl();
       Collection<Producto> productos = servicio.cargarCatalogo();
 
       for (Producto p : productos) {
@@ -34,7 +33,8 @@ public class ServicioClienteImpl implements ServicioCliente {
     Producto producto = null;
 
     try {
-      ServicioRemoto servicio = (ServicioRemoto) Naming.lookup(URL_COMPRAR_PRODUCTO);
+      // ServicioRemoto servicio = (ServicioRemoto) Naming.lookup(URL_COMPRAR_PRODUCTO);
+      ServicioRemoto servicio = new ServicioRemotoImpl();
       producto = servicio.compraSegura(codigo);
     } catch (Exception e) {
       e.printStackTrace();
@@ -47,7 +47,8 @@ public class ServicioClienteImpl implements ServicioCliente {
     Usuario usuario = null;
 
     try {
-      ServicioRemoto servicio = (ServicioRemoto) Naming.lookup(URL_LOGIN);
+      // ServicioRemoto servicio = (ServicioRemoto) Naming.lookup(URL_LOGIN);
+      ServicioRemoto servicio = new ServicioRemotoImpl();
       usuario = servicio.login(username, password);
     } catch (Exception e) {
       e.printStackTrace();

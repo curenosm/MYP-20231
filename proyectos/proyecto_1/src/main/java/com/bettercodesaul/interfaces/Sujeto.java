@@ -8,5 +8,5 @@ package com.bettercodesaul.interfaces;
  * @author Hernandez Paramo Elizabeth
  */
 public interface Sujeto {
-  void notificar(String evento);
+  void notificar(Object evento);
 }

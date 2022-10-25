@@ -51,4 +51,15 @@ public class Constantes {
   public static int random(int startInclusive, int endExclusive) {
     return (int) (Math.random() * endExclusive + startInclusive);
   }
+
+  /**
+   * Metodo para generar un identificador unico (no garantizado)
+   *
+   * @return
+   * @throws InterruptedException
+   */
+  public static Long generarID() throws InterruptedException {
+    Thread.sleep(100);
+    return System.currentTimeMillis();
+  }
 }

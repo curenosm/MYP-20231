@@ -8,5 +8,5 @@ package com.bettercodesaul.interfaces;
  * @author Hernandez Paramo Elizabeth
  */
 public interface Observador {
-  void actualizar(String registro);
+  void actualizar(Object evento);
 }
