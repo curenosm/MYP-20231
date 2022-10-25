@@ -5,6 +5,7 @@ import static com.bettercodesaul.util.PropertiesFactory.*;
 
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
+import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.servicio.ServicioRemoto;
 import com.bettercodesaul.servicio.ServicioRemotoImpl;
 import com.bettercodesaul.util.*;
@@ -37,7 +38,7 @@ public class Main {
     bold(property("messages.client"));
 
     ServicioRemoto servicioRemoto = new ServicioRemotoImpl();
-    ClienteRemoto cliente = new ClienteRemoto();
+    ServicioClienteImpl cliente = new ServicioClienteImpl();
 
     Usuario usuario = null;
     do {
@@ -83,7 +84,7 @@ public class Main {
             break;
           case 1:
             success(messages.getProperty("messages.shop.menu"));
-            warning(cliente.obtenerCatalogo2());
+            warning(cliente.obtenerCatalogo());
 
             Producto compra = comprarProducto(cliente, messages);
             carrito.add(compra);
@@ -127,9 +128,9 @@ public class Main {
     }
   }
 
-  public static Producto comprarProducto(ClienteRemoto cliente, Properties messages) {
+  public static Producto comprarProducto(ServicioClienteImpl cliente, Properties messages) {
     Scanner scanner = new Scanner(System.in);
-    int resp = 0;
+    Long resp = 0L;
     warning(messages.getProperty("messages.buy.product"));
     // resp = scanner.nextInt();
 
@@ -137,15 +138,14 @@ public class Main {
     do {
 
       try {
-
-        // TODO: handle exception
-
-        resp = scanner.nextInt();
+        resp = scanner.nextLong();
       } catch (Exception e) {
         error(messages.getProperty("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
+
       Producto productoElegido = cliente.comprarProducto(resp);
+      System.out.println(productoElegido);
       if (productoElegido == null) {
         error(messages.getProperty("messages.error.product"));
         scanner = new Scanner(System.in);

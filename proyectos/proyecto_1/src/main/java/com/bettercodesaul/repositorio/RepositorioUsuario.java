@@ -2,19 +2,20 @@ package com.bettercodesaul.repositorio;
 
 import com.bettercodesaul.modelos.Usuario;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
-public class UsuarioRepositorio implements Repositorio<Usuario> {
+public class RepositorioUsuario implements Repositorio<Usuario> {
 
-  private static volatile UsuarioRepositorio uniqueInstance;
+  private static volatile RepositorioUsuario uniqueInstance;
   private List<Usuario> usuarios;
 
-  public static UsuarioRepositorio getInstance() {
+  public static RepositorioUsuario getInstance() {
 
     if (uniqueInstance == null) {
-      synchronized (UsuarioRepositorio.class) {
+      synchronized (RepositorioUsuario.class) {
         if (uniqueInstance == null) {
-          uniqueInstance = new UsuarioRepositorio();
+          uniqueInstance = new RepositorioUsuario();
         }
       }
     }
@@ -22,7 +23,7 @@ public class UsuarioRepositorio implements Repositorio<Usuario> {
     return uniqueInstance;
   }
 
-  private UsuarioRepositorio() {
+  private RepositorioUsuario() {
     try {
       usuarios =
           List.of(
@@ -48,11 +49,17 @@ public class UsuarioRepositorio implements Repositorio<Usuario> {
     }
   }
 
-  public Usuario find(String username) {
-    return this.usuarios
-        .stream()
-        .filter(u -> u.getUsername().equals(username))
-        .findFirst()
-        .orElse(null);
+  @Override
+  public Collection<Usuario> findAll() {
+    return usuarios;
+  }
+
+  @Override
+  public Usuario find(Long primaryKey) {
+    return usuarios.stream().filter(u -> u.getId() == primaryKey).findFirst().orElse(null);
+  }
+
+  public Usuario findByUsername(String username) {
+    return usuarios.stream().filter(u -> u.getUsername().equals(username)).findFirst().orElse(null);
   }
 }

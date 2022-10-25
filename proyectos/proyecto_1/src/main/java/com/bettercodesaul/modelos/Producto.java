@@ -1,22 +1,23 @@
 package com.bettercodesaul.modelos;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class Producto implements Cloneable {
+public class Producto implements Cloneable, Serializable {
 
-  private int codigoBarras;
+  private Long codigoBarras;
   private String nombre;
   private String departamento;
   private BigDecimal precio;
 
-  public Producto(int codigoBarras, String nombre, String departamento, BigDecimal precio) {
+  public Producto(Long codigoBarras, String nombre, String departamento, BigDecimal precio) {
     this.codigoBarras = codigoBarras;
     this.nombre = nombre;
     this.departamento = departamento;
     this.precio = precio;
   }
 
-  public int getCodigoBarras() {
+  public Long getCodigoBarras() {
     return this.codigoBarras;
   }
 
