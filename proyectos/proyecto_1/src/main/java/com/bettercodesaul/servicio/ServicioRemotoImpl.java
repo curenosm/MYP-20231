@@ -46,8 +46,18 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   }
 
   @Override
-  public Producto compraSegura(Long codigoBarras) throws RemoteException, InterruptedException {
-    return this.repositorioProductos.find(codigoBarras);
+  public Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras) throws RemoteException, InterruptedException {
+    Producto compra = this.repositorioProductos.find(codigoBarras);
+    
+    // Validacion codigo correcto
+    if (usuario.getCuentaBancaria() != null) {
+      // TODO: Validacion dinero suficiente
+      
+    } else {
+      
+    }
+
+    return compra;
   }
 
   public void simularGeneradorOfertas() {
