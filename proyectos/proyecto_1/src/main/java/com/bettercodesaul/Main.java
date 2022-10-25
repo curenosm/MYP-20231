@@ -6,11 +6,7 @@ import static com.bettercodesaul.util.PropertiesFactory.*;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
-import com.bettercodesaul.servicio.ServicioRemoto;
-import com.bettercodesaul.servicio.ServicioRemotoImpl;
 import com.bettercodesaul.util.*;
-import java.net.MalformedURLException;
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,8 +33,7 @@ public class Main {
   public static void startClient() throws RemoteException {
     bold(property("messages.client"));
 
-    ServicioRemoto servicioRemoto = new ServicioRemotoImpl();
-    ServicioClienteImpl cliente = new ServicioClienteImpl();
+    ServicioClienteImpl servicio = new ServicioClienteImpl();
 
     Usuario usuario = null;
     do {
@@ -50,12 +45,8 @@ public class Main {
         info("Password: ");
         String password = scanner.nextLine();
 
-        usuario = servicioRemoto.login(username, password);
+        usuario = servicio.login(username, password);
 
-      } catch (RemoteException e) {
-        error(property("messages.error.remote"));
-      } catch (InterruptedException e) {
-        error(property("messages.error.interrupted"));
       } catch (NumberFormatException e) {
         error(property("messages.error.invalid.option"));
         scanner.nextLine();
@@ -65,6 +56,9 @@ public class Main {
       }
 
     } while (usuario == null);
+
+    // Registramos al usuario como observador del repositorio de ofertas para
+    // que si una nueva surja, este sea notificado
 
     Properties messages = PropertiesFactory.loadMessages(usuario.getCodigoPais());
 
@@ -84,14 +78,16 @@ public class Main {
             break;
           case 1:
             success(messages.getProperty("messages.shop.menu"));
-            warning(cliente.obtenerCatalogo());
+            warning(servicio.obtenerCatalogo());
 
-            Producto compra = comprarProducto(cliente, messages);
+            Producto compra = comprarProducto(servicio, messages);
             carrito.add(compra);
             success(messages.getProperty("messages.success.buy" + compra.getNombre()));
 
             break;
-
+          case 2:
+            success(messages.getProperty("messages.shop.offers"));
+            warning(usuario.getOfertasDisponibles().toString());
           default:
             error(messages.getProperty("messages.error.invalid.option"));
             throw new Exception();
@@ -104,15 +100,6 @@ public class Main {
         scanner = new Scanner(System.in);
       }
     } while (opcionMenuWelcome != 0);
-
-    try {
-      ServicioRemoto servicio = new ServicioRemotoImpl();
-      Naming.rebind("RemoteHello", servicio);
-    } catch (MalformedURLException e) {
-      error(messages.getProperty("messages.error.wrong.url"));
-    } catch (RemoteException e) {
-      error(messages.getProperty("messages.error.remote"));
-    }
 
     System.exit(0);
   }

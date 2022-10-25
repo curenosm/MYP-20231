@@ -10,7 +10,7 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
 
   private static volatile RepositorioOferta uniqueInstance;
   private RepositorioUsuario repositorioUsuario;
-  private Collection<Oferta> ofertas;
+  private List<Oferta> ofertas;
 
   public static RepositorioOferta getInstance() {
     if (uniqueInstance == null) {
@@ -25,11 +25,8 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
   }
 
   private RepositorioOferta() {
-    try {
-      ofertas = List.of();
-    } catch (Exception e) {
-      ofertas = new ArrayList<>();
-    }
+    ofertas = new ArrayList<>();
+    repositorioUsuario = RepositorioUsuario.getInstance();
   }
 
   public void save(Oferta oferta) {
