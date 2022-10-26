@@ -4,6 +4,8 @@ import static com.bettercodesaul.util.Constantes.generarID;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Clase que simula una oferta en los productos
@@ -12,6 +14,8 @@ import java.util.Date;
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
+@Getter
+@Setter
 public class Oferta {
 
   private Long id;
@@ -22,6 +26,7 @@ public class Oferta {
 
   /**
    * Constructor sin parametros de la clase
+   *
    * @throws InterruptedException
    */
   public Oferta() throws InterruptedException {
@@ -30,6 +35,7 @@ public class Oferta {
 
   /**
    * Constructor con parametros de la clase
+   *
    * @param id Long
    * @param producto instancia de la clase Producto
    * @param porcentajeDescuento instancia de la clase BigDecimal
@@ -53,6 +59,7 @@ public class Oferta {
 
   /**
    * Metodo para obtener el valor del atributo producto
+   *
    * @return Producto
    */
   public Producto getProducto() {
@@ -61,6 +68,7 @@ public class Oferta {
 
   /**
    * Metodo para modificar el valor del atributo producto
+   *
    * @param producto Instancia de la clase Producto
    */
   public void setProducto(Producto producto) {
@@ -69,6 +77,7 @@ public class Oferta {
 
   /**
    * Metodo para obtener el procentaje del descuento
+   *
    * @return BigDecimal
    */
   public BigDecimal getPorcentajeDescuento() {
@@ -77,6 +86,7 @@ public class Oferta {
 
   /**
    * Metodo para modificar el valor del atributo porcentajeDescuento
+   *
    * @param porcentajeDescuento nuevo valor del atributo (BigDecimal)
    */
   public void setPorcentajeDescuento(BigDecimal porcentajeDescuento) {
@@ -85,6 +95,7 @@ public class Oferta {
 
   /**
    * Metodo para obtener el valor del aributo codigoPaisOferta
+   *
    * @return String
    */
   public String getCodigoPaisOferta() {
@@ -93,7 +104,8 @@ public class Oferta {
 
   /**
    * Metodo para modificar el valor del atributo codigoPaisOferta
-   * @param codigoPaisOferta nuevo valor del atributo 
+   *
+   * @param codigoPaisOferta nuevo valor del atributo
    */
   public void setCodigoPaisOferta(String codigoPaisOferta) {
     this.codigoPaisOferta = codigoPaisOferta;
@@ -101,6 +113,7 @@ public class Oferta {
 
   /**
    * Metodo para obtener el valor del atributo validaHasta
+   *
    * @return Date
    */
   public Date getValidaHasta() {
@@ -109,6 +122,7 @@ public class Oferta {
 
   /**
    * Metodo para modificar el valor del atributo validaHasta
+   *
    * @param validaHasta Instancia de la clase Date que sera el nuevo valor
    */
   public void setValidaHasta(Date validaHasta) {
@@ -117,6 +131,7 @@ public class Oferta {
 
   /**
    * Metodo para obtener el valor del atributo id
+   *
    * @return Long
    */
   public Long getId() {
@@ -125,6 +140,7 @@ public class Oferta {
 
   /**
    * Metodo para modificar el valor del atributo id
+   *
    * @param id Long que sera el nuevo valor
    */
   public void setId(Long id) {

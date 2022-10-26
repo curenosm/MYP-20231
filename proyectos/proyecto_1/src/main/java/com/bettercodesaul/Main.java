@@ -17,6 +17,12 @@ public class Main {
 
   private static Scanner scanner = new Scanner(System.in);
 
+  /**
+   * Metodo principal donde se lleva a cabo la interaccion entre el usuario y el programa
+   *
+   * @param args
+   * @throws RemoteException
+   */
   public static void main(String[] args) throws RemoteException {
     success(property("version"));
     System.out.println("Prueba");
@@ -30,6 +36,11 @@ public class Main {
     }
   }
 
+  /**
+   * Metodo que inicia el programa desde la perspectiva o forma del cliente
+   *
+   * @throws RemoteException
+   */
   public static void startClient() throws RemoteException {
     bold(property("messages.client"));
 
@@ -104,6 +115,7 @@ public class Main {
     System.exit(0);
   }
 
+  /** Metodo para iniciar el programa desde la version deñ servidor */
   public static void startServer() {
     bold(property("messages.server"));
 

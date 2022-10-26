@@ -1,12 +1,13 @@
 package com.bettercodesaul.repositorio;
 
 import com.bettercodesaul.modelos.Usuario;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 /**
- * Clase que simula un repositorio de usuarios. Implementa la interfaz Repositorio 
+ * Clase que simula un repositorio de usuarios. Implementa la interfaz Repositorio
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -19,6 +20,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
 
   /**
    * Metodo para obtener un instancia de la clase tras realizar unas verificaciones
+   *
    * @return RepositorioUsuario
    */
   public static RepositorioUsuario getInstance() {
@@ -34,10 +36,11 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
     return uniqueInstance;
   }
 
-  /**
-   * Constructor sin parametros de la clase
-   */
+  /** Constructor sin parametros de la clase */
   private RepositorioUsuario() {
+
+    // TODO: Cargar datos de productos desde archivo .bat
+
     try {
       usuarios =
           List.of(
@@ -47,17 +50,27 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
                   "Admin",
                   "5511223344",
                   "Boulevard of Broken Dreams",
-                  11L,
-                  "es_MX"),
-              new Usuario("manolo", "manolo", "Manolo", "5511111111", "Sin nombre", 12L, "es_ES"),
+                  1L,
+                  "es_MX",
+                  new BigDecimal("10000")),
+              new Usuario(
+                  "manolo",
+                  "manolo",
+                  "Manolo",
+                  "5511111111",
+                  "Sin nombre",
+                  1L,
+                  "es_ES",
+                  new BigDecimal("10000")),
               new Usuario(
                   "john",
                   "john",
                   "John",
                   "5599887766",
                   "St Mary Street no. 1, Wisconsin",
-                  13L,
-                  "en_US"));
+                  1L,
+                  "en_US",
+                  new BigDecimal("10000")));
     } catch (Exception e) {
       usuarios = new ArrayList<>();
     }
@@ -65,6 +78,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
 
   /**
    * Metodo que sobreescribe el metodo finAll de la clase padre. Devuelve todos los usuarios
+   *
    * @return Collection<Usuario>
    */
   @Override
@@ -74,6 +88,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
 
   /**
    * Metodo que busca a un usuario dentro del repositorio a partir de un parametro dado
+   *
    * @param primaryKey dato del tipo Long con el cual se buscara al usuario
    * @return Usuario
    */
@@ -84,6 +99,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
 
   /**
    * Metodo para buscar y encontrar (si existe) a un usuario segun su nombre de usuario
+   *
    * @param username Nombre del usuario con el cual buscarlo
    * @return Usuario
    */

@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Clase que simula un repositorio de productos. Implementa la interfaz Repositorio 
+ * Clase que simula un repositorio de productos. Implementa la interfaz Repositorio
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -21,6 +21,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo que tras realizar una serie de verificaciones crea una instancia de la clase
+   *
    * @return RepositorioProducto
    */
   public static RepositorioProducto getInstance() {
@@ -36,10 +37,11 @@ public class RepositorioProducto implements Repositorio<Producto> {
     return uniqueInstance;
   }
 
-  /**
-   * Metodo constructor sin parametros de la clase
-   */
+  /** Metodo constructor sin parametros de la clase */
   private RepositorioProducto() {
+
+    // TODO: Cargar datos de productos desde archivo .bat
+
     try {
       productos =
           List.of(
@@ -69,6 +71,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo para obtener un producto dado su codigo de barras
+   *
    * @param codigoBarras identificador del producto
    * @return Producto
    */
@@ -88,18 +91,25 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo para obtener los productos del repositorio segun su departamento
+   *
    * @param departamento Departamento del cual se desea los productos
    * @return Collection<Producto>
    */
   public Collection<Producto> findByDepartamento(String departamento) {
     return productos
         .stream()
+        .map(
+            p -> {
+              System.out.println(p);
+              return p;
+            })
         .filter(p -> p.getDepartamento().equals(departamento))
         .collect(Collectors.toList());
   }
 
   /**
    * Metodo para representar en cadena los productos de un departamento
+   *
    * @param departamento Coleccion de instancias de la clase Producto de un mismo departamento
    * @return String
    */
@@ -115,6 +125,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo para mostrar en forma de cadena de texto el catalogo de productos
+   *
    * @return String
    */
   public String mostrarCatalogo() {
@@ -130,6 +141,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo que regresa la coleccion de todos los productos del catalogo
+   *
    * @return Collection<Producto>
    */
   @Override
@@ -139,20 +151,26 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo para encontrar un producto segun una clave dada
+   *
    * @param primaryKey clave con la cual se buscara el producto
    * @return Producto
    */
   @Override
   public Producto find(Long primaryKey) {
-    return productos
-        .stream()
-        .filter(p -> primaryKey == p.getCodigoBarras())
-        .findFirst()
-        .orElse(null);
+    Producto res =
+        productos
+            .stream()
+            .filter(p -> primaryKey.equals(p.getCodigoBarras()))
+            .findFirst()
+            .orElse(null);
+
+    System.out.println(res.getNombre());
+    return res;
   }
 
   /**
    * Metodo que devuelve los productos del departamento de Alimentos
+   *
    * @return Collection<Producto>
    */
   public Collection<Producto> getAlimentos() {
@@ -161,6 +179,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo que devuelve los productos del departamento de Electronica
+   *
    * @return Collection<Producto>
    */
   public Collection<Producto> getELectronica() {
@@ -169,6 +188,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   /**
    * Metodo que devuelve los productos del departamento de Electrodomesticos
+   *
    * @return Collection<Producto>
    */
   public Collection<Producto> getElectrodomesticos() {

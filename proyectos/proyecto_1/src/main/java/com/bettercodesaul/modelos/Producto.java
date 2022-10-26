@@ -19,6 +19,7 @@ public class Producto implements Cloneable, Serializable {
 
   /**
    * Metodo constructor parametros de la clase con
+   *
    * @param codigoBarras codigo de barras que identifica al producto
    * @param nombre nombre del producto
    * @param departamento departamento al que pertenece el producto
@@ -33,6 +34,7 @@ public class Producto implements Cloneable, Serializable {
 
   /**
    * Metodo para obtener el valor del atributo codigoBarras
+   *
    * @return Long
    */
   public Long getCodigoBarras() {
@@ -41,6 +43,7 @@ public class Producto implements Cloneable, Serializable {
 
   /**
    * Metodo para obtener el valor del atributo nombre
+   *
    * @return String
    */
   public String getNombre() {
@@ -49,6 +52,7 @@ public class Producto implements Cloneable, Serializable {
 
   /**
    * Metodo para obtener el valor del atributo departamento
+   *
    * @return String
    */
   public String getDepartamento() {
@@ -57,6 +61,7 @@ public class Producto implements Cloneable, Serializable {
 
   /**
    * Metodo para obtener el valor del atributo precio
+   *
    * @return BigDecimal
    */
   public BigDecimal getPrecio() {
@@ -65,6 +70,7 @@ public class Producto implements Cloneable, Serializable {
 
   /**
    * Metodo que devuelve una copia del producto
+   *
    * @return Object
    */
   @Override
@@ -74,6 +80,7 @@ public class Producto implements Cloneable, Serializable {
 
   /**
    * Metodo que representa en cadena a una instancia de la clase
+   *
    * @return String
    */
   @Override

@@ -17,6 +17,7 @@ public class ServicioClienteImpl implements ServicioCliente {
 
   /**
    * Constructor sin parametros de la clases
+   *
    * @throws RemoteException
    */
   public ServicioClienteImpl() throws RemoteException {
@@ -25,21 +26,16 @@ public class ServicioClienteImpl implements ServicioCliente {
 
   /**
    * Metodo para obtener una representacion del catalogo de productos
+   *
    * @return String
    */
-  public String obtenerCatalogo() {
+  public String obtenerCatalogo() throws Exception {
 
     String menuCatalogo = "";
+    Collection<Producto> productos = servicio.cargarCatalogo();
 
-    try {
-      Collection<Producto> productos = servicio.cargarCatalogo();
-
-      for (Producto p : productos) {
-        menuCatalogo += p.toString();
-      }
-
-    } catch (Exception e) {
-      e.printStackTrace();
+    for (Producto p : productos) {
+      menuCatalogo += p.toString();
     }
 
     return menuCatalogo;
@@ -47,10 +43,11 @@ public class ServicioClienteImpl implements ServicioCliente {
 
   /**
    * Metodo para realizar la compra de un producto
+   *
    * @param codigo Codigo del producto a comprar
    * @return Producto
    */
-  public Producto comprarProducto(Long codigo) {
+  /*public Producto comprarProducto(Long codigo) {
     Producto producto = null;
 
     try {
@@ -60,10 +57,11 @@ public class ServicioClienteImpl implements ServicioCliente {
     }
 
     return producto;
-  }
+  }*/
 
   /**
    * Metodo que permite a un usuario iniciar sesion
+   *
    * @param username Nombre del usuario
    * @param password Contrasenia del usuario
    * @return Usuario
@@ -78,5 +76,18 @@ public class ServicioClienteImpl implements ServicioCliente {
     }
 
     return usuario;
+  }
+
+  /**
+   * Metodo para realizar la compra de un producto desde la cuenta de un usuario
+   *
+   * @param usuario Instancia de la clase Usuario
+   * @param cuentaBancaria Cuenta asociada al usuario
+   * @param codigo Codigo del producto a comprar
+   * @return Producto
+   */
+  public Producto comprarProducto(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
+      throws Exception {
+    return servicio.compraSegura(usuario, cuentaBancaria, codigoBarras);
   }
 }

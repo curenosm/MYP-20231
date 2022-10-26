@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Clase que simula un repositorio de ofertas. Implementa las interfaces Sujeto y Repositorio 
+ * Clase que simula un repositorio de ofertas. Implementa las interfaces Sujeto y Repositorio
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -21,6 +21,7 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
 
   /**
    * Metodo que devuelve una instancia de la clase tras realizar un par de verificaciones
+   *
    * @return RepositorioOfera
    */
   public static RepositorioOferta getInstance() {
@@ -35,9 +36,7 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
     return uniqueInstance;
   }
 
-  /**
-   * Metodo constructor sin parametros de la clase
-   */
+  /** Metodo constructor sin parametros de la clase */
   private RepositorioOferta() {
     ofertas = new ArrayList<>();
     repositorioUsuario = RepositorioUsuario.getInstance();
@@ -45,6 +44,7 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
 
   /**
    * Metodo que guarda una oferta y notifica de la misma
+   *
    * @param oferta Instancia de la clase Oferta
    */
   public void save(Oferta oferta) {
@@ -54,16 +54,18 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
 
   /**
    * Metodo que sobreescribe el metodo find de la interfaz Repositorio
+   *
    * @param primaryKey Long
    * @return null
    */
   @Override
   public Oferta find(Long primaryKey) {
-    return null;
+    return ofertas.stream().filter(o -> o.getId().equals(primaryKey)).findFirst().orElse(null);
   }
 
-   /**
+  /**
    * Metodo que sobreescribe el metodo findAll de la interfaz Repositorio
+   *
    * @param primaryKey Long
    * @return Collection<Oferta>
    */
@@ -73,7 +75,9 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
   }
 
   /**
-   * Metodo que notifica de las ofertas a los usuarios con el mismo codigo de pais que el que tiene la oferta
+   * Metodo que notifica de las ofertas a los usuarios con el mismo codigo de pais que el que tiene
+   * la oferta
+   *
    * @param oferta Instancia de la clase Object
    */
   @Override

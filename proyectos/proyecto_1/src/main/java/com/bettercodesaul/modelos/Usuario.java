@@ -4,6 +4,7 @@ import static com.bettercodesaul.util.Constantes.generarID;
 
 import com.bettercodesaul.interfaces.Observador;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 
 /**
@@ -24,9 +25,11 @@ public class Usuario implements Serializable, Observador {
   private Long cuentaBancaria;
   private String codigoPais;
   private Collection<Oferta> ofertasDisponibles;
+  private BigDecimal saldoDisponible;
 
   /**
    * Metodo constructor con parametros de la clase
+   *
    * @param username nombre de usuario (nickname)
    * @param password contrasenia asociada a la cuenta del usuario
    * @param nombre nombre real del usuario
@@ -43,7 +46,8 @@ public class Usuario implements Serializable, Observador {
       String telefono,
       String direccion,
       Long cuentaBancaria,
-      String codigoPais)
+      String codigoPais,
+      BigDecimal saldoInicial)
       throws InterruptedException {
 
     this.id = generarID();
@@ -54,10 +58,12 @@ public class Usuario implements Serializable, Observador {
     this.direccion = direccion;
     this.cuentaBancaria = cuentaBancaria;
     this.codigoPais = codigoPais;
+    this.saldoDisponible = saldoInicial;
   }
 
   /**
    * Metodo para obtener el valor del atributo id
+   *
    * @return Long
    */
   public Long getId() {
@@ -66,14 +72,16 @@ public class Usuario implements Serializable, Observador {
 
   /**
    * Metodo para modificar el valor del atributo id
+   *
    * @param id Long que sera el nuevo valor del atributo
    */
   public void setId(Long id) {
     this.id = id;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo username
+   *
    * @return String
    */
   public String getUsername() {
@@ -82,14 +90,16 @@ public class Usuario implements Serializable, Observador {
 
   /**
    * Metodo para modificar el valor del atributo username
+   *
    * @param username String que sera el nuevo valor del atributo
    */
   public void setUsername(String username) {
     this.username = username;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo password
+   *
    * @return String
    */
   public String getPassword() {
@@ -100,8 +110,9 @@ public class Usuario implements Serializable, Observador {
     this.password = password;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo nombre
+   *
    * @return String
    */
   public String getNombre() {
@@ -110,14 +121,16 @@ public class Usuario implements Serializable, Observador {
 
   /**
    * Metodo para modificar el valor del atributo nombre
+   *
    * @param nombre String que sera el nuevo valor del atributo
    */
   public void setNombre(String nombre) {
     this.nombre = nombre;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo telefono
+   *
    * @return String
    */
   public String getTelefono() {
@@ -126,14 +139,16 @@ public class Usuario implements Serializable, Observador {
 
   /**
    * Metodo para modificar el valor del atributo telefono
+   *
    * @param telefono String que sera el nuevo valor del atributo
    */
   public void setTelefono(String telefono) {
     this.telefono = telefono;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo direccion
+   *
    * @return String
    */
   public String getDireccion() {
@@ -142,14 +157,16 @@ public class Usuario implements Serializable, Observador {
 
   /**
    * Metodo para modificar el valor del atributo direccion
+   *
    * @param direccion String que sera el nuevo valor del atributo
    */
   public void setDireccion(String direccion) {
     this.direccion = direccion;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo cuentaBancaria
+   *
    * @return Long
    */
   public Long getCuentaBancaria() {
@@ -158,14 +175,16 @@ public class Usuario implements Serializable, Observador {
 
   /**
    * Metodo para modificar el valor del atributo cuentaBancaria
+   *
    * @param cuentaBancaria Long que sera el nuevo valor del atributo
    */
   public void setCuentaBancaria(Long cuentaBancaria) {
     this.cuentaBancaria = cuentaBancaria;
   }
 
-   /**
+  /**
    * Metodo para obtener el valor del atributo codigoPais
+   *
    * @return String
    */
   public String getCodigoPais() {
@@ -174,24 +193,45 @@ public class Usuario implements Serializable, Observador {
 
   /**
    * Metodo para modificar el valor del atributo codigoPais
+   *
    * @param codigoPais String que sera el nuevo valor del atributo
    */
   public void setCodigoPais(String codigoPais) {
     this.codigoPais = codigoPais;
   }
 
- /**
+  /**
    * Metodo para obtener el valor del atributo ofertasDisponibles
+   *
    * @return Collection<Oferta>
    */
   public Collection<Oferta> getOfertasDisponibles() {
     return ofertasDisponibles;
   }
 
-   /**
-    * Metodo para modificar el valor del atributo ofertasDisponibles
-    * @param ofertasDisponibles Collection<Oferta> que sera el nuevo valor del atributo
-    */
+  /**
+   * Metodo para obtener el valor del atributo saldoDidsponible
+   *
+   * @return BigDecimal
+   */
+  public BigDecimal getSaldoDisponible() {
+    return this.saldoDisponible;
+  }
+
+  /**
+   * Metodo para modficiar el valor del atributo saldoDisponible
+   *
+   * @param saldoDisponible BigDecimal que sera el nuevo valor del atributo
+   */
+  public void setSaldoDisponible(BigDecimal saldoDisponible) {
+    this.saldoDisponible = saldoDisponible;
+  }
+
+  /**
+   * Metodo para modificar el valor del atributo ofertasDisponibles
+   *
+   * @param ofertasDisponibles Collection<Oferta> que sera el nuevo valor del atributo
+   */
   public void setOfertasDisponibles(Collection<Oferta> ofertasDisponibles) {
     this.ofertasDisponibles = ofertasDisponibles;
   }
@@ -203,8 +243,9 @@ public class Usuario implements Serializable, Observador {
     }
   }
 
-   /**
+  /**
    * Metodo de representacion en cadena
+   *
    * @return String
    */
   @Override
