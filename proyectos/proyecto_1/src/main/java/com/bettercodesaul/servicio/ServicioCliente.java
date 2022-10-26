@@ -4,9 +4,10 @@ import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 
 public interface ServicioCliente {
-  String obtenerCatalogo();
+  String obtenerCatalogo() throws Exception;
 
-  Producto comprarProducto(Long codigo);
+  Producto comprarProducto(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
+      throws Exception;
 
-  Usuario login(String username, String password);
+  Usuario login(String username, String password) throws Exception;
 }

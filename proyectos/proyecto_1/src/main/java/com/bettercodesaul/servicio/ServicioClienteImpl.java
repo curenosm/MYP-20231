@@ -30,27 +30,12 @@ public class ServicioClienteImpl implements ServicioCliente {
     return menuCatalogo;
   }
 
-  public Producto comprarProducto(Long codigo) {
-    Producto producto = null;
-
-    try {
-      producto = servicio.compraSegura(codigo);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    return producto;
+  public Producto comprarProducto(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
+      throws Exception {
+    return servicio.compraSegura(usuario, cuentaBancaria, codigoBarras);
   }
 
-  public Usuario login(String username, String password) {
-    Usuario usuario = null;
-
-    try {
-      usuario = servicio.login(username, password);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    return usuario;
+  public Usuario login(String username, String password) throws Exception {
+    return servicio.login(username, password);
   }
 }

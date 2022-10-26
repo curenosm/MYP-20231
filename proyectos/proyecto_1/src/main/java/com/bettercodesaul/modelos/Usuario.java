@@ -4,6 +4,7 @@ import static com.bettercodesaul.util.Constantes.generarID;
 
 import com.bettercodesaul.interfaces.Observador;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
 
 public class Usuario implements Serializable, Observador {
@@ -17,6 +18,7 @@ public class Usuario implements Serializable, Observador {
   private Long cuentaBancaria;
   private String codigoPais;
   private Collection<Oferta> ofertasDisponibles;
+  private BigDecimal saldoDisponible;
 
   public Usuario(
       String username,
@@ -25,7 +27,8 @@ public class Usuario implements Serializable, Observador {
       String telefono,
       String direccion,
       Long cuentaBancaria,
-      String codigoPais)
+      String codigoPais,
+      BigDecimal saldoInicial)
       throws InterruptedException {
 
     this.id = generarID();
@@ -36,6 +39,7 @@ public class Usuario implements Serializable, Observador {
     this.direccion = direccion;
     this.cuentaBancaria = cuentaBancaria;
     this.codigoPais = codigoPais;
+    this.saldoDisponible = saldoInicial;
   }
 
   public Long getId() {
@@ -136,5 +140,13 @@ public class Usuario implements Serializable, Observador {
         + ", codigoPais="
         + codigoPais
         + "]";
+  }
+
+  public BigDecimal getSaldoDisponible() {
+    return saldoDisponible;
+  }
+
+  public void setSaldoDisponible(BigDecimal saldoDisponible) {
+    this.saldoDisponible = saldoDisponible;
   }
 }

@@ -1,11 +1,14 @@
 package com.bettercodesaul.servicio;
 
+import static com.bettercodesaul.util.PropertiesFactory.*;
+
 import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.repositorio.RepositorioOferta;
 import com.bettercodesaul.repositorio.RepositorioProducto;
 import com.bettercodesaul.repositorio.RepositorioUsuario;
+import java.math.BigDecimal;
 import java.rmi.RemoteException;
 import java.util.Collection;
 
@@ -46,18 +49,28 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   }
 
   @Override
-  public Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras) throws RemoteException, InterruptedException {
+  public Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
+      throws Exception {
     Producto compra = this.repositorioProductos.find(codigoBarras);
-    
+
+    if (compra == null) return null;
+
     // Validacion codigo correcto
     if (usuario.getCuentaBancaria() != null) {
-      // TODO: Validacion dinero suficiente
-      
+      if (usuario.getCuentaBancaria().equals(cuentaBancaria)) {
+        if (usuario.getSaldoDisponible().compareTo(compra.getPrecio()) <= 0) {
+          BigDecimal res = usuario.getSaldoDisponible().subtract(compra.getPrecio());
+          usuario.setSaldoDisponible(res);
+          return compra;
+        } else {
+          throw new Exception(property("messages.error.invalid.insuficient.money"));
+        }
+      } else {
+        throw new Exception(property("messages.error.invalid.account.number"));
+      }
     } else {
-      
+      throw new Exception("messages.error.invalid.account.number");
     }
-
-    return compra;
   }
 
   public void simularGeneradorOfertas() {
@@ -69,6 +82,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
                   Thread.sleep(20 * 1000);
 
                   Oferta oferta = new Oferta();
+                  oferta.setCodigoPaisOferta("");
                   repositorioOfertas.save(oferta);
 
                   System.out.println("Oferta generada");

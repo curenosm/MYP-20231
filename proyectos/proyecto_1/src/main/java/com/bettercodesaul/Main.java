@@ -80,14 +80,17 @@ public class Main {
             success(messages.getProperty("messages.shop.menu"));
             warning(servicio.obtenerCatalogo());
 
-            Producto compra = comprarProducto(servicio, messages);
+            Producto compra = comprarProducto(servicio, messages, usuario);
             carrito.add(compra);
             success(messages.getProperty("messages.success.buy" + compra.getNombre()));
-
             break;
           case 2:
             success(messages.getProperty("messages.shop.offers"));
-            warning(usuario.getOfertasDisponibles().toString());
+            usuario.getOfertasDisponibles().forEach(t -> warning(t.toString()));
+            break;
+          case 3:
+            success(messages.getProperty("messages.shop"));
+            break;
           default:
             error(messages.getProperty("messages.error.invalid.option"));
             throw new Exception();
@@ -115,28 +118,37 @@ public class Main {
     }
   }
 
-  public static Producto comprarProducto(ServicioClienteImpl cliente, Properties messages) {
+  public static Producto comprarProducto(
+      ServicioClienteImpl servicio, Properties messages, Usuario usuario) throws Exception {
+
     Scanner scanner = new Scanner(System.in);
     Long resp = 0L;
     warning(messages.getProperty("messages.buy.product"));
     // resp = scanner.nextInt();
+
+    // TODO: Solicitar cuenta bancaria
+    Long cuentaBancaria = 1L;
 
     // MOSTRAR CATALOGO
     do {
 
       try {
         resp = scanner.nextLong();
+        System.out.println(resp);
       } catch (Exception e) {
-        error(messages.getProperty("messages.error.invalid.option"));
+        error(e.getMessage());
         scanner = new Scanner(System.in);
       }
 
-      Producto productoElegido = cliente.comprarProducto(resp);
-      System.out.println(productoElegido);
-      if (productoElegido == null) {
-        error(messages.getProperty("messages.error.product"));
+      Producto productoElegido = null;
+      try {
+        productoElegido = servicio.comprarProducto(usuario, cuentaBancaria, resp);
+        System.out.println("productoElegido " + productoElegido);
+      } catch (Exception e) {
         scanner = new Scanner(System.in);
-      } else {
+      }
+
+      if (productoElegido != null) {
         return productoElegido;
       }
 

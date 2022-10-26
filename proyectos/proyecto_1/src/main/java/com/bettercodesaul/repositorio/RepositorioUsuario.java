@@ -1,6 +1,7 @@
 package com.bettercodesaul.repositorio;
 
 import com.bettercodesaul.modelos.Usuario;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -33,17 +34,27 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
                   "Admin",
                   "5511223344",
                   "Boulevard of Broken Dreams",
-                  11L,
-                  "es_MX"),
-              new Usuario("manolo", "manolo", "Manolo", "5511111111", "Sin nombre", 12L, "es_ES"),
+                  1L,
+                  "es_MX",
+                  new BigDecimal("10000")),
+              new Usuario(
+                  "manolo",
+                  "manolo",
+                  "Manolo",
+                  "5511111111",
+                  "Sin nombre",
+                  1L,
+                  "es_ES",
+                  new BigDecimal("10000")),
               new Usuario(
                   "john",
                   "john",
                   "John",
                   "5599887766",
                   "St Mary Street no. 1, Wisconsin",
-                  13L,
-                  "en_US"));
+                  1L,
+                  "en_US",
+                  new BigDecimal("10000")));
     } catch (Exception e) {
       usuarios = new ArrayList<>();
     }

@@ -70,6 +70,11 @@ public class RepositorioProducto implements Repositorio<Producto> {
   public Collection<Producto> findByDepartamento(String departamento) {
     return productos
         .stream()
+        .map(
+            p -> {
+              System.out.println(p);
+              return p;
+            })
         .filter(p -> p.getDepartamento().equals(departamento))
         .collect(Collectors.toList());
   }
@@ -102,11 +107,15 @@ public class RepositorioProducto implements Repositorio<Producto> {
 
   @Override
   public Producto find(Long primaryKey) {
-    return productos
-        .stream()
-        .filter(p -> primaryKey == p.getCodigoBarras())
-        .findFirst()
-        .orElse(null);
+    Producto res =
+        productos
+            .stream()
+            .filter(p -> primaryKey.equals(p.getCodigoBarras()))
+            .findFirst()
+            .orElse(null);
+
+    System.out.println(res.getNombre());
+    return res;
   }
 
   public Collection<Producto> getAlimentos() {

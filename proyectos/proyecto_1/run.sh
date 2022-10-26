@@ -2,7 +2,7 @@
 
 MODE=$1
 
-./mvnw package >> ./.mvn/OUTPUT.log
+./mvnw package
 
 if [ "$MODE" = "server" ]; then
     :
