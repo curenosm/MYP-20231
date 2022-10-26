@@ -40,21 +40,27 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     return usuario;
   }
 
-  @Override
+  // @Override
   public Collection<Producto> cargarCatalogo() throws RemoteException, InterruptedException {
     return repositorioProductos.findAll();
   }
 
-  @Override
-  public Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras) throws RemoteException, InterruptedException {
+  public Producto compraSegura(Long codigoBarras) throws RemoteException, InterruptedException {
     Producto compra = this.repositorioProductos.find(codigoBarras);
-    
+    return compra;
+  }
+
+  // @Override
+  public Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
+      throws RemoteException, InterruptedException {
+    Producto compra = this.repositorioProductos.find(codigoBarras);
+
     // Validacion codigo correcto
     if (usuario.getCuentaBancaria() != null) {
       // TODO: Validacion dinero suficiente
-      
+
     } else {
-      
+
     }
 
     return compra;
