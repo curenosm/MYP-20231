@@ -6,6 +6,13 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.Collection;
 
+/**
+ * Interfaz que simula un servicio de forma remota. Extiende de la clase Remote
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public interface ServicioRemoto extends Remote {
 
   Usuario login(String username, String password) throws RemoteException, InterruptedException;
