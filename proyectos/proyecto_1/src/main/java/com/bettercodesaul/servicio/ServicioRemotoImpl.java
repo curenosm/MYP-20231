@@ -1,7 +1,5 @@
 package com.bettercodesaul.servicio;
 
-import static com.bettercodesaul.util.PropertiesFactory.*;
-
 import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
@@ -56,10 +54,10 @@ public class ServicioRemotoImpl implements ServicioRemoto {
         return usuario;
       }
 
-      usuario = null;
+      throw new Exception("messages.error.incorrect.password");
     }
 
-    return usuario;
+    throw new Exception("messages.error.user.not.found");
   }
 
   @Override
@@ -85,15 +83,15 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     // Validacion codigo correcto
     if (usuario.getCuentaBancaria() != null) {
       if (usuario.getCuentaBancaria().equals(cuentaBancaria)) {
-        if (usuario.getSaldoDisponible().compareTo(compra.getPrecio()) <= 0) {
+        if (usuario.getSaldoDisponible().compareTo(compra.getPrecio()) >= 0) {
           BigDecimal res = usuario.getSaldoDisponible().subtract(compra.getPrecio());
           usuario.setSaldoDisponible(res);
           return compra;
         } else {
-          throw new Exception(property("messages.error.invalid.insuficient.money"));
+          throw new Exception("messages.error.invalid.insuficient.money");
         }
       } else {
-        throw new Exception(property("messages.error.invalid.account.number"));
+        throw new Exception("messages.error.invalid.account.number");
       }
     } else {
       throw new Exception("messages.error.invalid.account.number");
@@ -119,6 +117,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
 
                   System.out.println("Oferta generada");
                 } catch (InterruptedException e) {
+
                 }
 
               } while (true);

@@ -5,6 +5,7 @@ import static com.bettercodesaul.util.Constantes.generarID;
 import com.bettercodesaul.interfaces.Observador;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collection;
 import lombok.Getter;
 import lombok.Setter;
@@ -63,6 +64,7 @@ public class Usuario implements Serializable, Observador {
     this.cuentaBancaria = cuentaBancaria;
     this.codigoPais = codigoPais;
     this.saldoDisponible = saldoInicial;
+    this.ofertasDisponibles = new ArrayList<>();
   }
 
   @Override

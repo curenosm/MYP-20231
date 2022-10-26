@@ -1,7 +1,6 @@
 package com.bettercodesaul.servicio;
 
 import com.bettercodesaul.modelos.*;
-import java.rmi.RemoteException;
 import java.util.Collection;
 
 /**
@@ -19,9 +18,9 @@ public class ServicioClienteImpl implements ServicioCliente {
   /**
    * Constructor sin parametros de la clases
    *
-   * @throws RemoteException
+   * @throws Exception
    */
-  public ServicioClienteImpl() throws RemoteException {
+  public ServicioClienteImpl() throws Exception {
     servicio = new ServicioRemotoImpl();
   }
 
@@ -49,16 +48,8 @@ public class ServicioClienteImpl implements ServicioCliente {
    * @param password Contrasenia del usuario
    * @return Usuario
    */
-  public Usuario login(String username, String password) {
-    Usuario usuario = null;
-
-    try {
-      usuario = servicio.login(username, password);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    return usuario;
+  public Usuario login(String username, String password) throws Exception {
+    return servicio.login(username, password);
   }
 
   /**

@@ -41,7 +41,7 @@ public class Main {
         error(property("messages.error.invalid.option"));
         scanner.nextLine();
       } catch (Exception e) {
-        error(property("messages.error.invalid.option"));
+        error(property(e.getMessage()));
         scanner = new Scanner(System.in);
       }
     } while (usuario == null);
@@ -51,12 +51,13 @@ public class Main {
 
     Properties messages = PropertiesFactory.loadMessages(usuario.getCodigoPais());
 
-    success(messages.getProperty("messages.welcome"));
-    success(messages.getProperty("messages.welcome.menu"));
-
     int opcionMenuWelcome = -1;
     ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
+
+      success(messages.getProperty("messages.welcome"));
+      success(messages.getProperty("messages.welcome.menu"));
+
       try {
         opcionMenuWelcome = Integer.parseInt(scanner.nextLine());
 
@@ -75,6 +76,9 @@ public class Main {
             break;
           case 2:
             success(messages.getProperty("messages.shop.offers"));
+            if (usuario.getOfertasDisponibles().size() == 0) {
+              warning(messages.getProperty("messages.error.unavailable.offers"));
+            }
             usuario.getOfertasDisponibles().forEach(t -> warning(t.toString()));
             break;
           case 3:
@@ -88,6 +92,8 @@ public class Main {
       } catch (NumberFormatException e) {
         error(messages.getProperty("messages.error.invalid.option"));
       } catch (Exception e) {
+        System.out.println("second exception");
+        e.printStackTrace();
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
@@ -99,13 +105,13 @@ public class Main {
   public static Producto comprarProducto(
       ServicioClienteImpl servicio, Properties messages, Usuario usuario) throws Exception {
     Long resp = 0L;
-    warning(messages.getProperty("messages.buy.product"));
 
     // TODO: Solicitar cuenta bancaria
     Long cuentaBancaria = 1L;
 
     // MOSTRAR CATALOGO
     do {
+      warning(messages.getProperty("messages.buy.product"));
 
       try {
         resp = scanner.nextLong();
