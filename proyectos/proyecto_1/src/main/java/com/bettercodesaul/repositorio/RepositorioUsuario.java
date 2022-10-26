@@ -1,6 +1,7 @@
 package com.bettercodesaul.repositorio;
 
 import com.bettercodesaul.modelos.Usuario;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,6 +26,9 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
   }
 
   private RepositorioUsuario() {
+
+    // TODO: Cargar datos de productos desde archivo .bat
+    
     try {
       usuarios =
           List.of(

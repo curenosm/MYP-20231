@@ -9,7 +9,6 @@ import com.bettercodesaul.repositorio.RepositorioOferta;
 import com.bettercodesaul.repositorio.RepositorioProducto;
 import com.bettercodesaul.repositorio.RepositorioUsuario;
 import java.math.BigDecimal;
-import java.rmi.RemoteException;
 import java.util.Collection;
 
 public class ServicioRemotoImpl implements ServicioRemoto {
@@ -18,7 +17,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   private RepositorioProducto repositorioProductos;
   private RepositorioOferta repositorioOfertas;
 
-  public ServicioRemotoImpl() throws RemoteException {
+  public ServicioRemotoImpl() {
     super();
     this.repositorioUsuarios = RepositorioUsuario.getInstance();
     this.repositorioProductos = RepositorioProducto.getInstance();
@@ -28,7 +27,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
 
   @Override
   public Usuario login(String username, String password)
-      throws RemoteException, InterruptedException {
+      throws Exception {
 
     Usuario usuario = repositorioUsuarios.findByUsername(username);
 
@@ -44,7 +43,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   }
 
   @Override
-  public Collection<Producto> cargarCatalogo() throws RemoteException, InterruptedException {
+  public Collection<Producto> cargarCatalogo() throws Exception {
     return repositorioProductos.findAll();
   }
 
@@ -75,22 +74,26 @@ public class ServicioRemotoImpl implements ServicioRemoto {
 
   public void simularGeneradorOfertas() {
     new Thread(
-            () -> {
-              // run background code here
-              do {
-                try {
-                  Thread.sleep(20 * 1000);
+      () -> {
+        // run background code here
+        do {
+          try {
+            Thread.sleep(20 * 1000);
 
-                  Oferta oferta = new Oferta();
-                  oferta.setCodigoPaisOferta("");
-                  repositorioOfertas.save(oferta);
+            // TODO: Crear ofertas al azar para cada departamento /producto
+            // utilizando el metodo save del repositorio de ofertas para
+            // que se notifique correctamente a los usuarios
+            Oferta oferta = new Oferta();
+            oferta.setCodigoPaisOferta("");
 
-                  System.out.println("Oferta generada");
-                } catch (InterruptedException e) {
-                }
 
-              } while (true);
-            })
-        .start();
+            repositorioOfertas.save(oferta);
+
+            System.out.println("Oferta generada");
+          } catch (InterruptedException e) {
+          }
+
+        } while (true);
+      }).start();
   }
 }

@@ -26,6 +26,9 @@ public class RepositorioProducto implements Repositorio<Producto> {
   }
 
   private RepositorioProducto() {
+
+    // TODO: Cargar datos de productos desde archivo .bat
+    
     try {
       productos =
           List.of(

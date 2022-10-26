@@ -1,30 +1,23 @@
 package com.bettercodesaul.servicio;
 
 import com.bettercodesaul.modelos.*;
-import java.rmi.RemoteException;
 import java.util.Collection;
 
 public class ServicioClienteImpl implements ServicioCliente {
 
   private ServicioRemoto servicio;
 
-  public ServicioClienteImpl() throws RemoteException {
+  public ServicioClienteImpl() {
     servicio = new ServicioRemotoImpl();
   }
 
-  public String obtenerCatalogo() {
+  public String obtenerCatalogo() throws Exception {
 
     String menuCatalogo = "";
+    Collection<Producto> productos = servicio.cargarCatalogo();
 
-    try {
-      Collection<Producto> productos = servicio.cargarCatalogo();
-
-      for (Producto p : productos) {
-        menuCatalogo += p.toString();
-      }
-
-    } catch (Exception e) {
-      e.printStackTrace();
+    for (Producto p : productos) {
+      menuCatalogo += p.toString();
     }
 
     return menuCatalogo;
