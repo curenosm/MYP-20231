@@ -7,9 +7,7 @@ import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.util.*;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -17,26 +15,18 @@ public class Main {
 
   private static Scanner scanner = new Scanner(System.in);
 
-  public static void main(String[] args) throws RemoteException {
+  public static void main(String[] args) throws Exception {
     success(property("version"));
-    System.out.println("Prueba");
-
-    if (args.length != 0) {
-      if (args[0].equals("server")) {
-        startServer();
-      } else startClient();
-    } else {
-      error(property("messages.error.mode.unselected"));
-    }
+    startClient();
   }
 
-  public static void startClient() throws RemoteException {
-    bold(property("messages.client"));
+  public static void startClient() throws Exception {
 
     ServicioClienteImpl servicio = new ServicioClienteImpl();
-
     Usuario usuario = null;
+
     do {
+      bold(property("messages.client"));
 
       try {
         info("Username: ");
@@ -54,7 +44,6 @@ public class Main {
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
-
     } while (usuario == null);
 
     // Registramos al usuario como observador del repositorio de ofertas para
@@ -104,27 +93,13 @@ public class Main {
       }
     } while (opcionMenuWelcome != 0);
 
-    System.exit(0);
-  }
-
-  public static void startServer() {
-    bold(property("messages.server"));
-
-    try {
-      List<String> catalogo = ReadFile.readUsingBufferedReader("/catalogo.bat");
-      catalogo.forEach(System.out::println);
-    } catch (Exception e) {
-
-    }
+    startClient();
   }
 
   public static Producto comprarProducto(
       ServicioClienteImpl servicio, Properties messages, Usuario usuario) throws Exception {
-
-    Scanner scanner = new Scanner(System.in);
     Long resp = 0L;
     warning(messages.getProperty("messages.buy.product"));
-    // resp = scanner.nextInt();
 
     // TODO: Solicitar cuenta bancaria
     Long cuentaBancaria = 1L;
@@ -141,12 +116,7 @@ public class Main {
       }
 
       Producto productoElegido = null;
-      try {
-        productoElegido = servicio.comprarProducto(usuario, cuentaBancaria, resp);
-        System.out.println("productoElegido " + productoElegido);
-      } catch (Exception e) {
-        scanner = new Scanner(System.in);
-      }
+      productoElegido = servicio.comprarProducto(usuario, cuentaBancaria, resp);
 
       if (productoElegido != null) {
         return productoElegido;

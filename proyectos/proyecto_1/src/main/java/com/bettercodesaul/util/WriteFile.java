@@ -7,24 +7,24 @@ import java.io.OutputStream;
 
 public class WriteFile {
 
-    /**
-     * Use Streams when you are dealing with raw data
-     * @param data
-     */
-    public static void writeUsingOutputStream(String pathname, String data) {
-        OutputStream os = null;
-        try {
-            os = new FileOutputStream(new File(pathname));
-            os.write(data.getBytes(), 0, data.length());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }finally{
-            try {
-                os.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+  /**
+   * Use Streams when you are dealing with raw data
+   *
+   * @param data
+   */
+  public static void writeUsingOutputStream(String pathname, String data) {
+    OutputStream os = null;
+    try {
+      os = new FileOutputStream(new File(pathname));
+      os.write(data.getBytes(), 0, data.length());
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      try {
+        os.close();
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
     }
-
+  }
 }

@@ -26,8 +26,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   }
 
   @Override
-  public Usuario login(String username, String password)
-      throws Exception {
+  public Usuario login(String username, String password) throws Exception {
 
     Usuario usuario = repositorioUsuarios.findByUsername(username);
 
@@ -74,26 +73,26 @@ public class ServicioRemotoImpl implements ServicioRemoto {
 
   public void simularGeneradorOfertas() {
     new Thread(
-      () -> {
-        // run background code here
-        do {
-          try {
-            Thread.sleep(20 * 1000);
+            () -> {
+              // run background code here
+              do {
+                try {
+                  Thread.sleep(20 * 1000);
 
-            // TODO: Crear ofertas al azar para cada departamento /producto
-            // utilizando el metodo save del repositorio de ofertas para
-            // que se notifique correctamente a los usuarios
-            Oferta oferta = new Oferta();
-            oferta.setCodigoPaisOferta("");
+                  // TODO: Crear ofertas al azar para cada departamento /producto
+                  // utilizando el metodo save del repositorio de ofertas para
+                  // que se notifique correctamente a los usuarios
+                  Oferta oferta = new Oferta();
+                  oferta.setCodigoPaisOferta("");
 
+                  repositorioOfertas.save(oferta);
 
-            repositorioOfertas.save(oferta);
+                  System.out.println("Oferta generada");
+                } catch (InterruptedException e) {
+                }
 
-            System.out.println("Oferta generada");
-          } catch (InterruptedException e) {
-          }
-
-        } while (true);
-      }).start();
+              } while (true);
+            })
+        .start();
   }
 }
