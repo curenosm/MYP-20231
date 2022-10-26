@@ -67,10 +67,6 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     return repositorioProductos.findAll();
   }
 
-  // public Producto compraSegura(Long codigoBarras) throws
-  //  RemoteException, InterruptedException { Producto compra =
-  // this.repositorioProductos.find(codigoBarras); return compra; }
-
   /**
    * Metodo para realizar una compra segura de un producto desde la cuenta de un usuario
    *

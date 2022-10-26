@@ -5,7 +5,8 @@ import java.rmi.RemoteException;
 import java.util.Collection;
 
 /**
- * Clase que simula un servicio al cliente implementado. Implementa la interfax ServicioCliente
+ * Clase que simula la implementacion del servicio del cliente. Implementa la interfax
+ * ServicioCliente
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -40,24 +41,6 @@ public class ServicioClienteImpl implements ServicioCliente {
 
     return menuCatalogo;
   }
-
-  /**
-   * Metodo para realizar la compra de un producto
-   *
-   * @param codigo Codigo del producto a comprar
-   * @return Producto
-   */
-  /*public Producto comprarProducto(Long codigo) {
-    Producto producto = null;
-
-    try {
-      producto = servicio.compraSegura(codigo);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    return producto;
-  }*/
 
   /**
    * Metodo que permite a un usuario iniciar sesion

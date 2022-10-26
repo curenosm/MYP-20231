@@ -4,7 +4,7 @@ import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 
 /**
- * Interfaz que simula un servicio al clinete.
+ * Interfaz que simula un servicio para el cliente.
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

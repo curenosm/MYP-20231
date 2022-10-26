@@ -2,6 +2,8 @@ package com.bettercodesaul.modelos;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Clase que simula un producto. Implementa las interfaces Cloneable y Serializable
@@ -10,6 +12,8 @@ import java.math.BigDecimal;
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
+@Getter
+@Setter
 public class Producto implements Cloneable, Serializable {
 
   private Long codigoBarras;
@@ -30,42 +34,6 @@ public class Producto implements Cloneable, Serializable {
     this.nombre = nombre;
     this.departamento = departamento;
     this.precio = precio;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo codigoBarras
-   *
-   * @return Long
-   */
-  public Long getCodigoBarras() {
-    return this.codigoBarras;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo nombre
-   *
-   * @return String
-   */
-  public String getNombre() {
-    return this.nombre;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo departamento
-   *
-   * @return String
-   */
-  public String getDepartamento() {
-    return this.departamento;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo precio
-   *
-   * @return BigDecimal
-   */
-  public BigDecimal getPrecio() {
-    return this.precio;
   }
 
   /**
