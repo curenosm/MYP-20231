@@ -7,9 +7,7 @@ import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.util.*;
-import java.rmi.RemoteException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -17,26 +15,18 @@ public class Main {
 
   private static Scanner scanner = new Scanner(System.in);
 
-  public static void main(String[] args) throws RemoteException {
+  public static void main(String[] args) throws Exception {
     success(property("version"));
-    System.out.println("Prueba");
-
-    if (args.length != 0) {
-      if (args[0].equals("server")) {
-        startServer();
-      } else startClient();
-    } else {
-      error(property("messages.error.mode.unselected"));
-    }
+    startClient();
   }
 
-  public static void startClient() throws RemoteException {
-    bold(property("messages.client"));
+  public static void startClient() throws Exception {
 
     ServicioClienteImpl servicio = new ServicioClienteImpl();
-
     Usuario usuario = null;
+
     do {
+      bold(property("messages.client"));
 
       try {
         info("Username: ");
@@ -54,7 +44,6 @@ public class Main {
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
-
     } while (usuario == null);
 
     // Registramos al usuario como observador del repositorio de ofertas para
@@ -80,14 +69,17 @@ public class Main {
             success(messages.getProperty("messages.shop.menu"));
             warning(servicio.obtenerCatalogo());
 
-            Producto compra = comprarProducto(servicio, messages);
+            Producto compra = comprarProducto(servicio, messages, usuario);
             carrito.add(compra);
             success(messages.getProperty("messages.success.buy" + compra.getNombre()));
-
             break;
           case 2:
             success(messages.getProperty("messages.shop.offers"));
-            warning(usuario.getOfertasDisponibles().toString());
+            usuario.getOfertasDisponibles().forEach(t -> warning(t.toString()));
+            break;
+          case 3:
+            success(messages.getProperty("messages.shop"));
+            break;
           default:
             error(messages.getProperty("messages.error.invalid.option"));
             throw new Exception();
@@ -101,42 +93,32 @@ public class Main {
       }
     } while (opcionMenuWelcome != 0);
 
-    System.exit(0);
+    startClient();
   }
 
-  public static void startServer() {
-    bold(property("messages.server"));
-
-    try {
-      List<String> catalogo = ReadFile.readUsingBufferedReader("/catalogo.bat");
-      catalogo.forEach(System.out::println);
-    } catch (Exception e) {
-
-    }
-  }
-
-  public static Producto comprarProducto(ServicioClienteImpl cliente, Properties messages) {
-    Scanner scanner = new Scanner(System.in);
+  public static Producto comprarProducto(
+      ServicioClienteImpl servicio, Properties messages, Usuario usuario) throws Exception {
     Long resp = 0L;
     warning(messages.getProperty("messages.buy.product"));
-    // resp = scanner.nextInt();
+
+    // TODO: Solicitar cuenta bancaria
+    Long cuentaBancaria = 1L;
 
     // MOSTRAR CATALOGO
     do {
 
       try {
         resp = scanner.nextLong();
+        System.out.println(resp);
       } catch (Exception e) {
-        error(messages.getProperty("messages.error.invalid.option"));
+        error(e.getMessage());
         scanner = new Scanner(System.in);
       }
 
-      Producto productoElegido = cliente.comprarProducto(resp);
-      System.out.println(productoElegido);
-      if (productoElegido == null) {
-        error(messages.getProperty("messages.error.product"));
-        scanner = new Scanner(System.in);
-      } else {
+      Producto productoElegido = null;
+      productoElegido = servicio.comprarProducto(usuario, cuentaBancaria, resp);
+
+      if (productoElegido != null) {
         return productoElegido;
       }
 

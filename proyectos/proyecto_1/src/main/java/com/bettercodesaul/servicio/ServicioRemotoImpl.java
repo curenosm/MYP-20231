@@ -1,12 +1,14 @@
 package com.bettercodesaul.servicio;
 
+import static com.bettercodesaul.util.PropertiesFactory.*;
+
 import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.repositorio.RepositorioOferta;
 import com.bettercodesaul.repositorio.RepositorioProducto;
 import com.bettercodesaul.repositorio.RepositorioUsuario;
-import java.rmi.RemoteException;
+import java.math.BigDecimal;
 import java.util.Collection;
 
 public class ServicioRemotoImpl implements ServicioRemoto {
@@ -15,7 +17,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   private RepositorioProducto repositorioProductos;
   private RepositorioOferta repositorioOfertas;
 
-  public ServicioRemotoImpl() throws RemoteException {
+  public ServicioRemotoImpl() {
     super();
     this.repositorioUsuarios = RepositorioUsuario.getInstance();
     this.repositorioProductos = RepositorioProducto.getInstance();
@@ -24,8 +26,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   }
 
   @Override
-  public Usuario login(String username, String password)
-      throws RemoteException, InterruptedException {
+  public Usuario login(String username, String password) throws Exception {
 
     Usuario usuario = repositorioUsuarios.findByUsername(username);
 
@@ -40,30 +41,34 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     return usuario;
   }
 
-  // @Override
-  public Collection<Producto> cargarCatalogo() throws RemoteException, InterruptedException {
+  @Override
+  public Collection<Producto> cargarCatalogo() throws Exception {
     return repositorioProductos.findAll();
   }
 
-  public Producto compraSegura(Long codigoBarras) throws RemoteException, InterruptedException {
-    Producto compra = this.repositorioProductos.find(codigoBarras);
-    return compra;
-  }
-
-  // @Override
+  @Override
   public Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
-      throws RemoteException, InterruptedException {
+      throws Exception {
     Producto compra = this.repositorioProductos.find(codigoBarras);
+
+    if (compra == null) return null;
 
     // Validacion codigo correcto
     if (usuario.getCuentaBancaria() != null) {
-      // TODO: Validacion dinero suficiente
-
+      if (usuario.getCuentaBancaria().equals(cuentaBancaria)) {
+        if (usuario.getSaldoDisponible().compareTo(compra.getPrecio()) <= 0) {
+          BigDecimal res = usuario.getSaldoDisponible().subtract(compra.getPrecio());
+          usuario.setSaldoDisponible(res);
+          return compra;
+        } else {
+          throw new Exception(property("messages.error.invalid.insuficient.money"));
+        }
+      } else {
+        throw new Exception(property("messages.error.invalid.account.number"));
+      }
     } else {
-
+      throw new Exception("messages.error.invalid.account.number");
     }
-
-    return compra;
   }
 
   public void simularGeneradorOfertas() {
@@ -74,7 +79,12 @@ public class ServicioRemotoImpl implements ServicioRemoto {
                 try {
                   Thread.sleep(20 * 1000);
 
+                  // TODO: Crear ofertas al azar para cada departamento /producto
+                  // utilizando el metodo save del repositorio de ofertas para
+                  // que se notifique correctamente a los usuarios
                   Oferta oferta = new Oferta();
+                  oferta.setCodigoPaisOferta("");
+
                   repositorioOfertas.save(oferta);
 
                   System.out.println("Oferta generada");

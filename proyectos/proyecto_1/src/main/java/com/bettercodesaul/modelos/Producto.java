@@ -2,7 +2,11 @@ package com.bettercodesaul.modelos;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Producto implements Cloneable, Serializable {
 
   private Long codigoBarras;
@@ -15,22 +19,6 @@ public class Producto implements Cloneable, Serializable {
     this.nombre = nombre;
     this.departamento = departamento;
     this.precio = precio;
-  }
-
-  public Long getCodigoBarras() {
-    return this.codigoBarras;
-  }
-
-  public String getNombre() {
-    return this.nombre;
-  }
-
-  public String getDepartamento() {
-    return this.departamento;
-  }
-
-  public BigDecimal getPrecio() {
-    return this.precio;
   }
 
   @Override

@@ -36,7 +36,7 @@ public class RepositorioOferta implements Repositorio<Oferta>, Sujeto {
 
   @Override
   public Oferta find(Long primaryKey) {
-    return null;
+    return ofertas.stream().filter(o -> o.getId().equals(primaryKey)).findFirst().orElse(null);
   }
 
   @Override

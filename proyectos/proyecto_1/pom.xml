@@ -17,11 +17,30 @@
     <google-java-format-version>1.15.0</google-java-format-version>
     <junit-version>5.8.2</junit-version>
     <jcolor-version>5.5.1</jcolor-version>
+    <lombok-version>1.18.24</lombok-version>
+    <maven-compiler-version>3.6.0</maven-compiler-version>
 
   </properties>
 
   <build>
     <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-version}</version>
+        <configuration>
+            <source>1.8</source>
+            <target>1.8</target>
+            <annotationProcessorPaths>
+                <path>
+                    <groupId>org.projectlombok</groupId>
+                    <artifactId>lombok</artifactId>
+                    <version>${lombok-version}</version>
+                </path>                         
+            </annotationProcessorPaths>
+        </configuration>
+    </plugin>
 
       <!-- Plugin para incluir los recursos en el jar -->
       <plugin>
@@ -88,6 +107,13 @@
   </build>
 
   <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok-version}</version>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>com.diogonunes</groupId>
       <artifactId>JColor</artifactId>

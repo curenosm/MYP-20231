@@ -4,8 +4,13 @@ import static com.bettercodesaul.util.Constantes.generarID;
 
 import com.bettercodesaul.interfaces.Observador;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Collection;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class Usuario implements Serializable, Observador {
 
   private Long id;
@@ -17,6 +22,7 @@ public class Usuario implements Serializable, Observador {
   private Long cuentaBancaria;
   private String codigoPais;
   private Collection<Oferta> ofertasDisponibles;
+  private BigDecimal saldoDisponible;
 
   public Usuario(
       String username,
@@ -25,7 +31,8 @@ public class Usuario implements Serializable, Observador {
       String telefono,
       String direccion,
       Long cuentaBancaria,
-      String codigoPais)
+      String codigoPais,
+      BigDecimal saldoInicial)
       throws InterruptedException {
 
     this.id = generarID();
@@ -36,78 +43,7 @@ public class Usuario implements Serializable, Observador {
     this.direccion = direccion;
     this.cuentaBancaria = cuentaBancaria;
     this.codigoPais = codigoPais;
-  }
-
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getUsername() {
-    return username;
-  }
-
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  public String getNombre() {
-    return nombre;
-  }
-
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
-  }
-
-  public String getTelefono() {
-    return telefono;
-  }
-
-  public void setTelefono(String telefono) {
-    this.telefono = telefono;
-  }
-
-  public String getDireccion() {
-    return direccion;
-  }
-
-  public void setDireccion(String direccion) {
-    this.direccion = direccion;
-  }
-
-  public Long getCuentaBancaria() {
-    return cuentaBancaria;
-  }
-
-  public void setCuentaBancaria(Long cuentaBancaria) {
-    this.cuentaBancaria = cuentaBancaria;
-  }
-
-  public String getCodigoPais() {
-    return codigoPais;
-  }
-
-  public void setCodigoPais(String codigoPais) {
-    this.codigoPais = codigoPais;
-  }
-
-  public Collection<Oferta> getOfertasDisponibles() {
-    return ofertasDisponibles;
-  }
-
-  public void setOfertasDisponibles(Collection<Oferta> ofertasDisponibles) {
-    this.ofertasDisponibles = ofertasDisponibles;
+    this.saldoDisponible = saldoInicial;
   }
 
   @Override
