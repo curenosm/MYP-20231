@@ -124,4 +124,21 @@ public class ServicioRemotoImpl implements ServicioRemoto {
             })
         .start();
   }
+
+  /**
+   * Metodo para realizar una compra segura de un producto desde la cuenta de un usuario
+   *
+   * @param usuario Usuario que desea realizar su cuenta
+   * @param cuentaBancaria Cuenta de donde se desea pagar
+   * @param codigoBarras Codigo que identifica al producto que se desea comprar
+   * @return Producto
+   */
+  @Override
+  public Producto compraProducto(Long codigoBarras) {
+    Producto compra = this.repositorioProductos.find(codigoBarras);
+
+    if (compra == null) return null;
+
+    return compra;
+  }
 }

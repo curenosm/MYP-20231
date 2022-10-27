@@ -64,15 +64,16 @@ public class Main {
         switch (opcionMenuWelcome) {
           case 0:
             success(messages.getProperty("messages.goodbye"));
-            System.exit(0);
+            opcionMenuWelcome = 0;
+            // System.exit(0);
             break;
           case 1:
             success(messages.getProperty("messages.shop.menu"));
             warning(servicio.obtenerCatalogo());
 
-            Producto compra = comprarProducto(servicio, messages, usuario);
+            Producto compra = comprarProducto(servicio, messages);
             carrito.add(compra);
-            success(messages.getProperty("messages.success.buy" + compra.getNombre()));
+            success(messages.getProperty("messages.success.buy") + compra.getNombre());
             break;
           case 2:
             success(messages.getProperty("messages.shop.offers"));
@@ -83,6 +84,7 @@ public class Main {
             break;
           case 3:
             success(messages.getProperty("messages.shop"));
+
             break;
           default:
             error(messages.getProperty("messages.error.invalid.option"));
@@ -102,7 +104,7 @@ public class Main {
     startClient();
   }
 
-  public static Producto comprarProducto(
+  public static Producto comprarProductoSeguro(
       ServicioClienteImpl servicio, Properties messages, Usuario usuario) throws Exception {
     Long resp = 0L;
 
@@ -122,7 +124,36 @@ public class Main {
       }
 
       Producto productoElegido = null;
-      productoElegido = servicio.comprarProducto(usuario, cuentaBancaria, resp);
+      productoElegido = servicio.comprarProductoSeguro(usuario, cuentaBancaria, resp);
+
+      if (productoElegido != null) {
+        return productoElegido;
+      }
+
+    } while (true);
+  }
+
+  public static Producto comprarProducto(ServicioClienteImpl servicio, Properties messages)
+      throws Exception {
+    Long resp = 0L;
+
+    // TODO: Solicitar cuenta bancaria
+    Long cuentaBancaria = 1L;
+
+    // MOSTRAR CATALOGO
+    do {
+      warning(messages.getProperty("messages.buy.product"));
+
+      try {
+        resp = scanner.nextLong();
+        System.out.println(resp);
+      } catch (Exception e) {
+        error(e.getMessage());
+        scanner = new Scanner(System.in);
+      }
+
+      Producto productoElegido = null;
+      productoElegido = servicio.comprarProducto(resp);
 
       if (productoElegido != null) {
         return productoElegido;

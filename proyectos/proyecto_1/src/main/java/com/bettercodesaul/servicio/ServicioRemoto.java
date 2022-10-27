@@ -19,4 +19,6 @@ public interface ServicioRemoto extends Remote {
   Collection<Producto> cargarCatalogo() throws Exception;
 
   Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras) throws Exception;
+
+  Producto compraProducto(Long codigoBarras);
 }
