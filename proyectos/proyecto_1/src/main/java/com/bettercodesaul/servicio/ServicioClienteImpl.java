@@ -74,6 +74,12 @@ public class ServicioClienteImpl implements ServicioCliente {
    * @return Producto
    */
   public Producto comprarProducto(Long codigoBarras) throws Exception {
-    return servicio.compraProducto(codigoBarras);
+    return servicio.seleccionarProducto(codigoBarras);
+  }
+
+  @Override
+  public boolean compraSegura(Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito)
+      throws Exception {
+    return comprarProductoSeguro(usuario, cuentaBancaria, carrito);
   }
 }

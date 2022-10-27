@@ -67,14 +67,8 @@
 <br/>
 
 # Requerimientos
-- Bosquejar diagrama de clases
 - Mostrar catalogo (HECHO) // ¿Serializar?
-- Crear ofertas de manera "aleatoria".
-- Descuentos fijos establecidos para las ofertas.
 - Crear menu usuarios.
-- Realizar compra de productos (uno a la vez).(HECHO)
-- Mostrar ticket de compra.(Ya se puede hacer en terminal) // ¿Serializar?
-- Cerrar sesion. (HECHO)
 - Salir del sistema. 
 <br/>
 

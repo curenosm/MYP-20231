@@ -14,7 +14,7 @@ import java.util.Collection;
 public interface ServicioCliente {
   String obtenerCatalogo() throws Exception;
 
-  boolean comprarProductoSeguro(Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito)
+  boolean compraSegura(Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito)
       throws Exception;
 
   Usuario login(String username, String password) throws Exception;

@@ -67,9 +67,7 @@ public class Main {
         switch (opcionMenuWelcome) {
           case 0:
             success(messages.getProperty("messages.goodbye"));
-
             opcionMenuWelcome = 0;
-
             break;
           case 1:
             clearScreen();
@@ -135,9 +133,7 @@ public class Main {
       Collection<Producto> carrito)
       throws Exception {
 
-    Scanner scanner = new Scanner(System.in);
     Long cuentaBancaria = 0L;
-    int contador = 0;
 
     do {
       warning(messages.getProperty("messages.bank.account"));
@@ -154,12 +150,9 @@ public class Main {
     boolean aprobado = false;
 
     try {
-
-      aprobado = servicio.comprarProductoSeguro(usuario, cuentaBancaria, carrito);
-
+      aprobado = servicio.compraSegura(usuario, cuentaBancaria, carrito);
     } catch (Exception e) {
       error(e.getMessage());
-      contador++;
     }
     return aprobado;
   }

@@ -20,6 +20,7 @@ public class Producto implements Cloneable, Serializable {
   private String nombre;
   private String departamento;
   private BigDecimal precio;
+  private int stock = 10000;
 
   /**
    * Metodo constructor parametros de la clase con

@@ -1,11 +1,11 @@
 package com.bettercodesaul.servicio;
 
-import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.repositorio.RepositorioOferta;
 import com.bettercodesaul.repositorio.RepositorioProducto;
 import com.bettercodesaul.repositorio.RepositorioUsuario;
+import com.bettercodesaul.util.GeneradorOfertas;
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
 import java.util.Collection;
@@ -34,7 +34,10 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     this.repositorioUsuarios = RepositorioUsuario.getInstance();
     this.repositorioProductos = RepositorioProducto.getInstance();
     this.repositorioOfertas = RepositorioOferta.getInstance();
-    simularGeneradorOfertas();
+
+    GeneradorOfertas generadorOfertas =
+        new GeneradorOfertas(repositorioOfertas, repositorioProductos);
+    generadorOfertas.simularGeneradorOfertas();
   }
 
   /**
@@ -103,33 +106,6 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     }
   }
 
-  /** Metodo que genera ofertas aleatorias cada determinado tiempo */
-  public void simularGeneradorOfertas() {
-    new Thread(
-            () -> {
-              // run background code here
-              do {
-                try {
-                  Thread.sleep(20 * 1000);
-
-                  // TODO: Crear ofertas al azar para cada departamento /producto
-                  // utilizando el metodo save del repositorio de ofertas para
-                  // que se notifique correctamente a los usuarios
-                  Oferta oferta = new Oferta();
-                  oferta.setCodigoPaisOferta("");
-
-                  repositorioOfertas.save(oferta);
-
-                  System.out.println("Oferta generada");
-                } catch (InterruptedException e) {
-
-                }
-
-              } while (true);
-            })
-        .start();
-  }
-
   /**
    * Metodo para realizar una compra segura de un producto desde la cuenta de un usuario
    *
@@ -139,10 +115,14 @@ public class ServicioRemotoImpl implements ServicioRemoto {
    * @return Producto
    */
   @Override
-  public Producto compraProducto(Long codigoBarras) {
+  public Producto seleccionarProducto(Long codigoBarras) {
     Producto compra = this.repositorioProductos.find(codigoBarras);
 
     if (compra == null) return null;
+
+    if (compra.getStock() >= 1) {
+      compra.setStock(compra.getStock() - 1);
+    }
 
     return compra;
   }

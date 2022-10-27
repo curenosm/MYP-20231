@@ -56,4 +56,10 @@ public class Oferta {
     this.codigoPaisOferta = codigoPaisOferta;
     this.validaHasta = validaHasta;
   }
+
+  @Override
+  public String toString() {
+    return String.format(
+        "[Producto=%s, Descuento=%s, Validez=%s]", producto, porcentajeDescuento, validaHasta);
+  }
 }
