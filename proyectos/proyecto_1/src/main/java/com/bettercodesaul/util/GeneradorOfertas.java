@@ -20,8 +20,8 @@ public class GeneradorOfertas {
 
   private List<String> codigosPaises = List.of("es_MX", "es_ES", "en_US");
 
-  public GeneradorOfertas(RepositorioOferta repositorioOfertas,
-                          RepositorioProducto repositorioProducto) {
+  public GeneradorOfertas(
+      RepositorioOferta repositorioOfertas, RepositorioProducto repositorioProducto) {
     this.repositorioOfertas = repositorioOfertas;
     this.repositorioProducto = repositorioProducto;
   }
@@ -53,19 +53,18 @@ public class GeneradorOfertas {
   }
 
   public Oferta generarOfertaAleatoria() throws Exception {
-    Oferta oferta = new Oferta();
-
     Random random = new Random();
 
+    int indexPaisYDepartamento = random.nextInt(0, departamentos.size());
     ArrayList<Producto> productos =
         (ArrayList<Producto>)
-            repositorioProducto.findByDepartamento(
-                departamentos.get(random.nextInt(departamentos.size() - 1)));
+            repositorioProducto.findByDepartamento(departamentos.get(indexPaisYDepartamento));
 
-    int randomIndex = random.nextInt(productos.size() - 1);
+    int randomIndex = random.nextInt(0, productos.size());
     Producto prod = productos.get(randomIndex);
 
-    oferta.setCodigoPaisOferta(codigosPaises.get(randomIndex));
+    Oferta oferta = new Oferta();
+    oferta.setCodigoPaisOferta(codigosPaises.get(indexPaisYDepartamento));
     oferta.setPorcentajeDescuento(new BigDecimal("0.3"));
     oferta.setProducto(prod);
     oferta.setValidaHasta(Date.from(Instant.now().plus(Duration.ofDays(30L))));

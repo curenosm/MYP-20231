@@ -59,7 +59,13 @@ public class Oferta {
 
   @Override
   public String toString() {
-    return String.format(
-        "[Producto=%s, Descuento=%s, Validez=%s]", producto, porcentajeDescuento, validaHasta);
+
+    return "Oferta [producto="
+        + producto.getNombre()
+        + ", descuento="
+        + porcentajeDescuento
+        + ", validez="
+        + validaHasta
+        + "]";
   }
 }

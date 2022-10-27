@@ -80,6 +80,12 @@ public class ServicioRemotoImpl implements ServicioRemoto {
   public boolean compraSegura(Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito)
       throws Exception {
     BigDecimal compra = new BigDecimal("0");
+
+    if (carrito == null || carrito.size() == 0) {
+      System.out.println("entro");
+      throw new Exception("messages.error.empty.shopping-cart");
+    }
+
     for (Producto producto : carrito) {
       compra = compra.add(producto.getPrecio());
     }

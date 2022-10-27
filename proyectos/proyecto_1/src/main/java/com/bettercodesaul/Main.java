@@ -152,7 +152,7 @@ public class Main {
     try {
       aprobado = servicio.compraSegura(usuario, cuentaBancaria, carrito);
     } catch (Exception e) {
-      error(e.getMessage());
+      error(messages.getProperty(e.getMessage()));
     }
     return aprobado;
   }

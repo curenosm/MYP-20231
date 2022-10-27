@@ -98,11 +98,6 @@ public class RepositorioProducto implements Repositorio<Producto> {
   public Collection<Producto> findByDepartamento(String departamento) {
     return productos
         .stream()
-        .map(
-            p -> {
-              System.out.println(p);
-              return p;
-            })
         .filter(p -> p.getDepartamento().equals(departamento))
         .collect(Collectors.toList());
   }
