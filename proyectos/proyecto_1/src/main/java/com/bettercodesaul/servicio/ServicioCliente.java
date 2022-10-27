@@ -2,6 +2,7 @@ package com.bettercodesaul.servicio;
 
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
+import java.util.Collection;
 
 /**
  * Interfaz que simula un servicio para el cliente.
@@ -13,7 +14,7 @@ import com.bettercodesaul.modelos.Usuario;
 public interface ServicioCliente {
   String obtenerCatalogo() throws Exception;
 
-  Producto comprarProducto(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
+  boolean comprarProductoSeguro(Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito)
       throws Exception;
 
   Usuario login(String username, String password) throws Exception;

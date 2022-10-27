@@ -8,6 +8,7 @@ import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.util.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -51,38 +52,62 @@ public class Main {
 
     Properties messages = PropertiesFactory.loadMessages(usuario.getCodigoPais());
 
+    success(messages.getProperty("messages.welcome"));
+    // success(messages.getProperty("messages.welcome.menu"));
+
     int opcionMenuWelcome = -1;
     ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
 
-      success(messages.getProperty("messages.welcome"));
       success(messages.getProperty("messages.welcome.menu"));
 
       try {
-        opcionMenuWelcome = Integer.parseInt(scanner.nextLine());
+        opcionMenuWelcome = scanner.nextInt(); // Integer.parseInt(scanner.nextLine());
 
         switch (opcionMenuWelcome) {
           case 0:
             success(messages.getProperty("messages.goodbye"));
-            System.exit(0);
+
+            opcionMenuWelcome = 0;
+
             break;
           case 1:
+            clearScreen();
+            // VER SI LO DEJAMOS ASI O MODIFICAMOS
+            success(servicio.obtenerCatalogo());
+            break;
+          case 2:
+            clearScreen();
             success(messages.getProperty("messages.shop.menu"));
             warning(servicio.obtenerCatalogo());
 
-            Producto compra = comprarProducto(servicio, messages, usuario);
+            Producto compra = comprarProducto(servicio, messages);
             carrito.add(compra);
-            success(messages.getProperty("messages.success.buy" + compra.getNombre()));
+            success(messages.getProperty("messages.success.buy") + compra.getNombre());
+
             break;
-          case 2:
+          case 3:
+            clearScreen();
             success(messages.getProperty("messages.shop.offers"));
             if (usuario.getOfertasDisponibles().size() == 0) {
               warning(messages.getProperty("messages.error.unavailable.offers"));
             }
             usuario.getOfertasDisponibles().forEach(t -> warning(t.toString()));
             break;
-          case 3:
+          case 4:
             success(messages.getProperty("messages.shop"));
+            System.out.println("Compra segura");
+            boolean ok = comprarProductoSeguro(servicio, messages, usuario, carrito);
+            if (ok) {
+              clearScreen();
+              for (Producto producto : carrito) {
+                bold(producto.toString());
+              }
+              success(messages.getProperty("messages.goodbye"));
+              carrito.clear();
+              opcionMenuWelcome = 0;
+            }
+
             break;
           default:
             error(messages.getProperty("messages.error.invalid.option"));
@@ -92,8 +117,9 @@ public class Main {
       } catch (NumberFormatException e) {
         error(messages.getProperty("messages.error.invalid.option"));
       } catch (Exception e) {
-        System.out.println("second exception");
-        e.printStackTrace();
+        // COMENTE ESTO PARA QUE NO APAREZCA EN PANTALLA CUANDO HAY CIERTAS EXCEPCIONES
+        // System.out.println("second exception");
+        // e.printStackTrace();
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
@@ -102,14 +128,46 @@ public class Main {
     startClient();
   }
 
-  public static Producto comprarProducto(
-      ServicioClienteImpl servicio, Properties messages, Usuario usuario) throws Exception {
+  public static boolean comprarProductoSeguro(
+      ServicioClienteImpl servicio,
+      Properties messages,
+      Usuario usuario,
+      Collection<Producto> carrito)
+      throws Exception {
+
+    Scanner scanner = new Scanner(System.in);
+    Long cuentaBancaria = 0L;
+    int contador = 0;
+
+    do {
+      warning(messages.getProperty("messages.bank.account"));
+      try {
+        cuentaBancaria = scanner.nextLong();
+        break;
+      } catch (Exception e) {
+        error(e.getMessage());
+        scanner = new Scanner(System.in);
+      }
+
+    } while (true);
+
+    boolean aprobado = false;
+
+    try {
+
+      aprobado = servicio.comprarProductoSeguro(usuario, cuentaBancaria, carrito);
+
+    } catch (Exception e) {
+      error(e.getMessage());
+      contador++;
+    }
+    return aprobado;
+  }
+
+  public static Producto comprarProducto(ServicioClienteImpl servicio, Properties messages)
+      throws Exception {
     Long resp = 0L;
 
-    // TODO: Solicitar cuenta bancaria
-    Long cuentaBancaria = 1L;
-
-    // MOSTRAR CATALOGO
     do {
       warning(messages.getProperty("messages.buy.product"));
 
@@ -122,7 +180,8 @@ public class Main {
       }
 
       Producto productoElegido = null;
-      productoElegido = servicio.comprarProducto(usuario, cuentaBancaria, resp);
+
+      productoElegido = servicio.comprarProducto(resp);
 
       if (productoElegido != null) {
         return productoElegido;

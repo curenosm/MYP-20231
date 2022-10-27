@@ -36,6 +36,10 @@ public class Producto implements Cloneable, Serializable {
     this.precio = precio;
   }
 
+  public BigDecimal getPrecio() {
+    return this.precio;
+  }
+
   /**
    * Metodo que devuelve una copia del producto
    *
@@ -59,10 +63,10 @@ public class Producto implements Cloneable, Serializable {
         + "Nombre producto: "
         + this.nombre
         + "\n"
-        + "Departamento "
+        + "Departamento: "
         + this.departamento
-        + "\n"
+        + "\nPrecio: "
         + this.precio
-        + "\n\n";
+        + "\n";
   }
 }

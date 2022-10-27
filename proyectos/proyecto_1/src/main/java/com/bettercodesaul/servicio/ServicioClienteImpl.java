@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 public class ServicioClienteImpl implements ServicioCliente {
 
-  private ServicioRemoto servicio;
+  private ServicioRemotoImpl servicio;
 
   /**
    * Constructor sin parametros de la clases
@@ -60,8 +60,20 @@ public class ServicioClienteImpl implements ServicioCliente {
    * @param codigo Codigo del producto a comprar
    * @return Producto
    */
-  public Producto comprarProducto(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
-      throws Exception {
-    return servicio.compraSegura(usuario, cuentaBancaria, codigoBarras);
+  public boolean comprarProductoSeguro(
+      Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito) throws Exception {
+    return servicio.compraSegura(usuario, cuentaBancaria, carrito);
+  }
+
+  /**
+   * Metodo para realizar la compra de un producto desde la cuenta de un usuario
+   *
+   * @param usuario Instancia de la clase Usuario
+   * @param cuentaBancaria Cuenta asociada al usuario
+   * @param codigo Codigo del producto a comprar
+   * @return Producto
+   */
+  public Producto comprarProducto(Long codigoBarras) throws Exception {
+    return servicio.compraProducto(codigoBarras);
   }
 }

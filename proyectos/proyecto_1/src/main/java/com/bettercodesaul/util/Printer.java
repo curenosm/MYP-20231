@@ -100,4 +100,10 @@ public class Printer {
     if (s == null) return;
     println(s, info);
   }
+
+  /** Metodo para limpiar la terminal */
+  public static void clearScreen() {
+    System.out.print("\033[H\033[2J");
+    System.out.flush();
+  }
 }
