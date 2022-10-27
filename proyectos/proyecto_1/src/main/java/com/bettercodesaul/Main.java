@@ -8,6 +8,7 @@ import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.util.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Properties;
 import java.util.Scanner;
 
@@ -57,6 +58,7 @@ public class Main {
     int opcionMenuWelcome = -1;
     ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
+
       success(messages.getProperty("messages.welcome.menu"));
 
       try {
@@ -70,24 +72,33 @@ public class Main {
 
             break;
           case 1:
+            clearScreen();
+            // VER SI LO DEJAMOS ASI O MODIFICAMOS
+            success(servicio.obtenerCatalogo());
+            break;
+          case 2:
+            clearScreen();
             success(messages.getProperty("messages.shop.menu"));
             warning(servicio.obtenerCatalogo());
-
 
             Producto compra = comprarProducto(servicio, messages);
             carrito.add(compra);
             success(messages.getProperty("messages.success.buy") + compra.getNombre());
 
             break;
-          case 2:
+          case 3:
+            clearScreen();
             success(messages.getProperty("messages.shop.offers"));
             if (usuario.getOfertasDisponibles().size() == 0) {
               warning(messages.getProperty("messages.error.unavailable.offers"));
             }
             usuario.getOfertasDisponibles().forEach(t -> warning(t.toString()));
             break;
-          case 3:
+          case 4:
             success(messages.getProperty("messages.shop"));
+            System.out.println("Compra segura");
+            boolean ok = comprarProductoSeguro(servicio, messages, usuario, carrito);
+            System.out.println(ok);
 
             break;
           default:
@@ -98,57 +109,57 @@ public class Main {
       } catch (NumberFormatException e) {
         error(messages.getProperty("messages.error.invalid.option"));
       } catch (Exception e) {
-        System.out.println("second exception");
-        e.printStackTrace();
+        // COMENTE ESTO PARA QUE NO APAREZCA EN PANTALLA CUANDO HAY CIERTAS EXCEPCIONES
+        // System.out.println("second exception");
+        // e.printStackTrace();
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
     } while (opcionMenuWelcome != 0);
-    System.out.println("Termino");
-    System.out.println(carrito.size());
-    for (Producto compra : carrito) {
-      bold(compra.toString());
-    }
+
     startClient();
   }
 
-  public static Producto comprarProductoSeguro(
-      ServicioClienteImpl servicio, Properties messages, Usuario usuario) throws Exception {
-    Long resp = 0L;
+  public static boolean comprarProductoSeguro(
+      ServicioClienteImpl servicio,
+      Properties messages,
+      Usuario usuario,
+      Collection<Producto> carrito)
+      throws Exception {
 
-    // TODO: Solicitar cuenta bancaria
-    Long cuentaBancaria = 1L;
+    Scanner scanner = new Scanner(System.in);
+    Long cuentaBancaria = 0L;
+    int contador = 0;
 
-    // MOSTRAR CATALOGO
     do {
-      warning(messages.getProperty("messages.buy.product"));
-
+      warning(messages.getProperty("messages.bank.account"));
       try {
-        resp = scanner.nextLong();
-        System.out.println(resp);
+        cuentaBancaria = scanner.nextLong();
+        break;
       } catch (Exception e) {
         error(e.getMessage());
         scanner = new Scanner(System.in);
       }
 
-      Producto productoElegido = null;
-      productoElegido = servicio.comprarProductoSeguro(usuario, cuentaBancaria, resp);
-
-      if (productoElegido != null) {
-        return productoElegido;
-      }
-
     } while (true);
+
+    boolean aprobado = false;
+
+    try {
+
+      aprobado = servicio.comprarProductoSeguro(usuario, cuentaBancaria, carrito);
+
+    } catch (Exception e) {
+      error(e.getMessage());
+      contador++;
+    }
+    return aprobado;
   }
 
   public static Producto comprarProducto(ServicioClienteImpl servicio, Properties messages)
       throws Exception {
     Long resp = 0L;
 
-    // TODO: Solicitar cuenta bancaria
-    Long cuentaBancaria = 1L;
-
-    // MOSTRAR CATALOGO
     do {
       warning(messages.getProperty("messages.buy.product"));
 
@@ -163,7 +174,6 @@ public class Main {
       Producto productoElegido = null;
 
       productoElegido = servicio.comprarProducto(resp);
-
 
       if (productoElegido != null) {
         return productoElegido;

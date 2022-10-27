@@ -52,7 +52,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
                   "Boulevard of Broken Dreams",
                   1L,
                   "es_MX",
-                  new BigDecimal("1000000")),
+                  new BigDecimal("10000")),
               new Usuario(
                   "manolo",
                   "manolo",
@@ -61,7 +61,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
                   "Sin nombre",
                   1L,
                   "es_ES",
-                  new BigDecimal("1000000")),
+                  new BigDecimal("10000")),
               new Usuario(
                   "john",
                   "john",
@@ -70,7 +70,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
                   "St Mary Street no. 1, Wisconsin",
                   1L,
                   "en_US",
-                  new BigDecimal("1000000")));
+                  new BigDecimal("10000")));
     } catch (Exception e) {
       usuarios = new ArrayList<>();
     }

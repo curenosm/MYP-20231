@@ -74,26 +74,31 @@ public class ServicioRemotoImpl implements ServicioRemoto {
    * @return Producto
    */
   @Override
-  public Producto compraSegura(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
+  public boolean compraSegura(Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito)
       throws Exception {
-    Producto compra = this.repositorioProductos.find(codigoBarras);
-
-    if (compra == null) return null;
+    BigDecimal compra = new BigDecimal("0");
+    for (Producto producto : carrito) {
+      compra = compra.add(producto.getPrecio());
+    }
 
     // Validacion codigo correcto
     if (usuario.getCuentaBancaria() != null) {
+      System.out.println(compra + "///" + usuario.getSaldoDisponible());
       if (usuario.getCuentaBancaria().equals(cuentaBancaria)) {
-        if (usuario.getSaldoDisponible().compareTo(compra.getPrecio()) >= 0) {
-          BigDecimal res = usuario.getSaldoDisponible().subtract(compra.getPrecio());
+        if (usuario.getSaldoDisponible().compareTo(compra) >= 0) {
+          BigDecimal res = usuario.getSaldoDisponible().subtract(compra);
           usuario.setSaldoDisponible(res);
-          return compra;
+          return true;
         } else {
+          // return false;
           throw new Exception("messages.error.invalid.insuficient.money");
         }
       } else {
+        // return false;
         throw new Exception("messages.error.invalid.account.number");
       }
     } else {
+      // return false;
       throw new Exception("messages.error.invalid.account.number");
     }
   }

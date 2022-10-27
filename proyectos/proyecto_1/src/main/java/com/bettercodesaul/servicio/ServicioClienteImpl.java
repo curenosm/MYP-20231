@@ -60,9 +60,9 @@ public class ServicioClienteImpl implements ServicioCliente {
    * @param codigo Codigo del producto a comprar
    * @return Producto
    */
-  public Producto comprarProductoSeguro(Usuario usuario, Long cuentaBancaria, Long codigoBarras)
-      throws Exception {
-    return servicio.compraSegura(usuario, cuentaBancaria, codigoBarras);
+  public boolean comprarProductoSeguro(
+      Usuario usuario, Long cuentaBancaria, Collection<Producto> carrito) throws Exception {
+    return servicio.compraSegura(usuario, cuentaBancaria, carrito);
   }
 
   /**
