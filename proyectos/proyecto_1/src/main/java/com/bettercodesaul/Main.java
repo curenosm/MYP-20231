@@ -98,7 +98,15 @@ public class Main {
             success(messages.getProperty("messages.shop"));
             System.out.println("Compra segura");
             boolean ok = comprarProductoSeguro(servicio, messages, usuario, carrito);
-            System.out.println(ok);
+            if (ok) {
+              clearScreen();
+              for (Producto producto : carrito) {
+                bold(producto.toString());
+              }
+              success(messages.getProperty("messages.goodbye"));
+              carrito.clear();
+              opcionMenuWelcome = 0;
+            }
 
             break;
           default:
