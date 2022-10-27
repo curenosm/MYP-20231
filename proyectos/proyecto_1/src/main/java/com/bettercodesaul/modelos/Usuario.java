@@ -5,7 +5,10 @@ import static com.bettercodesaul.util.Constantes.generarID;
 import com.bettercodesaul.interfaces.Observador;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collection;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * Clase que simula a un usuario. Implementa las interfaces Serializable y Observador.
@@ -14,6 +17,8 @@ import java.util.Collection;
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
+@Getter
+@Setter
 public class Usuario implements Serializable, Observador {
 
   private Long id;
@@ -59,181 +64,7 @@ public class Usuario implements Serializable, Observador {
     this.cuentaBancaria = cuentaBancaria;
     this.codigoPais = codigoPais;
     this.saldoDisponible = saldoInicial;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo id
-   *
-   * @return Long
-   */
-  public Long getId() {
-    return id;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo id
-   *
-   * @param id Long que sera el nuevo valor del atributo
-   */
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo username
-   *
-   * @return String
-   */
-  public String getUsername() {
-    return username;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo username
-   *
-   * @param username String que sera el nuevo valor del atributo
-   */
-  public void setUsername(String username) {
-    this.username = username;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo password
-   *
-   * @return String
-   */
-  public String getPassword() {
-    return password;
-  }
-
-  public void setPassword(String password) {
-    this.password = password;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo nombre
-   *
-   * @return String
-   */
-  public String getNombre() {
-    return nombre;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo nombre
-   *
-   * @param nombre String que sera el nuevo valor del atributo
-   */
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo telefono
-   *
-   * @return String
-   */
-  public String getTelefono() {
-    return telefono;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo telefono
-   *
-   * @param telefono String que sera el nuevo valor del atributo
-   */
-  public void setTelefono(String telefono) {
-    this.telefono = telefono;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo direccion
-   *
-   * @return String
-   */
-  public String getDireccion() {
-    return direccion;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo direccion
-   *
-   * @param direccion String que sera el nuevo valor del atributo
-   */
-  public void setDireccion(String direccion) {
-    this.direccion = direccion;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo cuentaBancaria
-   *
-   * @return Long
-   */
-  public Long getCuentaBancaria() {
-    return cuentaBancaria;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo cuentaBancaria
-   *
-   * @param cuentaBancaria Long que sera el nuevo valor del atributo
-   */
-  public void setCuentaBancaria(Long cuentaBancaria) {
-    this.cuentaBancaria = cuentaBancaria;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo codigoPais
-   *
-   * @return String
-   */
-  public String getCodigoPais() {
-    return codigoPais;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo codigoPais
-   *
-   * @param codigoPais String que sera el nuevo valor del atributo
-   */
-  public void setCodigoPais(String codigoPais) {
-    this.codigoPais = codigoPais;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo ofertasDisponibles
-   *
-   * @return Collection<Oferta>
-   */
-  public Collection<Oferta> getOfertasDisponibles() {
-    return ofertasDisponibles;
-  }
-
-  /**
-   * Metodo para obtener el valor del atributo saldoDidsponible
-   *
-   * @return BigDecimal
-   */
-  public BigDecimal getSaldoDisponible() {
-    return this.saldoDisponible;
-  }
-
-  /**
-   * Metodo para modficiar el valor del atributo saldoDisponible
-   *
-   * @param saldoDisponible BigDecimal que sera el nuevo valor del atributo
-   */
-  public void setSaldoDisponible(BigDecimal saldoDisponible) {
-    this.saldoDisponible = saldoDisponible;
-  }
-
-  /**
-   * Metodo para modificar el valor del atributo ofertasDisponibles
-   *
-   * @param ofertasDisponibles Collection<Oferta> que sera el nuevo valor del atributo
-   */
-  public void setOfertasDisponibles(Collection<Oferta> ofertasDisponibles) {
-    this.ofertasDisponibles = ofertasDisponibles;
+    this.ofertasDisponibles = new ArrayList<>();
   }
 
   @Override

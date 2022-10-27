@@ -1,7 +1,5 @@
 package com.bettercodesaul.servicio;
 
-import static com.bettercodesaul.util.PropertiesFactory.*;
-
 import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
@@ -56,20 +54,16 @@ public class ServicioRemotoImpl implements ServicioRemoto {
         return usuario;
       }
 
-      usuario = null;
+      throw new Exception("messages.error.incorrect.password");
     }
 
-    return usuario;
+    throw new Exception("messages.error.user.not.found");
   }
 
   @Override
   public Collection<Producto> cargarCatalogo() throws Exception {
     return repositorioProductos.findAll();
   }
-
-  // public Producto compraSegura(Long codigoBarras) throws
-  //  RemoteException, InterruptedException { Producto compra =
-  // this.repositorioProductos.find(codigoBarras); return compra; }
 
   /**
    * Metodo para realizar una compra segura de un producto desde la cuenta de un usuario
@@ -94,10 +88,10 @@ public class ServicioRemotoImpl implements ServicioRemoto {
           usuario.setSaldoDisponible(res);
           return compra;
         } else {
-          throw new Exception(property("messages.error.invalid.insuficient.money"));
+          throw new Exception("messages.error.invalid.insuficient.money");
         }
       } else {
-        throw new Exception(property("messages.error.invalid.account.number"));
+        throw new Exception("messages.error.invalid.account.number");
       }
     } else {
       throw new Exception("messages.error.invalid.account.number");
@@ -123,10 +117,28 @@ public class ServicioRemotoImpl implements ServicioRemoto {
 
                   System.out.println("Oferta generada");
                 } catch (InterruptedException e) {
+
                 }
 
               } while (true);
             })
         .start();
+  }
+
+  /**
+   * Metodo para realizar una compra segura de un producto desde la cuenta de un usuario
+   *
+   * @param usuario Usuario que desea realizar su cuenta
+   * @param cuentaBancaria Cuenta de donde se desea pagar
+   * @param codigoBarras Codigo que identifica al producto que se desea comprar
+   * @return Producto
+   */
+  @Override
+  public Producto compraProducto(Long codigoBarras) {
+    Producto compra = this.repositorioProductos.find(codigoBarras);
+
+    if (compra == null) return null;
+
+    return compra;
   }
 }

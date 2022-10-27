@@ -44,6 +44,9 @@ public class Printer {
    * @param style Instancia AnsiFormat con el formato deseado
    */
   public static void println(String s, AnsiFormat style) {
+
+    if (s == null) return;
+
     println("");
     println(style.format(s));
   }
@@ -54,6 +57,7 @@ public class Printer {
    * @param s String con el mensaje deseado
    */
   public static void error(String s) {
+    if (s == null) return;
     println(s, error);
   }
 
@@ -63,6 +67,7 @@ public class Printer {
    * @param s String con el mensaje deseado
    */
   public static void warning(String s) {
+    if (s == null) return;
     println(s, warning);
   }
 
@@ -72,6 +77,7 @@ public class Printer {
    * @param s String con el mensaje deseado
    */
   public static void success(String s) {
+    if (s == null) return;
     println(s, success);
   }
 
@@ -81,6 +87,7 @@ public class Printer {
    * @param s String con el mensaje deseado
    */
   public static void bold(String s) {
+    if (s == null) return;
     println(s, bold);
   }
 
@@ -90,6 +97,7 @@ public class Printer {
    * @param s String con el mensaje deseado
    */
   public static void info(String s) {
+    if (s == null) return;
     println(s, info);
   }
 
