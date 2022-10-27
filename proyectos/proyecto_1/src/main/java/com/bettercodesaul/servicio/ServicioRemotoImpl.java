@@ -89,7 +89,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     // Validacion codigo correcto
     if (usuario.getCuentaBancaria() != null) {
       if (usuario.getCuentaBancaria().equals(cuentaBancaria)) {
-        if (usuario.getSaldoDisponible().compareTo(compra.getPrecio()) <= 0) {
+        if (usuario.getSaldoDisponible().compareTo(compra.getPrecio()) >= 0) {
           BigDecimal res = usuario.getSaldoDisponible().subtract(compra.getPrecio());
           usuario.setSaldoDisponible(res);
           return compra;

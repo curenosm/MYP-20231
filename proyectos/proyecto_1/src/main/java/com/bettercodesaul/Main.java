@@ -52,26 +52,36 @@ public class Main {
     Properties messages = PropertiesFactory.loadMessages(usuario.getCodigoPais());
 
     success(messages.getProperty("messages.welcome"));
-    success(messages.getProperty("messages.welcome.menu"));
+    // success(messages.getProperty("messages.welcome.menu"));
 
     int opcionMenuWelcome = -1;
     ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
+      success(messages.getProperty("messages.welcome.menu"));
       try {
-        opcionMenuWelcome = Integer.parseInt(scanner.nextLine());
+        opcionMenuWelcome = scanner.nextInt(); // Integer.parseInt(scanner.nextLine());
 
         switch (opcionMenuWelcome) {
           case 0:
             success(messages.getProperty("messages.goodbye"));
-            System.exit(0);
+            // System.exit(0);
+            opcionMenuWelcome = 0;
             break;
           case 1:
             success(messages.getProperty("messages.shop.menu"));
             warning(servicio.obtenerCatalogo());
 
-            Producto compra = comprarProducto(servicio, messages, usuario);
-            carrito.add(compra);
-            success(messages.getProperty("messages.success.buy" + compra.getNombre()));
+            Producto compra = null;
+
+            compra = comprarProducto(servicio, messages, usuario);
+
+            if (compra != null) {
+              carrito.add(compra);
+              success(messages.getProperty("messages.success.buy") + compra.getNombre());
+            } else {
+              error(messages.getProperty("messages.error.product"));
+            }
+            clearScreen();
             break;
           case 2:
             success(messages.getProperty("messages.shop.offers"));
@@ -92,7 +102,11 @@ public class Main {
         scanner = new Scanner(System.in);
       }
     } while (opcionMenuWelcome != 0);
-
+    System.out.println("Termino");
+    System.out.println(carrito.size());
+    for (Producto compra : carrito) {
+      bold(compra.toString());
+    }
     startClient();
   }
 
@@ -117,6 +131,7 @@ public class Main {
 
       Producto productoElegido = null;
       productoElegido = servicio.comprarProducto(usuario, cuentaBancaria, resp);
+      System.out.println(productoElegido.toString());
 
       if (productoElegido != null) {
         return productoElegido;

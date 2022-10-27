@@ -91,10 +91,10 @@ public class Producto implements Cloneable, Serializable {
         + "Nombre producto: "
         + this.nombre
         + "\n"
-        + "Departamento "
+        + "Departamento: "
         + this.departamento
-        + "\n"
+        + "\nPrecio: "
         + this.precio
-        + "\n\n";
+        + "\n";
   }
 }

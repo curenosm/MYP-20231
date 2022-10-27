@@ -243,7 +243,6 @@ public class Usuario implements Serializable, Observador {
     }
   }
 
-
   /**
    * Metodo de representacion en cadena
    *
@@ -252,21 +251,21 @@ public class Usuario implements Serializable, Observador {
   @Override
   public String toString() {
     return "Usuario [id="
-           + id
-           + ", username="
-           + username
-           + ", password="
-           + password
-           + ", nombre="
-           + nombre
-           + ", telefono="
-           + telefono
-           + ", direccion="
-           + direccion
-           + ", cuentaBancaria="
-           + cuentaBancaria
-           + ", codigoPais="
-           + codigoPais
-           + "]";
+        + id
+        + ", username="
+        + username
+        + ", password="
+        + password
+        + ", nombre="
+        + nombre
+        + ", telefono="
+        + telefono
+        + ", direccion="
+        + direccion
+        + ", cuentaBancaria="
+        + cuentaBancaria
+        + ", codigoPais="
+        + codigoPais
+        + "]";
   }
 }

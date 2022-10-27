@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 public class ServicioClienteImpl implements ServicioCliente {
 
-  private ServicioRemoto servicio;
+  private ServicioRemotoImpl servicio;
 
   /**
    * Constructor sin parametros de la clases

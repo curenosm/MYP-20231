@@ -54,7 +54,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
               new Producto(20L, "Laptop Cell", "Electronica", new BigDecimal("11999.99")),
               new Producto(30L, "Audifonos Noisy", "Electronica", new BigDecimal("443.22")),
               new Producto(40L, "Bateria Portatil", "Electronica", new BigDecimal("230.30")),
-              new Producto(50L, "Mouse Gamer Pro", "ELectronica", new BigDecimal("558.18")),
+              new Producto(50L, "Mouse Gamer Pro", "Electronica", new BigDecimal("558.18")),
               new Producto(100L, "Tostadora Coster", "Electrodomesticos", new BigDecimal("777.77")),
               new Producto(
                   200L, "Licuadora Master3000", "Electrodomesticos", new BigDecimal("850.5")),
