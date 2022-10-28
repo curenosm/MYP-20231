@@ -8,11 +8,8 @@ import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.util.*;
 import java.math.BigDecimal;
-import java.time.Duration;
-import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Scanner;
@@ -117,7 +114,7 @@ public class Main {
             System.out.println("Compra segura");
             boolean ok = comprarProductoSeguro(servicio, messages, usuario, carrito);
             if (ok) {
-              // Date fecha = generarFecha();
+              String fecha = generarFecha(usuario);
               BigDecimal costo = new BigDecimal("0");
               for (Producto producto : carrito) {
                 costo = costo.add(producto.getPrecio());
@@ -127,8 +124,9 @@ public class Main {
               info(
                   messages.getProperty("messages.success.final.buy")
                       + usuario.getSaldoDisponible()
-                      + "\n");
-              // + messages.getProperty("messages.date" + fecha.toString()00));
+                      + "\n"
+                      + messages.getProperty("messages.date")
+                      + fecha);
               success(messages.getProperty("messages.goodbye"));
               carrito.clear();
               opcionMenuWelcome = 0;
@@ -150,7 +148,7 @@ public class Main {
         scanner = new Scanner(System.in);
       }
     } while (opcionMenuWelcome != 0);
-
+    scanner.nextLine();
     startClient();
   }
 
@@ -247,9 +245,21 @@ public class Main {
    *
    * @return Date
    */
-  public static Date generarFecha() {
+  public static String generarFecha(Usuario usuario) {
     Random rand = new Random();
-    Long random = rand.nextLong();
-    return Date.from(Instant.now().plus(Duration.ofDays(random)));
+    int dias = rand.nextInt(30);
+
+    int mes = 0;
+    if (dias % 3 == 0 || dias % 3 == 0 || dias % 7 == 0) {
+      mes = 11;
+    } else {
+      mes = 12;
+    }
+    int anio = 2022;
+    if (usuario.getCodigoPais().equals("en_US")) {
+      return mes + "/" + dias + "/" + anio;
+    } else {
+      return dias + "/" + mes + "/" + anio;
+    }
   }
 }

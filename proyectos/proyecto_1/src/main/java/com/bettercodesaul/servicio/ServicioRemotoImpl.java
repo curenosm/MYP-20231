@@ -101,7 +101,8 @@ public class ServicioRemotoImpl implements ServicioRemoto {
       // Si hay una oferta disponible, usa el descuento
       if (ofertasFiltradas != null && ofertasFiltradas.size() != 0) {
 
-        BigDecimal res = ofertasFiltradas.get(0).getPorcentajeDescuento().multiply(producto.getPrecio());
+        BigDecimal res =
+            ofertasFiltradas.get(0).getPorcentajeDescuento().multiply(producto.getPrecio());
 
         res = producto.getPrecio().subtract(res);
         compra = compra.add(res);
