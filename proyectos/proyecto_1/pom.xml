@@ -12,6 +12,8 @@
     <!-- Plugins -->
     <fmt-maven-plugin-version>2.5.0</fmt-maven-plugin-version>
     <jacoco-maven-plugin-version>0.8.8</jacoco-maven-plugin-version>
+    <maven-checkstyle-plugin-version>3.2.0</maven-checkstyle-plugin-version>
+    <maven-compiler-version>3.6.0</maven-compiler-version>
     <maven-resources-plugin-version>3.2.0</maven-resources-plugin-version>
     <maven-surefire-plugin-version>2.19.1</maven-surefire-plugin-version>
     <spring-boot-maven-plugin-version>2.7.2</spring-boot-maven-plugin-version>
@@ -21,7 +23,6 @@
     <junit-version>5.8.2</junit-version>
     <jcolor-version>5.5.1</jcolor-version>
     <lombok-version>1.18.24</lombok-version>
-    <maven-compiler-version>3.6.0</maven-compiler-version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
