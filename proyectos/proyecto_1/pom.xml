@@ -11,7 +11,9 @@
 
     <!-- Plugins -->
     <fmt-maven-plugin-version>2.5.0</fmt-maven-plugin-version>
+    <jacoco-maven-plugin-version>0.8.8</jacoco-maven-plugin-version>
     <maven-resources-plugin-version>3.2.0</maven-resources-plugin-version>
+    <maven-surefire-plugin-version>2.19.1</maven-surefire-plugin-version>
     <spring-boot-maven-plugin-version>2.7.2</spring-boot-maven-plugin-version>
 
     <!-- Dependencies -->
@@ -20,8 +22,6 @@
     <jcolor-version>5.5.1</jcolor-version>
     <lombok-version>1.18.24</lombok-version>
     <maven-compiler-version>3.6.0</maven-compiler-version>
-    <jacoco-maven-plugin-version>0.8.8</jacoco-maven-plugin-version>
-    <maven-surefire-plugin-version>2.19.1</maven-surefire-plugin-version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -31,6 +31,7 @@
   <build>
     <plugins>
 
+      <!-- Plugin para compilar (incluye procesamiento de anotaciones de lombok) -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -89,8 +90,8 @@
             <configuration>
               <classifier>executable</classifier>
               <mainClass>
-                      com.bettercodesaul.Main
-                    </mainClass>
+                com.bettercodesaul.Main
+              </mainClass>
             </configuration>
           </execution>
         </executions>
@@ -111,6 +112,7 @@
         </executions>
       </plugin>
 
+      <!-- Plugin para generar reportes de code coverage -->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
