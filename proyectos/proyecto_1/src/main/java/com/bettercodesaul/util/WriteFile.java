@@ -7,11 +7,11 @@ import java.io.OutputStream;
 
 /**
  * Clase que facilita la escritura de archivos.
- * 
-* @author Alcantara Estrada Kevin Isaac
-* @author Curenio Sanchez Misael
-* @author Hernandez Paramo Elizabeth
-**/
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class WriteFile {
 
   /**

@@ -1,5 +1,8 @@
 package com.bettercodesaul.util;
 
+import static com.bettercodesaul.util.Constantes.*;
+import static com.bettercodesaul.util.Printer.*;
+
 import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.repositorio.RepositorioOferta;
@@ -11,9 +14,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
-
-import static com.bettercodesaul.util.Constantes.*;
-import static com.bettercodesaul.util.Printer.*;
 
 /**
  * Clase para generar ofertas a los productos de los usuarios
@@ -47,7 +47,8 @@ public class GeneradorOfertas {
                   Oferta oferta = generarOfertaAleatoria();
                   repositorioOfertas.save(oferta);
 
-                  println("\nOferta generada para los usuarios con codigo de pais "
+                  println(
+                      "\nOferta generada para los usuarios con codigo de pais "
                           + oferta.getCodigoPaisOferta());
                 } catch (InterruptedException e) {
                   e.printStackTrace();

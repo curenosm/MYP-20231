@@ -117,7 +117,7 @@ public class Main {
             System.out.println("Compra segura");
             boolean ok = comprarProductoSeguro(servicio, messages, usuario, carrito);
             if (ok) {
-             // Date fecha = generarFecha();
+              // Date fecha = generarFecha();
               BigDecimal costo = new BigDecimal("0");
               for (Producto producto : carrito) {
                 costo = costo.add(producto.getPrecio());

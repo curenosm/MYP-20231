@@ -11,11 +11,11 @@ import java.util.List;
 
 /**
  * Clase para facilitar la lectura de archivos
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
-*/
+ */
 public class ReadFile {
 
   /**

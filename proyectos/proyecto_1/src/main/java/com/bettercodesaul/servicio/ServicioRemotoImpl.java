@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 import java.rmi.RemoteException;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -92,21 +91,23 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     for (Producto producto : carrito) {
 
       // Busca entre las ofertas del usuario
-      List<Oferta> ofertasFiltradas = usuario
-        .getOfertasDisponibles()
-        .stream()
-        .filter(o -> o.getProducto().equals(producto))
-        .collect(Collectors.toList());
+      List<Oferta> ofertasFiltradas =
+          usuario
+              .getOfertasDisponibles()
+              .stream()
+              .filter(o -> o.getProducto().equals(producto))
+              .collect(Collectors.toList());
 
       // Si hay una oferta disponible, usa el descuento
       if (ofertasFiltradas != null && ofertasFiltradas.size() != 0) {
-        compra = compra.add(
-          ofertasFiltradas.get(0).getPorcentajeDescuento().multiply(producto.getPrecio())
-        );
+
+        BigDecimal res = ofertasFiltradas.get(0).getPorcentajeDescuento().multiply(producto.getPrecio());
+
+        res = producto.getPrecio().subtract(res);
+        compra = compra.add(res);
       } else {
         compra = compra.add(producto.getPrecio());
       }
-
     }
 
     // Validacion codigo correcto

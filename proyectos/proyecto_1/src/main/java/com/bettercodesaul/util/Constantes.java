@@ -9,12 +9,11 @@ package com.bettercodesaul.util;
  */
 public class Constantes {
 
-  public static final int TIEMPO_ENTRE_OFERTAS = 1000*20;
+  public static final int TIEMPO_ENTRE_OFERTAS = 1000 * 20;
   public static final String DESCUENTO_PREDETERMINADO = "0.3";
 
   /**
-   public static final String * "0.3"
-   * * Metodo para redondear decimales
+   * public static final String * "0.3" * Metodo para redondear decimales
    *
    * @param cantidad Cantidad a redondear
    * @return double
