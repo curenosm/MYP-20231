@@ -12,6 +12,13 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Clase para generar ofertas a los productos de los usuarios
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class GeneradorOfertas {
 
   private RepositorioOferta repositorioOfertas;
@@ -52,15 +59,21 @@ public class GeneradorOfertas {
         .start();
   }
 
+  /**
+   * Metodo que genera de manera aleatoria una oferta
+   *
+   * @return Oferta
+   * @throws Exception
+   */
   public Oferta generarOfertaAleatoria() throws Exception {
     Random random = new Random();
 
-    int indexPaisYDepartamento = random.nextInt(0, departamentos.size());
+    int indexPaisYDepartamento = random.nextInt(departamentos.size());
     ArrayList<Producto> productos =
         (ArrayList<Producto>)
             repositorioProducto.findByDepartamento(departamentos.get(indexPaisYDepartamento));
 
-    int randomIndex = random.nextInt(0, productos.size());
+    int randomIndex = random.nextInt(productos.size());
     Producto prod = productos.get(randomIndex);
 
     Oferta oferta = new Oferta();

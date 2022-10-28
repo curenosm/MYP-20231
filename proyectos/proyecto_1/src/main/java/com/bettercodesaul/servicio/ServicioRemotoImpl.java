@@ -82,7 +82,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     BigDecimal compra = new BigDecimal("0");
 
     if (carrito == null || carrito.size() == 0) {
-      System.out.println("entro");
+
       throw new Exception("messages.error.empty.shopping-cart");
     }
 
@@ -92,22 +92,22 @@ public class ServicioRemotoImpl implements ServicioRemoto {
 
     // Validacion codigo correcto
     if (usuario.getCuentaBancaria() != null) {
-      System.out.println(compra + "///" + usuario.getSaldoDisponible());
+
       if (usuario.getCuentaBancaria().equals(cuentaBancaria)) {
         if (usuario.getSaldoDisponible().compareTo(compra) >= 0) {
           BigDecimal res = usuario.getSaldoDisponible().subtract(compra);
           usuario.setSaldoDisponible(res);
           return true;
         } else {
-          // return false;
+
           throw new Exception("messages.error.invalid.insuficient.money");
         }
       } else {
-        // return false;
+
         throw new Exception("messages.error.invalid.account.number");
       }
     } else {
-      // return false;
+
       throw new Exception("messages.error.invalid.account.number");
     }
   }

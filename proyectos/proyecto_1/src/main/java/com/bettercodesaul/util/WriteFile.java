@@ -10,6 +10,7 @@ public class WriteFile {
   /**
    * Use Streams when you are dealing with raw data
    *
+   * @param pathname
    * @param data
    */
   public static void writeUsingOutputStream(String pathname, String data) {

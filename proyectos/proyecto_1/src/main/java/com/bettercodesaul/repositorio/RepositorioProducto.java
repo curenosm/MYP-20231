@@ -75,7 +75,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
    * @param codigoBarras identificador del producto
    * @return Producto
    */
-  public Producto obtenerProducto(int codigoBarras) {
+  public Producto obtenerProducto(Long codigoBarras) {
     try {
       for (Producto producto : RepositorioProducto.productos) {
         if (producto.getCodigoBarras() == codigoBarras) {
@@ -159,7 +159,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
             .findFirst()
             .orElse(null);
 
-    System.out.println(res.getNombre());
+    // System.out.println(res.getNombre());
     return res;
   }
 
