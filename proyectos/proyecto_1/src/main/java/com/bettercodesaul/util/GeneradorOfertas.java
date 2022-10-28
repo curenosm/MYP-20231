@@ -12,6 +12,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import static com.bettercodesaul.util.Constantes.*;
+import static com.bettercodesaul.util.Printer.*;
+
 /**
  * Clase para generar ofertas a los productos de los usuarios
  *
@@ -40,18 +43,18 @@ public class GeneradorOfertas {
               // run background code here
               do {
                 try {
-                  Thread.sleep(20 * 1000);
+                  Thread.sleep(TIEMPO_ENTRE_OFERTAS);
                   Oferta oferta = generarOfertaAleatoria();
                   repositorioOfertas.save(oferta);
 
-                  System.out.println(
-                      "Oferta generada para los usuarios con codigo de pais "
+                  println("\nOferta generada para los usuarios con codigo de pais "
                           + oferta.getCodigoPaisOferta());
                 } catch (InterruptedException e) {
-                  System.out.println("1st");
+                  e.printStackTrace();
+                  error("Interrupted exception");
                 } catch (Exception e) {
                   e.printStackTrace();
-                  System.out.println("2nd");
+                  error("Exception");
                 }
 
               } while (true);
@@ -78,7 +81,7 @@ public class GeneradorOfertas {
 
     Oferta oferta = new Oferta();
     oferta.setCodigoPaisOferta(codigosPaises.get(indexPaisYDepartamento));
-    oferta.setPorcentajeDescuento(new BigDecimal("0.3"));
+    oferta.setPorcentajeDescuento(new BigDecimal(DESCUENTO_PREDETERMINADO));
     oferta.setProducto(prod);
     oferta.setValidaHasta(Date.from(Instant.now().plus(Duration.ofDays(30L))));
 
