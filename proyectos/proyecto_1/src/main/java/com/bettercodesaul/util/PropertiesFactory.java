@@ -7,7 +7,7 @@ import java.util.Properties;
 
 /**
  * Clase que nos sirve para fabricar un conjunto de frases que conformen el comportamiento del
- * idioam segun el usuario
+ * idioma segun el usuario
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -22,7 +22,7 @@ public class PropertiesFactory {
   }
 
   /**
-   * Metodo que carga el archivo application.properties que esta en la raiz de la practica.
+   * Metodo que carga el archivo application.properties que esta en la carpeta de recursos
    *
    * @return objeto de propiedades
    */
@@ -42,7 +42,7 @@ public class PropertiesFactory {
   }
 
   /**
-   * Metodo que carga el archivo application.properties que esta en la raiz de la practica.
+   * Metodo que carga los archivos messages_*.properties que estan en la carpeta de recursos
    *
    * @return objeto de propiedades
    */

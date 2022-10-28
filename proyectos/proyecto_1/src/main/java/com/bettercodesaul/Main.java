@@ -21,7 +21,7 @@ import java.util.Scanner;
  * Clase para correr el resto del proyecto e interactuar con el usuario
  *
  * @author Alcantara Estrada Kevin Isaac
- * @author Curenios Sanchez Misael
+ * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
 public class Main {

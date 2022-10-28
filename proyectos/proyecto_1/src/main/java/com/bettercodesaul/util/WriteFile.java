@@ -5,6 +5,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 
+/**
+ * Clase que facilita la escritura de archivos.
+ * 
+* @author Alcantara Estrada Kevin Isaac
+* @author Curenio Sanchez Misael
+* @author Hernandez Paramo Elizabeth
+**/
 public class WriteFile {
 
   /**
