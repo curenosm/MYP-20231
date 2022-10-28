@@ -1,5 +1,6 @@
 package com.bettercodesaul.servicio;
 
+import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.repositorio.RepositorioOferta;
@@ -9,6 +10,9 @@ import com.bettercodesaul.util.GeneradorOfertas;
 import java.math.BigDecimal;
 import java.rmi.RemoteException;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 /**
  * Clase que simula la implementacion de un servicio remoto. Implementa la interfaz ServicioRemoto
@@ -86,7 +90,23 @@ public class ServicioRemotoImpl implements ServicioRemoto {
     }
 
     for (Producto producto : carrito) {
-      compra = compra.add(producto.getPrecio());
+
+      // Busca entre las ofertas del usuario
+      List<Oferta> ofertasFiltradas = usuario
+        .getOfertasDisponibles()
+        .stream()
+        .filter(o -> o.getProducto().equals(producto))
+        .collect(Collectors.toList());
+
+      // Si hay una oferta disponible, usa el descuento
+      if (ofertasFiltradas != null && ofertasFiltradas.size() != 0) {
+        compra = compra.add(
+          ofertasFiltradas.get(0).getPorcentajeDescuento().multiply(producto.getPrecio())
+        );
+      } else {
+        compra = compra.add(producto.getPrecio());
+      }
+
     }
 
     // Validacion codigo correcto
