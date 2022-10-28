@@ -12,6 +12,13 @@ import java.util.Collection;
 import java.util.Properties;
 import java.util.Scanner;
 
+/**
+ * Clase para correr el resto del proyecto e interactuar con el usuario
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenios Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class Main {
 
   private static Scanner scanner = new Scanner(System.in);
@@ -21,6 +28,10 @@ public class Main {
     startClient();
   }
 
+  /**
+   * Metodo para iniciar la version del programa para un cliente
+   * @throws Exception
+   */
   public static void startClient() throws Exception {
 
     ServicioClienteImpl servicio = new ServicioClienteImpl();
@@ -126,6 +137,15 @@ public class Main {
     startClient();
   }
 
+  /**
+   * Metodo para completar la compra de forma segura
+   * @param servicio instancia de ServicioClienteImpl
+   * @param messages Instancia de Properties
+   * @param usuario Instancia de la clase usuario (el que usa el servicio actualmente)
+   * @param carrito Coleccion de instancias de la clase Producto
+   * @return boolean
+   * @throws Exception
+   */
   public static boolean comprarProductoSeguro(
       ServicioClienteImpl servicio,
       Properties messages,
@@ -157,6 +177,13 @@ public class Main {
     return aprobado;
   }
 
+  /**
+   * Metodo para agregar un producto al carrito de compra
+   * @param servicio Instancia de la clase ServicioClienteImpl
+   * @param messages Instancia de Properties
+   * @return Producto
+   * @throws Exception
+   */
   public static Producto comprarProducto(ServicioClienteImpl servicio, Properties messages)
       throws Exception {
     Long resp = 0L;
