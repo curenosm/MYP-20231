@@ -159,7 +159,7 @@ public class RepositorioProducto implements Repositorio<Producto> {
             .findFirst()
             .orElse(null);
 
-    System.out.println(res.getNombre());
+    // System.out.println(res.getNombre());
     return res;
   }
 

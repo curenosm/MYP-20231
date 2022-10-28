@@ -7,14 +7,19 @@ import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.util.*;
+import java.math.BigDecimal;
+import java.time.Duration;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Date;
 import java.util.Properties;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
  * Clase para correr el resto del proyecto e interactuar con el usuario
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenios Sanchez Misael
  * @author Hernandez Paramo Elizabeth
@@ -22,6 +27,7 @@ import java.util.Scanner;
 public class Main {
 
   private static Scanner scanner = new Scanner(System.in);
+  private static int contador;
 
   public static void main(String[] args) throws Exception {
     success(property("version"));
@@ -30,6 +36,7 @@ public class Main {
 
   /**
    * Metodo para iniciar la version del programa para un cliente
+   *
    * @throws Exception
    */
   public static void startClient() throws Exception {
@@ -38,12 +45,15 @@ public class Main {
     Usuario usuario = null;
 
     do {
+      warning("Escribe 'exit' para salir");
       bold(property("messages.client"));
 
       try {
         info("Username: ");
         String username = scanner.nextLine();
-
+        if (username.equals("exit")) {
+          System.exit(0);
+        }
         info("Password: ");
         String password = scanner.nextLine();
 
@@ -69,7 +79,7 @@ public class Main {
     int opcionMenuWelcome = -1;
     ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
-
+      // if (opcionMenuWelcome != 1) clearScreen();
       success(messages.getProperty("messages.welcome.menu"));
 
       try {
@@ -96,7 +106,6 @@ public class Main {
 
             break;
           case 3:
-            clearScreen();
             success(messages.getProperty("messages.shop.offers"));
             if (usuario.getOfertasDisponibles().size() == 0) {
               warning(messages.getProperty("messages.error.unavailable.offers"));
@@ -108,10 +117,18 @@ public class Main {
             System.out.println("Compra segura");
             boolean ok = comprarProductoSeguro(servicio, messages, usuario, carrito);
             if (ok) {
-              clearScreen();
+             // Date fecha = generarFecha();
+              BigDecimal costo = new BigDecimal("0");
               for (Producto producto : carrito) {
+                costo = costo.add(producto.getPrecio());
                 bold(producto.toString());
               }
+              warning(messages.getProperty("messages.product.cost") + costo);
+              info(
+                  messages.getProperty("messages.success.final.buy")
+                      + usuario.getSaldoDisponible()
+                      + "\n");
+              // + messages.getProperty("messages.date" + fecha.toString()00));
               success(messages.getProperty("messages.goodbye"));
               carrito.clear();
               opcionMenuWelcome = 0;
@@ -139,6 +156,7 @@ public class Main {
 
   /**
    * Metodo para completar la compra de forma segura
+   *
    * @param servicio instancia de ServicioClienteImpl
    * @param messages Instancia de Properties
    * @param usuario Instancia de la clase usuario (el que usa el servicio actualmente)
@@ -154,6 +172,10 @@ public class Main {
       throws Exception {
 
     Long cuentaBancaria = 0L;
+    if (carrito.isEmpty()) {
+      warning(messages.getProperty("messages.error.empty.shopping-cart"));
+      return false;
+    }
 
     do {
       warning(messages.getProperty("messages.bank.account"));
@@ -173,12 +195,22 @@ public class Main {
       aprobado = servicio.compraSegura(usuario, cuentaBancaria, carrito);
     } catch (Exception e) {
       error(messages.getProperty(e.getMessage()));
+      if (e.getMessage().equals("messages.error.invalid.account.number")) {
+        contador++;
+        if (contador >= 2) {
+          error(messages.getProperty("messages.error.security"));
+          System.exit(0);
+        }
+      } else if (e.getMessage().equals("messages.error.invalid.insuficient.money")) {
+        carrito.clear();
+      }
     }
     return aprobado;
   }
 
   /**
    * Metodo para agregar un producto al carrito de compra
+   *
    * @param servicio Instancia de la clase ServicioClienteImpl
    * @param messages Instancia de Properties
    * @return Producto
@@ -193,7 +225,7 @@ public class Main {
 
       try {
         resp = scanner.nextLong();
-        System.out.println(resp);
+        // System.out.println(resp);
       } catch (Exception e) {
         error(e.getMessage());
         scanner = new Scanner(System.in);
@@ -208,5 +240,16 @@ public class Main {
       }
 
     } while (true);
+  }
+
+  /**
+   * Metodo para generar un fecha aleatoria pero con sentido
+   *
+   * @return Date
+   */
+  public static Date generarFecha() {
+    Random rand = new Random();
+    Long random = rand.nextLong();
+    return Date.from(Instant.now().plus(Duration.ofDays(random)));
   }
 }

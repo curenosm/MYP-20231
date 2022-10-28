@@ -5,6 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * Clase que nos sirve para fabricar un conjunto de frases que conformen el comportamiento del
+ * idioam segun el usuario
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class PropertiesFactory {
 
   private static Properties properties;

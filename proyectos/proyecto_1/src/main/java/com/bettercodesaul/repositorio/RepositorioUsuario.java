@@ -50,7 +50,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
                   "Admin",
                   "5511223344",
                   "Boulevard of Broken Dreams",
-                  1L,
+                  123L,
                   "es_MX",
                   new BigDecimal("10000")),
               new Usuario(
@@ -59,7 +59,7 @@ public class RepositorioUsuario implements Repositorio<Usuario> {
                   "Manolo",
                   "5511111111",
                   "Sin nombre",
-                  1L,
+                  12L,
                   "es_ES",
                   new BigDecimal("10000")),
               new Usuario(
