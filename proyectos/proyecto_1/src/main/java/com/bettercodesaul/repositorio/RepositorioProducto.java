@@ -40,7 +40,6 @@ public class RepositorioProducto implements Repositorio<Producto> {
   /** Metodo constructor sin parametros de la clase */
   private RepositorioProducto() {
 
-    // TODO: Cargar datos de productos desde archivo .bat
 
     try {
       productos =

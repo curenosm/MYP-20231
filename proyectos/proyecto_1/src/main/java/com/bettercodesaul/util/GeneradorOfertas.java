@@ -40,7 +40,7 @@ public class GeneradorOfertas {
   public void simularGeneradorOfertas() {
     new Thread(
             () -> {
-              // run background code here
+            
               do {
                 try {
                   Thread.sleep(TIEMPO_ENTRE_OFERTAS);

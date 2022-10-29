@@ -105,6 +105,7 @@ public class ServicioRemotoImpl implements ServicioRemoto {
             ofertasFiltradas.get(0).getPorcentajeDescuento().multiply(producto.getPrecio());
 
         res = producto.getPrecio().subtract(res);
+
         compra = compra.add(res);
       } else {
         compra = compra.add(producto.getPrecio());

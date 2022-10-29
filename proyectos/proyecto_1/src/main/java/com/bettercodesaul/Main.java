@@ -3,6 +3,7 @@ package com.bettercodesaul;
 import static com.bettercodesaul.util.Printer.*;
 import static com.bettercodesaul.util.PropertiesFactory.*;
 
+import com.bettercodesaul.modelos.Oferta;
 import com.bettercodesaul.modelos.Producto;
 import com.bettercodesaul.modelos.Usuario;
 import com.bettercodesaul.servicio.ServicioClienteImpl;
@@ -71,16 +72,16 @@ public class Main {
     Properties messages = PropertiesFactory.loadMessages(usuario.getCodigoPais());
 
     success(messages.getProperty("messages.welcome"));
-    // success(messages.getProperty("messages.welcome.menu"));
+  
 
     int opcionMenuWelcome = -1;
     ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
-      // if (opcionMenuWelcome != 1) clearScreen();
+    
       success(messages.getProperty("messages.welcome.menu"));
 
       try {
-        opcionMenuWelcome = scanner.nextInt(); // Integer.parseInt(scanner.nextLine());
+        opcionMenuWelcome = scanner.nextInt(); 
 
         switch (opcionMenuWelcome) {
           case 0:
@@ -89,7 +90,7 @@ public class Main {
             break;
           case 1:
             clearScreen();
-            // VER SI LO DEJAMOS ASI O MODIFICAMOS
+            
             success(servicio.obtenerCatalogo());
             break;
           case 2:
@@ -117,8 +118,18 @@ public class Main {
               String fecha = generarFecha(usuario);
               BigDecimal costo = new BigDecimal("0");
               for (Producto producto : carrito) {
-                costo = costo.add(producto.getPrecio());
-                bold(producto.toString());
+                Producto copia = (Producto) producto.clone();
+                for (Oferta oferta : usuario.getOfertasDisponibles()) {
+                  if (oferta.getProducto().getNombre().equals(copia.getNombre())) {
+                    copia.setPrecio(
+                        copia
+                            .getPrecio()
+                            .subtract(oferta.getPorcentajeDescuento().multiply(copia.getPrecio())));
+                    break;
+                  }
+                }
+                costo = costo.add(copia.getPrecio());
+                bold(copia.toString());
               }
               warning(messages.getProperty("messages.product.cost") + costo);
               info(
@@ -141,9 +152,7 @@ public class Main {
       } catch (NumberFormatException e) {
         error(messages.getProperty("messages.error.invalid.option"));
       } catch (Exception e) {
-        // COMENTE ESTO PARA QUE NO APAREZCA EN PANTALLA CUANDO HAY CIERTAS EXCEPCIONES
-        // System.out.println("second exception");
-        // e.printStackTrace();
+       
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
@@ -223,7 +232,7 @@ public class Main {
 
       try {
         resp = scanner.nextLong();
-        // System.out.println(resp);
+        
       } catch (Exception e) {
         error(e.getMessage());
         scanner = new Scanner(System.in);
@@ -243,7 +252,7 @@ public class Main {
   /**
    * Metodo para generar un fecha aleatoria pero con sentido
    *
-   * @return Date
+   * @return String
    */
   public static String generarFecha(Usuario usuario) {
     Random rand = new Random();
