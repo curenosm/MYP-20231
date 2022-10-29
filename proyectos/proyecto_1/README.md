@@ -71,16 +71,6 @@
 <br/>
 <br/>
 
-# Requerimientos
-- Mostrar catalogo (HECHO) // ¿Serializar?
-- Crear menu usuarios.
-- En caso de que se quiera concretar la compra sin ningun producto mandar aviso
-- En caso de que se compre un producto con alguna oferta asociada al usuario
-se hara el descuento pertinente.
-- Mejorar
-- Salir del sistema. 
-<br/>
-
 # Justificación de patrones
 
 - En el caso de los idiomas, decidimos utilizar Factory, pues al ser un patrón que permite que sus subclases decidan qué clase instanciar, nos facilita el poder asignar un idioma. Además de poder incorporar nuevos tipos de productos en el programa sin descomponer el código cliente existente. Teniendo a nuestros métodos abstractos que cambian, sus descendientes implementan a nuestros métodos de la forma que quieran, como lo es en el caso de los idiomas, ya que se requiere que cambien conforme el cliente lo solicite.
