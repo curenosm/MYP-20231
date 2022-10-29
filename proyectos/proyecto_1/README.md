@@ -86,10 +86,13 @@ se hara el descuento pertinente.
 - En el caso de los idiomas, decidimos utilizar Factory, pues al ser un patrón que permite que sus subclases decidan qué clase instanciar, nos facilita el poder asignar un idioma. Además de poder incorporar nuevos tipos de productos en el programa sin descomponer el código cliente existente. Teniendo a nuestros métodos abstractos que cambian, sus descendientes implementan a nuestros métodos de la forma que quieran, como lo es en el caso de los idiomas, ya que se requiere que cambien conforme el cliente lo solicite.
 <br/>
 
-- En el caso de los catálogos, utilizamos el patrón Proxy debido a que en las instrucciones se nos indicó que no se podía mostrar el cátalogo real, porque si había vulnerabilidad de seguridad, cualquiera podría cambiarlo. Si recordamos lo que vimos en clase, el aptrón Proxy proporciona un marcador de posición para otro objeto para controlar el acceso a él, es decir, evitamos que cualquiera lo modifique, en este caso los clientes. 
+- En el caso de los catálogos, utilizamos el patrón Proxy debido a que en las instrucciones se nos indicó que no se podía mostrar el cátalogo real, porque si había vulnerabilidad de seguridad, cualquiera podría cambiarlo. Si recordamos lo que vimos en clase, el patrón Proxy proporciona un marcador de posición para otro objeto para controlar el acceso a él, es decir, evitamos que cualquiera lo modifique, en este caso los clientes. 
 <br/>
 
 - Para el caso de las ofertas, decidimos utilizar Observer ya que en las instrucciones nos indica que dichas ofertas cambian entre los países, recordando un poco la definición de este patrón, nos dice que se define una dependencia de uno a muchos entre objetos de tal forma que cuando un objeto cambia de estado, todos sus dependientes son notificados y se actualizan autómaticamente. Y es lo que sucede en las ofertas, cuando se indique el país de origen, autómaticamente van a cambiar las ofertas que se le muestren al cliente.
+<br/>
+
+- Para salvagualdar la seguridad de los datos del usuario, al solicitar la cuenta bancaria a través de un representante, si los datos son erróneos sacamos al usuario al menu con las opciones de la tienda y puede intentar hacer la compra de nuevo, pues sabemos que pudo haber sido un simple error; sin embargo, si falla de nuevo con los datos, el programa se cierra para evitar que se vulnere la seguridad de los datos del usuario, evitando la posibilidad de hallar la cuenta bancaria asociada mediante la fuerza bruta.
 <br/>
 
 
