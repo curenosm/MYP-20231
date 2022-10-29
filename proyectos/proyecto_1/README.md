@@ -64,17 +64,7 @@
     **password:** manolo
 
 <br/>
-<br/>
 
-# Requerimientos
-- Mostrar catalogo (HECHO) // ¿Serializar?
-- Crear menu usuarios.
-- En caso de que se quiera concretar la compra sin ningun producto mandar aviso
-- En caso de que se compre un producto con alguna oferta asociada al usuario
-se hara el descuento pertinente.
-- Mejorar
-- Salir del sistema. 
-<br/>
 
 # Justificación de patrones
 
