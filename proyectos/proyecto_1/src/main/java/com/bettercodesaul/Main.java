@@ -72,16 +72,15 @@ public class Main {
     Properties messages = PropertiesFactory.loadMessages(usuario.getCodigoPais());
 
     success(messages.getProperty("messages.welcome"));
-  
 
     int opcionMenuWelcome = -1;
     ArrayList<Producto> carrito = new ArrayList<Producto>();
     do {
-    
+
       success(messages.getProperty("messages.welcome.menu"));
 
       try {
-        opcionMenuWelcome = scanner.nextInt(); 
+        opcionMenuWelcome = scanner.nextInt();
 
         switch (opcionMenuWelcome) {
           case 0:
@@ -90,7 +89,7 @@ public class Main {
             break;
           case 1:
             clearScreen();
-            
+
             success(servicio.obtenerCatalogo());
             break;
           case 2:
@@ -152,7 +151,7 @@ public class Main {
       } catch (NumberFormatException e) {
         error(messages.getProperty("messages.error.invalid.option"));
       } catch (Exception e) {
-       
+
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
       }
@@ -232,7 +231,7 @@ public class Main {
 
       try {
         resp = scanner.nextLong();
-        
+
       } catch (Exception e) {
         error(e.getMessage());
         scanner = new Scanner(System.in);
