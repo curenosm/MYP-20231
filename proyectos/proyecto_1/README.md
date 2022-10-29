@@ -69,7 +69,6 @@
     <br/>
 
 <br/>
-<br/>
 
 # Justificación de patrones
 
