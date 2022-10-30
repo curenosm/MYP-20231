@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ServicioRemotoImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto_1</a> &gt; <a href="index.source.html" class="el_package">com.bettercodesaul.servicio</a> &gt; <span class="el_source">ServicioRemotoImpl.java</span></div><h1>ServicioRemotoImpl.java</h1><pre class="source lang-java linenums">package com.bettercodesaul.servicio;
+
+import com.bettercodesaul.modelos.Oferta;
+import com.bettercodesaul.modelos.Producto;
+import com.bettercodesaul.modelos.Usuario;
+import com.bettercodesaul.repositorio.RepositorioOferta;
+import com.bettercodesaul.repositorio.RepositorioProducto;
+import com.bettercodesaul.repositorio.RepositorioUsuario;
+import com.bettercodesaul.util.GeneradorOfertas;
+import java.math.BigDecimal;
+import java.rmi.RemoteException;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Collectors;
+
+/**
+ * Clase que simula la implementacion de un servicio remoto. Implementa la interfaz ServicioRemoto
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
+public class ServicioRemotoImpl implements ServicioRemoto {
+
+  private RepositorioUsuario repositorioUsuarios;
+  private RepositorioProducto repositorioProductos;
+  private RepositorioOferta repositorioOfertas;
+
+  /**
+   * Constructor sin parametros de la clase
+   *
+   * @throws RemoteException
+   */
+  public ServicioRemotoImpl() throws RemoteException {
+
+<span class="nc" id="L36">    super();</span>
+<span class="nc" id="L37">    this.repositorioUsuarios = RepositorioUsuario.getInstance();</span>
+<span class="nc" id="L38">    this.repositorioProductos = RepositorioProducto.getInstance();</span>
+<span class="nc" id="L39">    this.repositorioOfertas = RepositorioOferta.getInstance();</span>
+
+<span class="nc" id="L41">    GeneradorOfertas generadorOfertas =</span>
+        new GeneradorOfertas(repositorioOfertas, repositorioProductos);
+<span class="nc" id="L43">    generadorOfertas.simularGeneradorOfertas();</span>
+<span class="nc" id="L44">  }</span>
+
+  /**
+   * Metodo que permite a un usuario iniciar sesion, buscando su cuenta con los datos dados
+   *
+   * @param username Nombre del usuario
+   * @param password Contrasenia del usuario
+   * @return Usuario
+   */
+  @Override
+  public Usuario login(String username, String password) throws Exception {
+
+<span class="nc" id="L56">    Usuario usuario = repositorioUsuarios.findByUsername(username);</span>
+
+<span class="nc bnc" id="L58" title="All 2 branches missed.">    if (usuario != null) {</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">      if (usuario.getPassword().equals(password)) {</span>
+<span class="nc" id="L60">        return usuario;</span>
+      }
+
+<span class="nc" id="L63">      throw new Exception(&quot;messages.error.incorrect.password&quot;);</span>
+    }
+
+<span class="nc" id="L66">    throw new Exception(&quot;messages.error.user.not.found&quot;);</span>
+  }
+
+  @Override
+  public Collection&lt;Producto&gt; cargarCatalogo() throws Exception {
+<span class="nc" id="L71">    return repositorioProductos.findAll();</span>
+  }
+
+  /**
+   * Metodo para realizar una compra segura de un producto desde la cuenta de un usuario
+   *
+   * @param usuario Usuario que desea realizar su cuenta
+   * @param cuentaBancaria Cuenta de donde se desea pagar
+   * @param codigoBarras Codigo que identifica al producto que se desea comprar
+   * @return Producto
+   */
+  @Override
+  public boolean compraSegura(Usuario usuario, Long cuentaBancaria, Collection&lt;Producto&gt; carrito)
+      throws Exception {
+<span class="nc" id="L85">    BigDecimal compra = new BigDecimal(&quot;0&quot;);</span>
+
+<span class="nc bnc" id="L87" title="All 4 branches missed.">    if (carrito == null || carrito.size() == 0) {</span>
+<span class="nc" id="L88">      throw new Exception(&quot;messages.error.empty.shopping-cart&quot;);</span>
+    }
+
+<span class="nc bnc" id="L91" title="All 2 branches missed.">    for (Producto producto : carrito) {</span>
+
+      // Busca entre las ofertas del usuario
+<span class="nc" id="L94">      List&lt;Oferta&gt; ofertasFiltradas =</span>
+          usuario
+<span class="nc" id="L96">              .getOfertasDisponibles()</span>
+<span class="nc" id="L97">              .stream()</span>
+<span class="nc" id="L98">              .filter(o -&gt; o.getProducto().equals(producto))</span>
+<span class="nc" id="L99">              .collect(Collectors.toList());</span>
+
+      // Si hay una oferta disponible, usa el descuento
+<span class="nc bnc" id="L102" title="All 4 branches missed.">      if (ofertasFiltradas != null &amp;&amp; ofertasFiltradas.size() != 0) {</span>
+
+<span class="nc" id="L104">        BigDecimal res =</span>
+<span class="nc" id="L105">            ofertasFiltradas.get(0).getPorcentajeDescuento().multiply(producto.getPrecio());</span>
+
+<span class="nc" id="L107">        res = producto.getPrecio().subtract(res);</span>
+
+<span class="nc" id="L109">        compra = compra.add(res);</span>
+<span class="nc" id="L110">      } else {</span>
+<span class="nc" id="L111">        compra = compra.add(producto.getPrecio());</span>
+      }
+<span class="nc" id="L113">    }</span>
+
+    // Validacion codigo correcto
+<span class="nc bnc" id="L116" title="All 2 branches missed.">    if (usuario.getCuentaBancaria() != null) {</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">      if (usuario.getCuentaBancaria().equals(cuentaBancaria)) {</span>
+<span class="nc bnc" id="L118" title="All 2 branches missed.">        if (usuario.getSaldoDisponible().compareTo(compra) &gt;= 0) {</span>
+<span class="nc" id="L119">          BigDecimal res = usuario.getSaldoDisponible().subtract(compra);</span>
+<span class="nc" id="L120">          usuario.setSaldoDisponible(res);</span>
+<span class="nc" id="L121">          return true;</span>
+        } else {
+<span class="nc" id="L123">          throw new Exception(&quot;messages.error.invalid.insuficient.money&quot;);</span>
+        }
+      } else {
+<span class="nc" id="L126">        throw new Exception(&quot;messages.error.invalid.account.number&quot;);</span>
+      }
+    } else {
+<span class="nc" id="L129">      throw new Exception(&quot;messages.error.invalid.account.number&quot;);</span>
+    }
+  }
+
+  /**
+   * Metodo para realizar una compra segura de un producto desde la cuenta de un usuario
+   *
+   * @param usuario Usuario que desea realizar su cuenta
+   * @param cuentaBancaria Cuenta de donde se desea pagar
+   * @param codigoBarras Codigo que identifica al producto que se desea comprar
+   * @return Producto
+   */
+  @Override
+  public Producto seleccionarProducto(Long codigoBarras) {
+<span class="nc" id="L143">    Producto compra = this.repositorioProductos.find(codigoBarras);</span>
+
+<span class="nc bnc" id="L145" title="All 2 branches missed.">    if (compra == null) return null;</span>
+
+<span class="nc bnc" id="L147" title="All 2 branches missed.">    if (compra.getStock() &gt;= 1) {</span>
+<span class="nc" id="L148">      compra.setStock(compra.getStock() - 1);</span>
+    }
+
+<span class="nc" id="L151">    return compra;</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

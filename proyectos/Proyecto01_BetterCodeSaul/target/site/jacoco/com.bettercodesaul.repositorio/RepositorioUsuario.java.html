@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RepositorioUsuario.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">proyecto_1</a> &gt; <a href="index.source.html" class="el_package">com.bettercodesaul.repositorio</a> &gt; <span class="el_source">RepositorioUsuario.java</span></div><h1>RepositorioUsuario.java</h1><pre class="source lang-java linenums">package com.bettercodesaul.repositorio;
+
+import com.bettercodesaul.modelos.Usuario;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+/**
+ * Clase que simula un repositorio de usuarios. Implementa la interfaz Repositorio
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
+public class RepositorioUsuario implements Repositorio&lt;Usuario&gt; {
+
+  private static volatile RepositorioUsuario uniqueInstance;
+  private List&lt;Usuario&gt; usuarios;
+
+  /**
+   * Metodo para obtener un instancia de la clase tras realizar unas verificaciones
+   *
+   * @return RepositorioUsuario
+   */
+  public static RepositorioUsuario getInstance() {
+
+<span class="nc bnc" id="L28" title="All 2 branches missed.">    if (uniqueInstance == null) {</span>
+<span class="nc" id="L29">      synchronized (RepositorioUsuario.class) {</span>
+<span class="nc bnc" id="L30" title="All 2 branches missed.">        if (uniqueInstance == null) {</span>
+<span class="nc" id="L31">          uniqueInstance = new RepositorioUsuario();</span>
+        }
+<span class="nc" id="L33">      }</span>
+    }
+
+<span class="nc" id="L36">    return uniqueInstance;</span>
+  }
+
+  /** Constructor sin parametros de la clase */
+<span class="nc" id="L40">  private RepositorioUsuario() {</span>
+
+    // TODO: Cargar datos de productos desde archivo .bat
+
+    try {
+<span class="nc" id="L45">      usuarios =</span>
+<span class="nc" id="L46">          List.of(</span>
+              new Usuario(
+                  &quot;admin&quot;,
+                  &quot;admin&quot;,
+                  &quot;Admin&quot;,
+                  &quot;5511223344&quot;,
+                  &quot;Boulevard of Broken Dreams&quot;,
+<span class="nc" id="L53">                  123L,</span>
+                  &quot;es_MX&quot;,
+                  new BigDecimal(&quot;10000&quot;)),
+              new Usuario(
+                  &quot;manolo&quot;,
+                  &quot;manolo&quot;,
+                  &quot;Manolo&quot;,
+                  &quot;5511111111&quot;,
+                  &quot;Sin nombre&quot;,
+<span class="nc" id="L62">                  12L,</span>
+                  &quot;es_ES&quot;,
+                  new BigDecimal(&quot;10000&quot;)),
+              new Usuario(
+                  &quot;john&quot;,
+                  &quot;john&quot;,
+                  &quot;John&quot;,
+                  &quot;5599887766&quot;,
+                  &quot;St Mary Street no. 1, Wisconsin&quot;,
+<span class="nc" id="L71">                  1L,</span>
+                  &quot;en_US&quot;,
+                  new BigDecimal(&quot;10000&quot;)));
+<span class="nc" id="L74">    } catch (Exception e) {</span>
+<span class="nc" id="L75">      usuarios = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L76">    }</span>
+<span class="nc" id="L77">  }</span>
+
+  /**
+   * Metodo que sobreescribe el metodo finAll de la clase padre. Devuelve todos los usuarios
+   *
+   * @return Collection&lt;Usuario&gt;
+   */
+  @Override
+  public Collection&lt;Usuario&gt; findAll() {
+<span class="nc" id="L86">    return usuarios;</span>
+  }
+
+  /**
+   * Metodo que busca a un usuario dentro del repositorio a partir de un parametro dado
+   *
+   * @param primaryKey dato del tipo Long con el cual se buscara al usuario
+   * @return Usuario
+   */
+  @Override
+  public Usuario find(Long primaryKey) {
+<span class="nc bnc" id="L97" title="All 2 branches missed.">    return usuarios.stream().filter(u -&gt; u.getId() == primaryKey).findFirst().orElse(null);</span>
+  }
+
+  /**
+   * Metodo para buscar y encontrar (si existe) a un usuario segun su nombre de usuario
+   *
+   * @param username Nombre del usuario con el cual buscarlo
+   * @return Usuario
+   */
+  public Usuario findByUsername(String username) {
+<span class="nc" id="L107">    return usuarios.stream().filter(u -&gt; u.getUsername().equals(username)).findFirst().orElse(null);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
