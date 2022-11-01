@@ -10,4 +10,21 @@ public class ControladorPrincipal {
     public String home() {
         return "index";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @GetMapping("/registro")
+    public String registro() {
+        return "registro";
+    }
+
+
+
+    @GetMapping("/ranking")
+    public String ranking() {
+        return "ranking";
+    }
 }

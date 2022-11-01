@@ -78,14 +78,14 @@ function create() {
 
     //  The score
     scoreString = 'Score : ';
-    scoreText = game.add.text(10, 10, scoreString + score, { font: '34px Arial', fill: '#fff' });
+    scoreText = game.add.text(10, 10, scoreString + score, { font: '20px Arial', fill: '#fff' });
 
     //  Lives
     lives = game.add.group();
-    game.add.text(game.world.width - 100, 10, 'Lives : ', { font: '34px Arial', fill: '#fff' });
+    game.add.text(game.world.width - 100, 10, 'Lives : ', { font: '20px Arial', fill: '#fff' });
 
     //  Text
-    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '84px Arial', fill: '#fff' });
+    stateText = game.add.text(game.world.centerX,game.world.centerY,' ', { font: '75px Arial', fill: '#fff' });
     stateText.anchor.setTo(0.5, 0.5);
     stateText.visible = false;
 
@@ -212,7 +212,7 @@ function collisionHandler (bullet, alien) {
         scoreText.text = scoreString + score;
 
         enemyBullets.callAll('kill',this);
-        stateText.text = " You Won, \n Click to restart";
+        stateText.text = " Ganaste, \n Haz click para reiniciar";
         stateText.visible = true;
 
         rounds++;
@@ -247,10 +247,12 @@ function enemyHitsPlayer (player,bullet) {
         player.kill();
         enemyBullets.callAll('kill');
 
-        stateText.text=" GAME OVER \n Click to restart";
+        stateText.text=" GAME OVER \n Haz click para reiniciar";
         stateText.visible = true;
         millisecondsBetweenBullets = INITIAL_MILISECONDS_BETWEEN_BULLETS;
         bulletsVelocity = INITIAL_BULLETS_VELOCITY;
+
+
 
         //the "click to restart" handler
         game.input.onTap.addOnce(restart,this);
