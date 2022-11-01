@@ -13,6 +13,9 @@ function preload() {
 
 }
 
+const INITIAL_MILISECONDS_BETWEEN_BULLETS = 2000;
+const INITIAL_BULLETS_VELOCITY = 240;
+
 var player;
 var aliens;
 var bullets;
@@ -29,6 +32,10 @@ var enemyBullet;
 var firingTimer = 0;
 var stateText;
 var livingEnemies = [];
+var millisecondsBetweenBullets = INITIAL_MILISECONDS_BETWEEN_BULLETS;
+var bulletsVelocity = INITIAL_BULLETS_VELOCITY;
+var rounds = 0;
+
 
 function create() {
 
@@ -150,24 +157,23 @@ function update() {
         player.body.velocity.setTo(0, 0);
 
         if (cursors.left.isDown)
-        {
             player.body.velocity.x = -200;
-        }
-        else if (cursors.right.isDown)
-        {
+        
+        if (cursors.right.isDown)
             player.body.velocity.x = 200;
-        }
-
+        
+        if (cursors.up.isDown)
+            player.body.velocity.y = -200;
+        
+        if (cursors.down.isDown)
+            player.body.velocity.y = 200;
+        
         //  Firing?
         if (fireButton.isDown)
-        {
             fireBullet();
-        }
 
         if (game.time.now > firingTimer)
-        {
             enemyFires();
-        }
 
         //  Run collision
         game.physics.arcade.overlap(bullets, aliens, collisionHandler, null, this);
@@ -209,6 +215,10 @@ function collisionHandler (bullet, alien) {
         stateText.text = " You Won, \n Click to restart";
         stateText.visible = true;
 
+        rounds++;
+        bulletsVelocity *= 1.10;
+        millisecondsBetweenBullets /= 1.25;
+
         //the "click to restart" handler
         game.input.onTap.addOnce(restart,this);
     }
@@ -239,6 +249,8 @@ function enemyHitsPlayer (player,bullet) {
 
         stateText.text=" GAME OVER \n Click to restart";
         stateText.visible = true;
+        millisecondsBetweenBullets = INITIAL_MILISECONDS_BETWEEN_BULLETS;
+        bulletsVelocity = INITIAL_BULLETS_VELOCITY;
 
         //the "click to restart" handler
         game.input.onTap.addOnce(restart,this);
@@ -270,8 +282,8 @@ function enemyFires () {
         // And fire the bullet from this enemy
         enemyBullet.reset(shooter.body.x, shooter.body.y);
 
-        game.physics.arcade.moveToObject(enemyBullet,player,120);
-        firingTimer = game.time.now + 2000;
+        game.physics.arcade.moveToObject(enemyBullet,player, bulletsVelocity);
+        firingTimer = game.time.now + millisecondsBetweenBullets;
     }
 
 }
