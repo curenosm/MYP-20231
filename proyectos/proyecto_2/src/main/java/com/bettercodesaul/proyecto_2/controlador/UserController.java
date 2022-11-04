@@ -1,7 +1,9 @@
 package com.bettercodesaul.proyecto_2.controlador;
 
-import com.bettercodesaul.proyecto_2.modelo.Usuario;
-import com.bettercodesaul.proyecto_2.repositorio.RepositorioUsuario;
+import com.bettercodesaul.proyecto_2.modelo.User;
+
+import com.bettercodesaul.proyecto_2.repositorio.UserRepository;
+
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,24 +18,24 @@ import java.util.Optional;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/usuarios")
-public class ControladorUsuario {
+public class UserController {
 
-    private RepositorioUsuario repositorioUsuario;
+    private UserRepository repositorioUsuario;
 
     @GetMapping
-    public List<Usuario> findAll() {
+    public List<User> findAll() {
         return repositorioUsuario.findAll();
     }
 
     @PostMapping
-    public Usuario save(@Valid Usuario usuario) {
+    public User save(@Valid User usuario) {
         return repositorioUsuario.save(usuario);
     }
 
     @PostMapping("/login")
-    public Usuario login(String username, String password) {
+    public User login(String username, String password) {
 
-        Optional<Usuario> res = repositorioUsuario.findByUsername(username);
+        Optional<User> res = repositorioUsuario.findByUsername(username);
 
         if (!res.isEmpty()) {
             if (!res.get().getPassword().equals(password)) {

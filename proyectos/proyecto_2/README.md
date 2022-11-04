@@ -35,7 +35,10 @@
 
 # Notas 
 - Los diagramas se encuentran ubicados en la carpeta `docs`
+- El usuario por defecto es:
 
+    + *Username:* **username**
+    + *Password:* **navesespaciales**
 
 # Diagramas
 

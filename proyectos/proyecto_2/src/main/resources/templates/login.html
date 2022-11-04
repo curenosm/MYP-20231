@@ -1,50 +1,35 @@
-<!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Inicio</title>
+    </head>
+    <body>
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{/css/styles.css}" rel="stylesheet" />
-</head>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        <form th:action="@{/login}" method="post">
+            
+            <div class="mb-3">
 
-<body>
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">BetterCodeSaul</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/ranking">Ranking</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <a class="btn btn-outline-light" href="/registro">Registro</a>
-                    <a class="btn btn-outline-info active" type="/login">Login</a>
-                </form>
+            <div class="mb-3">
+                <label class="form-label" for="username"> Username : </label>
+                <input class="form-control" type="text" name="username"  id="username" aria-describedby="usernameHelper"/> 
             </div>
-        </div>
-    </nav>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" id="password">
+            </div>
 
-    <center>
-        <div id="form">
-            <input type="text">
-        </div>
-    </center>
-
-    <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
-    <script th:src="@{/js/jquery-3.6.1.min.js}"></script>
-</body>
-
+            <input class="btn btn-outline-info" type="submit" value="Sign In"/>
+        </form>
+    </body>
 </html>
