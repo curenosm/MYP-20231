@@ -56,6 +56,8 @@
  
  El plan es que en cuanto a MVC los modelos sean las clases que estamos desarrollando junto con los repositorios, el controlador seria el main del proyecto y el visual la interfaz gráfica del juego.
  
+ *Aun no esta completo el UML, es un bosquejo y puede ser modificado
+ 
  **Yo recomendaria no borrar el codigo en js para poder visualizar cómo estaba ordenado el código y volver a él por si algo nos falla o atora.
  
 # Cosas por hacer
@@ -63,7 +65,7 @@
 
 *Cambiar los colores de las balas, naves y enemigos un poco para así notar diferencia entre los tipos.
 
-
+*Completar UML
 
 # Diagramas
 
