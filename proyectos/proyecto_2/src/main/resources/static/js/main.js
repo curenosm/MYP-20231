@@ -1,7 +1,33 @@
 
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update, render: render });
 
+
+var URLs = {
+    naves: {
+        findAll: '/naves'
+    },
+    aliens : {
+        findAll: '/aliens'
+    },
+    ranking: {
+        findAll: '/puntuaciones',
+        save: '/puntuaciones'
+    }
+};
+
+
 function preload() {
+
+    $.ajax({
+        url: URLs.naves.findAll,
+        method: 'GET',
+        success:  function (res) {
+            console.log(res);
+        },
+        error: function (err) {
+            console.error(err);
+        }
+    });
 
     game.load.image('bullet', '/assets/Bigbullet.png');
     game.load.image('enemyBullet', 'assets/enemy-bullet.png');
@@ -252,7 +278,23 @@ function enemyHitsPlayer (player,bullet) {
         millisecondsBetweenBullets = INITIAL_MILISECONDS_BETWEEN_BULLETS;
         bulletsVelocity = INITIAL_BULLETS_VELOCITY;
 
-
+        $.ajax({
+            url: URLs.ranking.save,
+            method: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType   : "json",
+            data: JSON.stringify(
+                {
+                    puntuacion: score
+                }
+            ),
+            success: function (res) {
+                console.log(res);
+            },
+            error: function (err) {
+                console.error(err);
+            }
+        })
 
         //the "click to restart" handler
         game.input.onTap.addOnce(restart,this);

@@ -3,6 +3,8 @@ package com.bettercodesaul.proyecto_2.modelo;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
@@ -29,5 +31,8 @@ public class User {
     private String email;
 
     private String roles;
+
+    @OneToMany(mappedBy = "user")
+    private List<Ranking> historialPartidas;
 
 }
