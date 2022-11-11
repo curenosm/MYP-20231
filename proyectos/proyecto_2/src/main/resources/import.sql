@@ -1,0 +1,1 @@
+INSERT INTO `users` (ID, USERNAME, PASSWORD, ACTIVE, EMAIL, ROLES) VALUES (1, 'user','navesespaciales',  true, 'admin@admin.com', 'ADMIN');

@@ -22,6 +22,7 @@ public class WebSecurityConfig {
 		http
 			.authorizeHttpRequests((requests) -> requests
 				.antMatchers("/", "/home").permitAll()
+				.antMatchers("/**").permitAll()
 				.anyRequest().authenticated()
 			)
 			.formLogin((form) -> form
@@ -29,8 +30,10 @@ public class WebSecurityConfig {
 				.defaultSuccessUrl("/", true)
 				.permitAll()
 			)
+			.cors().disable()
+			.csrf().disable()
 			.logout((logout) -> logout.permitAll())
-			;
+			.headers().frameOptions().disable();
 
 		return http.build();
 	}
