@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bettercodesaul.proyecto_2.modelo.Nave;
 import com.bettercodesaul.proyecto_2.repositorio.NavesRepository;
 
+
 /**
- * NavesController
+ * Modelo de una nave 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
  */
 @RestController
 @RequestMapping("/naves")

@@ -5,6 +5,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
+/**
+ * Clase controladora encargada de redireccionar las solicitudes de
+ * ciertas rutas a sus vistas asociadas
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 @Controller
 public class TemplatesController {
 

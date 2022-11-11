@@ -278,16 +278,21 @@ function enemyHitsPlayer (player,bullet) {
         millisecondsBetweenBullets = INITIAL_MILISECONDS_BETWEEN_BULLETS;
         bulletsVelocity = INITIAL_BULLETS_VELOCITY;
 
+        console.info(score);
+
+        let data = {
+            puntuacion: score
+        }
+
+        console.log(JSON.stringify(data));
+
+
         $.ajax({
             url: URLs.ranking.save,
             method: 'POST',
             contentType: "application/json; charset=utf-8",
             dataType   : "json",
-            data: JSON.stringify(
-                {
-                    puntuacion: score
-                }
-            ),
+            data: JSON.stringify(data),
             success: function (res) {
                 console.log(res);
             },

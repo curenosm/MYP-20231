@@ -9,6 +9,14 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 
+
+/**
+ * Modelo de un usuario del sistema 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 @Getter
 @Setter
 @Entity
@@ -20,6 +28,7 @@ public class User {
     private Long id;
 
     @NotEmpty
+    @Column(unique = true)
     private String username;
     
     @NotEmpty
@@ -28,6 +37,7 @@ public class User {
     private boolean active;
 
     @Email
+    @Column(unique = true)
     private String email;
 
     private String roles;

@@ -4,7 +4,7 @@ import com.bettercodesaul.proyecto_2.modelo.User;
 
 import com.bettercodesaul.proyecto_2.repositorio.UserRepository;
 
-import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,12 +15,24 @@ import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
-@AllArgsConstructor
+
+/**
+ * Clase controladora encargada de manejar todo lo relacionado con los usuarios 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 @RestController
 @RequestMapping("/usuarios")
 public class UserController {
 
     private UserRepository repositorioUsuario;
+
+    @Autowired
+    public UserController(UserRepository repositorioUsuario) {
+        this.repositorioUsuario = repositorioUsuario;
+    }
 
     @GetMapping
     public List<User> findAll() {
