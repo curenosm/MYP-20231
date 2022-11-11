@@ -17,7 +17,7 @@ import java.util.Optional;
 
 
 /**
- * Clase 
+ * Clase controladora encargada de manejar todo lo relacionado con los usuarios 
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

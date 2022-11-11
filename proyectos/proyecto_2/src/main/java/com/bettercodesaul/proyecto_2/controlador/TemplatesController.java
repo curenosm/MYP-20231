@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 /**
- * Clase 
+ * Clase controladora encargada de redireccionar las solicitudes de
+ * ciertas rutas a sus vistas asociadas
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

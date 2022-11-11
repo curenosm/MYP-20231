@@ -1,7 +1,7 @@
 package com.bettercodesaul.proyecto_2.modelo;
 
 /**
- * Clase 
+ * Modelo de un alienigena 
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

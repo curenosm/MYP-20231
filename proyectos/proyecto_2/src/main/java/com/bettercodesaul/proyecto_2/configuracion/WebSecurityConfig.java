@@ -28,6 +28,11 @@ public class WebSecurityConfig {
 	@Autowired
 	private UserDetailsService userDetailsService;
 
+	/**
+	 * Registramos un bean con nuestra implementacion de UserDetailsService
+	 * 
+	 * @return authProvider
+	 */
     @Bean
     public DaoAuthenticationProvider authProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -36,12 +41,23 @@ public class WebSecurityConfig {
         return authProvider;
     }
 
+	/**
+	 * Registramos un password encoder que no cifra nada por el momento
+	 * 
+	 * @return
+	 */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
     }
 
 
+	/**
+	 * Metodo que se encarga de cofigurar la cadena de seguridad y la regitra
+	 * como un bean en el contenedor de Spring
+	 * 
+	 * @return SecurityFilterChain
+	 */
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http

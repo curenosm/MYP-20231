@@ -17,7 +17,7 @@ import lombok.Setter;
 
 
 /**
- * Clase 
+ * Registro de la puntuacion de un usuario en el juego
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

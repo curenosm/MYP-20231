@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty;
 
 
 /**
- * Clase 
+ * Modelo de un usuario del sistema 
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

@@ -11,7 +11,8 @@ import com.bettercodesaul.proyecto_2.repositorio.UserRepository;
 
 
 /**
- * Clase
+ * Implementacion de la interfaz UserDetailsService, nos permite acceder
+ * a los usuarios de manera eficiente para temas de autenticacion y autorizacion
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

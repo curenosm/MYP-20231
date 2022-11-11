@@ -10,11 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bettercodesaul.proyecto_2.modelo.Nave;
 import com.bettercodesaul.proyecto_2.repositorio.NavesRepository;
 
-import lombok.extern.slf4j.Slf4j;
-
 
 /**
- * Clase 
+ * Modelo de una nave 
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

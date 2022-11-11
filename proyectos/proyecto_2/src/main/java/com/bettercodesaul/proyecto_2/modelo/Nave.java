@@ -10,7 +10,7 @@ import lombok.Setter;
 
 
 /**
- * Clase 
+ * Modelo de una nave en el juego 
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
