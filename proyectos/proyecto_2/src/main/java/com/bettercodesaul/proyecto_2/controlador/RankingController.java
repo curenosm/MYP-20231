@@ -7,8 +7,6 @@ import java.util.List;
 
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.User;
@@ -22,20 +20,28 @@ import com.bettercodesaul.proyecto_2.modelo.Ranking;
 import com.bettercodesaul.proyecto_2.repositorio.RankingRepository;
 import com.bettercodesaul.proyecto_2.repositorio.UserRepository;
 
-import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-
+/**
+ * Clase
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 @Slf4j
-@AllArgsConstructor
 @RestController
 @RequestMapping("/puntuaciones")
 public class RankingController {
 
-    // El contenedor de inversion de control autoinyecta las dependencias mediante
-    // el constructor generado por lombok
     private RankingRepository rankingRepository;
     private UserRepository userRepository;
+
+    @Autowired
+    public RankingController(RankingRepository rankingRepository, UserRepository userRepository) {
+        this.rankingRepository = rankingRepository;
+        this.userRepository = userRepository;
+    }
 
     @GetMapping("/top")
     public List<Ranking> findTopRanking() {

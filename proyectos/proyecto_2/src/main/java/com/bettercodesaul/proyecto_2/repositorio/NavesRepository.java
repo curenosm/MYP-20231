@@ -6,6 +6,14 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.bettercodesaul.proyecto_2.modelo.Nave;
 
+
+/**
+ * Interfaz que nos ayuda a acceder a la base de datos usando hibernate 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public interface NavesRepository extends CrudRepository<Nave, Long>{
     List<Nave> findAll();
 }

@@ -43,8 +43,31 @@
         </div>
     </center>
 
-
     <div th:insert="fragments/general.html :: scripts"></div>
+
+    <script>
+        function registrarUsuario() {
+            let data = {
+                username: username,
+                password: password,
+                email: email
+            };
+
+            $.ajax({
+                url: '/usuarios',
+                method: 'POST',
+                data: JSON.stringify(data),
+                success: function(res) {
+                    console.log(res);
+                },
+                error: function(err) {
+                    console.error(err);
+                    alert(err.msg);
+                }
+            });
+        }
+    </script>
+
 </body>
 
 </html>
