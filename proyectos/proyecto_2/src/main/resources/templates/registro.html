@@ -15,29 +15,29 @@
         <h1>Registro: </h1>
         <br><br><br><br>
         <form onsubmit="registrarUsuario()">
-            <div class="form-group">
-                <label for="username">Username</label>
+            <div class="form-group mb-3">
+                <label class="form-label" for="username">Username</label>
                 <input type="text" class="form-control" id="username"
                     placeholder="Escriba el nombre de usuario">
             </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
+            <div class="form-group mb-3">
+                <label class="form-label" for="email">Email address</label>
                 <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
                     placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password">
+            <div class="form-group mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input type="password" class="form-control" id="password">
             </div>
-            <div class="form-group">
-                <label for="passwordConfirm">Password confirmation</label>
-                <input type="password" class="form-control" id="passwordConfirm" placeholder="Password Confirmation">
+            <div class="form-group mb-3">
+                <label class="form-label" for="passwordConfirm">Password confirmation</label>
+                <input type="password" class="form-control" id="passwordConfirm" />
             </div>
             <br><br><br><br>
             <button type="submit" class="btn btn-primary">Registrar</button>
-            ¿Ya estas registrado? <a th:href="@{/login}">Inicia sesion</a>
-        </form>    
+            ¿Ya estas registrado? <a th:href="@{/login}">Iniciar sesión</a>
+        </form>
     </div>
     <br><br><br><br><br><br><br><br>
     

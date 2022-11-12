@@ -1,5 +1,6 @@
 package com.bettercodesaul.proyecto_2.servicio;
 
+import com.bettercodesaul.proyecto_2.modelo.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -7,7 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.bettercodesaul.proyecto_2.repositorio.UserRepository;
+import com.bettercodesaul.proyecto_2.repositorio.RepositorioUsuarios;
 
 
 /**
@@ -19,21 +20,25 @@ import com.bettercodesaul.proyecto_2.repositorio.UserRepository;
  * @author Hernandez Paramo Elizabeth
  */
 @Service
-public class CustomUserDetailService implements UserDetailsService {
+public class CustomUserDetailsService implements UserDetailsService {
+
+    private final RepositorioUsuarios repositorioUsuarios;
 
     @Autowired
-    private UserRepository userRepository;
+    public CustomUserDetailsService(RepositorioUsuarios repositorioUsuarios) {
+        this.repositorioUsuarios = repositorioUsuarios;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        final com.bettercodesaul.proyecto_2.modelo.User curUser = userRepository.findByUsername(username).orElse(null);
-        if (curUser == null) {
+        final Usuario curUsuario = repositorioUsuarios.findByUsername(username).orElse(null);
+        if (curUsuario == null) {
             throw new UsernameNotFoundException(username);
         }
         
-        UserDetails user = User.withUsername(curUser.getUsername())
-            .password(curUser.getPassword())
-            .authorities(curUser.getRoles())
+        UserDetails user = User.withUsername(curUsuario.getUsername())
+            .password(curUsuario.getPassword())
+            .authorities(curUsuario.getRoles())
             .build();
         
         return user;

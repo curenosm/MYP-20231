@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bettercodesaul.proyecto_2.modelo.Nave;
-import com.bettercodesaul.proyecto_2.repositorio.NavesRepository;
+import com.bettercodesaul.proyecto_2.repositorio.RepositorioNaves;
 
 
 /**
@@ -20,14 +20,18 @@ import com.bettercodesaul.proyecto_2.repositorio.NavesRepository;
  */
 @RestController
 @RequestMapping("/naves")
-public class NavesController {
+public class ControladorNaves {
+
+    private final RepositorioNaves repositorioNaves;
 
     @Autowired
-    private NavesRepository navesRepository;
+    public ControladorNaves(RepositorioNaves repositorioNaves) {
+        this.repositorioNaves = repositorioNaves;
+    }
 
     @GetMapping
     public List<Nave> findAll() {
-        return navesRepository.findAll(); 
+        return repositorioNaves.findAll();
     }
 
 }

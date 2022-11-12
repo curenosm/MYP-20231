@@ -23,10 +23,14 @@ import org.springframework.security.web.SecurityFilterChain;
  */
 @Configuration
 @EnableWebSecurity
-public class WebSecurityConfig {
+public class ConfiguracionSeguridadWeb {
+
+	private final UserDetailsService userDetailsService;
 
 	@Autowired
-	private UserDetailsService userDetailsService;
+	public ConfiguracionSeguridadWeb(UserDetailsService userDetailsService) {
+		this.userDetailsService = userDetailsService;
+	}
 
 	/**
 	 * Registramos un bean con nuestra implementacion de UserDetailsService

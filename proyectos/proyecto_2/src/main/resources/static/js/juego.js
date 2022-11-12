@@ -11,7 +11,8 @@ var URLs = {
     },
     ranking: {
         findAll: '/puntuaciones',
-        save: '/puntuaciones'
+        findById: '/puntuaciones',
+        save: '/puntuaciones',
     }
 };
 
@@ -29,13 +30,12 @@ function preload() {
         }
     });
 
-    game.load.image('bullet', '/assets/Bigbullet.png');
-    game.load.image('enemyBullet', 'assets/enemy-bullet.png');
-    game.load.spritesheet('invader', 'assets/tropas.png', 32, 32);
-    game.load.image('ship', 'assets/nave3.png');
-    game.load.spritesheet('kaboom', 'assets/explode.png', 128, 128);
-    game.load.image('starfield', 'assets/starfield.png');
-    game.load.image('background', 'assets/background2.png');
+    game.load.image('bullet', '/assets/balas/bullet1.png');
+    game.load.image('enemyBullet', 'assets/balas/enemy-bullet.png');
+    game.load.spritesheet('invader', 'assets/aliens/tropas.png', 32, 32);
+    game.load.image('ship', 'assets/naves/nave3.png');
+    game.load.spritesheet('kaboom', 'assets/balas/explode.png', 128, 128);
+    game.load.image('starfield', 'assets/fondos/starfield.png');
 
 }
 
