@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inicio</title>
+
+    <div th:insert="fragments/general.html :: headerfiles"></div>
 </head>
 
 <body>
@@ -33,6 +35,9 @@
 
             <input class="btn btn-outline-info" type="submit" value="Sign In" />
     </form>
+
+    <div th:insert="fragments/general.html :: scripts"></div>
+
 </body>
 
 </html>

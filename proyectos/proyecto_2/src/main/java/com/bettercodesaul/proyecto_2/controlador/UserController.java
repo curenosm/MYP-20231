@@ -4,6 +4,8 @@ import com.bettercodesaul.proyecto_2.modelo.User;
 
 import com.bettercodesaul.proyecto_2.repositorio.UserRepository;
 
+import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +25,7 @@ import java.util.Optional;
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
+@Slf4j
 @RestController
 @RequestMapping("/usuarios")
 public class UserController {
@@ -42,20 +45,6 @@ public class UserController {
     @PostMapping
     public User save(@Valid User usuario) {
         return repositorioUsuario.save(usuario);
-    }
-
-    @PostMapping("/login")
-    public User login(String username, String password) {
-
-        Optional<User> res = repositorioUsuario.findByUsername(username);
-
-        if (!res.isEmpty()) {
-            if (!res.get().getPassword().equals(password)) {
-                return null;
-            }
-        }
-
-        return res.get();
     }
 
 }

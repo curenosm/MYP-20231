@@ -31,7 +31,7 @@ public class CustomUserDetailService implements UserDetailsService {
             throw new UsernameNotFoundException(username);
         }
         
-        UserDetails user = User.withUsername(curUser.getEmail())
+        UserDetails user = User.withUsername(curUser.getUsername())
             .password(curUser.getPassword())
             .authorities(curUser.getRoles())
             .build();
