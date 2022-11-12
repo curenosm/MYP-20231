@@ -1,11 +1,10 @@
 package com.bettercodesaul.proyecto_2.repositorio;
 
-import java.util.List;
-
+import com.bettercodesaul.proyecto_2.modelo.Usuario;
 import org.springframework.data.repository.CrudRepository;
 
-import com.bettercodesaul.proyecto_2.modelo.Ranking;
-import com.bettercodesaul.proyecto_2.modelo.User;
+import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -15,7 +14,7 @@ import com.bettercodesaul.proyecto_2.modelo.User;
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
-public interface RankingRepository extends CrudRepository<Ranking, Long> {
-    List<Ranking> findAll();
-    List<Ranking> findByUser(User user);
+public interface RepositorioUsuarios extends CrudRepository<Usuario, Long> {
+    Optional<Usuario> findByUsername(String username);
+    List<Usuario> findAll();
 }

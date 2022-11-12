@@ -17,34 +17,53 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Puntuación</th>
+                    <th scope="col">Fecha</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
-            </tbody>
+            <tbody id="tableBody"></tbody>
         </table>
     </div>
 
     <div th:insert="fragments/general.html :: scripts"></div>
+
+    <script>
+        $(document).ready(function() {
+
+            // Realiza una petición para llenar la tabla del ranking
+            $.ajax({
+                url: '/puntuaciones/top',
+                method: 'GET',
+                success: function (res) {
+
+                    res.forEach((puntuacion, i) => {
+
+                        let tableRow = `
+                            <tr>
+                                <td>${i + 1}</td>
+                                <td>
+                                    <a href="/perfil/${puntuacion.username}">${puntuacion.username}</a>
+                                </td>
+                                <td>${puntuacion.email}</td>
+                                <td>${puntuacion.score}</td>
+                                <td>${puntuacion.eventDate}</td>
+                            </tr>
+                        `;
+
+                        $('#tableBody').append(tableRow);
+                        console.log(puntuacion);
+                    });
+                },
+                error: function (err) {
+                    console.error(err);
+                    alert('Hubo un error al solicitar los datos');
+                }
+            })
+        })
+    </script>
+
 </body>
 
 </html>

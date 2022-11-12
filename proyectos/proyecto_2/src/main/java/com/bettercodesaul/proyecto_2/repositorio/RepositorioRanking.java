@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.bettercodesaul.proyecto_2.modelo.Nave;
+import com.bettercodesaul.proyecto_2.modelo.Ranking;
+import com.bettercodesaul.proyecto_2.modelo.Usuario;
 
 
 /**
@@ -14,6 +15,7 @@ import com.bettercodesaul.proyecto_2.modelo.Nave;
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
-public interface NavesRepository extends CrudRepository<Nave, Long>{
-    List<Nave> findAll();
+public interface RepositorioRanking extends CrudRepository<Ranking, Long> {
+    List<Ranking> findAll();
+    List<Ranking> findByUsuario(Usuario usuario);
 }

@@ -34,7 +34,7 @@ public class Ranking {
 
     @JsonIgnore
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    private User user;
+    private Usuario usuario;
 
     private Long puntuacion;
 

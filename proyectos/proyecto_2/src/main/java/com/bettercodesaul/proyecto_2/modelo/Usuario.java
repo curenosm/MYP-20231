@@ -21,7 +21,7 @@ import javax.validation.constraints.NotEmpty;
 @Setter
 @Entity
 @Table(name = "users")
-public class User {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -42,7 +42,7 @@ public class User {
 
     private String roles;
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "usuario")
     private List<Ranking> historialPartidas;
 
 }

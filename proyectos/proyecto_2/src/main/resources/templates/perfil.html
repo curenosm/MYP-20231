@@ -5,21 +5,48 @@
 <head>
     <title>Perfil</title>
 
-
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <div th:insert="fragments/general.html :: headerfiles"></div>
 </head>
 
 <body>
 
     <nav th:insert="fragments/general.html :: navbar"></nav>
     
-    <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
-    <form th:action="@{/logout}" method="post">
-        <input type="submit" value="Sign Out" />
-    </form>
+    <h1 th:inline="text">Perfil</h1>
+    <ul>
+        <li id="username">${model.user.username}</li>
+        <li id="email">${model.user.email}</li>
+        <li id="id">${model.user.id}</li>
+    </ul>
 
     <div th:insert="fragments/general.html :: scripts"></div>
+
+    <script>
+        $(document).ready(function() {
+
+            console.log("hello");
+            let searchParams = new URLSearchParams(window.location.search);
+            if (searchParams.has('userId')) {
+                console.log("id");
+
+                let userId = searchParams.get('userId');
+
+                // Realiza una petición para llenar la tabla del ranking
+                $.ajax({
+                    url: `/usuarios/${userId}`,
+                    method: 'GET',
+                    success: function (res) {
+                        console.log(res);
+                    },
+                    error: function (err) {
+                        console.error(err);
+                        alert('Hubo un error al solicitar los datos');
+                    }
+                });
+            }
+
+        });
+    </script>
 
 </body>
 
