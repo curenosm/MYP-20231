@@ -10,31 +10,57 @@
 </head>
 
 <body>
-
-    <nav th:insert="fragments/general.html :: navbar"></nav>
-
-    <div id="form">
-        <input type="text">
+    <div class="container" >
+        <br><br><br><br>
+        <h1>Registro: </h1>
+        <br><br><br><br>
+        <form onsubmit="registrarUsuario()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username"
+                    placeholder="Escriba el nombre de usuario">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="passwordConfirm">Password confirmation</label>
+                <input type="password" class="form-control" id="passwordConfirm" placeholder="Password Confirmation">
+            </div>
+            <br><br><br><br>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            ¿Ya estas registrado? <a th:href="@{/login}">Inicia sesion</a>
+        </form>    
     </div>
-
+    <br><br><br><br><br><br><br><br>
+    
     <div th:insert="fragments/general.html :: scripts"></div>
 
     <script>
         function registrarUsuario() {
             let data = {
-                username: username,
-                password: password,
-                email: email
+                username: $('#username').val(),
+                password: $('#password').val(),
+                email: $('#email').val()
             };
+
+            console.log(data);
 
             $.ajax({
                 url: '/usuarios',
                 method: 'POST',
                 data: JSON.stringify(data),
-                success: function(res) {
+                success: function (res) {
                     console.log(res);
                 },
-                error: function(err) {
+                error: function (err) {
                     console.error(err);
                     alert(err.msg);
                 }
