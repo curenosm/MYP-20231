@@ -35,11 +35,19 @@
 
 # Notas 
 - Los diagramas se encuentran ubicados en la carpeta `docs`
-- El usuario por defecto es:
+- Hay 3 usuarios por defecto, que son:
 
-    + *Username:* **username**
-    + *Password:* **navesespaciales**
-    
+*Username:* **usuario** <br/>
+*Password:* **123456**
+
+
+*Username:* **admin** <br/>
+*Password:* **123456**
+
+
+*Username:* **staff** <br/>
+*Password:* **123456**
+
 # Patrones
 Para esta práctica utilizamos los siguientes patrones:
 
