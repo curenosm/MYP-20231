@@ -29,7 +29,7 @@ function preload() {
         }
     });
 
-    game.load.image('bullet', '/assets/Bigbullet.png');
+    game.load.image('bullet', '/assets/powerUp3.png');
     game.load.image('enemyBullet', 'assets/enemy-bullet.png');
     game.load.spritesheet('invader', 'assets/tropas.png', 32, 32);
     game.load.image('ship', 'assets/nave3.png');
