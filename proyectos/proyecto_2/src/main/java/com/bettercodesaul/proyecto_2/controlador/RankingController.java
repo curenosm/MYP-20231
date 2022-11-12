@@ -61,6 +61,13 @@ public class RankingController {
     public Ranking save(@AuthenticationPrincipal User user, @Valid @RequestBody Ranking ranking) {
 
         try {
+
+            if(user != null){
+                log.info(user.getUsername());
+                log.info(user.toString());
+            }
+            
+
             com.bettercodesaul.proyecto_2.modelo.User cur = userRepository.findByUsername(user.getUsername())
                     .orElse(null);
 

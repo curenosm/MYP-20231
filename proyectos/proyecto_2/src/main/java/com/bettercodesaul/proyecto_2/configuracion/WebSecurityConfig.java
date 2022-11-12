@@ -62,8 +62,8 @@ public class WebSecurityConfig {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests((requests) -> requests
-				.antMatchers("/", "/home").permitAll()
-				.antMatchers("/**").permitAll()
+				.antMatchers("/registro", "/css/**").permitAll()
+				// .antMatchers("/**").permitAll()
 				.anyRequest().authenticated()
 			)
 			.authenticationProvider(authProvider())

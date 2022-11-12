@@ -6,33 +6,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inicio</title>
+
+    <div th:insert="fragments/general.html :: headerfiles"></div>
 </head>
 
 <body>
-
-    <div th:if="${param.logout}">
-        You have been logged out.
+    <div class="container">
+        <br><br><br><br>
+        <h1>Login: </h1>
+        <br><br><br><br>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+        
+        <form th:action="@{/login}" method="post">
+    
+            <div class="mb-3">
+    
+                <div th:if="${param.error}">
+                    Invalid username and password.
+                </div>
+    
+                <div class="mb-3">
+                    <label class="form-label" for="username"> Username : </label>
+                    <input class="form-control" type="text" name="username" id="username"
+                        aria-describedby="usernameHelper" />
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password">
+                </div>
+    
+                <input class="btn btn-success" type="submit" value="Sign In" />
+                ¿No tienes una cuenta? <a th:href="@{/registro}">Registrate</a>
+            </div>
+        </form>
     </div>
-    <form th:action="@{/login}" method="post">
+    <br><br><br><br><br><br><br><br>
 
-        <div class="mb-3">
+    <div th:insert="fragments/general.html :: scripts"></div>
 
-            <div th:if="${param.error}">
-                Invalid username and password.
-            </div>
-
-            <div class="mb-3">
-                <label class="form-label" for="username"> Username : </label>
-                <input class="form-control" type="text" name="username" id="username"
-                    aria-describedby="usernameHelper" />
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" id="password">
-            </div>
-
-            <input class="btn btn-outline-info" type="submit" value="Sign In" />
-    </form>
 </body>
 
 </html>

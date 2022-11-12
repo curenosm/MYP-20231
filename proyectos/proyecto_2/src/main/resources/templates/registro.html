@@ -6,61 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Registro</title>
 
-    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
-    <link th:href="@{/css/styles.css}" rel="stylesheet" />
+    <div th:insert="fragments/general.html :: headerfiles"></div>
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">BetterCodeSaul</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/ranking">Ranking</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <a class="btn btn-outline-light active" href="/registro">Registro</a>
-                    <a class="btn btn-outline-info" type="/login">Login</a>
-                </form>
+    <div class="container" >
+        <br><br><br><br>
+        <h1>Registro: </h1>
+        <br><br><br><br>
+        <form onsubmit="registrarUsuario()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username"
+                    placeholder="Escriba el nombre de usuario">
             </div>
-        </div>
-    </nav>
-
-    <center>
-        <div id="form">
-            <input type="text">
-        </div>
-    </center>
-
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp"
+                    placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label for="passwordConfirm">Password confirmation</label>
+                <input type="password" class="form-control" id="passwordConfirm" placeholder="Password Confirmation">
+            </div>
+            <br><br><br><br>
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            ¿Ya estas registrado? <a th:href="@{/login}">Inicia sesion</a>
+        </form>    
+    </div>
+    <br><br><br><br><br><br><br><br>
+    
     <div th:insert="fragments/general.html :: scripts"></div>
 
     <script>
         function registrarUsuario() {
             let data = {
-                username: username,
-                password: password,
-                email: email
+                username: $('#username').val(),
+                password: $('#password').val(),
+                email: $('#email').val()
             };
+
+            console.log(data);
 
             $.ajax({
                 url: '/usuarios',
                 method: 'POST',
                 data: JSON.stringify(data),
-                success: function(res) {
+                success: function (res) {
                     console.log(res);
                 },
-                error: function(err) {
+                error: function (err) {
                     console.error(err);
                     alert(err.msg);
                 }
