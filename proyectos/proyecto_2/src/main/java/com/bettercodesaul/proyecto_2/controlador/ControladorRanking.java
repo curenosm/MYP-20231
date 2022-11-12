@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
-import com.bettercodesaul.proyecto_2.dto.PuntuacionDTO;
+import com.bettercodesaul.proyecto_2.dto.DTOPuntuacion;
 import com.bettercodesaul.proyecto_2.modelo.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -46,16 +46,16 @@ public class ControladorRanking {
     }
 
     @GetMapping("/top")
-    public List<PuntuacionDTO> findTopRanking() {
+    public List<DTOPuntuacion> findTopRanking() {
 
-        List<PuntuacionDTO> res = this.repositorioRanking
+        List<DTOPuntuacion> res = this.repositorioRanking
                 .findAll()
                 .stream()
                 .sorted( (r1, r2) -> r1.getPuntuacion().compareTo(r2.getPuntuacion()))
                 .map(r -> {
 
                     if (r.getUsuario() != null)
-                        return PuntuacionDTO.builder()
+                        return DTOPuntuacion.builder()
                             .email(r.getUsuario().getEmail())
                             .score(r.getPuntuacion())
                             .userId(r.getUsuario().getId())

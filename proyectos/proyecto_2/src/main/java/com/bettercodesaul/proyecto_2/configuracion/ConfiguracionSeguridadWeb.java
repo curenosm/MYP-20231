@@ -66,8 +66,11 @@ public class ConfiguracionSeguridadWeb {
 	public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http
 			.authorizeHttpRequests((requests) -> requests
-				.antMatchers("/registro", "/css/**").permitAll()
-				// .antMatchers("/**").permitAll()
+				.antMatchers(
+					"/registro",
+					"/css/**",
+					"/js/**"
+				).permitAll()
 				.anyRequest().authenticated()
 			)
 			.authenticationProvider(authProvider())

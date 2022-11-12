@@ -1,5 +1,6 @@
 package com.bettercodesaul.proyecto_2.controlador;
 
+import com.bettercodesaul.proyecto_2.dto.Sample;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,11 @@ public class ControladorTemplates {
 
     @GetMapping
     public String home() {
+
+        Sample sample = new Sample();
+        sample.turnOn();
+        log.info(sample.toString());
+
         return "redirect:/index";
     }
 

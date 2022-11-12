@@ -1,6 +1,6 @@
 package com.bettercodesaul.proyecto_2.controlador;
 
-import com.bettercodesaul.proyecto_2.dto.UserDTO;
+import com.bettercodesaul.proyecto_2.dto.DTOUsuario;
 import com.bettercodesaul.proyecto_2.modelo.Usuario;
 
 import com.bettercodesaul.proyecto_2.repositorio.RepositorioUsuarios;
@@ -40,13 +40,13 @@ public class ControladorUsuarios {
     }
 
     @GetMapping("/{username}")
-    public ResponseEntity<UserDTO> findByUsername(@PathVariable String username) {
+    public ResponseEntity<DTOUsuario> findByUsername(@PathVariable String username) {
 
         Usuario usuario = repositorioUsuario.findByUsername(username).orElse(null);
 
         if (usuario != null)
             return ResponseEntity.ok(
-                UserDTO.builder()
+                DTOUsuario.builder()
                     .id(usuario.getId())
                     .username(usuario.getUsername())
                     .email(usuario.getEmail())
