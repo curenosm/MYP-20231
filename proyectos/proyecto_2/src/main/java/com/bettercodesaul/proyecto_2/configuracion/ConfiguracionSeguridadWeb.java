@@ -27,6 +27,10 @@ public class ConfiguracionSeguridadWeb {
 
 	private final UserDetailsService userDetailsService;
 
+	/**
+	 * Constructor con parametros de la clase
+	 * @param userDetailsService 
+	 */
 	@Autowired
 	public ConfiguracionSeguridadWeb(UserDetailsService userDetailsService) {
 		this.userDetailsService = userDetailsService;

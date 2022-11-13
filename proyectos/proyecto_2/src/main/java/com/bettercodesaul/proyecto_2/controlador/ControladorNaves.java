@@ -24,11 +24,19 @@ public class ControladorNaves {
 
     private final RepositorioNaves repositorioNaves;
 
+    /**
+     * Constructor con parametros de la clase
+     * @param repositorioNaves Instancia de la clase repositorioNaves
+     */
     @Autowired
     public ControladorNaves(RepositorioNaves repositorioNaves) {
         this.repositorioNaves = repositorioNaves;
     }
 
+    /**
+     * Metodo para obtener todos los elementos del respositorioNaves en forma de lista
+     * @return List<Nave>
+     */
     @GetMapping
     public List<Nave> findAll() {
         return repositorioNaves.findAll();

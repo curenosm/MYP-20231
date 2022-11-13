@@ -39,12 +39,21 @@ public class ControladorRanking {
     private RepositorioRanking repositorioRanking;
     private RepositorioUsuarios repositorioUsuarios;
 
+    /**
+     * Constructor con parametros de la clase
+     * @param repositorioRanking Instancia de RepositorioRanking
+     * @param repositorioUsuarios Instancia de la clase RepositorioUsuarios
+     */
     @Autowired
     public ControladorRanking(RepositorioRanking repositorioRanking, RepositorioUsuarios repositorioUsuarios) {
         this.repositorioRanking = repositorioRanking;
         this.repositorioUsuarios = repositorioUsuarios;
     }
 
+    /**
+     * Metodo para obtener los jugadores con mayor ranking
+     * @return  List<DTOPuntacion>
+     */
     @GetMapping("/top")
     public List<DTOPuntuacion> findTopRanking() {
 
@@ -70,6 +79,11 @@ public class ControladorRanking {
         return res;
     }
 
+    /**
+     * Metodo que obtiene el historial de puntos por partida del usuario
+     * @param user Instancia de la clase Usuario
+     * @return List<Ranking>
+     */
     @GetMapping("/history")
     public List<Ranking> findUserHistory(@AuthenticationPrincipal User user) {
         Usuario cur = repositorioUsuarios.findByUsername(user.getUsername())
@@ -78,6 +92,12 @@ public class ControladorRanking {
         return this.repositorioRanking.findByUsuario(cur);
     }
 
+    /**
+     * Metodo para guardar los puntos obtenidos en una partida dado un usuario
+     * @param user Instancia de la clase User que jugo la prtida
+     * @param ranking Instancia de la clase Ranking a guardar
+     * @return Ranking
+     */
     @PostMapping
     public Ranking save(@AuthenticationPrincipal User user, @Valid @RequestBody Ranking ranking) {
 

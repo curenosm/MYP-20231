@@ -29,16 +29,29 @@ public class ControladorUsuarios {
 
     private RepositorioUsuarios repositorioUsuario;
 
+    /**
+     * Metodo constructor de la clase con parametros
+     * @param repositorioUsuario Instancia de la clase RepositorioUsuario
+     */
     @Autowired
     public ControladorUsuarios(RepositorioUsuarios repositorioUsuario) {
         this.repositorioUsuario = repositorioUsuario;
     }
 
+    /**
+     * Metodo para obtener todos los usuarios en forma de lista
+     * @return List<Usuario>
+     */
     @GetMapping
     public List<Usuario> findAll() {
         return repositorioUsuario.findAll();
     }
 
+    /**
+     * Metodo para obtener un usuario de acuerdo al nombre de usuario
+     * @param username Nombre del usuario a buscar
+     * @return ResponseEntity<DTOUsuario>
+     */
     @GetMapping("/{username}")
     public ResponseEntity<DTOUsuario> findByUsername(@PathVariable String username) {
 
@@ -57,6 +70,11 @@ public class ControladorUsuarios {
         return ResponseEntity.notFound().build();
     }
 
+    /**
+     * Metodo para guardar una instancia de la clase Usuario en el repositorio de usuarios
+     * @param usuario Instancia de la clase User a guardar
+     * @return Usuario
+     */
     @PostMapping
     public Usuario save(@Valid Usuario usuario) {
         return repositorioUsuario.save(usuario);

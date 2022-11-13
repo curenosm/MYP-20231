@@ -24,11 +24,21 @@ public class CustomUserDetailsService implements UserDetailsService {
 
     private final RepositorioUsuarios repositorioUsuarios;
 
+    /**
+     * Metodo constructor con parametros de la clase
+     * @param repositorioUsuarios Instancia de la clase RepositorioUsuarios
+     */
     @Autowired
     public CustomUserDetailsService(RepositorioUsuarios repositorioUsuarios) {
         this.repositorioUsuarios = repositorioUsuarios;
     }
 
+    /**
+     * Metodo para cargar los datos de un usuario de acuerdo a su nombre
+     * @param username Nombre del usuario para buscarlo y cargar sus datos
+     * @return UserDetails
+     * @throws UsernameNotFoundException
+     */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final Usuario curUsuario = repositorioUsuarios.findByUsername(username).orElse(null);
