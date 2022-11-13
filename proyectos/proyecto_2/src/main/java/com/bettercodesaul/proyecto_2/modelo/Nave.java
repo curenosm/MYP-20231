@@ -26,4 +26,6 @@ public class Nave {
     private Long id;
 
     private String nombre;
+    private Bala disparo;
+    private Bala powerUp;
 }

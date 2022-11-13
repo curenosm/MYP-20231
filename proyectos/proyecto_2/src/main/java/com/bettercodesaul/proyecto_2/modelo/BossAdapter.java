@@ -1,30 +1,28 @@
 package com.bettercodesaul.proyecto_2.modelo;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import lombok.Getter;
+import lombok.Setter;
+
+
 /**
- * Modelo de una bala en el juego
+ * Modelo de una nave en el juego 
  * 
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
 @Entity
-//@Getter
-//@Setter
-public interface Bala {
+@Getter
+@Setter
+public class BossAdapter extends Alien {
 
-    //@Id
-   // @GeneratedValue(strategy = GenerationType.AUTO)
-    //private static Long id;
-    public String tipo;
-    public int velocidadBala;
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private Boss jefe;
 }
