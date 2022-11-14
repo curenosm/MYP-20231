@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.bettercodesaul</groupId>
+  <artifactId>proyecto_1</artifactId>
+  <version>0.0.1</version>
+
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <!-- Plugins -->
+    <fmt-maven-plugin-version>2.5.0</fmt-maven-plugin-version>
+    <jacoco-maven-plugin-version>0.8.8</jacoco-maven-plugin-version>
+    <maven-checkstyle-plugin-version>3.2.0</maven-checkstyle-plugin-version>
+    <maven-compiler-version>3.6.0</maven-compiler-version>
+    <maven-resources-plugin-version>3.2.0</maven-resources-plugin-version>
+    <maven-surefire-plugin-version>2.19.1</maven-surefire-plugin-version>
+    <spring-boot-maven-plugin-version>2.7.2</spring-boot-maven-plugin-version>
+
+    <!-- Dependencies -->
+    <google-java-format-version>1.15.0</google-java-format-version>
+    <junit-version>5.8.2</junit-version>
+    <jcolor-version>5.5.1</jcolor-version>
+    <lombok-version>1.18.24</lombok-version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+  </properties>
+
+  <build>
+    <plugins>
+
+      <!-- Plugin para compilar (incluye procesamiento de anotaciones de lombok) -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven-compiler-version}</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+          <encoding>${project.build.sourceEncoding}</encoding>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>${lombok-version}</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+
+      <!-- Plugin para incluir los recursos en el jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${maven-resources-plugin-version}</version>
+        <executions>
+          <execution>
+            <id>copy-resource-one</id>
+            <phase>generate-sources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/target/destination-folder</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>source-files</directory>
+                  <includes>
+                    <include>*.*</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Plugin para generar el jar ejecutable con dependencias incluidas -->
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <version>${spring-boot-maven-plugin-version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+            <configuration>
+              <classifier>executable</classifier>
+              <mainClass>
+                com.bettercodesaul.Main
+              </mainClass>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Plugin para autoformatear el codigo con el estilo de google -->
+      <plugin>
+        <groupId>com.coveo</groupId>
+        <artifactId>fmt-maven-plugin</artifactId>
+        <version>${fmt-maven-plugin-version}</version>
+        <executions>
+          <execution>
+            <?m2e execute onConfiguration?>
+            <goals>
+              <goal>format</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Plugin para generar reportes de code coverage -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco-maven-plugin-version}</version>
+
+        <configuration>
+          <destfile>${project.artifactId}/target/jacoco.exec</destfile>
+          <datafile>${project.artifactId}/target/jacoco.exec</datafile>
+        </configuration>
+        
+        <executions>
+          <execution>
+            <id>prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>report</id>
+            <phase>test</phase>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok-version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.diogonunes</groupId>
+      <artifactId>JColor</artifactId>
+      <version>${jcolor-version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <version>${junit-version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>com.google.googlejavaformat</groupId>
+      <artifactId>google-java-format</artifactId>
+      <version>${google-java-format-version}</version>
+    </dependency>
+
+  </dependencies>
+
+</project>
