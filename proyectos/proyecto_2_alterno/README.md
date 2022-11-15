@@ -40,50 +40,33 @@
 
 <br/><br/>
 
-# Notas 
-- Los diagramas se encuentran ubicados en la carpeta `docs`
-- Existen 3 usuarios predeterminados en el sistema, cuyos datos de inicio de sesion son:
+# Patrones
+Para esta práctica utilizamos los siguientes patrones:
 
-    ### Mexico
+1) *Strategy:* Para el desarrollo del proyecto, decidimos utilizar Strategy para implementar a los barcos, en el juego puede haber 3 tipos de barcos, habrá power ups que se implementarán de acuerdo al tipo de barco elegido (Propongo de 2 a 3 power ups por tipo de nave) Los power up podrian aparecer cada x turnos
+ 
+2) *Prototype:* Recordemos que en este patrón se pueden clonar objetos sin que el código dependa de sus clases, para nuestro juego sucede lo mismo con los enemigos. Para tener una única clase de enemigo y poder tener varias copias de un objeto, podemos hacer que simplemente cambien losatributos de los distintos tipos de enemigos. Implementa la interfaz barco
+ 
+3) *Adapter:* Decidimos utilizar Adapter porque podemos meter otro tipo de enemigos, de tal forma que no sean de la clase Nave pero al usar un adaptador podemos hacer que se comporte como uno. Esto para que si se desea agregar otro tipo de enemigos con otras caracteristicas sea posibles hacerlo sin tocar el codigo de las Naves.
+ 
+4) *Iterator:* Podemos tener los tipos de enemigos en una lista privada en un repositorio y que no accedamos directamente a la lista, sino que usemos el patrón de Iterator para que así accedamos a los elementos de la lista y al avanzar oleadas hacemos que el iterador avance para obtener el siguiente tipo de enemigos o minibosses. 
 
-    **username:** admin <br/>
-    **password:** admin <br/>
-    **no. cuenta:** 123
+5) *Builder:* El usuario arma su tipo de barco al inicio, por ello usamos el patrón
+ 
+6) *MVC:* La parte visual sería lo visto por el usuario, la interfaz del juego.
+ 
+# Notas
+ 
+ El plan es que en cuanto a MVC los modelos sean las clases que estamos desarrollando junto con los repositorios, el controlador seria el main del proyecto compuesto de clases controladoras para no tener mucho cosigo cargado en una sola clase. Lo visual seria la terminal
+ 
+ *Aun no esta completo el UML, es un bosquejo y puede ser modificado
+ 
 
-    <br/>
+ 
+# Cosas por hacer
+*Crear los generadores correspondientes a Prototype y los controladores para jugar como tal
 
-    ### España
-
-    **username:** manolo <br/>
-    **password:** manolo <br/>
-    **no. cuenta:** 12
-
-    <br/>
-    
-    ### USA
-
-    **username:** john <br/>
-    **password:** john <br/>
-    **no. cuenta:** 1
-
-    <br/>
-
-<br/>
-
-# Justificación de patrones
-
-- En el caso de los idiomas, decidimos utilizar Factory, pues al ser un patrón que permite que sus subclases decidan qué clase instanciar, nos facilita el poder asignar un idioma. Además de poder incorporar nuevos tipos de productos en el programa sin descomponer el código cliente existente. Teniendo a nuestros métodos abstractos que cambian, sus descendientes implementan a nuestros métodos de la forma que quieran, como lo es en el caso de los idiomas, ya que se requiere que cambien conforme el cliente lo solicite.
-<br/>
-
-- En el caso de los catálogos, utilizamos el patrón Proxy debido a que en las instrucciones se nos indicó que no se podía mostrar el cátalogo real, porque si había vulnerabilidad de seguridad, cualquiera podría cambiarlo. Si recordamos lo que vimos en clase, el patrón Proxy proporciona un marcador de posición para otro objeto para controlar el acceso a él, es decir, evitamos que cualquiera lo modifique, en este caso los clientes. 
-<br/>
-
-- Para el caso de las ofertas, decidimos utilizar Observer ya que en las instrucciones nos indica que dichas ofertas cambian entre los países, recordando un poco la definición de este patrón, nos dice que se define una dependencia de uno a muchos entre objetos de tal forma que cuando un objeto cambia de estado, todos sus dependientes son notificados y se actualizan autómaticamente. Y es lo que sucede en las ofertas, cuando se indique el país de origen, autómaticamente van a cambiar las ofertas que se le muestren al cliente.
-<br/>
-
-- Para salvagualdar la seguridad de los datos del usuario, al solicitar la cuenta bancaria a través de un representante, si los datos son erróneos sacamos al usuario al menu con las opciones de la tienda y puede intentar hacer la compra de nuevo, pues sabemos que pudo haber sido un simple error; sin embargo, si falla de nuevo con los datos, el programa se cierra para evitar que se vulnere la seguridad de los datos del usuario, evitando la posibilidad de hallar la cuenta bancaria asociada mediante la fuerza bruta.
-<br/>
-
+*Completar UML
 
 # Diagramas
 
@@ -94,6 +77,9 @@
 </center>
 
 <center>
+    <img src="./docs/DiagramaSecuencia.png" width="100%">
+</center>
+
     <img src="./docs/DiagramaSecuencia.png" width="100%">
 </center>
 
