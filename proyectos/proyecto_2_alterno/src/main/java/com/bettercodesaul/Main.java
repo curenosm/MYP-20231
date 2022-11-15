@@ -3,17 +3,7 @@ package com.bettercodesaul;
 import static com.bettercodesaul.util.Printer.*;
 import static com.bettercodesaul.util.PropertiesFactory.*;
 
-import com.bettercodesaul.modelos.Oferta;
-import com.bettercodesaul.modelos.Producto;
-import com.bettercodesaul.modelos.Usuario;
-import com.bettercodesaul.servicio.ServicioClienteImpl;
 import com.bettercodesaul.util.*;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Properties;
-import java.util.Random;
-import java.util.Scanner;
 
 /**
  * Clase para correr el resto del proyecto e interactuar con el usuario
@@ -24,7 +14,7 @@ import java.util.Scanner;
  */
 public class Main {
 
-  private static Scanner scanner = new Scanner(System.in);
+  /*private static Scanner scanner = new Scanner(System.in);
   private static int contador;
 
   public static void main(String[] args) throws Exception {
@@ -32,11 +22,7 @@ public class Main {
     startClient();
   }
 
-  /**
-   * Metodo para iniciar la version del programa para un cliente
-   *
-   * @throws Exception
-   */
+
   public static void startClient() throws Exception {
 
     ServicioClienteImpl servicio = new ServicioClienteImpl();
@@ -160,16 +146,7 @@ public class Main {
     startClient();
   }
 
-  /**
-   * Metodo para completar la compra de forma segura
-   *
-   * @param servicio instancia de ServicioClienteImpl
-   * @param messages Instancia de Properties
-   * @param usuario Instancia de la clase usuario (el que usa el servicio actualmente)
-   * @param carrito Coleccion de instancias de la clase Producto
-   * @return boolean
-   * @throws Exception
-   */
+
   public static boolean comprarProductoSeguro(
       ServicioClienteImpl servicio,
       Properties messages,
@@ -214,14 +191,7 @@ public class Main {
     return aprobado;
   }
 
-  /**
-   * Metodo para agregar un producto al carrito de compra
-   *
-   * @param servicio Instancia de la clase ServicioClienteImpl
-   * @param messages Instancia de Properties
-   * @return Producto
-   * @throws Exception
-   */
+
   public static Producto comprarProducto(ServicioClienteImpl servicio, Properties messages)
       throws Exception {
     Long resp = 0L;
@@ -248,11 +218,6 @@ public class Main {
     } while (true);
   }
 
-  /**
-   * Metodo para generar un fecha aleatoria pero con sentido
-   *
-   * @return String
-   */
   public static String generarFecha(Usuario usuario) {
     Random rand = new Random();
     int dias = rand.nextInt(30);
@@ -269,5 +234,5 @@ public class Main {
     } else {
       return dias + "/" + mes + "/" + anio;
     }
-  }
+  }*/
 }

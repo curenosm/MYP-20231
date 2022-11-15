@@ -1,5 +1,8 @@
 package com.bettercodesaul.proyecto_2.controlador;
 
+import java.util.EventListener;
+import java.awt.*;    
+import java.awt.event.*;   
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +23,7 @@ import com.bettercodesaul.proyecto_2.repositorio.RepositorioNaves;
  */
 @RestController
 @RequestMapping("/naves")
-public class ControladorNaves {
+public class ControladorNaves implements KeyListener {
 
     private final RepositorioNaves repositorioNaves;
 
@@ -42,4 +45,5 @@ public class ControladorNaves {
         return repositorioNaves.findAll();
     }
 
+    
 }

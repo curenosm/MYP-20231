@@ -18,10 +18,12 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class Alien {
+public abstract class Alien {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private String tipo;
+    private Bala disparo;
 
 }
