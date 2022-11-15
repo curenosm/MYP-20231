@@ -9,4 +9,6 @@ public interface Barco {
   public void defender();
 
   public Object generarNave() throws CloneNotSupportedException;
+
+  public void powerUp();
 }

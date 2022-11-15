@@ -10,7 +10,7 @@ import java.util.List;
 public class RepositorioComponentes implements Repositorio {
   private List<Componente> componentes;
 
-  RepositorioComponentes() {
+  public RepositorioComponentes() {
     this.componentes =
         List.of(
             new CanionSimple(),

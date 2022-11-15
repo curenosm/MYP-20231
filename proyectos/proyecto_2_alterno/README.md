@@ -64,7 +64,10 @@ Para esta práctica utilizamos los siguientes patrones:
 
  
 # Cosas por hacer
-*Crear los generadores correspondientes a Prototype y los controladores para jugar como tal
+*Actualizar el doc application.properties segun las necesidades de nuestro proyecto
+*Generar toString() de la clase Componente, Nave y MonstruoAdapter 
+*Crear los controladores, la idea es que estén divididos según lo que hagan y sean llamados por el main, el primero seria para construir el barco (La parte de Builder), el segundo para las interacciones (Atacar, Defender, Activar PowerUp)
+*Documentar
 
 *Completar UML
 
@@ -76,10 +79,5 @@ Para esta práctica utilizamos los siguientes patrones:
     <img src="./docs/DiagramaClases.png" width="100%">
 </center>
 
-<center>
-    <img src="./docs/DiagramaSecuencia.png" width="100%">
-</center>
 
-    <img src="./docs/DiagramaSecuencia.png" width="100%">
-</center>
 

@@ -4,6 +4,7 @@ import com.bettercodesaul.interfaces.Barco;
 import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerUps.*;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -19,7 +20,7 @@ public class Nave implements Barco, Cloneable {
   protected Componente arma;
   protected Componente coraza;
   protected Componente emblema;
-  protected static List<PowerUp> poderes;
+  protected List<PowerUp> poderes;
 
   public Nave() {}
 
@@ -30,7 +31,7 @@ public class Nave implements Barco, Cloneable {
   }
 
   public List<PowerUp> getPoderes() {
-    return poderes;
+    return this.poderes;
   }
 
   public String getTipo() {
@@ -128,10 +129,26 @@ public class Nave implements Barco, Cloneable {
   public Object generarNave() throws CloneNotSupportedException {
 
     try {
-      return (Nave) this.clone();
+      Nave copia = (Nave) this.clone();
+      Random r = new Random();
+      copia.setAtaque(100 + r.nextInt(2000));
+      copia.setBlindaje(100 + r.nextInt(800));
+      copia.setVelocidad(1 + r.nextInt(7));
+      copia.setVida(50 + r.nextInt(3000));
+      return copia;
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
     }
     return null;
+  }
+
+  @Override
+  public void powerUp() {
+    Iterator<PowerUp> ite = poderes.iterator();
+    if (ite.hasNext()) {
+      PowerUp activo = ite.next();
+      activo.comportamientoAtaque(this);
+      activo.comportamientoDefensa(this);
+    }
   }
 }
