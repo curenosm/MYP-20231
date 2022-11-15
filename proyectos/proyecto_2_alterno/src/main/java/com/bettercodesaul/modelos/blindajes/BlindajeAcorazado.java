@@ -1,4 +1,4 @@
-package com.bettercodesaul.modelos.armas;
+package com.bettercodesaul.modelos.blindajes;
 
 import com.bettercodesaul.modelos.Componente;
 

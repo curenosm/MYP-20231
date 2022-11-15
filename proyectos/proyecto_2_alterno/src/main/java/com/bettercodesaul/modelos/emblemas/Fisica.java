@@ -1,4 +1,4 @@
-package com.bettercodesaul.modelos.armas;
+package com.bettercodesaul.modelos.emblemas;
 
 import com.bettercodesaul.modelos.Componente;
 

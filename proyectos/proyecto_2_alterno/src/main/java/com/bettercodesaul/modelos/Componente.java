@@ -7,6 +7,10 @@ public class Componente implements Cloneable {
   protected int agilidad;
   protected int velocidad;
 
+  public String getNombre() {
+    return this.nombre;
+  }
+
   public int getAtaque() {
     return this.ataque;
   }
@@ -25,11 +29,11 @@ public class Componente implements Cloneable {
 
   public Object clonar() throws CloneNotSupportedException {
     try {
-      Componente clon = (Componente) this.clone();
+
+      return (Componente) this.clone();
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
     }
-
-    return clon;
+    return null;
   }
 }

@@ -1,9 +1,11 @@
 package com.bettercodesaul.interfaces;
 
-public interface Powerup {
+import com.bettercodesaul.modelos.barcos.Nave;
+
+public interface PowerUp {
 
   public String descripcion();
-  
+
   public void comportamientoAtaque(Nave barco);
 
   public void comportamientoDefensa(Nave barco);

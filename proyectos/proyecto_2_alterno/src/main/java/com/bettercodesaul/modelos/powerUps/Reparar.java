@@ -3,18 +3,18 @@ package com.bettercodesaul.modelos.powerUps;
 import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.barcos.Nave;
 
-public class Propulsar implements PowerUp {
+public class Reparar implements PowerUp {
 
-  public Propulsar() {}
+  public Reparar() {}
 
   public String descripcion() {
-    return "Propulsas tu barco, aumentando en 2 puntos su velocidad y un 1 punto su agilidad";
+    return "Cedes por un momento para reparar danios, aumentando tu vida en 1000 puntos";
   }
 
   public void comportamientoAtaque(Nave barco) {}
 
   public void comportamientoDefensa(Nave barco) {
-    barco.setVelocidad(barco.getVelocidad() + 2);
-    barco.setAgilidad(barco.getAgilidad() + 1);
+    int aumento = barco.getVida() + 1000;
+    barco.setBlindaje(aumento);
   }
 }

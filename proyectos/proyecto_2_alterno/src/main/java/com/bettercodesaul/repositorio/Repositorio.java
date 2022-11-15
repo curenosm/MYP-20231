@@ -11,7 +11,7 @@ import java.util.Collection;
  */
 public interface Repositorio<T> {
 
-  public T find(Long primaryKey);
+  public T find(String primaryKey);
 
   public Collection<T> findAll();
 }

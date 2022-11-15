@@ -1,9 +1,11 @@
 package como.bettercodesaul.modelos;
 
-import com.bettercodesaul.modelos.barcos.Submarino;
+import com.bettercodesaul.modelos.Componente;
+import com.bettercodesaul.modelos.barcos.*;
 
 /**
  * Clase para construir y sustituir piezas de un objeto complejo
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Eizabeth
@@ -14,44 +16,45 @@ public class Builder {
   protected Componente arma;
   protected Componente blindaje;
   protected Componente emblema;
- 
 
-  /**
-   * Constructor sin parametros de la clase
-   */
+  /** Constructor sin parametros de la clase */
   public Builder() {}
 
   /**
    * Constructor con parametros de la clase
+   *
    * @param arma Instancia de la clase Componente
    * @param blindaje Instancia de la clase Componente
    * @param cabina Instancia de la clase Componente
    */
-  public Builder(String tipo, Componente arma, Componente blindaje, Componente emblema) {
-    this.tipo= tipo;
+  public Builder(int tipo, Componente arma, Componente blindaje, Componente emblema) {
+    this.tipo = tipo;
     this.arma = arma;
     this.blindaje = blindaje;
     this.emblema = emblema;
-    
   }
 
   /**
    * Metodo para construir una nave de acuerdo a los elementos que tiene el Builder
+   *
    * @return Nave
    */
   public Nave build() {
-      switch(this.tipo){
-          case 1:
-            return new Submarino(this.arma, this.blindaje, this.emblema);
-          case 2:
-            return new Acorazado(this.arma, this.blindaje, this.emblema);
-          case 3:
-            return new PortaAviones(this.arma, this.blindaje, this.emblema);
-      }
+    switch (this.tipo) {
+      case 1:
+        return new Submarino(this.arma, this.blindaje, this.emblema);
+      case 2:
+        return new Acorazado(this.arma, this.blindaje, this.emblema);
+      case 3:
+        return new PortaAviones(this.arma, this.blindaje, this.emblema);
+      default:
+        return null;
+    }
   }
 
   /**
    * Metodo para modificar el atributo arma de la clase
+   *
    * @param arma Instancia de la clase Componente
    * @return Builder
    */
@@ -60,9 +63,9 @@ public class Builder {
     return this;
   }
 
-
   /**
    * Metodo para modificar el atributo blindaje de la clase
+   *
    * @param arma Instancia de la clase Componente
    * @return Builder
    */
@@ -71,9 +74,9 @@ public class Builder {
     return this;
   }
 
-
   /**
    * Metodo para modificar el atributo cabina de la clase
+   *
    * @param arma Instancia de la clase Componente
    * @return Builder
    */
@@ -81,7 +84,4 @@ public class Builder {
     this.emblema = emblema;
     return this;
   }
-
-
- 
 }

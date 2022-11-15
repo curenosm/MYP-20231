@@ -1,4 +1,4 @@
-package com.bettercodesaul.modelos.armas;
+package com.bettercodesaul.modelos.blindajes;
 
 import com.bettercodesaul.modelos.Componente;
 
@@ -12,4 +12,3 @@ public class BlindajeMilitar extends Componente {
     this.velocidad = 0;
   }
 }
-

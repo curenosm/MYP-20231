@@ -1,40 +1,36 @@
 package com.bettercodesaul.modelos.barcos;
 
 import com.bettercodesaul.interfaces.Barco;
-import com.bettercodesaul.interfaces.Powerup;
+import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerUps.*;
-
 import java.util.List;
 import java.util.Random;
 
 public class Nave implements Barco, Cloneable {
 
-  protected String tipo="";
-  protected boolean defendiendo=false;
-  protected int ataque=0;
-  protected int vida=0;
-  protected int blindaje=0;
-  protected int agilidad=0;
-  protected int velocidad=0;
+  protected String tipo = "";
+  protected boolean defendiendo = false;
+  protected int ataque = 0;
+  protected int vida = 0;
+  protected int blindaje = 0;
+  protected int agilidad = 0;
+  protected int velocidad = 0;
   protected Componente arma;
   protected Componente coraza;
   protected Componente emblema;
-  protected List<Powerup> poderes;
+  protected static List<PowerUp> poderes;
 
-  public Nave(){
+  public Nave() {}
 
+  public Nave(Componente arma, Componente coraza, Componente emblema) {
+    this.arma = arma;
+    this.coraza = coraza;
+    this.emblema = emblema;
   }
 
-  public Nave(Componente arma, Componente coraza, Componente emblema){
-      this.arma=arma;
-      this.coraza=coraza;
-      this.emblema=emblema;
-      
-  }
-
-  public List<PowerUp> getPoderes(){
-      return this.poderes;
+  public List<PowerUp> getPoderes() {
+    return poderes;
   }
 
   public String getTipo() {
@@ -132,10 +128,10 @@ public class Nave implements Barco, Cloneable {
   public Object generarNave() throws CloneNotSupportedException {
 
     try {
-      Nave copia = (Nave) this.clone();
+      return (Nave) this.clone();
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
     }
-    return copia;
+    return null;
   }
 }
