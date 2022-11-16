@@ -7,6 +7,10 @@ public class Reparar implements PowerUp {
 
   public Reparar() {}
 
+  public String nombre() {
+    return "Reparar";
+  }
+
   public String descripcion() {
     return "Cedes por un momento para reparar danios, aumentando tu vida en 1000 puntos";
   }

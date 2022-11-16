@@ -5,6 +5,7 @@ import com.bettercodesaul.modelos.Componente;
 public class CC extends Componente {
 
   public CC() {
+    this.id = 200L;
     this.nombre = "CC";
     this.ataque = 600;
     this.blindaje = 0;

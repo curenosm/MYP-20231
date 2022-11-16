@@ -7,6 +7,10 @@ public class Blindar implements PowerUp {
 
   public Blindar() {}
 
+  public String nombre() {
+    return "Blindar";
+  }
+
   public String descripcion() {
     return "Blindas tu barco con una aleacion de Vibranium, aumentando tu blindaje un 40%";
   }

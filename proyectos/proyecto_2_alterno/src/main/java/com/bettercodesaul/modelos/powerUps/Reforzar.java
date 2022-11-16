@@ -7,6 +7,10 @@ public class Reforzar implements PowerUp {
 
   public Reforzar() {}
 
+  public String nombre() {
+    return "Reforzar";
+  }
+
   public String descripcion() {
     return "Refuerzas tu barco con una aleacion de Adamantium, aumentando tu blindaje un 70%";
   }

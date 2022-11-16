@@ -84,4 +84,9 @@ public class Builder {
     this.emblema = emblema;
     return this;
   }
+
+  public Builder tipo(int tipo) {
+    this.tipo = tipo;
+    return this;
+  }
 }

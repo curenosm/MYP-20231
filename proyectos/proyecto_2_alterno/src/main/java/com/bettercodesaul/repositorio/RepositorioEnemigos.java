@@ -1,24 +1,26 @@
 package com.bettercodesaul.repositorio;
 
 import static com.bettercodesaul.modelos.generadores.GeneradorEnemigos.*;
+import static com.bettercodesaul.util.Constantes.*;
 
 import com.bettercodesaul.modelos.barcos.Nave;
 import com.bettercodesaul.modelos.monstruos.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Random;
 
 public class RepositorioEnemigos implements Repositorio {
-  private static List<Nave> enemigos =
-      List.of(
-          generarSubmarino(),
-          generarAcorazado(),
-          generarPortaAviones(),
-          new MonstruoAdapter(new MonstruoMarino("Kraken", 4500, 2700, 900)));
+  private MonstruoMarino kraken = new MonstruoMarino("Kraken", 4500, 2700, 900);
+  private Nave adp = new MonstruoAdapter(kraken);
+  private ArrayList<Nave> enemigos = new ArrayList<>();
+  // List.of(generarSubmarino(), generarAcorazado(), generarPortaAviones(), adp);
 
   public RepositorioEnemigos() {
+    enemigos.add(generarSubmarino());
+    enemigos.add(generarAcorazado());
+    enemigos.add(generarPortaAviones());
+    enemigos.add(adp);
     generarEnemigos();
   }
 
@@ -34,9 +36,8 @@ public class RepositorioEnemigos implements Repositorio {
    * @return Producto
    */
   @Override
-  public Nave find(String primaryKey) {
-    Nave res =
-        enemigos.stream().filter(p -> primaryKey.equals(p.getTipo())).findFirst().orElse(null);
+  public Nave find(Long primaryKey) {
+    Nave res = enemigos.stream().filter(p -> primaryKey.equals(p.getId())).findFirst().orElse(null);
 
     try {
       return (Nave) res.generarNave();
@@ -47,11 +48,12 @@ public class RepositorioEnemigos implements Repositorio {
   }
 
   public void generarEnemigos() {
-    Random r = new Random();
+    //  enemigos= enemigos.to
     while (enemigos.size() < 10) {
-      int resp = r.nextInt(4);
+      int resp = random(0, 4);
       try {
-        enemigos.add((Nave) enemigos.get(resp).generarNave());
+        Nave enemy = (Nave) enemigos.get(resp).generarNave();
+        this.enemigos.add(enemy);
       } catch (CloneNotSupportedException e) {
         e.printStackTrace();
       }
@@ -59,7 +61,7 @@ public class RepositorioEnemigos implements Repositorio {
     Collections.shuffle(enemigos);
   }
 
-  public static Iterator getEnemigos() {
+  public Iterator getEnemigos() {
     return enemigos.iterator();
   }
 }

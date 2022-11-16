@@ -7,6 +7,10 @@ public class Sumergir implements PowerUp {
 
   public Sumergir() {}
 
+  public String nombre() {
+    return "Sumergir";
+  }
+
   public String descripcion() {
     return "Sumerges tu barco para evitar danios, duplicando tu agilidad, pero reduciendo tu velocidad en 1";
   }

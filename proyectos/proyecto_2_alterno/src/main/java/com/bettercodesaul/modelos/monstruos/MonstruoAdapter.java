@@ -7,7 +7,8 @@ public class MonstruoAdapter extends Nave {
 
   private MonstruoMarino monstruo;
 
-  public MonstruoAdapter(MonstruoMarino Monstruo) {
+  public MonstruoAdapter(MonstruoMarino monstruo) {
+
     this.tipo = monstruo.getNombre();
     this.ataque = monstruo.getAtaque();
     this.vida = monstruo.getVitalidad();

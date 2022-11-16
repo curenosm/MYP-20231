@@ -36,9 +36,9 @@ public class RepositorioComponentes implements Repositorio {
    * @return Producto
    */
   @Override
-  public Componente find(String primaryKey) {
+  public Componente find(Long primaryKey) {
     Componente res =
-        componentes.stream().filter(p -> primaryKey.equals(p.getNombre())).findFirst().orElse(null);
+        componentes.stream().filter(p -> primaryKey.equals(p.getId())).findFirst().orElse(null);
 
     // System.out.println(res.getNombre());
     try {
@@ -46,6 +46,7 @@ public class RepositorioComponentes implements Repositorio {
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
     }
+    System.out.println("ERROR");
     return null;
   }
 }

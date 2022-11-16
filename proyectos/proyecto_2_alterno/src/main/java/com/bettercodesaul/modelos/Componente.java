@@ -1,11 +1,19 @@
 package com.bettercodesaul.modelos;
 
 public class Componente implements Cloneable {
-  protected String nombre;
-  protected int ataque;
-  protected int blindaje;
-  protected int agilidad;
-  protected int velocidad;
+
+  protected Long id = 000L;
+  protected String nombre = "";
+  protected int ataque = 0;
+  protected int blindaje = 0;
+  protected int agilidad = 0;
+  protected int velocidad = 0;
+
+  public Componente() {}
+
+  public Long getId() {
+    return this.id;
+  }
 
   public String getNombre() {
     return this.nombre;
@@ -35,5 +43,18 @@ public class Componente implements Cloneable {
       e.printStackTrace();
     }
     return null;
+  }
+
+  public String toString() {
+    return "Nombre: "
+        + this.nombre
+        + "Ataque: "
+        + this.ataque
+        + "Blindaje: "
+        + this.blindaje
+        + "Agilidad: "
+        + this.agilidad
+        + "Velocidad: "
+        + this.velocidad;
   }
 }
