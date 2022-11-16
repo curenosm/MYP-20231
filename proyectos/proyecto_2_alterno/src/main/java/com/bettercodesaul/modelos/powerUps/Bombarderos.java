@@ -7,6 +7,10 @@ public class Bombarderos implements PowerUp {
 
   public Bombarderos() {}
 
+  public String nombre() {
+    return "Bombarderos";
+  }
+
   public String descripcion() {
     return "Un conjunto de aviones de bombarderos, aumentando tu danio un 60%";
   }

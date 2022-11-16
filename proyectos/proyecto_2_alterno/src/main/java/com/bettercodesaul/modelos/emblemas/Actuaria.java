@@ -5,6 +5,7 @@ import com.bettercodesaul.modelos.Componente;
 public class Actuaria extends Componente {
 
   public Actuaria() {
+    this.id = 100L;
     this.nombre = "Actuaria";
     this.ataque = 200;
     this.blindaje = 100;

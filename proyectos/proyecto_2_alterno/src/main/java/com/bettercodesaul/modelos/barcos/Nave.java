@@ -1,16 +1,15 @@
 package com.bettercodesaul.modelos.barcos;
 
-import com.bettercodesaul.interfaces.Barco;
 import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerUps.*;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
-public class Nave implements Barco, Cloneable {
+public class Nave implements Cloneable {
 
   protected String tipo = "";
+  protected Long id = 000L;
   protected boolean defendiendo = false;
   protected int ataque = 0;
   protected int vida = 0;
@@ -28,6 +27,37 @@ public class Nave implements Barco, Cloneable {
     this.arma = arma;
     this.coraza = coraza;
     this.emblema = emblema;
+  }
+
+  public String toString() {
+    String s = "";
+    for (PowerUp power : this.poderes) {
+      s += "\n" + power.nombre();
+    }
+    return "Clase: "
+        + this.tipo
+        + "\nAtaque: "
+        + this.ataque
+        + "\nVida: "
+        + this.vida
+        + "\nDefensa: "
+        + this.blindaje
+        + "\nAgilidad: "
+        + this.agilidad
+        + "\nVelocidad: "
+        + this.velocidad
+        + "\nArma: "
+        + this.arma.getNombre()
+        + "\nBlindaje: "
+        + this.coraza.getNombre()
+        + "\nEmblema: "
+        + this.emblema.getNombre()
+        + "\nPowerUps: "
+        + s;
+  }
+
+  public Long getId() {
+    return this.id;
   }
 
   public List<PowerUp> getPoderes() {
@@ -142,11 +172,10 @@ public class Nave implements Barco, Cloneable {
     return null;
   }
 
-  @Override
   public void powerUp() {
-    Iterator<PowerUp> ite = poderes.iterator();
-    if (ite.hasNext()) {
-      PowerUp activo = ite.next();
+    if (!poderes.isEmpty()) {
+      PowerUp activo = this.poderes.get(0);
+      poderes.remove(0);
       activo.comportamientoAtaque(this);
       activo.comportamientoDefensa(this);
     }

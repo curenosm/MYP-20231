@@ -11,15 +11,14 @@ import java.util.List;
 import java.util.Random;
 
 public class RepositorioEnemigos implements Repositorio {
-  private static List<Nave> enemigos =
-      List.of(
-          generarSubmarino(),
-          generarAcorazado(),
-          generarPortaAviones(),
-          new MonstruoAdapter(new MonstruoMarino("Kraken", 4500, 2700, 900)));
+  private MonstruoMarino kraken = new MonstruoMarino("Kraken", 4500, 2700, 900);
+  private Nave adp = new MonstruoAdapter(kraken);
+  private List<Nave> enemigos =
+      List.of(generarSubmarino(), generarAcorazado(), generarPortaAviones(), adp);
 
   public RepositorioEnemigos() {
-    generarEnemigos();
+
+    // generarEnemigos();
   }
 
   @Override
@@ -34,9 +33,8 @@ public class RepositorioEnemigos implements Repositorio {
    * @return Producto
    */
   @Override
-  public Nave find(String primaryKey) {
-    Nave res =
-        enemigos.stream().filter(p -> primaryKey.equals(p.getTipo())).findFirst().orElse(null);
+  public Nave find(Long primaryKey) {
+    Nave res = enemigos.stream().filter(p -> primaryKey.equals(p.getId())).findFirst().orElse(null);
 
     try {
       return (Nave) res.generarNave();
@@ -59,7 +57,7 @@ public class RepositorioEnemigos implements Repositorio {
     Collections.shuffle(enemigos);
   }
 
-  public static Iterator getEnemigos() {
+  public Iterator getEnemigos() {
     return enemigos.iterator();
   }
 }

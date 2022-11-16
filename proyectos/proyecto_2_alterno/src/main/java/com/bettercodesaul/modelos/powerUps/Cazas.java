@@ -7,6 +7,10 @@ public class Cazas implements PowerUp {
 
   public Cazas() {}
 
+  public String nombre() {
+    return "Cazas";
+  }
+
   public String descripcion() {
     return "Un conjunto de cazas militares, aumentando tu danio al doble";
   }

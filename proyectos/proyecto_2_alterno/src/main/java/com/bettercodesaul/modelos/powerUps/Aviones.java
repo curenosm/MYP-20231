@@ -7,6 +7,10 @@ public class Aviones implements PowerUp {
 
   public Aviones() {}
 
+  public String nombre() {
+    return "Aviones";
+  }
+
   public String descripcion() {
     return "Un conjunto de aviones de combate te apoyan en la batalla, aumentando tu danio un 30%";
   }

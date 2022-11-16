@@ -5,6 +5,7 @@ import com.bettercodesaul.modelos.Componente;
 public class BlindajeFurtivo extends Componente {
 
   public BlindajeFurtivo() {
+    this.id = 020L;
     this.nombre = "Blindaje Furtivo";
     this.ataque = 0;
     this.blindaje = 300;

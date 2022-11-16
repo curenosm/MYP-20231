@@ -1,5 +1,11 @@
 package com.bettercodesaul.util;
 
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.Scanner;
+
 /**
  * Clase que almacena las constantes utilizadas para la practica
  *
@@ -9,60 +15,50 @@ package com.bettercodesaul.util;
  */
 public class Constantes {
 
-  public static final int TIEMPO_ENTRE_OFERTAS = 1000 * 20;
-  public static final String DESCUENTO_PREDETERMINADO = "0.3";
+  private static Properties properties;
+  public static Scanner scanner = new Scanner(System.in);
 
-  /**
-   * public static final String * "0.3" * Metodo para redondear decimales
-   *
-   * @param cantidad Cantidad a redondear
-   * @return double
-   */
-  public static double redondear(double cantidad) {
-    return Math.floor(cantidad * 100) / 100;
+  static {
+    properties = loadProperties();
   }
 
   /**
-   * Metodo para repetir un caracter dado un cierto numero de veces
+   * Metodo que carga el archivo application.properties que esta en la raiz de la practica.
    *
-   * @param c Caracter a repetir
-   * @param n Numero de veces
-   * @return
+   * @return objeto de propiedades
    */
-  public static String repeat(char c, int n) {
-    return (n > 0) ? c + repeat(c, n - 1) : "";
+  public static Properties loadProperties() {
+
+    try (InputStream input = new FileInputStream("src/main/resources/application.properties")) {
+      Properties prop = new Properties();
+      prop.load(input);
+      return prop;
+    } catch (IOException ex) {
+      ex.printStackTrace();
+    }
+
+    return null;
   }
 
   /**
-   * Metodo para repetir una cadena un cierto numero de veces
+   * Metodo para obtener un mensaje especifico del archivo application.properties de acuerdo a su
+   * nombre
    *
-   * @param c Cadena a repetir
-   * @param n Numero de veces
-   * @return
+   * @param propertyName NOmbre del mensaje que se desea obtener
+   * @return String
    */
-  public static String repeat(String s, int n) {
-    return (n > 0) ? s + repeat(s, n - 1) : "";
+  public static String property(String propertyName) {
+    return properties.getProperty(propertyName);
   }
 
   /**
-   * Metodo para repetir una cadena un cierto numero de veces
+   * Metodo para generar un numero aleatorio
    *
-   * @param c Cadena a repetir
-   * @param n Numero de veces
+   * @param startInclusive Desde que numero se generan los aleatorios
+   * @param endExclusive Hasta que numero se generan (excluye tal numero de los generados)
    * @return
    */
   public static int random(int startInclusive, int endExclusive) {
     return (int) (Math.random() * endExclusive + startInclusive);
-  }
-
-  /**
-   * Metodo para generar un identificador unico (no garantizado)
-   *
-   * @return
-   * @throws InterruptedException
-   */
-  public static Long generarID() throws InterruptedException {
-    Thread.sleep(100);
-    return System.currentTimeMillis();
   }
 }
