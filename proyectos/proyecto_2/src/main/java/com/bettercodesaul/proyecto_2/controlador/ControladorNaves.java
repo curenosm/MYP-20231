@@ -23,7 +23,7 @@ import com.bettercodesaul.proyecto_2.repositorio.RepositorioNaves;
  */
 @RestController
 @RequestMapping("/naves")
-public class ControladorNaves implements KeyListener {
+public class ControladorNaves{
 
     private final RepositorioNaves repositorioNaves;
 

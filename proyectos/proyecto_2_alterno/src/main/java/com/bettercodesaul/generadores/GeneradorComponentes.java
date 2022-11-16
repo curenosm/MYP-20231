@@ -1,4 +1,4 @@
-package com.bettercodesaul.modelos.generadores;
+package com.bettercodesaul.generadores;
 
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.repositorio.RepositorioComponentes;

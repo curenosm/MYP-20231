@@ -4,6 +4,7 @@ import static com.bettercodesaul.util.Printer.*;
 import static com.bettercodesaul.util.PropertiesFactory.*;
 
 import com.bettercodesaul.util.*;
+import java.util.Scanner;
 
 /**
  * Clase para correr el resto del proyecto e interactuar con el usuario
@@ -14,15 +15,15 @@ import com.bettercodesaul.util.*;
  */
 public class Main {
 
-  /*private static Scanner scanner = new Scanner(System.in);
+  private static Scanner scanner = new Scanner(System.in);
   private static int contador;
 
   public static void main(String[] args) throws Exception {
     success(property("version"));
-    startClient();
+    // startClient();
   }
 
-
+  /*
   public static void startClient() throws Exception {
 
     ServicioClienteImpl servicio = new ServicioClienteImpl();
