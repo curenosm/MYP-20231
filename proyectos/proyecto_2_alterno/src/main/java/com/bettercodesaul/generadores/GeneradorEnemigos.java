@@ -1,6 +1,6 @@
 package com.bettercodesaul.generadores;
 
-import static com.bettercodesaul.modelos.generadores.GeneradorComponentes.*;
+import static com.bettercodesaul.generadores.GeneradorComponentes.*;
 
 import com.bettercodesaul.modelos.barcos.*;
 

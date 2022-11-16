@@ -5,8 +5,8 @@ import static com.bettercodesaul.util.PropertiesFactory.*;
 
 import com.bettercodesaul.controladores.ControladorBuilder;
 import com.bettercodesaul.controladores.ControladorJuego;
+import com.bettercodesaul.generadores.GeneradorComponentes;
 import com.bettercodesaul.modelos.barcos.Nave;
-import com.bettercodesaul.modelos.generadores.GeneradorComponentes;
 import com.bettercodesaul.util.*;
 import java.util.Scanner;
 
@@ -21,16 +21,15 @@ public class Main {
 
   private static Scanner scanner = new Scanner(System.in);
   private static int contador;
+  private static GeneradorComponentes gen = new GeneradorComponentes();
   private static ControladorBuilder controlBuilder = new ControladorBuilder();
   private static ControladorJuego controlJuego;
-  private static GeneradorComponentes gen = new GeneradorComponentes();
 
   public static void main(String[] args) throws Exception {
+
     System.out.println("Bienvenido");
     Nave nave = controlBuilder.construirNave();
     System.out.println(nave.toString());
-    // Componente arma = gen.generarArma();
-    // System.out.println(arma.toString());
     controlJuego = new ControladorJuego(nave);
     controlJuego.jugar();
   }
