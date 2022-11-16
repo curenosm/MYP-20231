@@ -7,10 +7,13 @@ import com.bettercodesaul.modelos.emblemas.*;
 import java.util.Collection;
 import java.util.List;
 
-public class RepositorioComponentes implements Repositorio {
+public class RepositorioComponentes implements Repositorio<Componente> {
+
+  private static volatile RepositorioComponentes uniqueInstance;
   private List<Componente> componentes;
 
-  public RepositorioComponentes() {
+  /** Constructor privado para usar Singleton */
+  private RepositorioComponentes() {
     this.componentes =
         List.of(
             new CanionSimple(),
@@ -22,6 +25,23 @@ public class RepositorioComponentes implements Repositorio {
             new CC(),
             new Actuaria(),
             new Fisica());
+  }
+
+  /**
+   * Metodo que devuelve una instancia de la clase tras realizar un par de verificaciones
+   *
+   * @return RepositorioEnemigos
+   */
+  public static RepositorioComponentes getInstance() {
+    if (uniqueInstance == null) {
+      synchronized (RepositorioComponentes.class) {
+        if (uniqueInstance == null) {
+          uniqueInstance = new RepositorioComponentes();
+        }
+      }
+    }
+
+    return uniqueInstance;
   }
 
   @Override

@@ -5,7 +5,7 @@ import static com.bettercodesaul.util.Printer.*;
 
 import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.Componente;
-import com.bettercodesaul.modelos.powerUps.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -30,6 +30,7 @@ public class Nave implements Cloneable {
     this.arma = arma;
     this.coraza = coraza;
     this.emblema = emblema;
+    this.poderes = new ArrayList<PowerUp>();
   }
 
   public String toString() {

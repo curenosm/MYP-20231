@@ -1,7 +1,7 @@
 package com.bettercodesaul.modelos.barcos;
 
 import com.bettercodesaul.modelos.Componente;
-import com.bettercodesaul.modelos.powerUps.*;
+import com.bettercodesaul.modelos.powerups.*;
 import java.util.List;
 
 public class PortaAviones extends Nave {

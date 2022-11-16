@@ -10,18 +10,38 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 
-public class RepositorioEnemigos implements Repositorio {
+public class RepositorioEnemigos implements Repositorio<Nave> {
   private MonstruoMarino kraken = new MonstruoMarino("Kraken", 4500, 2700, 900);
   private Nave adp = new MonstruoAdapter(kraken);
   private ArrayList<Nave> enemigos = new ArrayList<>();
   // List.of(generarSubmarino(), generarAcorazado(), generarPortaAviones(), adp);
 
-  public RepositorioEnemigos() {
+  private static volatile RepositorioEnemigos uniqueInstance;
+
+  /** Constructor privado para usar Singleton */
+  private RepositorioEnemigos() {
     enemigos.add(generarSubmarino());
     enemigos.add(generarAcorazado());
     enemigos.add(generarPortaAviones());
     enemigos.add(adp);
     generarEnemigos();
+  }
+
+  /**
+   * Metodo que devuelve una instancia de la clase tras realizar un par de verificaciones
+   *
+   * @return RepositorioEnemigos
+   */
+  public static RepositorioEnemigos getInstance() {
+    if (uniqueInstance == null) {
+      synchronized (RepositorioEnemigos.class) {
+        if (uniqueInstance == null) {
+          uniqueInstance = new RepositorioEnemigos();
+        }
+      }
+    }
+
+    return uniqueInstance;
   }
 
   @Override
@@ -61,7 +81,7 @@ public class RepositorioEnemigos implements Repositorio {
     Collections.shuffle(enemigos);
   }
 
-  public Iterator getEnemigos() {
+  public Iterator<Nave> getEnemigos() {
     return enemigos.iterator();
   }
 }

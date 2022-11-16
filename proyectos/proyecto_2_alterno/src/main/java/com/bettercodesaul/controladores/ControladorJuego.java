@@ -10,7 +10,7 @@ import java.util.Iterator;
 import java.util.Scanner;
 
 public class ControladorJuego {
-  private RepositorioEnemigos repo = new RepositorioEnemigos();
+  private RepositorioEnemigos repo = RepositorioEnemigos.getInstance();
   private Scanner scanner = new Scanner(System.in);
   private Nave aliado;
 
@@ -38,12 +38,13 @@ public class ControladorJuego {
     boolean jugando = true;
     while (jugando == true) {
       jugarTurno(aliado, enemigo);
-      if (aliado.getVida() < 0) {
+      if (aliado.getVida() <= 0) {
         vivo = false;
         jugando = false;
 
-      } else if (enemigo.getVida() < 0) {
+      } else if (enemigo.getVida() <= 0) {
         jugando = false;
+        return true;
       }
     }
     return vivo;

@@ -1,4 +1,4 @@
-package com.bettercodesaul.modelos.powerUps;
+package com.bettercodesaul.modelos.powerups;
 
 import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.barcos.Nave;

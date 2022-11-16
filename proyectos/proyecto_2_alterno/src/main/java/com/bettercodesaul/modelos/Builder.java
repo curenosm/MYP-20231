@@ -1,6 +1,5 @@
-package como.bettercodesaul.modelos;
+package com.bettercodesaul.modelos;
 
-import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.barcos.*;
 
 /**
@@ -56,7 +55,7 @@ public class Builder {
    * Metodo para modificar el atributo arma de la clase
    *
    * @param arma Instancia de la clase Componente
-   * @return Builder
+   * @return Builder import static com.bettercodesaul.util.Printer.*;
    */
   public Builder arma(Componente arma) {
     this.arma = arma;

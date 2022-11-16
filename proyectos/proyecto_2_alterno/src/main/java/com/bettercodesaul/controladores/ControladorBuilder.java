@@ -3,10 +3,10 @@ package com.bettercodesaul.controladores;
 import static com.bettercodesaul.util.Constantes.*;
 import static com.bettercodesaul.util.Printer.*;
 
+import com.bettercodesaul.modelos.Builder;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.barcos.Nave;
 import com.bettercodesaul.repositorio.RepositorioComponentes;
-import como.bettercodesaul.modelos.Builder;
 import java.util.Scanner;
 
 public class ControladorBuilder {
@@ -16,7 +16,7 @@ public class ControladorBuilder {
 
   public ControladorBuilder() {
     constructor = new Builder();
-    repo = new RepositorioComponentes();
+    repo = RepositorioComponentes.getInstance();
   }
 
   public Nave construirNave() {

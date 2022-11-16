@@ -21,7 +21,7 @@
 
 1. Dirigirse al directorio raiz del proyecto
 2. Compilar usando `./mvnw package`
-3. Ejecutar usando `java -jar ./target/proyecto_1-0.0.1-executable.jar`
+3. Ejecutar usando `java -jar ./target/proyecto_2-0.0.1-executable.jar`
 
 ### Forma 2
 1. Dirigirse al directorio raiz del proyecto
@@ -36,7 +36,7 @@
 
 1. Dirigirse al directorio raiz del proyecto
 2. Compilar usando `.\mvnw.cmd package`
-3. Ejecutar usando `java -jar .\target\proyecto_1-0.0.1-executable.jar`
+3. Ejecutar usando `java -jar .\target\proyecto_2-0.0.1-executable.jar`
 
 <br/><br/>
 
@@ -54,7 +54,11 @@ Para esta práctica utilizamos los siguientes patrones:
 5) *Builder:* El usuario arma su tipo de barco al inicio, por ello usamos el patrón
  
 6) *MVC:* La parte visual sería lo visto por el usuario, la interfaz del juego.
- 
+
+7) *Singleton*: Utilizamos el patrón singleton para la parte de los repositorios en vista de que están simulando un acceso a datos y por
+lo tanto no necesitamos crear diferentes instancias de la clase, pues
+con una sola podríamos acceder a ellos desde cualquier parte del codigo, ahorrando de esta forma recursos.
+
 # Notas
  
  El plan es que en cuanto a MVC los modelos sean las clases que estamos desarrollando junto con los repositorios, el controlador seria el main del proyecto compuesto de clases controladoras para no tener mucho cosigo cargado en una sola clase. Lo visual seria la terminal

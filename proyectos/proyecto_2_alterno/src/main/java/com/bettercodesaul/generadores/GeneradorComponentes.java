@@ -6,11 +6,8 @@ import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.repositorio.RepositorioComponentes;
 
 public class GeneradorComponentes {
-  private static RepositorioComponentes repositorioComponentes;
-
-  public GeneradorComponentes() {
-    repositorioComponentes = new RepositorioComponentes();
-  }
+  private static RepositorioComponentes repositorioComponentes =
+      RepositorioComponentes.getInstance();;
 
   public static Componente generarArma() {
 
