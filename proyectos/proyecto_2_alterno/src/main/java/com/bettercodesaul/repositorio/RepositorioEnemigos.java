@@ -1,6 +1,6 @@
 package com.bettercodesaul.repositorio;
 
-import static com.bettercodesaul.modelos.generadores.GeneradorEnemigos.*;
+import static com.bettercodesaul.generadores.GeneradorEnemigos.*;
 import static com.bettercodesaul.util.Constantes.*;
 
 import com.bettercodesaul.modelos.barcos.Nave;

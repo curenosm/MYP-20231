@@ -1,7 +1,6 @@
 package com.bettercodesaul.modelos.barcos;
 
 import com.bettercodesaul.modelos.Componente;
-import com.bettercodesaul.modelos.generadores.GeneradorComponentes.*;
 import com.bettercodesaul.modelos.powerUps.*;
 import java.util.List;
 

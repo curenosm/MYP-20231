@@ -1,4 +1,4 @@
-package com.bettercodesaul.modelos.generadores;
+package com.bettercodesaul.generadores;
 
 import static com.bettercodesaul.modelos.generadores.GeneradorComponentes.*;
 
