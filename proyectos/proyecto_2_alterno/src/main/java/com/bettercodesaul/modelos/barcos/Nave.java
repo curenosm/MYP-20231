@@ -1,5 +1,8 @@
 package com.bettercodesaul.modelos.barcos;
 
+import static com.bettercodesaul.util.Constantes.*;
+import static com.bettercodesaul.util.Printer.*;
+
 import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerUps.*;
@@ -140,15 +143,25 @@ public class Nave implements Cloneable {
 
   public void atacar(Nave enemigo) {
     if (!enemigo.esquivar()) {
+      success(property("messages.ataque.acertado"));
       if (enemigo.getDefendiendo()) {
+        bold(property("messages.ataque.defendido"));
         int danio = this.ataque - enemigo.getBlindaje();
+        bold(property("messages.ataque.danio") + danio);
         enemigo.setDefendiendo(false);
         if (danio >= 0) {
           enemigo.setVida(enemigo.getVida() - danio);
+          warning(property("messages.objetivo.vida") + enemigo.getVida());
+        } else {
+          warning(property("messages.ataque.danio" + 0));
         }
       } else {
         enemigo.setVida(enemigo.getVida() - this.ataque);
+        bold(property("messages.ataque.danio") + this.ataque);
+        warning(property("messages.objetivo.vida") + enemigo.getVida());
       }
+    } else {
+      warning(property("message.ataque.esquivado"));
     }
   }
 
@@ -161,10 +174,10 @@ public class Nave implements Cloneable {
     try {
       Nave copia = (Nave) this.clone();
       Random r = new Random();
-      copia.setAtaque(100 + r.nextInt(2000));
-      copia.setBlindaje(100 + r.nextInt(800));
-      copia.setVelocidad(1 + r.nextInt(7));
-      copia.setVida(50 + r.nextInt(3000));
+      copia.setAtaque(this.ataque + random(0, 3201));
+      copia.setBlindaje(this.blindaje + random(0, 1200));
+      copia.setVelocidad(this.velocidad + random(0, 7));
+      copia.setVida(this.vida + r.nextInt(3000));
       return copia;
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
@@ -175,7 +188,6 @@ public class Nave implements Cloneable {
   public void powerUp() {
     if (!poderes.isEmpty()) {
       PowerUp activo = this.poderes.get(0);
-      poderes.remove(0);
       activo.comportamientoAtaque(this);
       activo.comportamientoDefensa(this);
     }

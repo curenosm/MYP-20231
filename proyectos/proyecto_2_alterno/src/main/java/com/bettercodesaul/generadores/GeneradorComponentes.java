@@ -1,8 +1,9 @@
 package com.bettercodesaul.modelos.generadores;
 
+import static com.bettercodesaul.util.Constantes.*;
+
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.repositorio.RepositorioComponentes;
-import java.util.Random;
 
 public class GeneradorComponentes {
   private static RepositorioComponentes repositorioComponentes;
@@ -12,8 +13,8 @@ public class GeneradorComponentes {
   }
 
   public static Componente generarArma() {
-    Random r = new Random();
-    int buscar = r.nextInt(3);
+
+    int buscar = random(0, 3);
     switch (buscar) {
       case 0:
         return repositorioComponentes.find(001L);
@@ -27,8 +28,8 @@ public class GeneradorComponentes {
   }
 
   public static Componente generarBlindaje() {
-    Random r = new Random();
-    int buscar = r.nextInt(3);
+
+    int buscar = random(0, 3);
     switch (buscar) {
       case 0:
         return repositorioComponentes.find(010L);
@@ -42,8 +43,7 @@ public class GeneradorComponentes {
   }
 
   public static Componente generarEmblema() {
-    Random r = new Random();
-    int buscar = r.nextInt(3);
+    int buscar = random(0, 3);
     switch (buscar) {
       case 0:
         return repositorioComponentes.find(100L);

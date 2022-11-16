@@ -19,11 +19,13 @@ public class ControladorJuego {
   }
 
   public void jugar() {
+    // repo.generarEnemigos();
     Iterator<Nave> ite = repo.getEnemigos();
     while (ite.hasNext()) {
-
-      boolean vivo = enfrentamiento(aliado, ite.next());
-      if (!vivo) {
+      Nave enemy = ite.next();
+      warning(property("messages.enemigo.nuevo") + "\n" + enemy.toString());
+      boolean vivo = enfrentamiento(aliado, enemy);
+      if (vivo == false) {
         error(property("messages.game.over"));
         System.exit(0);
       }
@@ -32,14 +34,19 @@ public class ControladorJuego {
   }
 
   public boolean enfrentamiento(Nave aliado, Nave enemigo) {
-    while (true) {
+    boolean vivo = true;
+    boolean jugando = true;
+    while (jugando == true) {
       jugarTurno(aliado, enemigo);
-      if (aliado.getVida() <= 0) {
-        return false;
-      } else if (enemigo.getVida() <= 0) {
-        return true;
+      if (aliado.getVida() < 0) {
+        vivo = false;
+        jugando = false;
+
+      } else if (enemigo.getVida() < 0) {
+        jugando = false;
       }
     }
+    return vivo;
   }
 
   public void jugarTurno(Nave aliado, Nave enemigo) {
@@ -47,8 +54,10 @@ public class ControladorJuego {
     int varEnem = random(1, enemigo.getVelocidad() + 1);
 
     if (varAli > varEnem) {
+      success(property("messages.turno.aliado"));
       turnoAliado(aliado, enemigo);
     } else {
+      error(property("messages.turno.enemigo"));
       turnoEnemigo(enemigo, aliado);
     }
   }

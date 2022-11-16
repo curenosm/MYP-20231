@@ -49,7 +49,7 @@ Para esta práctica utilizamos los siguientes patrones:
  
 3) *Adapter:* Decidimos utilizar Adapter porque podemos meter otro tipo de enemigos, de tal forma que no sean de la clase Nave pero al usar un adaptador podemos hacer que se comporte como uno. Esto para que si se desea agregar otro tipo de enemigos con otras caracteristicas sea posibles hacerlo sin tocar el codigo de las Naves.
  
-4) *Iterator:* Podemos tener los tipos de enemigos en una lista privada en un repositorio y que no accedamos directamente a la lista, sino que usemos el patrón de Iterator para que así accedamos a los elementos de la lista y al avanzar oleadas hacemos que el iterador avance para obtener el siguiente tipo de enemigos o minibosses. 
+4) *Iterator:* Podemos tener los tipos de enemigos en una lista privada en un repositorio y que no accedamos directamente a la lista, sino que usemos el patrón de Iterator para que así accedamos a los elementos de la lista y al avanzar oleadas hacemos que el iterador avance para obtener el siguiente tipo de enemigos o minibosses. (FALTA CORREGIR PARA PODER IMPLEMENTAR)
 
 5) *Builder:* El usuario arma su tipo de barco al inicio, por ello usamos el patrón
  
@@ -65,8 +65,8 @@ Para esta práctica utilizamos los siguientes patrones:
  
 # Cosas por hacer
 *Actualizar el doc application.properties segun las necesidades de nuestro proyecto
-*Generar toString() de la clase Componente, Nave y MonstruoAdapter 
-*Crear los controladores, la idea es que estén divididos según lo que hagan y sean llamados por el main, el primero seria para construir el barco (La parte de Builder), el segundo para las interacciones (Atacar, Defender, Activar PowerUp)
+
+*Arreglar bug en el metodo enfrentamiento() de la clase ControladorJUego, pues cuando el enemigo se queda sin vida, seguimos jugando
 *Documentar
 
 *Completar UML
