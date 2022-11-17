@@ -5,7 +5,8 @@ import com.bettercodesaul.modelos.Componente;
 public class CanionDoble extends Componente {
 
   public CanionDoble() {
-    this.id = 001L;
+    super();
+    this.id = 1L;
     this.nombre = "Canion Doble";
     this.ataque = 300;
     this.blindaje = 0;

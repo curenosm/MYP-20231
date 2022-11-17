@@ -1,6 +1,5 @@
 package com.bettercodesaul.modelos.powerups;
 
-import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.barcos.Nave;
 
 public class Blindar implements PowerUp {

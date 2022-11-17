@@ -3,8 +3,8 @@ package com.bettercodesaul.modelos.barcos;
 import static com.bettercodesaul.util.Constantes.*;
 import static com.bettercodesaul.util.Printer.*;
 
-import com.bettercodesaul.interfaces.PowerUp;
 import com.bettercodesaul.modelos.Componente;
+import com.bettercodesaul.modelos.powerups.PowerUp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -24,7 +24,9 @@ public class Nave implements Cloneable {
   protected Componente emblema;
   protected List<PowerUp> poderes;
 
-  public Nave() {}
+  public Nave() {
+    this.poderes = new ArrayList<PowerUp>();
+  }
 
   public Nave(Componente arma, Componente coraza, Componente emblema) {
     this.arma = arma;
@@ -38,26 +40,27 @@ public class Nave implements Cloneable {
     for (PowerUp power : this.poderes) {
       s += "\n" + power.nombre();
     }
-    return "Clase: "
-        + this.tipo
-        + "\nAtaque: "
-        + this.ataque
-        + "\nVida: "
-        + this.vida
-        + "\nDefensa: "
-        + this.blindaje
-        + "\nAgilidad: "
-        + this.agilidad
-        + "\nVelocidad: "
-        + this.velocidad
-        + "\nArma: "
-        + this.arma.getNombre()
-        + "\nBlindaje: "
-        + this.coraza.getNombre()
-        + "\nEmblema: "
-        + this.emblema.getNombre()
-        + "\nPowerUps: "
-        + s;
+    s +=
+        "Clase: "
+            + this.tipo
+            + "\nAtaque: "
+            + this.ataque
+            + "\nVida: "
+            + this.vida
+            + "\nDefensa: "
+            + this.blindaje
+            + "\nAgilidad: "
+            + this.agilidad
+            + "\nVelocidad: "
+            + this.velocidad;
+
+    if (this.arma != null) s += "\nArma: " + this.arma.getNombre();
+
+    if (this.coraza != null) s += "\nBlindaje: " + this.coraza.getNombre();
+
+    if (this.emblema != null) s += "\nEmblema: " + this.emblema.getNombre();
+
+    return s;
   }
 
   public Long getId() {
@@ -117,6 +120,8 @@ public class Nave implements Cloneable {
   }
 
   public void setVida(int vida) {
+    if (vida < 0) this.vida = 0;
+
     this.vida = vida;
   }
 

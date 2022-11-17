@@ -25,10 +25,12 @@ public class ControladorJuego {
       Nave enemy = ite.next();
       warning(property("messages.enemigo.nuevo") + "\n" + enemy.toString());
       boolean vivo = enfrentamiento(aliado, enemy);
-      if (vivo == false) {
+      if (!vivo) {
         error(property("messages.game.over"));
         System.exit(0);
       }
+
+      ite.forEachRemaining(System.out::println);
     }
     success(property("messages.game.win"));
   }
@@ -38,11 +40,15 @@ public class ControladorJuego {
     boolean jugando = true;
     while (jugando == true) {
       jugarTurno(aliado, enemigo);
+
+      System.out.println("Despues de jugar turno " + enemigo.getVida());
       if (aliado.getVida() <= 0) {
         vivo = false;
         jugando = false;
 
       } else if (enemigo.getVida() <= 0) {
+
+        System.out.println("El enemigo perdio");
         jugando = false;
         return true;
       }
@@ -89,6 +95,7 @@ public class ControladorJuego {
             throw new Exception();
         }
 
+        success(property("menu.acciones.aliado"));
       } catch (Exception e) {
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
@@ -103,16 +110,16 @@ public class ControladorJuego {
         error(property("messages.ataque.enemigo"));
         enemigo.atacar(aliado);
         break;
-
       case 2:
         error(property("messages.defensa.enemigo"));
         enemigo.defender();
         break;
-
       case 3:
         error(property("messages.powerup.enemigo"));
         enemigo.powerUp();
         break;
     }
+
+    success(property("menu.acciones.aliado"));
   }
 }

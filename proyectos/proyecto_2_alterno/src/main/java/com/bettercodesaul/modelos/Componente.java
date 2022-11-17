@@ -46,15 +46,24 @@ public class Componente implements Cloneable {
   }
 
   public String toString() {
-    return "Nombre: "
+    return "Id: "
+        + this.id
+        + "\n"
+        + "Nombre: "
         + this.nombre
+        + "\n"
         + "Ataque: "
         + this.ataque
+        + "\n"
         + "Blindaje: "
         + this.blindaje
+        + "\n"
         + "Agilidad: "
         + this.agilidad
+        + "\n"
         + "Velocidad: "
-        + this.velocidad;
+        + this.velocidad
+        + "\n"
+        + "\n";
   }
 }

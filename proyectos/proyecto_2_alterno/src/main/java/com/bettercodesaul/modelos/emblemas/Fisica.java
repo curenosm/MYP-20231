@@ -5,6 +5,7 @@ import com.bettercodesaul.modelos.Componente;
 public class Fisica extends Componente {
 
   public Fisica() {
+    super();
     this.id = 300L;
     this.nombre = "Fisica";
     this.ataque = 320;

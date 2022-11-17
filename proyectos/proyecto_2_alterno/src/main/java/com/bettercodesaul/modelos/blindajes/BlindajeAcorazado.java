@@ -5,7 +5,8 @@ import com.bettercodesaul.modelos.Componente;
 public class BlindajeAcorazado extends Componente {
 
   public BlindajeAcorazado() {
-    this.id = 010L;
+    super();
+    this.id = 10L;
     this.nombre = "Blindaje Acorazado";
     this.ataque = 0;
     this.blindaje = 900;

@@ -14,11 +14,11 @@ public class GeneradorComponentes {
     int buscar = random(0, 3);
     switch (buscar) {
       case 0:
-        return repositorioComponentes.find(001L);
+        return repositorioComponentes.find(1L);
       case 1:
-        return repositorioComponentes.find(002L);
+        return repositorioComponentes.find(2L);
       case 2:
-        return repositorioComponentes.find(003L);
+        return repositorioComponentes.find(3L);
       default:
         return null;
     }
@@ -29,11 +29,11 @@ public class GeneradorComponentes {
     int buscar = random(0, 3);
     switch (buscar) {
       case 0:
-        return repositorioComponentes.find(010L);
+        return repositorioComponentes.find(10L);
       case 1:
-        return repositorioComponentes.find(020L);
+        return repositorioComponentes.find(20L);
       case 2:
-        return repositorioComponentes.find(030L);
+        return repositorioComponentes.find(30L);
       default:
         return null;
     }

@@ -5,7 +5,8 @@ import com.bettercodesaul.modelos.Componente;
 public class BlindajeMilitar extends Componente {
 
   public BlindajeMilitar() {
-    this.id = 030L;
+    super();
+    this.id = 30L;
     this.nombre = "Blindaje Militar";
     this.ataque = 0;
     this.blindaje = 450;

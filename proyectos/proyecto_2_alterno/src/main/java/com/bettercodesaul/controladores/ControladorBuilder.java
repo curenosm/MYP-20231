@@ -35,13 +35,13 @@ public class ControladorBuilder {
         resp = scanner.nextInt();
         switch (resp) {
           case 1:
-            return repo.find(001L);
+            return repo.find(1L);
 
           case 2:
-            return repo.find(002L);
+            return repo.find(2L);
 
           case 3:
-            return repo.find(003L);
+            return repo.find(3L);
 
           default:
             throw new Exception();
@@ -62,13 +62,13 @@ public class ControladorBuilder {
         resp = scanner.nextInt();
         switch (resp) {
           case 1:
-            return repo.find(010L);
+            return repo.find(10L);
 
           case 2:
-            return repo.find(020L);
+            return repo.find(20L);
 
           case 3:
-            return repo.find(030L);
+            return repo.find(30L);
 
           default:
             throw new Exception();
