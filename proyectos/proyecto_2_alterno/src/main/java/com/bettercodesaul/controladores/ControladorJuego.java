@@ -30,7 +30,7 @@ public class ControladorJuego {
         System.exit(0);
       }
 
-      ite.forEachRemaining(System.out::println);
+      // ite.forEachRemaining(System.out::println);
     }
     success(property("messages.game.win"));
   }
@@ -38,22 +38,21 @@ public class ControladorJuego {
   public boolean enfrentamiento(Nave aliado, Nave enemigo) {
     boolean vivo = true;
     boolean jugando = true;
-    while (jugando == true) {
+    do {
       jugarTurno(aliado, enemigo);
-
+      boolean a = enemigo.getVida() < 0;
+      System.out.println(a);
       System.out.println("Despues de jugar turno " + enemigo.getVida());
       if (aliado.getVida() <= 0) {
-        vivo = false;
-        jugando = false;
+        return false;
 
       } else if (enemigo.getVida() <= 0) {
-
         System.out.println("El enemigo perdio");
-        jugando = false;
         return true;
       }
-    }
-    return vivo;
+    } while (enemigo.getVida() > 0);
+    System.out.println("El enemigo perdio");
+    return true;
   }
 
   public void jugarTurno(Nave aliado, Nave enemigo) {
@@ -99,8 +98,9 @@ public class ControladorJuego {
       } catch (Exception e) {
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
+        resp = 0;
       }
-    } while (true);
+    } while (resp == 0);
   }
 
   public void turnoEnemigo(Nave enemigo, Nave aliado) {
