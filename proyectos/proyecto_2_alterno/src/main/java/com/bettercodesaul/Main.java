@@ -13,15 +13,15 @@ import com.bettercodesaul.modelos.barcos.Nave;
  */
 public class Main {
 
-  private static ControladorBuilder controlBuilder = new ControladorBuilder();
-  private static ControladorJuego controlJuego;
+  private static ControladorBuilder controladorBuilder = new ControladorBuilder();
+  private static ControladorJuego controladorJuego;
 
   public static void main(String[] args) throws Exception {
 
     System.out.println("Bienvenido");
-    Nave nave = controlBuilder.construirNave();
+    Nave nave = controladorBuilder.construirNave();
     System.out.println(nave.toString());
-    controlJuego = new ControladorJuego(nave);
-    controlJuego.jugar();
+    controladorJuego = new ControladorJuego(nave);
+    controladorJuego.jugar();
   }
 }

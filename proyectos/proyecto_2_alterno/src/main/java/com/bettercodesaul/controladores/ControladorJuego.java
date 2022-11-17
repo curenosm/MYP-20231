@@ -6,6 +6,7 @@ import static com.bettercodesaul.util.Printer.*;
 
 import com.bettercodesaul.modelos.barcos.Nave;
 import com.bettercodesaul.repositorio.RepositorioEnemigos;
+import com.bettercodesaul.vistas.*;
 import java.util.Iterator;
 import java.util.Scanner;
 
@@ -14,12 +15,16 @@ public class ControladorJuego {
   private Scanner scanner = new Scanner(System.in);
   private Nave aliado;
 
+  private VistaTurnoAliado vistaTurnoAliado;
+  private VistaTurnoEnemigo vistaTurnoEnemigo;
+
   public ControladorJuego(Nave aliado) {
     this.aliado = aliado;
+    vistaTurnoAliado = VistaTurnoAliado.getInstance();
+    vistaTurnoEnemigo = VistaTurnoEnemigo.getInstance();
   }
 
   public void jugar() {
-    // repo.generarEnemigos();
     Iterator<Nave> ite = repo.getEnemigos();
     while (ite.hasNext()) {
       Nave enemy = ite.next();
@@ -29,20 +34,14 @@ public class ControladorJuego {
         error(property("messages.game.over"));
         System.exit(0);
       }
-
-      // ite.forEachRemaining(System.out::println);
     }
     success(property("messages.game.win"));
   }
 
   public boolean enfrentamiento(Nave aliado, Nave enemigo) {
-    boolean vivo = true;
-    boolean jugando = true;
     do {
       jugarTurno(aliado, enemigo);
-      boolean a = enemigo.getVida() < 0;
-      System.out.println(a);
-      System.out.println("Despues de jugar turno " + enemigo.getVida());
+
       if (aliado.getVida() <= 0) {
         return false;
 
@@ -51,7 +50,7 @@ public class ControladorJuego {
         return true;
       }
     } while (enemigo.getVida() > 0);
-    System.out.println("El enemigo perdio");
+
     return true;
   }
 
@@ -60,41 +59,39 @@ public class ControladorJuego {
     int varEnem = random(1, enemigo.getVelocidad() + 1);
 
     if (varAli > varEnem) {
-      success(property("messages.turno.aliado"));
+      vistaTurnoAliado.showMenu();
       turnoAliado(aliado, enemigo);
     } else {
-      error(property("messages.turno.enemigo"));
+      vistaTurnoEnemigo.showMessageTurno();
       turnoEnemigo(enemigo, aliado);
     }
   }
 
   public void turnoAliado(Nave aliado, Nave enemigo) {
-    success(property("menu.acciones.aliado"));
+    vistaTurnoAliado.showMenu();
     int resp = 0;
+
     do {
       try {
         resp = scanner.nextInt();
         switch (resp) {
           case 1:
-            success(property("messages.ataque.aliado"));
+            vistaTurnoAliado.atacar();
             aliado.atacar(enemigo);
             break;
-
           case 2:
-            success(property("messages.defensa.aliado"));
+            vistaTurnoAliado.defender();
             aliado.defender();
             break;
-
           case 3:
-            success(property("messages.powerup.aliado"));
+            vistaTurnoAliado.activarPowerUp();
             aliado.powerUp();
             break;
-
           default:
             throw new Exception();
         }
 
-        success(property("menu.acciones.aliado"));
+        vistaTurnoAliado.showMenu();
       } catch (Exception e) {
         error(property("messages.error.invalid.option"));
         scanner = new Scanner(System.in);
@@ -105,17 +102,18 @@ public class ControladorJuego {
 
   public void turnoEnemigo(Nave enemigo, Nave aliado) {
     int p = random(1, 4);
+
     switch (p) {
       case 1:
-        error(property("messages.ataque.enemigo"));
+        vistaTurnoEnemigo.atacar();
         enemigo.atacar(aliado);
         break;
       case 2:
-        error(property("messages.defensa.enemigo"));
+        vistaTurnoEnemigo.defender();
         enemigo.defender();
         break;
       case 3:
-        error(property("messages.powerup.enemigo"));
+        vistaTurnoEnemigo.activarPowerUp();
         enemigo.powerUp();
         break;
     }

@@ -37,7 +37,7 @@ public class Nave implements Cloneable {
 
   public String toString() {
     String s = "";
-   
+
     s +=
         "Clase: "
             + this.tipo
@@ -57,7 +57,7 @@ public class Nave implements Cloneable {
     if (this.coraza != null) s += "\nBlindaje: " + this.coraza.getNombre();
 
     if (this.emblema != null) s += "\nEmblema: " + this.emblema.getNombre();
-      s+="\nPoderes";
+    s += "\nPoderes";
     for (PowerUp power : this.poderes) {
       s += "\n" + power.nombre();
     }
