@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
-import java.util.Scanner;
 
 /**
  * Clase que almacena las constantes utilizadas para la practica
@@ -16,7 +15,6 @@ import java.util.Scanner;
 public class Constantes {
 
   private static Properties properties;
-  public static Scanner scanner = new Scanner(System.in);
 
   static {
     properties = loadProperties();
