@@ -7,16 +7,19 @@ import com.bettercodesaul.modelos.Builder;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.barcos.Nave;
 import com.bettercodesaul.repositorio.RepositorioComponentes;
+import com.bettercodesaul.vistas.VistaBuilder;
 import java.util.Scanner;
 
 public class ControladorBuilder {
   private Builder constructor;
   private RepositorioComponentes repo;
   private Scanner scanner = new Scanner(System.in);
+  private VistaBuilder vistaBuilder;
 
   public ControladorBuilder() {
     constructor = new Builder();
     repo = RepositorioComponentes.getInstance();
+    vistaBuilder = VistaBuilder.getInstance();
   }
 
   public Nave construirNave() {
@@ -28,7 +31,7 @@ public class ControladorBuilder {
   }
 
   public Componente elegirArma() {
-    info(property("menu.tipo.armas"));
+    vistaBuilder.menuArmas();
     int resp = 0;
     do {
       try {
@@ -48,14 +51,14 @@ public class ControladorBuilder {
         }
 
       } catch (Exception e) {
-        error(property("messages.error.invalid.option"));
+        vistaBuilder.opcionInvalida();
         scanner = new Scanner(System.in);
       }
     } while (true);
   }
 
   public Componente elegirBlindaje() {
-    info(property("menu.tipo.blindajes"));
+    vistaBuilder.menuBlindajes();
     int resp = 0;
     do {
       try {
@@ -75,14 +78,14 @@ public class ControladorBuilder {
         }
 
       } catch (Exception e) {
-        error(property("messages.error.invalid.option"));
+        vistaBuilder.opcionInvalida();
         scanner = new Scanner(System.in);
       }
     } while (true);
   }
 
   public Componente elegirEmblema() {
-    info(property("menu.tipo.emblemas"));
+    vistaBuilder.menuEmblemas();
     int resp = 0;
     do {
       try {
@@ -102,14 +105,14 @@ public class ControladorBuilder {
         }
 
       } catch (Exception e) {
-        error(property("messages.error.invalid.option"));
+        vistaBuilder.opcionInvalida();
         scanner = new Scanner(System.in);
       }
     } while (true);
   }
 
   public int elegirTipo() {
-    info(property("menu.tipo.barcos"));
+    vistaBuilder.menuTipo();
     int resp = 0;
     do {
       try {
@@ -122,7 +125,7 @@ public class ControladorBuilder {
         }
 
       } catch (Exception e) {
-        error(property("messages.error.invalid.option"));
+        vistaBuilder.opcionInvalida();
         scanner = new Scanner(System.in);
       }
     } while (true);

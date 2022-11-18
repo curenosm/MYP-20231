@@ -7,12 +7,10 @@ import com.bettercodesaul.modelos.emblemas.*;
 import java.util.Collection;
 import java.util.List;
 
-public class RepositorioComponentes implements Repositorio<Componente> {
-
-  private static volatile RepositorioComponentes uniqueInstance;
+public class RepositorioComponentes implements Repositorio {
   private List<Componente> componentes;
+  private static volatile RepositorioComponentes uniqueInstance;
 
-  /** Constructor privado para usar Singleton */
   private RepositorioComponentes() {
     this.componentes =
         List.of(
@@ -27,11 +25,6 @@ public class RepositorioComponentes implements Repositorio<Componente> {
             new Fisica());
   }
 
-  /**
-   * Metodo que devuelve una instancia de la clase tras realizar un par de verificaciones
-   *
-   * @return RepositorioEnemigos
-   */
   public static RepositorioComponentes getInstance() {
     if (uniqueInstance == null) {
       synchronized (RepositorioComponentes.class) {
@@ -46,7 +39,7 @@ public class RepositorioComponentes implements Repositorio<Componente> {
 
   @Override
   public Collection<Componente> findAll() {
-    return componentes;
+    return this.componentes;
   }
 
   /**
@@ -58,16 +51,7 @@ public class RepositorioComponentes implements Repositorio<Componente> {
   @Override
   public Componente find(Long primaryKey) {
     Componente res =
-        componentes
-            .stream()
-            .map(
-                o -> {
-                  System.out.println(o);
-                  return o;
-                })
-            .filter(p -> primaryKey.equals(p.getId()))
-            .findFirst()
-            .orElse(null);
+        componentes.stream().filter(p -> primaryKey.equals(p.getId())).findFirst().orElse(null);
 
     try {
       return (Componente) res.clonar();

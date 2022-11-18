@@ -7,7 +7,6 @@ import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerups.PowerUp;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class Nave implements Cloneable {
 
@@ -23,6 +22,7 @@ public class Nave implements Cloneable {
   protected Componente coraza;
   protected Componente emblema;
   protected List<PowerUp> poderes;
+  protected int contador = 0;
 
   public Nave() {
     this.poderes = new ArrayList<PowerUp>();
@@ -140,8 +140,8 @@ public class Nave implements Cloneable {
   }
 
   public boolean esquivar() {
-    Random r = new Random();
-    int valorDado = r.nextInt(10) + 1;
+
+    int valorDado = random(this.agilidad, 13);
     if (this.agilidad >= valorDado) {
       return true;
     } else {
@@ -149,27 +149,47 @@ public class Nave implements Cloneable {
     }
   }
 
-  public void atacar(Nave enemigo) {
-    if (!enemigo.esquivar()) {
-      success(property("messages.ataque.acertado"));
+  public String atacar(Nave enemigo) {
+
+    if (enemigo.esquivar()) {
+
       if (enemigo.getDefendiendo()) {
-        bold(property("messages.ataque.defendido"));
+
         int danio = this.ataque - enemigo.getBlindaje();
-        bold(property("messages.ataque.danio") + danio);
+
         enemigo.setDefendiendo(false);
         if (danio >= 0) {
           enemigo.setVida(enemigo.getVida() - danio);
-          warning(property("messages.objetivo.vida") + enemigo.getVida());
+          return property("messages.ataque.acertado")
+              + "\n"
+              + property("messages.ataque.defendido")
+              + "\n"
+              + property("messages.ataque.danio")
+              + danio
+              + "\n"
+              + property("messages.objetivo.vida")
+              + enemigo.getVida();
+
         } else {
-          warning(property("messages.ataque.danio" + 0));
+          return property("messages.ataque.acertado")
+              + "\n"
+              + property("messages.ataque.defendido")
+              + "\n"
+              + property("messages.ataque.danio")
+              + 0;
         }
       } else {
         enemigo.setVida(enemigo.getVida() - this.ataque);
-        bold(property("messages.ataque.danio") + this.ataque);
-        warning(property("messages.objetivo.vida") + enemigo.getVida());
+        return property("messages.ataque.acertado")
+            + "\n"
+            + property("messages.ataque.danio")
+            + this.ataque
+            + "\n"
+            + property("messages.objetivo.vida")
+            + enemigo.getVida();
       }
     } else {
-      warning(property("message.ataque.esquivado"));
+      return property("message.ataque.esquivado");
     }
   }
 
@@ -181,11 +201,12 @@ public class Nave implements Cloneable {
 
     try {
       Nave copia = (Nave) this.clone();
-      Random r = new Random();
-      copia.setAtaque(this.ataque + random(0, 3201));
-      copia.setBlindaje(this.blindaje + random(0, 1200));
-      copia.setVelocidad(this.velocidad + random(0, 7));
-      copia.setVida(this.vida + r.nextInt(3000));
+
+      copia.setAtaque(random(100, 1201));
+      copia.setBlindaje(random(0, 501));
+      copia.setVelocidad(random(1, 6));
+      copia.setVida(random(800, 3001));
+      copia.setAgilidad(random(0, 6));
       return copia;
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
@@ -193,11 +214,15 @@ public class Nave implements Cloneable {
     return null;
   }
 
-  public void powerUp() {
-    if (!poderes.isEmpty()) {
-      PowerUp activo = this.poderes.get(0);
+  public String powerUp() {
+    if (contador < this.poderes.size()) {
+      PowerUp activo = this.poderes.get(contador);
+
       activo.comportamientoAtaque(this);
       activo.comportamientoDefensa(this);
+      contador++;
+      return activo.nombre() + ": " + activo.descripcion();
     }
+    return property("messages.powerup.vacio");
   }
 }

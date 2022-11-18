@@ -35,7 +35,7 @@ public class VistaTurnoAliado {
   }
 
   public void showMenu() {
-    success(property("messages.turno.aliado"));
+    success(property("menu.acciones.aliado"));
   }
 
   public void showMessageTurno() {

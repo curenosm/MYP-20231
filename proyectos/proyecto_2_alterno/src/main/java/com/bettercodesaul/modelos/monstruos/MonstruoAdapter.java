@@ -1,5 +1,7 @@
 package com.bettercodesaul.modelos.monstruos;
 
+import static com.bettercodesaul.util.Constantes.*;
+
 import com.bettercodesaul.modelos.barcos.Nave;
 import java.util.Random;
 
@@ -13,11 +15,7 @@ public class MonstruoAdapter extends Nave {
     this.ataque = monstruo.getAtaque();
     this.vida = monstruo.getVitalidad();
     this.blindaje = monstruo.getResistencia();
-  }
-
-  @Override
-  public int getAgilidad() {
-    return 0;
+    this.agilidad = 1;
   }
 
   @Override
@@ -26,18 +24,15 @@ public class MonstruoAdapter extends Nave {
   }
 
   @Override
-  public int getVelocidad() {
-    return 5;
-  }
-
-  @Override
-  public boolean esquivar() {
-    return false;
-  }
-
-  @Override
-  public void atacar(Nave enemigo) {
+  public String atacar(Nave enemigo) {
     enemigo.setVida(enemigo.getVida() - this.ataque);
+    return property("messages.ataque.acertado")
+        + "\n"
+        + property("messages.ataque.danio")
+        + this.ataque
+        + "\n"
+        + property("messages.objetivo.vida")
+        + enemigo.getVida();
   }
 
   @Override
@@ -51,10 +46,10 @@ public class MonstruoAdapter extends Nave {
     try {
       Nave copia = (Nave) this.clone();
       Random r = new Random();
-      copia.setAtaque(100 + r.nextInt(4000));
-      copia.setBlindaje(100 + r.nextInt(1200));
-      copia.setVelocidad(1 + r.nextInt(2));
-      copia.setVida(1000 + r.nextInt(3000));
+      copia.setAtaque(random(1000, 2501));
+      copia.setBlindaje(random(200, 601));
+      copia.setVelocidad(random(1, 4));
+      copia.setVida(random(1000, 3001));
       return copia;
     } catch (CloneNotSupportedException e) {
       e.printStackTrace();
@@ -63,9 +58,10 @@ public class MonstruoAdapter extends Nave {
   }
 
   @Override
-  public void powerUp() {
+  public String powerUp() {
     this.vida += 1000;
     this.ataque += 500;
     this.blindaje += 200;
+    return property("messages.powerup.monstruo");
   }
 }
