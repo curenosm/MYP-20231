@@ -4,10 +4,21 @@ import com.bettercodesaul.modelos.powerups.*;
 import java.util.Collection;
 import java.util.List;
 
-public class RepositorioPowerUps implements Repositorio {
+/**
+ * Clase de acceso a los datos de los power ups
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
+public class RepositorioPowerUps implements Repositorio<PowerUp> {
+
   private List<PowerUp> powerUps;
   private static volatile RepositorioPowerUps uniqueInstance;
 
+  /**
+   * Constructor privado para usar Singleton
+   */
   private RepositorioPowerUps() {
     this.powerUps =
         List.of(
@@ -22,6 +33,10 @@ public class RepositorioPowerUps implements Repositorio {
             new Sumergir());
   }
 
+  /**
+   * Metodo que nos devuelve la unica instancia de esta clase
+   * @return
+   */
   public static RepositorioPowerUps getInstance() {
     if (uniqueInstance == null) {
       synchronized (RepositorioPowerUps.class) {
@@ -34,6 +49,9 @@ public class RepositorioPowerUps implements Repositorio {
     return uniqueInstance;
   }
 
+  /**
+   * Metodo que nos permite obtener todos los powerups
+   */
   @Override
   public Collection<PowerUp> findAll() {
     return powerUps;

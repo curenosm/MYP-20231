@@ -2,6 +2,14 @@ package com.bettercodesaul.modelos.blindajes;
 
 import com.bettercodesaul.modelos.Componente;
 
+/**
+ * Modelo que representa un blindaje militar
+ * 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class BlindajeMilitar extends Componente {
 
   public BlindajeMilitar() {

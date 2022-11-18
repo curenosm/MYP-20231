@@ -10,6 +10,14 @@ import com.bettercodesaul.vistas.*;
 import java.util.Iterator;
 import java.util.Scanner;
 
+/**
+ * Controlador para armar las naves
+ * 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class ControladorJuego {
   private RepositorioEnemigos repo = RepositorioEnemigos.getInstance();
   private Scanner scanner = new Scanner(System.in);
@@ -26,6 +34,9 @@ public class ControladorJuego {
     vistaJuego = VistaJuego.getInstance();
   }
 
+  /**
+   * Metodo para iniciar el juego
+   */
   public void jugar() {
     Iterator<Nave> ite = repo.getEnemigos();
     while (ite.hasNext()) {
@@ -40,6 +51,13 @@ public class ControladorJuego {
     vistaJuego.gameWin();
   }
 
+  /**
+   * Metodo para ejecutar el enfrentamiento de dos naves
+   * 
+   * @param aliado Nuestra nave
+   * @param enemigo Nave enemiga
+   * @return true en caso de que ganemos el combate
+   */
   public boolean enfrentamiento(Nave aliado, Nave enemigo) {
     do {
       jugarTurno(aliado, enemigo);
@@ -56,6 +74,12 @@ public class ControladorJuego {
     return true;
   }
 
+  /**
+   * Metodo para decidir el turno del jugador
+   * 
+   * @param aliado Nuestra nave
+   * @param enemigo Nave enemiga
+   */
   public void jugarTurno(Nave aliado, Nave enemigo) {
     int varAli = random(1, aliado.getVelocidad() + 1);
     int varEnem = random(1, enemigo.getVelocidad() + 1);
@@ -69,6 +93,12 @@ public class ControladorJuego {
     }
   }
 
+  /**
+   * Metodo encargado de manejar las acciones en nuestro turno
+   * 
+   * @param aliado
+   * @param enemigo
+   */
   public void turnoAliado(Nave aliado, Nave enemigo) {
     vistaTurnoAliado.showMenu();
     int resp = 0;
@@ -101,6 +131,11 @@ public class ControladorJuego {
     } while (resp == 0);
   }
 
+  /**
+   * Metodo encargado de simular el comportamiento del enemigo durante el juego
+   * @param enemigo
+   * @param aliado
+   */
   public void turnoEnemigo(Nave enemigo, Nave aliado) {
     int p = random(1, 4);
 

@@ -2,6 +2,15 @@ package com.bettercodesaul.modelos.emblemas;
 
 import com.bettercodesaul.modelos.Componente;
 
+
+/**
+ * Modelo que representa un emblema de la carrera de Actuaria
+ * 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class Actuaria extends Componente {
 
   public Actuaria() {

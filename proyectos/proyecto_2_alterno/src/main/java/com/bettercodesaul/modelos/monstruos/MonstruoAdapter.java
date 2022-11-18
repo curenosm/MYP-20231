@@ -5,9 +5,15 @@ import static com.bettercodesaul.util.Constantes.*;
 import com.bettercodesaul.modelos.barcos.Nave;
 import java.util.Random;
 
-public class MonstruoAdapter extends Nave {
 
-  private MonstruoMarino monstruo;
+/**
+ * Clase Adaptadora de un monstruo para que se comporte como una Nave
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
+public class MonstruoAdapter extends Nave {
 
   public MonstruoAdapter(MonstruoMarino monstruo) {
 
@@ -23,6 +29,11 @@ public class MonstruoAdapter extends Nave {
     return false;
   }
 
+  /**
+   * Metodo para atacar
+   * 
+   * @param Nave enemigo a atacar
+   */
   @Override
   public String atacar(Nave enemigo) {
     enemigo.setVida(enemigo.getVida() - this.ataque);
@@ -35,11 +46,17 @@ public class MonstruoAdapter extends Nave {
         + enemigo.getVida();
   }
 
+  /**
+   * Metodo para defenderse del ataque
+   */
   @Override
   public void defender() {
     this.defendiendo = false;
   }
 
+  /*
+   * Metodo para generar la nave
+   */
   @Override
   public Object generarNave() throws CloneNotSupportedException {
 

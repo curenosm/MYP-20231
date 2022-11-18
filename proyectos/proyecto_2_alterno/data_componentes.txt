@@ -1,0 +1,72 @@
+Id: 3
+Nombre: Canion Simple
+Ataque: 100
+Blindaje: 0
+Agilidad: 0
+Velocidad: 0
+
+
+Id: 1
+Nombre: Canion Doble
+Ataque: 300
+Blindaje: 0
+Agilidad: 0
+Velocidad: -1
+
+
+Id: 2
+Nombre: Canion Nuclear
+Ataque: 800
+Blindaje: 0
+Agilidad: 0
+Velocidad: -3
+
+
+Id: 10
+Nombre: Blindaje Acorazado
+Ataque: 0
+Blindaje: 900
+Agilidad: -1
+Velocidad: -1
+
+
+Id: 30
+Nombre: Blindaje Militar
+Ataque: 0
+Blindaje: 450
+Agilidad: 1
+Velocidad: 0
+
+
+Id: 20
+Nombre: Blindaje Furtivo
+Ataque: 0
+Blindaje: 300
+Agilidad: 2
+Velocidad: 0
+
+
+Id: 200
+Nombre: CC
+Ataque: 600
+Blindaje: 0
+Agilidad: 2
+Velocidad: 0
+
+
+Id: 100
+Nombre: Actuaria
+Ataque: 200
+Blindaje: 100
+Agilidad: 0
+Velocidad: 0
+
+
+Id: 300
+Nombre: Fisica
+Ataque: 320
+Blindaje: 350
+Agilidad: 0
+Velocidad: 2
+
+

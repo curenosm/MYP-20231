@@ -84,6 +84,12 @@ public class Builder {
     return this;
   }
 
+  /**
+   * Metodo para modificar el atributo tipo de la clase
+   *
+   * @param arma Instancia de la clase Componente
+   * @return Builder
+   */
   public Builder tipo(int tipo) {
     this.tipo = tipo;
     return this;

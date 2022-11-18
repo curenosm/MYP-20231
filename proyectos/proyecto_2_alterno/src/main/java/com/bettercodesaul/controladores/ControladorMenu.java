@@ -11,6 +11,14 @@ import com.bettercodesaul.repositorio.RepositorioComponentes;
 import com.bettercodesaul.repositorio.RepositorioPowerUps;
 import java.util.Scanner;
 
+/**
+ * Controlador para armar las naves
+ * 
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class ControladorMenu {
   private RepositorioComponentes repoCom;
   private RepositorioPowerUps repoPow;
@@ -30,7 +38,7 @@ public class ControladorMenu {
       s += comp.toString();
       s += "\n";
     }
-    String direc = "../util/.Componentes.txt";
+    String direc = "data_componentes.txt";
     writeUsingFiles(direc, s);
   }
 
@@ -40,7 +48,7 @@ public class ControladorMenu {
       s += power.nombre() + "\n" + power.descripcion();
       s += "\n";
     }
-    String direc = "./src";
+    String direc = "data_powerups.txt";
     writeUsingFiles(direc, s);
   }
 
@@ -53,24 +61,18 @@ public class ControladorMenu {
 
         switch (resp) {
           case 1:
-            // Generar lista de componentes
             listaComponentes();
             break;
-
           case 2:
-            // Generar lista de PowerUps
             listaPowerUps();
             break;
-
           case 3:
             // Jugar
             Nave nave = cBuilder.construirNave();
             cJuego = new ControladorJuego(nave);
             cJuego.jugar();
             break;
-
           case 4:
-            // Salir
             System.exit(0);
             break;
 

@@ -1,8 +1,5 @@
 package com.bettercodesaul.controladores;
 
-import static com.bettercodesaul.util.Constantes.*;
-import static com.bettercodesaul.util.Printer.*;
-
 import com.bettercodesaul.modelos.Builder;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.barcos.Nave;
@@ -10,7 +7,15 @@ import com.bettercodesaul.repositorio.RepositorioComponentes;
 import com.bettercodesaul.vistas.VistaBuilder;
 import java.util.Scanner;
 
+/**
+ * Controlador para armar las naves
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class ControladorBuilder {
+  
   private Builder constructor;
   private RepositorioComponentes repo;
   private Scanner scanner = new Scanner(System.in);
@@ -22,6 +27,11 @@ public class ControladorBuilder {
     vistaBuilder = VistaBuilder.getInstance();
   }
 
+  /**
+   * Metodo constructor de la nave
+   * 
+   * @return Nave construida usando los componentes elegidos
+   */
   public Nave construirNave() {
     constructor = constructor.tipo(elegirTipo());
     constructor = constructor.arma(elegirArma());
@@ -30,6 +40,11 @@ public class ControladorBuilder {
     return constructor.build();
   }
 
+  /**
+   * Metodo para solicitar el tipo de arma
+   * 
+   * @return tipo de nave elegida
+   */
   public Componente elegirArma() {
     vistaBuilder.menuArmas();
     int resp = 0;
@@ -39,13 +54,10 @@ public class ControladorBuilder {
         switch (resp) {
           case 1:
             return repo.find(1L);
-
           case 2:
             return repo.find(2L);
-
           case 3:
             return repo.find(3L);
-
           default:
             throw new Exception();
         }
@@ -57,6 +69,12 @@ public class ControladorBuilder {
     } while (true);
   }
 
+  
+  /**
+   * Metodo para solicitar el tipo de blindaje
+   * 
+   * @return tipo de nave elegida
+   */
   public Componente elegirBlindaje() {
     vistaBuilder.menuBlindajes();
     int resp = 0;
@@ -84,6 +102,11 @@ public class ControladorBuilder {
     } while (true);
   }
 
+  /**
+   * Metodo para solicitar el tipo de emblema
+   * 
+   * @return tipo de nave elegida
+   */
   public Componente elegirEmblema() {
     vistaBuilder.menuEmblemas();
     int resp = 0;
@@ -111,6 +134,11 @@ public class ControladorBuilder {
     } while (true);
   }
 
+  /**
+   * Metodo para solicitar el tipo de nave
+   * 
+   * @return tipo de nave elegida
+   */
   public int elegirTipo() {
     vistaBuilder.menuTipo();
     int resp = 0;

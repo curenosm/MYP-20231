@@ -10,7 +10,16 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 
+
+/**
+ * Clase de acceso a los datos de los enemigos
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class RepositorioEnemigos implements Repositorio<Nave> {
+
   private MonstruoMarino kraken = new MonstruoMarino("Kraken", 4500, 2700, 900);
   private Nave adp = new MonstruoAdapter(kraken);
   private ArrayList<Nave> enemigos = new ArrayList<>();
@@ -18,7 +27,9 @@ public class RepositorioEnemigos implements Repositorio<Nave> {
 
   private static volatile RepositorioEnemigos uniqueInstance;
 
-  /** Constructor privado para usar Singleton */
+  /** 
+   * Constructor privado para usar Singleton 
+   * */
   private RepositorioEnemigos() {
     enemigos.add(generarSubmarino());
     enemigos.add(generarAcorazado());
@@ -44,6 +55,9 @@ public class RepositorioEnemigos implements Repositorio<Nave> {
     return uniqueInstance;
   }
 
+  /**
+   * Metodo que devuelve todos los enemigos registrados en el sistema
+   */
   @Override
   public Collection<Nave> findAll() {
     return enemigos;
