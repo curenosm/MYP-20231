@@ -6,8 +6,7 @@ import java.util.List;
 
 /**
  * Nave de tipo porta aviones
- * 
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth

@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  * Nave del tipo submarino
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth

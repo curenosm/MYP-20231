@@ -6,8 +6,7 @@ import java.util.List;
 
 /**
  * Modelo que representa un barco acorazado
- * 
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth

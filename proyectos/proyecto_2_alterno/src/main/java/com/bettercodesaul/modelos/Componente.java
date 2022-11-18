@@ -2,8 +2,7 @@ package com.bettercodesaul.modelos;
 
 /**
  * Modelo que representa un componente de la nave
- * 
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth

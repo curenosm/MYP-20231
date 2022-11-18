@@ -12,8 +12,7 @@ import java.util.Scanner;
 
 /**
  * Controlador para armar las naves
- * 
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
@@ -34,9 +33,7 @@ public class ControladorJuego {
     vistaJuego = VistaJuego.getInstance();
   }
 
-  /**
-   * Metodo para iniciar el juego
-   */
+  /** Metodo para iniciar el juego */
   public void jugar() {
     Iterator<Nave> ite = repo.getEnemigos();
     while (ite.hasNext()) {
@@ -53,7 +50,7 @@ public class ControladorJuego {
 
   /**
    * Metodo para ejecutar el enfrentamiento de dos naves
-   * 
+   *
    * @param aliado Nuestra nave
    * @param enemigo Nave enemiga
    * @return true en caso de que ganemos el combate
@@ -76,7 +73,7 @@ public class ControladorJuego {
 
   /**
    * Metodo para decidir el turno del jugador
-   * 
+   *
    * @param aliado Nuestra nave
    * @param enemigo Nave enemiga
    */
@@ -95,7 +92,7 @@ public class ControladorJuego {
 
   /**
    * Metodo encargado de manejar las acciones en nuestro turno
-   * 
+   *
    * @param aliado
    * @param enemigo
    */
@@ -133,6 +130,7 @@ public class ControladorJuego {
 
   /**
    * Metodo encargado de simular el comportamiento del enemigo durante el juego
+   *
    * @param enemigo
    * @param aliado
    */

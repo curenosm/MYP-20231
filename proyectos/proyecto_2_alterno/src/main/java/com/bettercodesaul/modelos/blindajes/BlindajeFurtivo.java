@@ -4,8 +4,7 @@ import com.bettercodesaul.modelos.Componente;
 
 /**
  * Modelo que representa un blindaje furtivo
- * 
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth

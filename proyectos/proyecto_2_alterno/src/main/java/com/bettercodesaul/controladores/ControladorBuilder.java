@@ -9,13 +9,13 @@ import java.util.Scanner;
 
 /**
  * Controlador para armar las naves
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth
  */
 public class ControladorBuilder {
-  
+
   private Builder constructor;
   private RepositorioComponentes repo;
   private Scanner scanner = new Scanner(System.in);
@@ -29,7 +29,7 @@ public class ControladorBuilder {
 
   /**
    * Metodo constructor de la nave
-   * 
+   *
    * @return Nave construida usando los componentes elegidos
    */
   public Nave construirNave() {
@@ -42,7 +42,7 @@ public class ControladorBuilder {
 
   /**
    * Metodo para solicitar el tipo de arma
-   * 
+   *
    * @return tipo de nave elegida
    */
   public Componente elegirArma() {
@@ -69,10 +69,9 @@ public class ControladorBuilder {
     } while (true);
   }
 
-  
   /**
    * Metodo para solicitar el tipo de blindaje
-   * 
+   *
    * @return tipo de nave elegida
    */
   public Componente elegirBlindaje() {
@@ -104,7 +103,7 @@ public class ControladorBuilder {
 
   /**
    * Metodo para solicitar el tipo de emblema
-   * 
+   *
    * @return tipo de nave elegida
    */
   public Componente elegirEmblema() {
@@ -136,7 +135,7 @@ public class ControladorBuilder {
 
   /**
    * Metodo para solicitar el tipo de nave
-   * 
+   *
    * @return tipo de nave elegida
    */
   public int elegirTipo() {

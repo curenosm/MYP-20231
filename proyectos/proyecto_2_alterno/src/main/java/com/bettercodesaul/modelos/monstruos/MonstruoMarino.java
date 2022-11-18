@@ -2,8 +2,7 @@ package com.bettercodesaul.modelos.monstruos;
 
 /**
  * Modelo que representa un
- * 
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo Elizabeth

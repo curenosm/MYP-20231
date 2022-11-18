@@ -8,8 +8,7 @@ import java.util.Collection;
 import java.util.List;
 
 /**
- * Clase de acceso a datos, en este caso a los datos de los
- * posibles componentes de las naves
+ * Clase de acceso a datos, en este caso a los datos de los posibles componentes de las naves
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -19,10 +18,7 @@ public class RepositorioComponentes implements Repositorio<Componente> {
   private List<Componente> componentes;
   private static volatile RepositorioComponentes uniqueInstance;
 
-
-  /**
-   * Constructor privado para usar Singleton
-   */
+  /** Constructor privado para usar Singleton */
   private RepositorioComponentes() {
     this.componentes =
         List.of(
@@ -37,9 +33,7 @@ public class RepositorioComponentes implements Repositorio<Componente> {
             new Fisica());
   }
 
-  /**
-   * Metodo que devuelve la unica instancia existente de esta clase
-   */
+  /** Metodo que devuelve la unica instancia existente de esta clase */
   public static RepositorioComponentes getInstance() {
     if (uniqueInstance == null) {
       synchronized (RepositorioComponentes.class) {
@@ -52,10 +46,7 @@ public class RepositorioComponentes implements Repositorio<Componente> {
     return uniqueInstance;
   }
 
-
-  /**
-   * Metodo que devuelve todos los componentes existentes en el sistema
-   */
+  /** Metodo que devuelve todos los componentes existentes en el sistema */
   @Override
   public Collection<Componente> findAll() {
     return this.componentes;

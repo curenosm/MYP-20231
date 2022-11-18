@@ -16,9 +16,7 @@ public class RepositorioPowerUps implements Repositorio<PowerUp> {
   private List<PowerUp> powerUps;
   private static volatile RepositorioPowerUps uniqueInstance;
 
-  /**
-   * Constructor privado para usar Singleton
-   */
+  /** Constructor privado para usar Singleton */
   private RepositorioPowerUps() {
     this.powerUps =
         List.of(
@@ -35,6 +33,7 @@ public class RepositorioPowerUps implements Repositorio<PowerUp> {
 
   /**
    * Metodo que nos devuelve la unica instancia de esta clase
+   *
    * @return
    */
   public static RepositorioPowerUps getInstance() {
@@ -49,9 +48,7 @@ public class RepositorioPowerUps implements Repositorio<PowerUp> {
     return uniqueInstance;
   }
 
-  /**
-   * Metodo que nos permite obtener todos los powerups
-   */
+  /** Metodo que nos permite obtener todos los powerups */
   @Override
   public Collection<PowerUp> findAll() {
     return powerUps;
