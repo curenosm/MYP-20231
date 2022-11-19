@@ -1,10 +1,16 @@
 package com.bettercodesaul.modelos.barcos;
 
-import com.bettercodesaul.generadores.GeneradorComponentes.*;
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerups.*;
 import java.util.List;
 
+/**
+ * Nave del tipo submarino
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class Submarino extends Nave {
 
   public Submarino(Componente arma, Componente coraza, Componente emblema) {

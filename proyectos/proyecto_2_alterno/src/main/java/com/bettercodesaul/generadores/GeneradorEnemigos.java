@@ -4,6 +4,13 @@ import static com.bettercodesaul.generadores.GeneradorComponentes.*;
 
 import com.bettercodesaul.modelos.barcos.*;
 
+/**
+ * Controlador para armar las naves
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class GeneradorEnemigos {
 
   public GeneradorEnemigos() {}

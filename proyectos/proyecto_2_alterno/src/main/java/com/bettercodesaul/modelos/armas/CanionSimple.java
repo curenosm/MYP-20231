@@ -2,6 +2,13 @@ package com.bettercodesaul.modelos.armas;
 
 import com.bettercodesaul.modelos.Componente;
 
+/**
+ * Modelo que representa un canion simple
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class CanionSimple extends Componente {
 
   public CanionSimple() {

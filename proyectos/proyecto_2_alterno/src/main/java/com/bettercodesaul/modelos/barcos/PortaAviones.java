@@ -4,6 +4,13 @@ import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerups.*;
 import java.util.List;
 
+/**
+ * Nave de tipo porta aviones
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class PortaAviones extends Nave {
 
   public PortaAviones(Componente arma, Componente coraza, Componente emblema) {

@@ -1,5 +1,12 @@
 package com.bettercodesaul.modelos;
 
+/**
+ * Modelo que representa un componente de la nave
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class Componente implements Cloneable {
 
   protected Long id = 000L;

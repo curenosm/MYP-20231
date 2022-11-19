@@ -4,6 +4,13 @@ import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerups.*;
 import java.util.List;
 
+/**
+ * Modelo que representa un barco acorazado
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class Acorazado extends Nave {
 
   public Acorazado(Componente arma, Componente coraza, Componente emblema) {

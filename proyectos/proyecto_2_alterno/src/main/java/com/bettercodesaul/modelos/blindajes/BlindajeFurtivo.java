@@ -2,6 +2,13 @@ package com.bettercodesaul.modelos.blindajes;
 
 import com.bettercodesaul.modelos.Componente;
 
+/**
+ * Modelo que representa un blindaje furtivo
+ *
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo Elizabeth
+ */
 public class BlindajeFurtivo extends Componente {
 
   public BlindajeFurtivo() {
