@@ -1,7 +1,7 @@
 package com.bettercodesaul.modelos.monstruos;
 
 /**
- * Modelo que representa un
+ * Modelo que representa un monstruo marino
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
@@ -14,6 +14,13 @@ public class MonstruoMarino {
   private int vitalidad;
   private int resistencia;
 
+  /**
+   * COnstructor con parametros de la clase
+   * @param nombre Nombre del monstruo
+   * @param ataque Capacidad de ataque
+   * @param vitalidad Vida del monstruo
+   * @param resistencia Blindaje que recubre al monstruo
+   */
   public MonstruoMarino(String nombre, int ataque, int vitalidad, int resistencia) {
     this.nombre = nombre;
     this.ataque = ataque;

@@ -14,6 +14,10 @@ import java.util.Random;
  */
 public class MonstruoAdapter extends Nave {
 
+  /**
+   * Constructor con parametros de la clase
+   * @param monstruo Instancia de la clase MonstruoMarino
+   */
   public MonstruoAdapter(MonstruoMarino monstruo) {
     this.tipo = monstruo.getNombre();
     this.ataque = monstruo.getAtaque();
@@ -49,14 +53,17 @@ public class MonstruoAdapter extends Nave {
         + enemigo.getVida();
   }
 
-  /** Metodo para defenderse del ataque */
+  
   @Override
   public void defender() {
     this.defendiendo = false;
   }
 
-  /*
-   * Metodo para generar la nave
+ /**
+   * Metodo encargado de generar naves usando el patron prototype
+   * 
+   * @return Object nave construida
+   * @throws CloneNotSupportedException
    */
   @Override
   public Object generarNave() throws CloneNotSupportedException {

@@ -7,6 +7,12 @@ import com.bettercodesaul.modelos.powerups.PowerUp;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase que simula un Barco o Nave maritima
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo ELizabeth
+ */
 public class Nave implements Cloneable {
 
   protected String tipo = "";
@@ -23,10 +29,17 @@ public class Nave implements Cloneable {
   protected List<PowerUp> poderes;
   protected int contador = 0;
 
+  /**COnstructor sin parametros de la clase */
   public Nave() {
     this.poderes = new ArrayList<PowerUp>();
   }
 
+  /**
+   * COnstructor con parametros de la clase
+   * @param arma
+   * @param coraza
+   * @param emblema
+   */
   public Nave(Componente arma, Componente coraza, Componente emblema) {
     this.arma = arma;
     this.coraza = coraza;
@@ -34,6 +47,11 @@ public class Nave implements Cloneable {
     this.poderes = new ArrayList<PowerUp>();
   }
 
+  /**
+   * Metodo para representar al objeto en cadena
+   * @return String
+   */
+  @Override
   public String toString() {
     String s = "";
 
@@ -138,6 +156,10 @@ public class Nave implements Cloneable {
     this.coraza = coraza;
   }
 
+  /**
+   * Metodo que determina si la Nave esquiva un ataque enemigo
+   * @return boolean
+   */
   public boolean esquivar() {
 
     int valorDado = random(0, 13);
@@ -148,6 +170,11 @@ public class Nave implements Cloneable {
     }
   }
 
+  /**
+   * Metodo para realizar un ataque a una Nave enemiga
+   * @param enemigo Instancia de la clase Nave
+   * @return String
+   */
   public String atacar(Nave enemigo) {
 
     if (enemigo.esquivar() == false) {
