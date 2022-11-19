@@ -34,7 +34,7 @@ public class RepositorioPowerUps implements Repositorio<PowerUp> {
   /**
    * Metodo que nos devuelve la unica instancia de esta clase
    *
-   * @return
+   * @return RepositorioPowerUps
    */
   public static RepositorioPowerUps getInstance() {
     if (uniqueInstance == null) {

@@ -1,7 +1,5 @@
 package com.bettercodesaul.controladores;
 
-import static com.bettercodesaul.util.Constantes.*;
-import static com.bettercodesaul.util.Printer.*;
 import static com.bettercodesaul.util.WriteFile.*;
 
 import com.bettercodesaul.modelos.Componente;
@@ -20,6 +18,7 @@ import java.util.Scanner;
  * @author Hernandez Paramo Elizabeth
  */
 public class ControladorMenu {
+
   private RepositorioComponentes repoCom;
   private RepositorioPowerUps repoPow;
   private Scanner scanner;
@@ -35,6 +34,9 @@ public class ControladorMenu {
     scanner = new Scanner(System.in);
   }
 
+  /**
+   * Metodo que nos muestra todos los componentes disponibles
+   */
   public void listaComponentes() {
     String s = "";
     for (Componente comp : repoCom.findAll()) {
@@ -45,6 +47,10 @@ public class ControladorMenu {
     writeUsingFiles(direc, s);
   }
 
+
+  /**
+   * Metodo que nos muestra todos los powerups disponibles
+   */ 
   public void listaPowerUps() {
     String s = "";
     for (PowerUp power : repoPow.findAll()) {
@@ -55,6 +61,9 @@ public class ControladorMenu {
     writeUsingFiles(direc, s);
   }
 
+  /**
+   * Metodo que maneja las opciones relacionadas al menu del juego
+   */
   public void menu() {
     int resp = 0;
     vistaMenu.saludo();

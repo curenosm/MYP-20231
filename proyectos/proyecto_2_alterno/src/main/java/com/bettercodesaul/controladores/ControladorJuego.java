@@ -2,7 +2,6 @@ package com.bettercodesaul.controladores;
 
 // import static com.bettercodesaul.repositorio.RepositorioEnemigos.*;
 import static com.bettercodesaul.util.Constantes.*;
-import static com.bettercodesaul.util.Printer.*;
 
 import com.bettercodesaul.modelos.barcos.Nave;
 import com.bettercodesaul.repositorio.RepositorioEnemigos;

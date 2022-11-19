@@ -36,26 +36,46 @@ public class VistaJuego {
     return uniqueInstance;
   }
 
+  /**
+   * Imprime la vista asociada a la aparicion de un nuevo enemigo
+   */
   public void nuevoEnemigo(Nave enemy) {
     warning(property("messages.enemigo.nuevo") + "\n" + enemy.toString());
   }
 
+  /**
+   * Imprime el mensaje en caso de haber perdido el juego
+   */
   public void gameOver() {
     error(property("messages.game.over"));
   }
 
+  /**
+   * Imprime el mensaje en caso de haber ganado el juego
+   */
   public void gameWin() {
     success(property("messages.game.win"));
   }
 
+  /**
+   * Imprime un mensaje en caso de que el contrincante actual pierda
+   */
   public void enemigoPerdio() {
     success(property("messages.perdio.enemigo"));
   }
 
+  /**
+   * Imprime un mensaje de error en caso de seleccionar una opcion incorrecta
+   */
   public void opcionInvalida() {
     error(property("messages.error.invalid.option"));
   }
 
+  /**
+   * Imprime un mensaje asociado a la accion de un barco
+   * 
+   * @param s accion rtelacada por el barco
+   */
   public void accionBarco(String s) {
     bold(s);
   }

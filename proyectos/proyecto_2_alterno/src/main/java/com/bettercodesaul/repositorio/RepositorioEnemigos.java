@@ -22,7 +22,6 @@ public class RepositorioEnemigos implements Repositorio<Nave> {
   private MonstruoMarino kraken = new MonstruoMarino("Kraken", 3000, 2700, 900);
   private Nave adp = new MonstruoAdapter(kraken);
   private ArrayList<Nave> enemigos = new ArrayList<>();
-  // List.of(generarSubmarino(), generarAcorazado(), generarPortaAviones(), adp);
 
   private static volatile RepositorioEnemigos uniqueInstance;
 

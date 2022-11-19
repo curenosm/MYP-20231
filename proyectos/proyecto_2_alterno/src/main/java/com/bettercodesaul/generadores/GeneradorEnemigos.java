@@ -5,7 +5,7 @@ import static com.bettercodesaul.generadores.GeneradorComponentes.*;
 import com.bettercodesaul.modelos.barcos.*;
 
 /**
- * Controlador para armar las naves
+ * Clase que se encarga de generar los diferentes tipos de enemigos
  *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael

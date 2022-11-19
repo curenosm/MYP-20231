@@ -4,6 +4,13 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
+/**
+ * Clase para facilitar la escritura de archivos
+ * 
+ * @author Alcantara Estrada Kevin Isaac
+ * @author Curenio Sanchez Misael
+ * @author Hernandez Paramo ELizabeth
+ */
 public class WriteFile {
 
   /**
@@ -18,7 +25,7 @@ public class WriteFile {
     } catch (IOException e) {
       // Intenta crear el directorio
       // new File(Constantes.DIRECTORIO_BITACORAS).mkdirs();
-      writeUsingFiles(pathname, data);
+      e.printStackTrace();
     } catch (Exception e) {
       e.printStackTrace();
     }

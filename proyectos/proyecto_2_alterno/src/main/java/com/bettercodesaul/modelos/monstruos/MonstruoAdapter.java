@@ -15,7 +15,6 @@ import java.util.Random;
 public class MonstruoAdapter extends Nave {
 
   public MonstruoAdapter(MonstruoMarino monstruo) {
-
     this.tipo = monstruo.getNombre();
     this.ataque = monstruo.getAtaque();
     this.vida = monstruo.getVitalidad();

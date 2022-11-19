@@ -14,9 +14,13 @@ import com.bettercodesaul.repositorio.RepositorioComponentes;
  */
 public class GeneradorComponentes {
 
-  private static RepositorioComponentes repositorioComponentes =
-      RepositorioComponentes.getInstance();;
+  private static RepositorioComponentes repositorioComponentes = RepositorioComponentes.getInstance();;
 
+  /**
+   * Metodo que nos devuelve cualquier arma 
+   * 
+   * @return arma aleatoria
+   */
   public static Componente generarArma() {
 
     int buscar = random(0, 3);
@@ -32,6 +36,12 @@ public class GeneradorComponentes {
     }
   }
 
+
+  /**
+   * Metodo que nos devuelve cualquier blindaje
+   * 
+   * @return Componente blindaje aleatorio
+   */
   public static Componente generarBlindaje() {
 
     int buscar = random(0, 3);
@@ -47,6 +57,11 @@ public class GeneradorComponentes {
     }
   }
 
+  /**
+   * Metodo que nos devuelve cualquier emblema
+   * 
+   * @return Componente blindaje aleatorio
+   */
   public static Componente generarEmblema() {
     int buscar = random(0, 3);
     switch (buscar) {
