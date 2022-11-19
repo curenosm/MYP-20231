@@ -82,6 +82,8 @@ public class ControladorMenu {
             vistaMenu.generado();
             break;
           case 3:
+            listaComponentes();
+            listaPowerUps();
             Nave nave = cBuilder.construirNave();
             cJuego = new ControladorJuego(nave);
             cJuego.jugar();
