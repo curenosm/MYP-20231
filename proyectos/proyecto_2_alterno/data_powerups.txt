@@ -1,18 +1,27 @@
 Aviones
 Un conjunto de aviones de combate te apoyan en la batalla, aumentando tu danio un 30%
+
 Blindar
 Blindas tu barco con una aleacion de Vibranium, aumentando tu blindaje un 40%
+
 Bombarderos
 Un conjunto de aviones de bombarderos, aumentando tu danio un 60%
+
 Cazas
 Un conjunto de cazas militares, aumentando tu danio al doble
+
 Propulsar
 Propulsas tu barco, aumentando en 2 puntos su velocidad y un 1 punto su agilidad
+
 Radar
 Utilizas un radar para detectar a tus enemigos y su ataques, aumentas en 3 tu agilidad
+
 Reforzar
 Refuerzas tu barco con una aleacion de Adamantium, aumentando tu blindaje un 70%
+
 Reparar
 Cedes por un momento para reparar danios, aumentando tu vida en 1000 puntos
+
 Sumergir
 Sumerges tu barco para evitar danios, duplicando tu agilidad, pero reduciendo tu velocidad en 1
+

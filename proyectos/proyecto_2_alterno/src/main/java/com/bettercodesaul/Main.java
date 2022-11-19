@@ -3,7 +3,6 @@ package com.bettercodesaul;
 import com.bettercodesaul.controladores.ControladorBuilder;
 import com.bettercodesaul.controladores.ControladorJuego;
 import com.bettercodesaul.controladores.ControladorMenu;
-import com.bettercodesaul.modelos.barcos.Nave;
 
 /**
  * Clase para correr el resto del proyecto e interactuar con el usuario
@@ -20,11 +19,6 @@ public class Main {
 
   public static void main(String[] args) throws Exception {
 
-    System.out.println("Bienvenido");
     controladorMenu.menu();
-    Nave nave = controladorBuilder.construirNave();
-    System.out.println(nave.toString());
-    controladorJuego = new ControladorJuego(nave);
-    controladorJuego.jugar();
   }
 }

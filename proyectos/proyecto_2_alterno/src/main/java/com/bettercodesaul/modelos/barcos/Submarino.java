@@ -17,9 +17,9 @@ public class Submarino extends Nave {
 
     super(arma, coraza, emblema);
     this.tipo = "Submarino";
-    this.ataque = 1400 + arma.getAtaque() + emblema.getAtaque();
+    this.ataque = 1900 + arma.getAtaque() + emblema.getAtaque();
     this.blindaje = 100 + coraza.getBlindaje() + emblema.getBlindaje();
-    this.vida = 2200;
+    this.vida = 4200;
     this.agilidad = 4 + arma.getAgilidad() + coraza.getAgilidad() + emblema.getAgilidad();
     this.velocidad = 6 + arma.getVelocidad() + coraza.getVelocidad() + emblema.getVelocidad();
     this.poderes = List.of(new Radar(), new Propulsar(), new Sumergir(), new Reparar());

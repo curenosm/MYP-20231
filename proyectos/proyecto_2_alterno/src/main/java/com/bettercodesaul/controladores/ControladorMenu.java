@@ -9,6 +9,7 @@ import com.bettercodesaul.modelos.barcos.Nave;
 import com.bettercodesaul.modelos.powerups.PowerUp;
 import com.bettercodesaul.repositorio.RepositorioComponentes;
 import com.bettercodesaul.repositorio.RepositorioPowerUps;
+import com.bettercodesaul.vistas.VistaMenu;
 import java.util.Scanner;
 
 /**
@@ -24,10 +25,13 @@ public class ControladorMenu {
   private Scanner scanner;
   private ControladorJuego cJuego;
   private ControladorBuilder cBuilder;
+  private VistaMenu vistaMenu;
 
   public ControladorMenu() {
     repoCom = RepositorioComponentes.getInstance();
     repoPow = RepositorioPowerUps.getInstance();
+    cBuilder = new ControladorBuilder();
+    vistaMenu = VistaMenu.getInstance();
     scanner = new Scanner(System.in);
   }
 
@@ -45,7 +49,7 @@ public class ControladorMenu {
     String s = "";
     for (PowerUp power : repoPow.findAll()) {
       s += power.nombre() + "\n" + power.descripcion();
-      s += "\n";
+      s += "\n\n";
     }
     String direc = "data_powerups.txt";
     writeUsingFiles(direc, s);
@@ -53,20 +57,22 @@ public class ControladorMenu {
 
   public void menu() {
     int resp = 0;
-    success(property("menu"));
+    vistaMenu.saludo();
     do {
+      vistaMenu.menu();
       try {
         resp = scanner.nextInt();
 
         switch (resp) {
           case 1:
             listaComponentes();
+            vistaMenu.generado();
             break;
           case 2:
             listaPowerUps();
+            vistaMenu.generado();
             break;
           case 3:
-            // Jugar
             Nave nave = cBuilder.construirNave();
             cJuego = new ControladorJuego(nave);
             cJuego.jugar();
@@ -79,8 +85,10 @@ public class ControladorMenu {
             throw new Exception();
         }
       } catch (Exception e) {
+        vistaMenu.opcionInvalida();
         resp = 0;
         scanner = new Scanner(System.in);
+        e.printStackTrace();
       }
     } while (true);
   }

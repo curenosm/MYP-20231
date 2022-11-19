@@ -19,7 +19,7 @@ import java.util.Iterator;
  */
 public class RepositorioEnemigos implements Repositorio<Nave> {
 
-  private MonstruoMarino kraken = new MonstruoMarino("Kraken", 4500, 2700, 900);
+  private MonstruoMarino kraken = new MonstruoMarino("Kraken", 3000, 2700, 900);
   private Nave adp = new MonstruoAdapter(kraken);
   private ArrayList<Nave> enemigos = new ArrayList<>();
   // List.of(generarSubmarino(), generarAcorazado(), generarPortaAviones(), adp);
@@ -78,7 +78,7 @@ public class RepositorioEnemigos implements Repositorio<Nave> {
 
   public void generarEnemigos() {
     //  enemigos= enemigos.to
-    while (enemigos.size() < 10) {
+    while (enemigos.size() < 7) {
       int resp = random(0, 4);
       try {
         Nave enemy = (Nave) enemigos.get(resp).generarNave();

@@ -20,7 +20,12 @@ public class MonstruoAdapter extends Nave {
     this.ataque = monstruo.getAtaque();
     this.vida = monstruo.getVitalidad();
     this.blindaje = monstruo.getResistencia();
-    this.agilidad = 1;
+    this.agilidad = 0;
+  }
+
+  @Override
+  public boolean esquivar() {
+    return false;
   }
 
   @Override

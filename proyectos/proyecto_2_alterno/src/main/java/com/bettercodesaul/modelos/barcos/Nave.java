@@ -141,7 +141,7 @@ public class Nave implements Cloneable {
 
   public boolean esquivar() {
 
-    int valorDado = random(this.agilidad, 13);
+    int valorDado = random(0, 13);
     if (this.agilidad >= valorDado) {
       return true;
     } else {
@@ -151,7 +151,7 @@ public class Nave implements Cloneable {
 
   public String atacar(Nave enemigo) {
 
-    if (enemigo.esquivar()) {
+    if (enemigo.esquivar() == false) {
 
       if (enemigo.getDefendiendo()) {
 

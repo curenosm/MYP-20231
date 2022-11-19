@@ -42,10 +42,12 @@ public class ControladorJuego {
       boolean vivo = enfrentamiento(aliado, enemy);
       if (!vivo) {
         vistaJuego.gameOver();
+
         System.exit(0);
       }
     }
     vistaJuego.gameWin();
+    System.exit(0);
   }
 
   /**
