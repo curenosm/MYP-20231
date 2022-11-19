@@ -55,41 +55,50 @@ Por último, la división espera que más adelante se puedan agregar más funcio
 # Patrones
 Para esta práctica utilizamos los siguientes patrones:
 
-1) *Strategy:* Como solución para la problemática, decidimos usar Strategy en el aspecto de los poderes, pues de ésta manera podemos dar los power ups que se decida a los distintos tipos de barcos para que su comportamiento sea distinto. Además, como se espera que los power ups hagan más cosas en la posterioridad, usar una interfaz para encapsular el comportamiento de éstos poderes nos permite modificar o agregar cosas a los power ups sin tener que modificar el resto del código.
- 
-2) *Prototype:* Cómo la división quiere ahorrarse espacio, para los enemigos no crearemos miles y miles de instancias distintas para que cada enfrentamiento sea distinto al menos en las estadísticas de los enemigos, sino que utilizaremos Prototype, pues al usar la interfaz Cloneable podemos generar copias con estadísticas modificadas a partir de una sola instancia de la clase, ahorrándonos mucho espacio y tiempo.
- 
-3) *Adapter:* Decidimos utilizar Adapter porque podemos meter otro tipo de enemigos, tal como los monstruos marinos de "Pulpos and Masters", de tal forma que aunque no sean de la clase Nave (los barcos que constituyen nuestro juego) podemos usar un adaptador para que se comporten como deseamos. Además, si se desea agregar otro tipo de enemigos con otras caracteristicas será posible hacerlo sin tocar el codigo de la clase Nave.
- 
-4) *Iterator:* Haciendo caso al profesor de biología, para evitar que los usuarios tengan acceso directo a la clase de sus monstruos marinos, podemos almacenar las instancias de ésta clase (y otras) en una estructura de datos privada y brindar al usuario un iterador con el cual podrá ejecutar de forma controlada y tal como se planea un partida.
+1) **Strategy**: Como solución para la problemática, decidimos usar Strategy en el aspecto de los poderes, pues de ésta manera podemos dar los power ups que se decida a los distintos tipos de barcos para que su comportamiento sea distinto. Además, como se espera que los power ups hagan más cosas en la posterioridad, usar una interfaz para encapsular el comportamiento de éstos poderes nos permite modificar o agregar cosas a los power ups sin tener que modificar el resto del código.
 
-5) *Builder:* Implementamos éste patrón para que el usuario pueda construir su Nave (barco) en tiempo real, actualmente hay 3 componentes de cada tipo y hay 3 tipos de componentes, así que hay 9 posibles combinaciones de componentes para disfrutar, pero se dice que se desea agregar más componentes a futuro, así que unos cuantos más y tendríamos cientos de combinacioes, es por eso que al utilizar Builder relegamos todas éstas posibles combinaciones a la perspicacia del usuario, ahorrándonos mucho código a futuro.
- 
-6) *MVC:* Decidimos utilizar éste patrón de diseño ya que podemos separar las partes de nuestro código bastante bien y ésto facilita la realización de cambios a futuro para toda la parte visual y de control, los modelos también resultan más sencillos de modificar y ésto evita rigidez y viscosidad.
+<br>
 
-7) *Singleton*: Utilizamos el patrón singleton para la parte de los repositorios en vista de que están simulando un acceso a datos y por
+2) **Prototype**: Cómo la división quiere ahorrarse espacio, para los enemigos no crearemos miles y miles de instancias distintas para que cada enfrentamiento sea distinto al menos en las estadísticas de los enemigos, sino que utilizaremos Prototype, pues al usar la interfaz Cloneable podemos generar copias con estadísticas modificadas a partir de una sola instancia de la clase, ahorrándonos mucho espacio y tiempo.
+
+<br>
+
+3) **Adapter**: Decidimos utilizar Adapter porque podemos meter otro tipo de enemigos, tal como los monstruos marinos de "Pulpos and Masters", de tal forma que aunque no sean de la clase Nave (los barcos que constituyen nuestro juego) podemos usar un adaptador para que se comporten como deseamos. Además, si se desea agregar otro tipo de enemigos con otras caracteristicas será posible hacerlo sin tocar el codigo de la clase Nave.
+
+<br>
+
+4) **Iterator**: Haciendo caso al profesor de biología, para evitar que los usuarios tengan acceso directo a la clase de sus monstruos marinos, podemos almacenar las instancias de ésta clase (y otras) en una estructura de datos privada y brindar al usuario un iterador con el cual podrá ejecutar de forma controlada y tal como se planea un partida.
+
+<br>
+
+5) **Builder**: Implementamos éste patrón para que el usuario pueda construir su Nave (barco) en tiempo real, actualmente hay 3 componentes de cada tipo y hay 3 tipos de componentes, así que hay 9 posibles combinaciones de componentes para disfrutar, pero se dice que se desea agregar más componentes a futuro, así que unos cuantos más y tendríamos cientos de combinacioes, es por eso que al utilizar Builder relegamos todas éstas posibles combinaciones a la perspicacia del usuario, ahorrándonos mucho código a futuro.
+
+<br>
+
+6) **MVC**: Decidimos utilizar éste patrón de diseño ya que podemos separar las partes de nuestro código bastante bien y ésto facilita la realización de cambios a futuro para toda la parte visual y de control, los modelos también resultan más sencillos de modificar y esto evita rigidez y viscosidad.
+
+<br>
+
+7) **Singleton**: Utilizamos el patrón singleton para la parte de los repositorios en vista de que están simulando un acceso a datos y por
 lo tanto no necesitamos crear diferentes instancias de la clase, pues
 con una sola podríamos acceder a ellos desde cualquier parte del codigo, ahorrando de esta forma recursos.
 
+<br>
+
 # Notas
  
-Verde Builder
-Amarillo Iterator
-Azul Adapter
-Rojo Prototype
-Morado Singleton
-Rosa Strategy
-MVC falta elegir color xdxdxd
- 
+- <span style="color: green;">Adapter</span>
+- <span style="color: yellow;">Prototype</span>
+- <span style="color: cyan;">Iterator</span>
+- <span style="color: red;">MVC</span>
+- <span style="color: pink;">Singleton</span>
+- <span style="color: orange;">Strategy</span>
+- <span style="color: #005fff;">Builder</span>
 
  
 # Cosas por hacer
 
-*Hacer diagrama de casos de uso
-
-*Documentar
-
-*Completar UML
+* Hacer diagrama de casos de uso
 
 # Diagramas
 

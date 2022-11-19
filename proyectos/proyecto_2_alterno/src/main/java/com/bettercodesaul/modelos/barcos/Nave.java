@@ -1,7 +1,6 @@
 package com.bettercodesaul.modelos.barcos;
 
 import static com.bettercodesaul.util.Constantes.*;
-import static com.bettercodesaul.util.Printer.*;
 
 import com.bettercodesaul.modelos.Componente;
 import com.bettercodesaul.modelos.powerups.PowerUp;
@@ -197,6 +196,12 @@ public class Nave implements Cloneable {
     this.defendiendo = true;
   }
 
+  /**
+   * Metodo encargado de generar naves usando el patron prototype
+   * 
+   * @return Object nave construida
+   * @throws CloneNotSupportedException
+   */
   public Object generarNave() throws CloneNotSupportedException {
 
     try {
@@ -214,6 +219,11 @@ public class Nave implements Cloneable {
     return null;
   }
 
+  /**
+   * Metodo para manejar la activacion de un powerup
+   * 
+   * @return String descripcion del powerup
+   */
   public String powerUp() {
     if (contador < this.poderes.size()) {
       PowerUp activo = this.poderes.get(contador);
