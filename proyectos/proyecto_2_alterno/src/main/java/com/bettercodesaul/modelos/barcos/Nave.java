@@ -9,6 +9,7 @@ import java.util.List;
 
 /**
  * Clase que simula un Barco o Nave maritima
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo ELizabeth
@@ -29,13 +30,14 @@ public class Nave implements Cloneable {
   protected List<PowerUp> poderes;
   protected int contador = 0;
 
-  /**COnstructor sin parametros de la clase */
+  /** COnstructor sin parametros de la clase */
   public Nave() {
     this.poderes = new ArrayList<PowerUp>();
   }
 
   /**
    * COnstructor con parametros de la clase
+   *
    * @param arma
    * @param coraza
    * @param emblema
@@ -49,6 +51,7 @@ public class Nave implements Cloneable {
 
   /**
    * Metodo para representar al objeto en cadena
+   *
    * @return String
    */
   @Override
@@ -158,6 +161,7 @@ public class Nave implements Cloneable {
 
   /**
    * Metodo que determina si la Nave esquiva un ataque enemigo
+   *
    * @return boolean
    */
   public boolean esquivar() {
@@ -172,6 +176,7 @@ public class Nave implements Cloneable {
 
   /**
    * Metodo para realizar un ataque a una Nave enemiga
+   *
    * @param enemigo Instancia de la clase Nave
    * @return String
    */
@@ -225,7 +230,7 @@ public class Nave implements Cloneable {
 
   /**
    * Metodo encargado de generar naves usando el patron prototype
-   * 
+   *
    * @return Object nave construida
    * @throws CloneNotSupportedException
    */
@@ -248,7 +253,7 @@ public class Nave implements Cloneable {
 
   /**
    * Metodo para manejar la activacion de un powerup
-   * 
+   *
    * @return String descripcion del powerup
    */
   public String powerUp() {

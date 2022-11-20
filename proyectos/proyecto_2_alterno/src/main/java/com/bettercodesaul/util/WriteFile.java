@@ -6,7 +6,7 @@ import java.nio.file.Paths;
 
 /**
  * Clase para facilitar la escritura de archivos
- * 
+ *
  * @author Alcantara Estrada Kevin Isaac
  * @author Curenio Sanchez Misael
  * @author Hernandez Paramo ELizabeth

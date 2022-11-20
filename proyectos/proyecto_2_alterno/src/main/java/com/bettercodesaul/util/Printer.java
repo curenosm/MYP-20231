@@ -13,11 +13,11 @@ import com.diogonunes.jcolor.*;
  */
 public class Printer {
 
-  private static AnsiFormat error   = new AnsiFormat(BOLD(), RED_TEXT());
+  private static AnsiFormat error = new AnsiFormat(BOLD(), RED_TEXT());
   private static AnsiFormat warning = new AnsiFormat(BOLD(), YELLOW_TEXT());
   private static AnsiFormat success = new AnsiFormat(BOLD(), GREEN_TEXT());
-  private static AnsiFormat info    = new AnsiFormat(BRIGHT_BLUE_TEXT());
-  private static AnsiFormat bold    = new AnsiFormat(BOLD(), BLUE_TEXT());
+  private static AnsiFormat info = new AnsiFormat(BRIGHT_BLUE_TEXT());
+  private static AnsiFormat bold = new AnsiFormat(BOLD(), BLUE_TEXT());
 
   /**
    * Metodo que imprime en una nueva linea el mensaje deseado

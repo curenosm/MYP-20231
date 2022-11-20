@@ -16,6 +16,7 @@ public class MonstruoMarino {
 
   /**
    * COnstructor con parametros de la clase
+   *
    * @param nombre Nombre del monstruo
    * @param ataque Capacidad de ataque
    * @param vitalidad Vida del monstruo

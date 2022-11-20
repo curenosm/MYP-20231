@@ -34,37 +34,27 @@ public class VistaMenu {
     return uniqueInstance;
   }
 
-  /**
-   * Mensaje de generacion de documento
-   */
+  /** Mensaje de generacion de documento */
   public void generado() {
     warning(property("messages.doc.generado"));
   }
 
-  /**
-   * Imprime el mensaje de bienvenida
-   */
+  /** Imprime el mensaje de bienvenida */
   public void saludo() {
     success(property("saludo"));
   }
 
-  /**
-   * Imprime el menu pricipal
-   */
+  /** Imprime el menu pricipal */
   public void menu() {
     success(property("menu"));
   }
 
-  /**
-   * Imprime el mensaje de salida
-   */
+  /** Imprime el mensaje de salida */
   public void salir() {
     success(property("salir"));
   }
 
-  /**
-   * Mensaje en caso de opcion incorrecta
-   */
+  /** Mensaje en caso de opcion incorrecta */
   public void opcionInvalida() {
     error(property("messages.error.invalid.option"));
   }

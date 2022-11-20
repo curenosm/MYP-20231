@@ -34,37 +34,27 @@ public class VistaTurnoAliado {
     return uniqueInstance;
   }
 
-  /**
-   * Metodo que meustra el menu de acciones del jugador en la partida
-   */
+  /** Metodo que meustra el menu de acciones del jugador en la partida */
   public void showMenu() {
     success(property("menu.acciones.aliado"));
   }
 
-  /**
-   * Mensaje del turno del jugador
-   */
+  /** Mensaje del turno del jugador */
   public void showMessageTurno() {
     success(property("messages.turno.aliado"));
   }
 
-  /**
-   * Mensaje de activacion de poder especial
-   */
+  /** Mensaje de activacion de poder especial */
   public void activarPowerUp() {
     success(property("messages.powerup.aliado"));
   }
 
-  /**
-   * Mensaje a imprimir al momento de defenderse
-   */
+  /** Mensaje a imprimir al momento de defenderse */
   public void defender() {
     success(property("messages.defensa.aliado"));
   }
 
-  /**
-   * Mensaje a imprimir mientras se ataca
-   */
+  /** Mensaje a imprimir mientras se ataca */
   public void atacar() {
     success(property("messages.ataque.aliado"));
   }

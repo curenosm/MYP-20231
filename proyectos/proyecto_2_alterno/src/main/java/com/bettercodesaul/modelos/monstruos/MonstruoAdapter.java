@@ -16,6 +16,7 @@ public class MonstruoAdapter extends Nave {
 
   /**
    * Constructor con parametros de la clase
+   *
    * @param monstruo Instancia de la clase MonstruoMarino
    */
   public MonstruoAdapter(MonstruoMarino monstruo) {
@@ -53,15 +54,14 @@ public class MonstruoAdapter extends Nave {
         + enemigo.getVida();
   }
 
-  
   @Override
   public void defender() {
     this.defendiendo = false;
   }
 
- /**
+  /**
    * Metodo encargado de generar naves usando el patron prototype
-   * 
+   *
    * @return Object nave construida
    * @throws CloneNotSupportedException
    */

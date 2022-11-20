@@ -12,7 +12,8 @@
 
 <br>
 
-#Problematica a resolver
+# Problematica a resolver
+
 La división Fciencias.game.inc de la facultad de ciencias desea desarrollar un videojuego para que los alumnos puedan disfrutar y desestresarse. Tal videojuego es uno con un sistema de combate por turnos (determinados por caracteristicas propias del barco) en el que los usuarios puedan tomar decisiones en y estrategias de juego durante el combate. Se solicita que el usuario pueda crear un barco de acuerdo a los distintos componentes disponibles, además, éstos componentes deben afectar las estadísticas del barco. Aunque por el momento se cuenta con pocos componentes, se piensa agregar más en el futuro.
 
 Otra característica que se quiere implementar al videojuego es que haya poderes o power ups que afecten la forma de jugar segun el tipo de nave, además, se espera que posteriormente éstos poderes puedan tener más comportamientos y acciones. 
@@ -24,6 +25,9 @@ Como la Fciencias.game.inc tuvo una reducción de su espacio ilimitado de Jmail,
 El profesor de biología, además, se ha vuelto receloso con sus personajes de "Pulpos and Masters" y condiciono que si se utilizan sus diseños, los jugadores no deben de poder acceder directamente a la información de éstos.
 
 Por último, la división espera que más adelante se puedan agregar más funcionalidades al videojuego, quizás ver un ranking o un foro con consejos para ganar, por ello desean que  agregar o quitar secciones del juego, especialmente en el aspecto visual no sea complejo. 
+
+<br>
+
 # Instrucciones de compilacion
 
 
@@ -86,21 +90,17 @@ con una sola podríamos acceder a ellos desde cualquier parte del codigo, ahorra
 <br>
 
 # Notas
- 
+
+- Los diagramas están ubicados en la carpeta `docs` del proyecto.
+# Diagramas
+
 - <span style="color: green;">Adapter</span>
-- <span style="color: yellow;">Prototype</span>
+- <span style="color: #BEA90E;">Prototype</span>
 - <span style="color: cyan;">Iterator</span>
 - <span style="color: red;">MVC</span>
-- <span style="color: pink;">Singleton</span>
-- <span style="color: orange;">Strategy</span>
+- <span style="color: #DA6DE6;">Singleton</span>
+- <span style="color: #E3863C;">Strategy</span>
 - <span style="color: #005fff;">Builder</span>
-
- 
-# Cosas por hacer
-
-* Hacer diagrama de casos de uso
-
-# Diagramas
 
 <br/>
 
@@ -110,3 +110,6 @@ con una sola podríamos acceder a ellos desde cualquier parte del codigo, ahorra
 
 
 
+<center>
+    <img src="./docs/DiagramaCasosDeUso.png" width="100%">
+</center>

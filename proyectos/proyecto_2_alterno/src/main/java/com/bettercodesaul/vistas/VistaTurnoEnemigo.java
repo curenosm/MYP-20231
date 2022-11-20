@@ -34,30 +34,22 @@ public class VistaTurnoEnemigo {
     return uniqueInstance;
   }
 
-  /**
-   * Mensaje de turno del enemigo
-   */
+  /** Mensaje de turno del enemigo */
   public void showMessageTurno() {
     error(property("messages.turno.enemigo"));
   }
 
-  /**
-   * Mensaje en caso de que el enemigo active un poder especial
-   */
+  /** Mensaje en caso de que el enemigo active un poder especial */
   public void activarPowerUp() {
     error(property("messages.powerup.enemigo"));
   }
 
-  /**
-   * Mensaje en caso de que el enemigo se defienda
-   */
+  /** Mensaje en caso de que el enemigo se defienda */
   public void defender() {
     error(property("messages.defensa.enemigo"));
   }
 
-  /**
-   * Mensaje en caso de que el enemigo ataque
-   */
+  /** Mensaje en caso de que el enemigo ataque */
   public void atacar() {
     error(property("messages.ataque.enemigo"));
   }

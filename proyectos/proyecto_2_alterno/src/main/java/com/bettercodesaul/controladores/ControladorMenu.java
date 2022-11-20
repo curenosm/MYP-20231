@@ -34,9 +34,7 @@ public class ControladorMenu {
     scanner = new Scanner(System.in);
   }
 
-  /**
-   * Metodo que nos muestra todos los componentes disponibles
-   */
+  /** Metodo que nos muestra todos los componentes disponibles */
   public void listaComponentes() {
     String s = "";
     for (Componente comp : repoCom.findAll()) {
@@ -47,10 +45,7 @@ public class ControladorMenu {
     writeUsingFiles(direc, s);
   }
 
-
-  /**
-   * Metodo que nos muestra todos los powerups disponibles
-   */ 
+  /** Metodo que nos muestra todos los powerups disponibles */
   public void listaPowerUps() {
     String s = "";
     for (PowerUp power : repoPow.findAll()) {
@@ -61,9 +56,7 @@ public class ControladorMenu {
     writeUsingFiles(direc, s);
   }
 
-  /**
-   * Metodo que maneja las opciones relacionadas al menu del juego
-   */
+  /** Metodo que maneja las opciones relacionadas al menu del juego */
   public void menu() {
     int resp = 0;
     vistaMenu.saludo();

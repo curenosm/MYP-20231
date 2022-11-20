@@ -17,6 +17,7 @@ public class GeneradorEnemigos {
 
   /**
    * Metodo que generar una Instancia de la clase Submarino
+   *
    * @return Nave
    */
   public static Nave generarSubmarino() {
@@ -24,8 +25,9 @@ public class GeneradorEnemigos {
     return submarino;
   }
 
-   /**
+  /**
    * Metodo que generar una Instancia de la clase Acorazado
+   *
    * @return Nave
    */
   public static Nave generarAcorazado() {
@@ -33,8 +35,9 @@ public class GeneradorEnemigos {
     return acorazado;
   }
 
-   /**
+  /**
    * Metodo que generar una Instancia de la clase PortaAviones
+   *
    * @return Nave
    */
   public static Nave generarPortaAviones() {
