@@ -16,15 +16,16 @@ import javax.persistence.Id;
  * @author Hernandez Paramo Elizabeth
  */
 @Entity
-//@Getter
-//@Setter
-public interface Bala {
+@Getter
+@Setter
+public class Bala {
 
-    //@Id
-   // @GeneratedValue(strategy = GenerationType.AUTO)
-    //private static Long id;
-    public String tipo;
-    public int velocidadBala;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    private String tipo;
+    private int velocidadBala;
 
 
 }

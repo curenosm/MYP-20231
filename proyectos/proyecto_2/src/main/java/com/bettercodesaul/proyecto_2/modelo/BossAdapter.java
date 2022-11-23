@@ -24,5 +24,4 @@ public class BossAdapter extends Alien {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Boss jefe;
 }

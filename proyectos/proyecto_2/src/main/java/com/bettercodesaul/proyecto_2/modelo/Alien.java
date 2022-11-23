@@ -24,6 +24,5 @@ public abstract class Alien {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String tipo;
-    private Bala disparo;
 
 }

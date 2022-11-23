@@ -26,6 +26,5 @@ public class Boss {
     private Long id;
 
     private String apodo;
-    private Bala disparo;
    
 }
